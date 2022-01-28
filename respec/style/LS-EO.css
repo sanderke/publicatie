@@ -1,0 +1,8 @@
+/* Style for Logius  verouderde versie */
+
+@import "base.css";
+
+body {
+    background-image: url('logos/LS-EO.svg');
+}
+

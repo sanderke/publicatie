@@ -1,0 +1,7 @@
+/* Style for Logius Consultatieversie */
+
+@import "base.css";
+
+body {
+    background-image: url('logos/LS-CV.svg');
+}

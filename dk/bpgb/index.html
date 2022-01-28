@@ -1,0 +1,1051 @@
+<!DOCTYPE html><html lang="nl"><head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta charset="utf-8">
+<meta name="generator" content="ReSpec 28.1.0 Logius profile 20220106">
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font:small Helvetica Neue,sans-serif,Droid Sans Fallback;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;margin-top:.25em}
+.dfn-panel ul a[href]{color:#333}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a[href]:hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
+    
+    
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+    
+    
+<title>Digikoppeling Best Practices Grote Berichten 3.1</title>
+    
+    
+<link rel="shortcut icon" type="image/x-icon" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/logius.ico">
+    
+    
+<link rel="stylesheet" type="text/css" href="./media/style.css">
+
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+:is(h1,h2,h3,h4,h5,h6,a) abbr{border:none}
+dfn{font-weight:700}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:normal}
+code{color:#c63501}
+th code{color:inherit}
+a[href].orcid{padding-left:4px;padding-right:4px}
+a[href].orcid>svg{margin-bottom:-2px}
+.toc a,.tof a{text-decoration:none}
+a .figno,a .secno{color:#000}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
+.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
+.simple th a{color:#fff;padding:3px 5px;text-align:left}
+.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
+.simple td{padding:3px 10px;border-top:1px solid #ddd}
+.simple tr:nth-child(even){background:#f0f6ff}
+.section dd>p:first-child{margin-top:0}
+.section dd>p:last-child{margin-bottom:0}
+.section dd{margin-bottom:1em}
+.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+a[href].self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+h2,h3,h4,h5,h6{position:relative}
+aside.example .marker>a.self-link{color:inherit}
+:is(h2,h3,h4,h5,h6)>a.self-link{border:none;color:inherit;font-size:83%;height:2em;left:-1.6em;opacity:.5;position:absolute;text-align:center;text-decoration:none;top:0;transition:opacity .2s;width:2em}
+:is(h2,h3,h4,h5,h6)>a.self-link::before{content:"§";display:block}
+@media (max-width:767px){
+dd{margin-left:0}
+:is(h2,h3,h4,h5,h6)>a.self-link{left:auto;top:auto}
+}
+@media print{
+.removeOnSave{display:none}
+}
+</style>
+<meta name="description" content="Dit document beschrijft een aantal Best Practices voor de DigiKoppeling Grote Berichten.">
+<style>
+.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
+.hljs-comment,.hljs-quote{color:#717277;font-style:italic}
+.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4}
+.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;font-weight:700}
+.hljs-literal{color:#0b76c5}
+.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c}
+.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01}
+.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801}
+.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3}
+.hljs-emphasis{font-style:italic}
+.hljs-strong{font-weight:700}
+.hljs-link{text-decoration:underline}
+</style>
+<style>
+var{position:relative;cursor:pointer}
+var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
+var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
+var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
+var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
+</style>
+<script id="initialUserConfig" type="application/json">{
+  "specStatus": "DEF",
+  "specType": "BP",
+  "pubDomain": "dk",
+  "shortName": "bpgb",
+  "publishDate": "2017-10-01",
+  "publishVersion": "3.1",
+  "license": "cc-by-nd",
+  "doJsonLd": true,
+  "editors": [
+    {
+      "name": "Peter Haasnoot",
+      "url": "https://logius.nl/standaarden",
+      "company": "Logius"
+    },
+    {
+      "name": "Pieter Hering",
+      "url": "https://logius.nl/standaarden",
+      "company": "Logius"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Logius",
+      "url": "mailto:digikoppeling@logius.nl",
+      "mailto": "digikoppeling@logius.nl"
+    }
+  ],
+  "github": "https://github.com/Logius-standaarden/Digikoppeling-Best-Practices-GB",
+  "addSectionLinks": true,
+  "a11y": false,
+  "alternateFormats": [
+    {
+      "label": "pdf",
+      "uri": "Digikoppeling-Best-Practices-GB.pdf"
+    }
+  ],
+  "nl_emailComments": "digikoppeling@logius.nl",
+  "nl_addReleaseTagTitle": true,
+  "nl_markdownSplitH1sections": true,
+  "nl_github": {
+    "revision": "https://github.com/Logius-standaarden/Digikoppeling-Best-Practices-GB/commits/"
+  },
+  "nl_organisationName": "Logius",
+  "nl_organisationPrefix": "LS-",
+  "nl_markdownTableClass": "dkkvs",
+  "nl_markdownEmbedImageInFigure": true,
+  "nl_organisationStylesURL": "https://publicatie.centrumvoorstandaarden.nl/respec/style/",
+  "nl_organisationPublishURL": "https://publicatie.centrumvoorstandaarden.nl/",
+  "nl_logo": {
+    "src": "https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg",
+    "alt": "Logius",
+    "id": "Logius",
+    "height": 77,
+    "width": 44,
+    "url": "https://www.logius.nl/standaarden"
+  },
+  "localBiblio": {
+    "NEN3610": {
+      "href": "https://www.nen.nl/nen-3610-2011-a1-2016-nl-217738",
+      "title": "Basismodel Geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten",
+      "authors": [
+        ""
+      ],
+      "date": "Maart 2011",
+      "publisher": "Nederlands Normalisatie-instituut"
+    },
+    "Digikoppeling Architectuur": {
+      "href": "https://centrumvoorstandaarden.github.io/Architectuur2.0-metRestfulAPI/static.html",
+      "title": "Digikoppeling Architectuur",
+      "authors": [
+        "Logius Centrum voor standaarden"
+      ],
+      "date": "december 2020",
+      "publisher": "Logius"
+    },
+    "Digikoppeling Beveiligingsdocument": {
+      "href": "https://www.logius.nl/sites/default/files/bestanden/website/Digikoppeling_Beveiligingsstandaarden_en_voorschriften_v1.3.pdf",
+      "title": "Digikoppeling Beveiligingsstandaarden en voorschriften",
+      "date": "2020",
+      "publisher": "Logius"
+    },
+    "Digikoppeling-Cert": {
+      "href": "http://www.logius.nl/digikoppeling",
+      "title": "Gebruik en achtergrond van Digikoppeling certificaten",
+      "publisher": "Logius"
+    },
+    "PKI Policy": {
+      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen",
+      "title": "Programma van Eisen (PKIoverheid)",
+      "publisher": "Logius"
+    },
+    "PKI CA": {
+      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/toegetreden-vertrouwensdienstverleners",
+      "title": "Toegetreden vertrouwensdienstverleners",
+      "publisher": "Logius"
+    },
+    "PKIoverheid Certificaten": {
+      "href": "https://cert.pkioverheid.nl/",
+      "title": "Pkioverheid certificaten",
+      "publisher": "Logius"
+    },
+    "Logius website": {
+      "href": "https://logius.nl/digikoppeling",
+      "title": "Logius Digikoppeling",
+      "publisher": "Logius"
+    },
+    "Digikoppeling Compliance Voorziening": {
+      "href": "https://portaal.digikoppeling.nl",
+      "title": "Digikoppeling Compliance Voorziening",
+      "publisher": "Logius"
+    }
+  },
+  "publishISODate": "2017-10-01T00:00:00.000Z",
+  "generatedSubtitle": "Vastgestelde versie 01 oktober 2017"
+}</script>
+<link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/LS-VG.css"></head>
+
+<body class="h-entry toc-inline"><div class="head">
+    <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg" width="44">
+  </a> <h1 id="title" class="title">Digikoppeling Best Practices Grote Berichten 3.1</h1>
+    
+    <h2>
+      Logius Best practice<br>
+      Vastgestelde versie
+      <time class="dt-published" datetime="2017-10-01">01 oktober 2017</time>
+    </h2>
+	<a lang="nl" href="https://publicatie.centrumvoorstandaarden.nl/">Overzicht standaarden</a>
+    <dl>
+      <dt>Deze versie:</dt><dd class="status">
+              <a class="u-url status" href="https://publicatie.centrumvoorstandaarden.nl/dk/bpgb/3.1">https://publicatie.centrumvoorstandaarden.nl/dk/bpgb/3.1</a>
+            </dd><dt>Laatst gepubliceerde versie:</dt><dd>
+              <a href="https://publicatie.centrumvoorstandaarden.nl/dk/bpgb/">https://publicatie.centrumvoorstandaarden.nl/dk/bpgb/</a>
+            </dd>
+      <dt>Laatste werkversie:</dt><dd><a href="https://logius-standaarden.github.io/Digikoppeling-Best-Practices-GB/">https://logius-standaarden.github.io/Digikoppeling-Best-Practices-GB/</a></dd>
+      
+      
+      
+      
+      
+      <dt>Redacteurs:</dt>
+      <dd class="editor p-author h-card vcard">
+    <a class="u-url url p-name fn" href="https://logius.nl/standaarden">Peter Haasnoot</a> (<span class="p-org org h-org">Logius</span>)
+  </dd><dd class="editor p-author h-card vcard">
+    <a class="u-url url p-name fn" href="https://logius.nl/standaarden">Pieter Hering</a> (<span class="p-org org h-org">Logius</span>)
+  </dd>
+      
+      <dt>Auteur:</dt><dd class="editor p-author h-card vcard">
+    <a class="ed_mailto u-email email p-name" href="mailto:digikoppeling@logius.nl">Logius</a>
+  </dd>
+      <dt>Doe mee:</dt><dd>
+    <a href="https://github.com/Logius-standaarden/Digikoppeling-Best-Practices-GB/">GitHub Logius-standaarden/Digikoppeling-Best-Practices-GB</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/Digikoppeling-Best-Practices-GB/issues/">Dien een melding in</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/Digikoppeling-Best-Practices-GB/commits/">Revisiehistorie</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/Digikoppeling-Best-Practices-GB/pulls/">Pull requests</a>
+  </dd>
+    </dl>
+    
+    
+    <p lang="en">
+          This document is also available in this non-normative format:
+          <a rel="alternate" href="Digikoppeling-Best-Practices-GB.pdf">pdf</a>
+        </p>
+    <p class="copyright" lang="en">
+          This document is licensed under a
+          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" class="subfoot">Creative Commons Attribution 4.0 License</a>.
+        </p>
+    <hr title="Separator for header">
+  </div>
+    <section id="abstract" class="introductory"><h2 id="samenvatting">Samenvatting<a class="self-link" href="#abstract" aria-label="Permalink for Section"></a></h2><p>Dit document beschrijft een aantal Best Practices voor de DigiKoppeling Grote Berichten.</p>
+<p></p>
+
+<p>Het document is bestemd voor architecten en ontwikkelaars die op basis van DigiKoppeling Grote Berichten gegevens
+    willen uitwisselen. Dit document is een aanvulling hierop en
+    heeft tot doel ontwikkelaars te informeren en adviseren over de te volgen werkwijze bij het toepassen van de
+    Koppelvlakstandaard Grote Berichten.</p></section>
+    <section id="sotd" class="introductory"><h2 id="status-van-dit-document">Status van dit document<a class="self-link" href="#sotd" aria-label="Permalink for Section"></a></h2>Dit is de definitieve versie van de  best practice. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.<p></p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#doel-en-doelgroep"><bdi class="secno">1.1 </bdi>Doel en doelgroep</a></li><li class="tocline"><a class="tocxref" href="#opbouw-digikoppeling-documentatie"><bdi class="secno">1.2 </bdi>Opbouw Digikoppeling documentatie</a></li><li class="tocline"><a class="tocxref" href="#doel-en-scope-van-digikoppeling"><bdi class="secno">1.3 </bdi>Doel en scope van Digikoppeling</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#leidend-principe"><bdi class="secno">1.3.1 </bdi>Leidend principe</a></li></ol></li><li class="tocline"><a class="tocxref" href="#koppelvlak-koppelvlakstandaard"><bdi class="secno">1.4 </bdi>Koppelvlak &amp; koppelvlakstandaard</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#specificatie-van-de-koppelvlakstandaard"><bdi class="secno">1.4.1 </bdi>Specificatie van de koppelvlakstandaard</a></li></ol></li><li class="tocline"><a class="tocxref" href="#opbouw-van-dit-document"><bdi class="secno">1.5 </bdi>Opbouw van dit document</a></li></ol></li><li class="tocline"><a class="tocxref" href="#best-practices"><bdi class="secno">2. </bdi>Best Practices</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding-0"><bdi class="secno">2.1 </bdi>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#interactiepatronen"><bdi class="secno">2.2 </bdi>Interactiepatronen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#halen"><bdi class="secno">2.2.1 </bdi>Halen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ebms2"><bdi class="secno">2.2.1.1 </bdi>EbMS2</a></li><li class="tocline"><a class="tocxref" href="#wus"><bdi class="secno">2.2.1.2 </bdi>WUS</a></li></ol></li><li class="tocline"><a class="tocxref" href="#brengen"><bdi class="secno">2.2.2 </bdi>Brengen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#metadata"><bdi class="secno">2.3 </bdi>Metadata</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#location-url"><bdi class="secno">2.3.1 </bdi>Location URL</a></li><li class="tocline"><a class="tocxref" href="#bestandsnaam"><bdi class="secno">2.3.2 </bdi>Bestandsnaam</a></li><li class="tocline"><a class="tocxref" href="#metadata-als-deel-van-een-bericht"><bdi class="secno">2.3.3 </bdi>Metadata als deel van een bericht</a></li><li class="tocline"><a class="tocxref" href="#meerdere-bestanden-in-een-bericht"><bdi class="secno">2.3.4 </bdi>Meerdere bestanden in één bericht</a></li><li class="tocline"><a class="tocxref" href="#geldigheidsduur"><bdi class="secno">2.3.5 </bdi>Geldigheidsduur</a></li><li class="tocline"><a class="tocxref" href="#context"><bdi class="secno">2.3.6 </bdi>Context</a></li></ol></li><li class="tocline"><a class="tocxref" href="#reliability"><bdi class="secno">2.4 </bdi>Reliability</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#retry-strategie"><bdi class="secno">2.4.1 </bdi>Retry strategie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#opmerking"><bdi class="secno">2.4.1.1 </bdi>Opmerking</a></li></ol></li><li class="tocline"><a class="tocxref" href="#foutafhandeling"><bdi class="secno">2.4.2 </bdi>Foutafhandeling</a></li></ol></li><li class="tocline"><a class="tocxref" href="#security"><bdi class="secno">2.5 </bdi>Security</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#oin-en-certificaten"><bdi class="secno">2.5.1 </bdi>OIN en certificaten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#client-zijde"><bdi class="secno">2.5.1.1 </bdi>Client-zijde</a></li><li class="tocline"><a class="tocxref" href="#server-zijde"><bdi class="secno">2.5.1.2 </bdi>Server-zijde</a></li><li class="tocline"><a class="tocxref" href="#certificaat-geldigheid"><bdi class="secno">2.5.1.3 </bdi>Certificaat-geldigheid</a></li><li class="tocline"><a class="tocxref" href="#tls-offloading"><bdi class="secno">2.5.1.4 </bdi>TLS-offloading</a></li></ol></li><li class="tocline"><a class="tocxref" href="#server-configuration"><bdi class="secno">2.5.2 </bdi>Server configuration</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#apache-tomcat"><bdi class="secno">2.5.2.1 </bdi>Apache Tomcat</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#http-connector"><bdi class="secno">2.5.2.1.1 </bdi>HTTP connector</a></li><li class="tocline"><a class="tocxref" href="#security-filter"><bdi class="secno">2.5.2.1.2 </bdi>Security Filter</a></li><li class="tocline"><a class="tocxref" href="#certificaten"><bdi class="secno">2.5.2.1.3 </bdi>Certificaten</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#intermediairs"><bdi class="secno">2.6 </bdi>Intermediairs</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#niet-transparant"><bdi class="secno">2.6.1 </bdi>Niet-transparant</a></li><li class="tocline"><a class="tocxref" href="#transparant"><bdi class="secno">2.6.2 </bdi>Transparant</a></li></ol></li><li class="tocline"><a class="tocxref" href="#natting"><bdi class="secno">2.7 </bdi>NATting</a></li></ol></li><li class="tocline"><a class="tocxref" href="#use-cases"><bdi class="secno">3. </bdi>Use cases</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#download"><bdi class="secno">3.1 </bdi>Download</a></li><li class="tocline"><a class="tocxref" href="#selectie"><bdi class="secno">3.2 </bdi>Selectie</a></li><li class="tocline"><a class="tocxref" href="#verzending"><bdi class="secno">3.3 </bdi>Verzending</a></li><li class="tocline"><a class="tocxref" href="#multi-distributie"><bdi class="secno">3.4 </bdi>Multi-distributie</a></li><li class="tocline"><a class="tocxref" href="#upload"><bdi class="secno">3.5 </bdi>Upload</a></li><li class="tocline"><a class="tocxref" href="#business-voorbeelden"><bdi class="secno">3.6 </bdi>Business voorbeelden</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">4. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">5. </bdi>Lijst met figuren</a></li></ol></nav>
+    <section class="introductory" data-format="markdown"><h1>Documentbeheer</h1><table class="dkkvs">
+<thead>
+<tr>
+<th>Datum</th>
+<th>Versie</th>
+<th>Auteur</th>
+<th>Opmerkingen</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>04-10-2012</td>
+<td>1.0</td>
+<td>Logius</td>
+<td>-</td>
+</tr>
+<tr>
+<td>10-06-2014</td>
+<td>1.1</td>
+<td>Logius</td>
+<td>Redactioneel bijwerken</td>
+</tr>
+<tr>
+<td>13-01-2015</td>
+<td>3.0</td>
+<td>Logius</td>
+<td>Verwijderen dubbelingen met koppelvlakstandaard</td>
+</tr>
+<tr>
+<td>01-10-2017</td>
+<td>3.1</td>
+<td>Logius</td>
+<td>Begrippen ebMS2 en CPA Register</td>
+</tr>
+</tbody></table></section>
+    <section class="introductory" data-format="markdown"><h1>Colofon</h1><table class="dkkvs">
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Logius Servicecentrum:</td>
+<td>Postbus 96810 2509<br>JE Den Haag<br>t. 0900 555 4555 (10 ct p/m)<br>e.<a href="mailto:servicecentrum@logius.nl">servicecentrum@logius.nl</a></td>
+</tr>
+</tbody></table></section>
+    
+<section data-format="markdown" id="inleiding"><h2 id="x1-inleiding"><bdi class="secno">1. </bdi>Inleiding<a class="self-link" href="#inleiding" aria-label="Permalink for Section 1."></a></h2><section id="doel-en-doelgroep"><h3 id="x1-1-doel-en-doelgroep"><bdi class="secno">1.1 </bdi>Doel en doelgroep<a class="self-link" href="#doel-en-doelgroep" aria-label="Permalink for Section 1.1"></a></h3><p>Dit document beschrijft een aantal Best Practices voor de DigiKoppeling Grote Berichten.</p><p>Het document is bestemd voor architecten en ontwikkelaars die op basis van DigiKoppeling Grote Berichten gegevens willen uitwisselen. Zie onderstaande tabel bij welke taken dit document ondersteunt. De koppelvlakstandaard Grote Berichten beschrijft verplichtingen voor het toepassen van Grote Berichten. Dit document is een aanvulling hierop en heeft tot doel ontwikkelaars te informeren en adviseren over de te volgen werkwijze bij het toepassen van de Koppelvlakstandaard Grote Berichten.</p><table class="dkkvs">
+<thead>
+<tr>
+<th>Afkorting</th>
+<th>Rol</th>
+<th>Taak</th>
+<th>Doelgroep?</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[MT]</td>
+<td>Management</td>
+<td>Bevoegdheid om namens organisatie (strategische) besluiten te nemen.</td>
+<td><strong>Nee</strong></td>
+</tr>
+<tr>
+<td>[PL]</td>
+<td>Projectleiding</td>
+<td>Verzorgen van de aansturing van projecten.</td>
+<td><strong>Nee</strong></td>
+</tr>
+<tr>
+<td>[A&amp;D]</td>
+<td>Analyseren &amp; ontwerpen (design)</td>
+<td>Analyseren en ontwerpen van oplossings-richtingen. Het verbinden van Business aan de IT.</td>
+<td><strong>Nee</strong></td>
+</tr>
+<tr>
+<td>[OT&amp;B]</td>
+<td>Ontwikkelen, testen en beheer</td>
+<td>Ontwikkelt, bouwt en configureert de techniek conform specificaties. Zorgen voor beheer na ingebruikname.</td>
+<td><strong>Ja</strong></td>
+</tr>
+</tbody></table></section><section id="opbouw-digikoppeling-documentatie"><h3 id="x1-2-opbouw-digikoppeling-documentatie"><bdi class="secno">1.2 </bdi>Opbouw Digikoppeling documentatie<a class="self-link" href="#opbouw-digikoppeling-documentatie" aria-label="Permalink for Section 1.2"></a></h3><p>Digikoppeling is beschreven in een set van documenten. Deze set is als volgt opgebouwd:</p><p><figure id="fig-opbouw-documentatie-digikoppeling"><img src="media/DK_Specificatie_structuur.svg" alt="Overzicht van de onderdelen van de Digikoppeling Standaard, de standaard is onderverdeeld in normatieve en ondersteunende onderdelen" title="Opbouw documentatie Digikoppeling"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">Opbouw documentatie Digikoppeling</span></figcaption></figure></p><details>
+    <summary> Tekstalternatief </summary>
+<ul>
+    <li>Digikoppeling Standaard
+        <ul>
+            <li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/beheer/">DK Beheermodel en releasebeleid</a>* </li>
+            <li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/actueel/">DK Overzicht Actuele Documentatie en Compliance</a>* </li>
+            <li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/architectuur">DK Architectuur</a>*
+                <ul>
+                    <li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/idauth/">DK Identificatie en Authenticatie</a>*
+                        <ul>
+                            <li><i> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/gbachtcert/">Digikoppeling Gebruik en Achtergronden Certificaten</a></i>† </li>
+                        </ul>
+                    </li>
+                    <li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/beveilig/">DK Beveiligingsstandaarden en voorschriften</a>* </li>
+                    <li>Koppelvlakstandaarden
+                        <ul>
+                            <li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/wus/">DK Koppelvlakstandaard WUS</a>*
+                                <ul>
+                                    <li><i><a href="https://publicatie.centrumvoorstandaarden.nl/dk/bpwus">Best-practice WUS</a></i>† </li>
+                                </ul>
+                            </li>
+                            <li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/ebms/">DK Koppelvlakstandaard ebMS2</a>*
+                                <ul>
+                                    <li> <i><a href="https://publicatie.centrumvoorstandaarden.nl/dk/bpebms">Best-practice ebMS2</a></i>† </li>
+                                </ul>
+                            </li>
+                            <li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/gb/">DK Koppelvlakstandaard Grote Berichten</a>*
+                                <ul>
+                                    <li> <i><a href="https://publicatie.centrumvoorstandaarden.nl/dk/bpgb">Best-practice Grote Berichten</a></i>†</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+    <i><a href="https://publicatie.centrumvoorstandaarden.nl/dk/watisdk/">Wat is Digikoppeling</a></i>†
+  </li>
+        </ul>
+    </li>
+</ul>
+<p>* Normatief document</p>
+<p>† Ondersteunend document</p>
+</details></section><section id="doel-en-scope-van-digikoppeling"><h3 id="x1-3-doel-en-scope-van-digikoppeling"><bdi class="secno">1.3 </bdi>Doel en scope van Digikoppeling<a class="self-link" href="#doel-en-scope-van-digikoppeling" aria-label="Permalink for Section 1.3"></a></h3><p>DigiKoppeling biedt de mogelijkheid om op een sterk gestandaardiseerde wijze berichten uit te wisselen tussen service aanbieders en service afnemers. De uitwisseling tussen partijen wordt in drie lagen opgedeeld:</p><ul>
+<li><p>Inhoud: Op deze laag worden de afspraken gemaakt over de inhoud van het uit te wisselen bericht, dus de structuur, semantiek en waardebereiken.<br>  DigiKoppeling houdt zich <strong>niet</strong> met de inhoud bezig, ‘heeft geen boodschap aan de boodschap’.</p>
+</li>
+<li><p>Logistiek: Op deze laag bevinden zich de afspraken betreffende transportprotocollen (HTTP), messaging (SOAP), beveiliging (authenticatie en encryptie) en betrouwbaarheid. <strong>Dit is de DigiKoppeling-laag.</strong></p>
+</li>
+<li><p>Transport: deze laag verzorgt het daadwerkelijke transport van het bericht.</p>
+</li>
+</ul><p>DigiKoppeling richt zich dus uitsluitend op de logistieke laag. Deze afspraken staan in de koppelvlakstandaards en andere voorzieningen. In het geval van WUS en ebMS2 komt de logistieke laag overeen met de ‘header’ van het bericht en gaat de ‘body’ uitsluitend over de inhoud. In het geval van Digikoppeling Grote Berichten is een deel van de logistieke informatie opgenomen in de ‘body’ van het bericht in de vorm van gestandaardiseerde meta-data.</p><section id="leidend-principe"><h4 id="x1-3-1-leidend-principe"><bdi class="secno">1.3.1 </bdi>Leidend principe<a class="self-link" href="#leidend-principe" aria-label="Permalink for Section 1.3.1"></a></h4><p>De koppelvlakstandaarden dienen te leiden tot een maximum aan interoperabiliteit met een minimum aan benodigde ontwikkelinspanning. Daarom wordt gekozen voor bewezen interoperabele internationale standaarden.</p><p>DigiKoppeling maakt berichtenuitwisseling mogelijk op basis van de ebXML/ebMS2 en WUS families van standaarden inclusief de daarbij behorende verwante standaarden.</p><p>Aan te sluiten overheidsorganisaties hebben aangegeven op een uniforme manier (één stekker) te willen aansluiten aan DigiKoppeling. Organisaties die beschikken over eigen middleware (ESB, broker) kunnen de aansluiting aan DigiKoppeling, de adapters, in het algemeen realiseren via voorzieningen in die middleware.</p></section></section><section id="koppelvlak-koppelvlakstandaard"><h3 id="x1-4-koppelvlak-koppelvlakstandaard"><bdi class="secno">1.4 </bdi>Koppelvlak &amp; koppelvlakstandaard<a class="self-link" href="#koppelvlak-koppelvlakstandaard" aria-label="Permalink for Section 1.4"></a></h3><p>Een koppelvlak is een interface die volgens vergaande standaards de gegevensuitwisseling verzorgt. Het werken met vaste standaards is essentieel voor een koppelvlak. Hierdoor wordt implementatie vergemakkelijkt. Ook wordt het mogelijk diverse soorten berichten door te sturen met een grote mate van interoperabiliteit.</p><p>Eén van de belangrijkste eisen die door de overheid gesteld wordt bij de inrichting van generieke voorzieningen is dat er niet veel maatwerk ontwikkeld hoeft te worden, maar dat er van “off the shelf” commercieel of OPEN geleverde software gebruik gemaakt kan worden. Voor DigiKoppeling, dus voor de logistieke laag, betreft dat het niet willen ontwikkelen van software voor de adapters.</p><p>Dit doel kan bereikt (benaderd) worden doordat gekozen wordt voor internationale (de jure of de facto) vastgelegde standaards, die door “alle” leveranciers interoperabel zijn geïmplementeerd. Ingeval van Grote Berichten is gebruik gemaakt van een optioneel deel uit de http 1.1 standaard. Hierdoor is het mogelijk om de overdracht te hervatten op het punt van afbreken door een toevallige storing. Zowel standaard servers als clients ondersteunen dit, maar aan de client kant moet de optie ook expliciet gebruikt worden.</p><p>Een andere eis is dat met name afnemers gebruik kunnen maken van één “stekker” (één logistiek koppelpunt).</p><section id="specificatie-van-de-koppelvlakstandaard"><h4 id="x1-4-1-specificatie-van-de-koppelvlakstandaard"><bdi class="secno">1.4.1 </bdi>Specificatie van de koppelvlakstandaard<a class="self-link" href="#specificatie-van-de-koppelvlakstandaard" aria-label="Permalink for Section 1.4.1"></a></h4><p>De koppelvlakspecificatie beschrijft de eisen waar de adapters aan moeten</p><p>voldoen om interoperabel met elkaar te kunnen communiceren.</p><p>DigiKoppeling gaat over logistiek, dus over de envelop en niet over de</p><p>inhoud. De hele set info die tezamen nodig is voor een complete generieke</p><p>DigiKoppeling koppelvlakdefinitie (Raamwerk Specificatie genoemd)</p><p>bestaat uit:</p><ul>
+<li><p>interfacedefinitie “on the wire”, (voorbeeld)listing van SOAP headers, en</p>
+</li>
+<li><p>informatie over velden en hun specifieke inhoud.</p>
+</li>
+</ul></section></section><section id="opbouw-van-dit-document"><h3 id="x1-5-opbouw-van-dit-document"><bdi class="secno">1.5 </bdi>Opbouw van dit document<a class="self-link" href="#opbouw-van-dit-document" aria-label="Permalink for Section 1.5"></a></h3><p>Hoofdstuk 1 bevat een aantal algemene inleidende onderwerpen. Hoofdstuk 2 beschrijft de Best Practices voor verschillende scenario's. Hoofdstuk 3 ten slotte bevat generieke use-cases waarin van deze standaard gebruik gemaakt kan worden.</p><p>Begrippen en afkortingen worden toegelicht in het document “Digikoppeling_Architectuur”. Deze zit in de Digikoppeling aansluitkit.</p><p>Dit document en andere documentatie is beschikbaar op <a href="http://www.logius.nl/digikoppeling">www.logius.nl/digikoppeling</a></p></section></section>
+<section data-format="markdown" id="best-practices"><h2 id="x2-best-practices"><bdi class="secno">2. </bdi>Best Practices<a class="self-link" href="#best-practices" aria-label="Permalink for Section 2."></a></h2><section id="inleiding-0"><h3 id="x2-1-inleiding"><bdi class="secno">2.1 </bdi>Inleiding<a class="self-link" href="#inleiding-0" aria-label="Permalink for Section 2.1"></a></h3><p>De situatie kan zich voordoen dat een WUS en/of ebMS2 bericht een grootte krijgt die niet meer efficiënt door de WUS / ebMS2 adapters verwerkt kan worden. Ook kan het zich voordoen dat er behoefte bestaat aan het buiten de normale procesgang ('out-of-band') sturen van aanvullende informatie naar systemen. In die gevallen zal dit “grote bericht” op een andere wijze verstuurd moeten worden: middels de DigiKoppeling Koppelvlakstandaard Grote Berichten.</p><p>De volgende standaard aanpak wordt hierbij gehanteerd:</p><ul>
+<li><p>De verzender stelt een bestand samen uit (een deel van) de gegevens die normaliter in het “grote bericht” verzonden zou worden. Het resultaat wordt aangeduid met de term “groot bestand”. Merk op dat dit ook een “groot” xml bestand kan zijn, een CAD bestand, een PDF document, een ZIP bestand, et cetera.</p>
+</li>
+<li><p>De verzender stelt metadata samen over het grote bestand en verstuurt deze metadata in een WUS- of ebMS2-bericht [in een zgn. stuurbericht]. Merk op dat het stuurbericht naast metadata ook voorzien kan zijn van inhoudelijke informatie die al nodig is bij ontvangst van het bericht voorafgaand aan het nog op te halen grote bestand.</p>
+</li>
+<li><p>De ontvanger haalt het grote bestand op via het gespecificeerde HTTP 1.1 protocol op basis van de verstrekte metadata (zoals in de koppelvlakstandaard is gespecificeerd). De bestandsoverdracht is niet “betrouwbaar”; indien dit wel gewenst is, dient de ontvanger aanvullende maatregelen te implementeren (retry-mechnisme, foutafhandeling). De Koppelvlakstandaard bevat hiervoor handvatten. Toepassing van deze handvatten in concrete implementaties vallen buiten de scope van het koppelvlak.</p>
+</li>
+</ul><p>De standaard doet geen uitspraak over gegevensstromen waarin kleine en grote berichten voorkomen. Bij implementatie van dergelijke gegevensstromen zal een organisatie moeten afwegen of kleine berichten anders of gelijk aan de ‘echte’ grote berichten verwerkt worden. In z’n algemeenheid zal een uniforme afhandeling eenduidiger en vooral ook eenvoudiger zijn; slechts in bijzondere gevallen zal dit niet volstaan.</p></section><section id="interactiepatronen"><h3 id="x2-2-interactiepatronen"><bdi class="secno">2.2 </bdi>Interactiepatronen<a class="self-link" href="#interactiepatronen" aria-label="Permalink for Section 2.2"></a></h3><p>Afhankelijk van de situatie zijn verschillende interactiepatronen mogelijk. Deze patronen verschillen qua initiatief en qua aanpak.</p><section id="halen"><h4 id="x2-2-1-halen"><bdi class="secno">2.2.1 </bdi>Halen<a class="self-link" href="#halen" aria-label="Permalink for Section 2.2.1"></a></h4><p>Er is bij grote berichten sprake van halen, wanneer een groot bestand door de ontvangende partij wordt opgehaald. Voorafgaand aan deze actie dient altijd een meta-bericht verstuurd te worden door de verzender.</p><section id="ebms2"><h5 id="x2-2-1-1-ebms2"><bdi class="secno">2.2.1.1 </bdi>EbMS2<a class="self-link" href="#ebms2" aria-label="Permalink for Section 2.2.1.1"></a></h5><p>Bij het Melden van grote hoeveelheden informatie dient van ebMS2 gebruik gemaakt te worden. Met ebMS2 kan de ontvangst van de metadata gegarandeerd worden.</p><p>De volgende aanpak is hierbij gebruikelijk:</p><ul>
+<li><p>De verzender stelt een groot bestand samen voor de overdracht.</p>
+</li>
+<li><p>De verzender stelt de metadata samen en verstuurt deze via ebMS2.</p>
+</li>
+<li><p>De ontvanger haalt het grote bestand op.</p>
+</li>
+</ul><p>Ook bij het Bevragen van grote hoeveelheden informatie kan van ebMS2 gebruik gemaakt worden. In dat geval gaat er een ebMS2 bevraging vooraf aan bovenstaande (terug-) Melding.</p><p>Toepassingen:</p><ul>
+<li><p>Verzenden van grote hoeveelheden informatie.</p>
+</li>
+<li><p>Distributie van grote hoeveelheden informatie.</p>
+</li>
+</ul><p>Een alternatieve aanpak is:</p><ul>
+<li><p>De verzender stelt de metadata samen en verstuurt deze via ebMS2.</p>
+</li>
+<li><p>De ontvanger haalt het grote bestand op.</p>
+</li>
+<li><p>De verzender genereert 'real-time' tijdens het ophalen de benodigde data.</p>
+</li>
+</ul><p>Toepassingen:</p><ul>
+<li><p>Noodzaak tot beperken van opslagcapaciteit voor grote bestanden.</p>
+</li>
+<li><p>Tijdkritische omgevingen.</p>
+</li>
+</ul><p>Merk op dat de metadata de checksum van het grote bestand bevat. Deze werkwijze vereist daarom dat de checksum al vooraf is bepaald. Vaak zal aan deze voorwaarde niet voldaan kunnen worden.</p></section><section id="wus"><h5 id="x2-2-1-2-wus"><bdi class="secno">2.2.1.2 </bdi>WUS<a class="self-link" href="#wus" aria-label="Permalink for Section 2.2.1.2"></a></h5><p>Bij het Bevragen van grote hoeveelheden informatie kan naast ebMS2 (zie hiervoor) ook van WUS gebruik gemaakt worden. Hierbij wordt dan een meta-bericht en een bijbehorende groot bestand gegenereerd. Het meta-bericht wordt als antwoord op het WUS-request verstuurd via de synchrone WUS-response. Dit kan vervolgens door de ontvanger gebruikt worden om het betreffende grote bestand op te halen.</p><p>Het toepassen van WUS voor Bevraging met Grote Berichten heeft wel enkele lastige eisen. WUS is een synchroon protocol waarin time-outs toegepast worden bij het uitblijven van een response op het request. Daarom is weinig tijd beschikbaar voor het genereren van een response bericht. Dit vereist daarom dat aan één van de volgende eisen is voldaan:</p><ul>
+<li><p>Het grote bestand is al gereed op het moment van de WUS bevraging.</p>
+</li>
+<li><p>Het grote bestand kan snel voor of tijdens het ophalen gegenereerd worden én de checksum is vooraf bekend.</p>
+</li>
+</ul><p>Toepassingen:</p><ul>
+<li><p>Opvragen van grote hoeveelheden informatie.</p>
+</li>
+<li><p>Opvragen van (afgesloten) log-bestanden.</p>
+</li>
+</ul></section></section><section id="brengen"><h4 id="x2-2-2-brengen"><bdi class="secno">2.2.2 </bdi>Brengen<a class="self-link" href="#brengen" aria-label="Permalink for Section 2.2.2"></a></h4><p>Er is bij grote berichten sprake van brengen, wanneer een groot bestand voorafgaand aan het meta-bericht door de verzender op een afgesproken plaats wordt klaargezet. Aansluitend op deze actie dient altijd een meta-bericht verstuurd te worden door de verzender.</p><p>De volgende aanpak wordt hierbij gehanteerd:</p><ul>
+<li><p>De verzender stelt een groot bestand samen en verstuurt deze via HTTP.</p>
+</li>
+<li><p>De verzender stelt de metadata samen en verstuurt deze via ebMS of WUS.</p>
+</li>
+<li><p>De ontvanger verwerkt het grote bestand.</p>
+</li>
+</ul><p>Het brengen interactiepatroon kan niet plaatsvinden op basis van de huidige versie van de koppelvlakstandaard. Het Technisch Overleg Digikoppeling heeft om redenen van veiligheid en gebrek aan behoefte geen uitwerking gegeven aan dit interactiepatroon. De koppelvlakstandaard is wel voorbereid op een toekomstige toevoeging van dit interactiepatroon mocht dit gewenst zijn.</p></section></section><section id="metadata"><h3 id="x2-3-metadata"><bdi class="secno">2.3 </bdi>Metadata<a class="self-link" href="#metadata" aria-label="Permalink for Section 2.3"></a></h3><p>De metadata beschrijft de informatie over het bestand dat verstuurd wordt met HTTP 1.1. De metadata zelf wordt verzonden via het WUS/ebMS2 Koppelvlak. Ten behoeve van toekomstige vernieuwingen bevat de metadata een versienummer (‘profile’-waarde).</p><section id="location-url"><h4 id="x2-3-1-location-url"><bdi class="secno">2.3.1 </bdi>Location URL<a class="self-link" href="#location-url" aria-label="Permalink for Section 2.3.1"></a></h4><p>De URL voor het ophalen of aanleveren van grote berichten moet uniek zijn; hierbij kan gebruik gemaakt worden van een UUID om een (fysieke) bestandsnaam te genereren. Daarnaast kan ook aanvullende informatie aan de URL worden toegevoegd om deze enigszins te structureren.</p><p>Bijvoorbeeld:</p><blockquote>
+<p>  <a href="https://my.host.nl/f47ac10b-58cc-**4**372-**a**567-0e02b2c3d479">https://my.host.nl/f47ac10b-58cc-**4**372-**a**567-0e02b2c3d479</a></p>
+</blockquote><p>Of ingedeeld naar (OIN van de) ontvanger:</p><blockquote>
+<p>  <a href="https://my.host.nl/01234567890123456789/f47ac10b-58cc-4372-a567-0e02b2c3d479">https://my.host.nl/01234567890123456789/f47ac10b-58cc-4372-a567-0e02b2c3d479</a></p>
+</blockquote><p>Of ingedeeld naar datum/tijd:</p><blockquote>
+<p>  <a href="https://my.host.nl/2010/09/01/f47ac10b-58cc-4372-a567-0e02b2c3d479">https://my.host.nl/2010/09/01/f47ac10b-58cc-4372-a567-0e02b2c3d479</a></p>
+</blockquote><p>Het default poortnummer is 443; het gebruik van afwijkende poortnummers is alleen met wederzijdse instemming toegestaan:</p><blockquote>
+<p>  <a href="https://my.host.nl:8443/f47ac10b-58cc-4372-a567-0e02b2c3d479">https://my.host.nl:8443/</a><a href="https://my.host.nl:8443/f47ac10b-58cc-4372-a567-0e02b2c3d479">f47ac10b-58cc-</a><a href="https://my.host.nl:8443/f47ac10b-58cc-4372-a567-0e02b2c3d479">4</a><a href="https://my.host.nl:8443/f47ac10b-58cc-4372-a567-0e02b2c3d479">372-</a><a href="https://my.host.nl:8443/f47ac10b-58cc-4372-a567-0e02b2c3d479">a</a><a href="https://my.host.nl:8443/f47ac10b-58cc-4372-a567-0e02b2c3d479">567-0e02b2c3d479</a></p>
+</blockquote><p>De URL hoeft niet altijd naar een fysiek bestand te verwijzen; de response voor de URL mag ook dynamisch worden opgebouwd. Wel geldt hierbij dat de response voor opeenvolgende requests identiek moet zijn, omdat anders geen checksum bepaald kan worden.</p></section><section id="bestandsnaam"><h4 id="x2-3-2-bestandsnaam"><bdi class="secno">2.3.2 </bdi>Bestandsnaam<a class="self-link" href="#bestandsnaam" aria-label="Permalink for Section 2.3.2"></a></h4><p>Voor ieder groot bestand dient een unieke lokale bestandsnaam bepaald te worden. De opgegeven bestandsnaam uit de metadata is uniek voor de gegeven context, zodat deze geschikt is als lokale bestandsnaam. Wel kunnen de eisen ten aanzien van bestandsnamen voor ieder platform verschillen; daarom kan de opgegeven bestandsnaam uit de metadata ook niet altijd zonder transformatie aan de zijde van de ontvanger gebruikt worden. Transformatie is bijvoorbeeld nodig als de ontvanger geen bestandsnaam van 200 posities kan verwerken of niet overweg kan met Unicode-karakters als bestandsnaam.</p><p>Als basis voor lokale bestandsnamen kan ook gebruik gemaakt worden van het bericht-id van de metadata of van de location-url, waarvan voor beide de uniciteit gegarandeerd kan worden. Een andere optie is om zelf een unieke bestandsnaam te genereren, gebruikmakend van de metadata en aangevuld met tenminste één unieke component (bericht-id, location-url of UUID).</p><p>Voorbeelden:</p><blockquote>
+<p>  sample.xml-c3c3281c-e561-4be8-8519-4e9690fb0f08
+  c3c3281c-e561-4be8-8519-4e9690fb0f08.xml
+  https-my.host.nl-f47ac10b-58cc-<strong>4</strong>372-<strong>a</strong>567-0e02b2c3d479</p>
+</blockquote></section><section id="metadata-als-deel-van-een-bericht"><h4 id="x2-3-3-metadata-als-deel-van-een-bericht"><bdi class="secno">2.3.3 </bdi>Metadata als deel van een bericht<a class="self-link" href="#metadata-als-deel-van-een-bericht" aria-label="Permalink for Section 2.3.3"></a></h4><p>Metadata hoeft niet altijd als een afzonderlijk bericht verzonden te worden. Het is ook toegestaan om metadata met andere parameters te combineren in één bericht. Het verschil tussen gewone services en “grote berichten” services beperkt zich dus alleen tot de wijze waarop de “payload” wordt aangeleverd.</p><pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-comment">&lt;!--?xml version="1.0" encoding="UTF-8"?--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">embedded-meta</span> <span class="hljs-attr">xmlns:tns</span>=<span class="hljs-string">"http://www.logius.nl/digikoppeling/gb-embedded/"</span> <span class="hljs-attr">xmlns:gb</span>=<span class="hljs-string">"http://www.logius.nl/digikoppeling/gb/2010/10"</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="hljs-attr">xsi:schemalocation</span>=<span class="hljs-string">"http://www.logius.nl/digikoppeling/gb/ gb-embedded.xsd "</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">andere-data</span>&gt;</span>
+        Hier kan van alles staan, tekst of andere tags .
+    <span class="hljs-tag">&lt;/<span class="hljs-name">andere-data</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">digikoppeling-external-data-references</span> <span class="hljs-attr">profile</span>=<span class="hljs-string">"digikoppeling-gb-1.0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">data-reference</span> <span class="hljs-attr">contextid</span>=<span class="hljs-string">"1201"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">lifetime</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">content</span> <span class="hljs-attr">contenttype</span>=<span class="hljs-string">""</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">filename</span>&gt;</span>
+                    NCName
+                <span class="hljs-tag">&lt;/<span class="hljs-name">filename</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">checksum</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"MD5"</span>&gt;</span>
+                    0123456789012345678901234567890123456789
+                <span class="hljs-tag">&lt;/<span class="hljs-name">checksum</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">size</span>&gt;</span>
+                    1024
+                <span class="hljs-tag">&lt;/<span class="hljs-name">size</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">content</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">transport</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">location</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">senderurl</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:anyURI"</span>&gt;</span>
+                        https://my.host.nl/12345-2-c3c3281c-e561-4be8-8519
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">senderurl</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">location</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">transport</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">lifetime</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">data-reference</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">digikoppeling-external-data-references</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">embedded-meta</span>&gt;</span>
+</code></pre><p>Essentieel voor GB is hierbij de <em>data-reference</em> tag; het gebruik van de <em>digikoppeling-external-data-references</em> tag is hierbij niet noodzakelijk. In plaats daarvan kan ook een tag uit de target namespace gebruikt worden, afhankelijk van het bijbehorende schema:</p><pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-comment">&lt;!--?xml version="1.0" encoding="UTF-8"?--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">embedded-meta</span> <span class="hljs-attr">xmlns:tns</span>=<span class="hljs-string">"http://www.logius.nl/digikoppeling/gb-embedded/"</span> <span class="hljs-attr">xmlns:gb</span>=<span class="hljs-string">"http://www.logius.nl/digikoppeling/gb/2010/10"</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="hljs-attr">xsi:schemalocation</span>=<span class="hljs-string">"http://www.logius.nl/digikoppeling/gb/ gb-embedded.xsd "</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">data</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>
+            tns:id
+        <span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>
+            tns:version
+        <span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">result</span> <span class="hljs-attr">profile</span>=<span class="hljs-string">"digikoppeling-gb-1.0"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">data-reference</span> <span class="hljs-attr">contextid</span>=<span class="hljs-string">"1201"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">lifetime</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">content</span> <span class="hljs-attr">contenttype</span>=<span class="hljs-string">""</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">filename</span>&gt;</span>
+                        NCName
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">filename</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">checksum</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"MD5"</span>&gt;</span>
+                        0123456789012345678901234567890123456789
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">checksum</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">size</span>&gt;</span>
+                        1024
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">size</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">content</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">transport</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">location</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">senderurl</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:anyURI"</span>&gt;</span>
+                            https://my.host.nl/12345-2-c3c3281c-e561-4be8-8519
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">senderurl</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">location</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">transport</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">lifetime</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">data-reference</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">result</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">data</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">embedded-meta</span>&gt;</span>
+</code></pre><p>De bijbehorende XSD zou hierbij als volgt gedefinieerd kunnen worden:</p><pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-comment">&lt;!--?xml version="1.0" encoding="UTF-8"?--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">schema</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema"</span> <span class="hljs-attr">xmlns:gb</span>=<span class="hljs-string">"http://www.logius.nl/digikoppeling/gb/2010/10"</span> <span class="hljs-attr">xmlns:tns</span>=<span class="hljs-string">"http://www.logius.nl/digikoppeling/gb/embedded/"</span> <span class="hljs-attr">elementformdefault</span>=<span class="hljs-string">"qualified"</span> <span class="hljs-attr">attributeformdefault</span>=<span class="hljs-string">"unqualified"</span> <span class="hljs-attr">targetnamespace</span>=<span class="hljs-string">"http://www.logius.nl/digikoppeling/gb/embedded/"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">import</span> <span class="hljs-attr">namespace</span>=<span class="hljs-string">"http://www.logius.nl/digikoppeling/gb/2010/10"</span> <span class="hljs-attr">schemalocation</span>=<span class="hljs-string">"gb-1.0.xsd"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"embedded-meta"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tns:data"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">complextype</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"data"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">sequence</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"id"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:string"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"version"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:string"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"result"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"gb:external-data-references"</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">sequence</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">complextype</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">import</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">schema</span>&gt;</span>
+</code></pre></section><section id="meerdere-bestanden-in-een-bericht"><h4 id="x2-3-4-meerdere-bestanden-in-een-bericht"><bdi class="secno">2.3.4 </bdi>Meerdere bestanden in één bericht<a class="self-link" href="#meerdere-bestanden-in-een-bericht" aria-label="Permalink for Section 2.3.4"></a></h4><p>Niet ieder groot bestand hoeft als een afzonderlijk bericht verzonden te worden. Het is ook toegestaan om meerdere bestanden te combineren in één bericht. Voor ieder afzonderlijk bestand dient dan wel een afzonderlijke data-reference te worden opgenomen in het bericht.</p><pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">schema</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema"</span> <span class="hljs-attr">elementformdefault</span>=<span class="hljs-string">"qualified"</span> <span class="hljs-attr">profile</span>=<span class="hljs-string">"digikoppeling-gb-1.0"</span> <span class="hljs-attr">xmlns:tns</span>=<span class="hljs-string">"http://www.logius.nl/digikoppeling/gb/2010/10"</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="hljs-attr">xi:schemalocation</span>=<span class="hljs-string">"http://www.logius.nl/digikoppeling/gb/2010/10/gb-meta.xsd"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">data-reference</span> <span class="hljs-attr">contextid</span>=<span class="hljs-string">"12345-1"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">lifetime</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">content</span> <span class="hljs-attr">contenttype</span>=<span class="hljs-string">"application/xml"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">filename</span>&gt;</span>
+                Bijlage-1NCName
+            <span class="hljs-tag">&lt;/<span class="hljs-name">filename</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">checksum</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"MD5"</span>&gt;</span>
+                0123456789abcdef0123456789abcdef
+            <span class="hljs-tag">&lt;/<span class="hljs-name">checksum</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">size</span>&gt;</span>
+                1024
+            <span class="hljs-tag">&lt;/<span class="hljs-name">size</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">content</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">transport</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">location</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">senderurl</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:anyURI"</span>&gt;</span>
+                    https://my.host.nl/12345-1-c3c3281c-e561-4be8-8519
+                <span class="hljs-tag">&lt;/<span class="hljs-name">senderurl</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">location</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">transport</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">lifetime</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">data-reference</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">data-reference</span> <span class="hljs-attr">contextid</span>=<span class="hljs-string">"12345-2"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">lifetime</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">content</span> <span class="hljs-attr">contenttype</span>=<span class="hljs-string">"application/xml"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">filename</span>&gt;</span>
+                Bijlage-2
+            <span class="hljs-tag">&lt;/<span class="hljs-name">filename</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">checksum</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"MD5"</span>&gt;</span>
+                0123456789abcdef0123454321abcdef
+            <span class="hljs-tag">&lt;/<span class="hljs-name">checksum</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">size</span>&gt;</span>
+                2048
+            <span class="hljs-tag">&lt;/<span class="hljs-name">size</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">content</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">transport</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">location</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">senderurl</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:anyURI"</span>&gt;</span>
+                    https://my.host.nl/12345-2-c3c3281c-e561-4be8-8519
+                <span class="hljs-tag">&lt;/<span class="hljs-name">senderurl</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">location</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">transport</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">lifetime</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">data-reference</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">schema</span>&gt;</span>
+</code></pre></section><section id="geldigheidsduur"><h4 id="x2-3-5-geldigheidsduur"><bdi class="secno">2.3.5 </bdi>Geldigheidsduur<a class="self-link" href="#geldigheidsduur" aria-label="Permalink for Section 2.3.5"></a></h4><p>Door een beperking op te leggen aan de beschikbaarheid wordt voorkomen dat het niet duidelijk is wanneer een bestand weer verwijderd zou mogen worden. Daarom ligt het voor de hand om altijd een expiratiedatum in de metadata op te nemen.</p><p>Wanneer echter op een andere wijze duidelijk gemaakt wordt wanneer een bestand verwijderd kan worden, bijvoorbeeld door een terugmelding vanuit de applicatie, dan kan de expiratiedatum</p><p>wellicht worden weggelaten.</p><p>Houdt er mee rekening dat een bestandsoverdracht niet binnen een afgesproken tijdsduur of voor expiratie van het bestand voltooid kan worden. Neem voorzorgsmaatregelen door in zo'n geval bijvoorbeeld de overdracht af te breken op basis van een time-out.</p></section><section id="context"><h4 id="x2-3-6-context"><bdi class="secno">2.3.6 </bdi>Context<a class="self-link" href="#context" aria-label="Permalink for Section 2.3.6"></a></h4><p>In het geval van Digikoppeling Grote Berichten is sprake van minimaal twee uitwisselingen waarvan het belang is om de samenhang te bewaken:</p><ol>
+<li><p>bericht met de meta-data;</p>
+</li>
+<li><p>bestand dat naar aanleiding hiervan opgehaald wordt.</p>
+</li>
+</ol><p>Het bewaken van de samenhang wordt extra belangrijk als er (tegelijkertijd) meerdere gegevensstromen zijn. Een oplossing verschilt per implementatie en kent algemeen de volgende mogelijkheden:</p><ul>
+<li><p>Verzender standaard<br>  Een verzender van het grote bericht heeft geen moeite om de context te bewaken. De applicatie die het grote bestand aanmaakt zal in hetzelfde proces ook metadata aanmaken. Bij ophalen van het bestand vormt de url waarmee deze opgehaald wordt de referentie voor de bestandserver. Om de oplossing robuuster te maken kan de contextID uit de metadata aanvullend overgenomen worden in het bestand. Onderstaande mogelijkheden hebben verder alleen betrekking op het bewaken van de context aan de ontvanger kant.</p>
+</li>
+<li><p>Contextbewaking door applicatieserver (WUS)<br>  De ontvanger die via een synchrone WUS-response metadata ontvangt kan in dezelfde procesgang het bestand ophalen. Bewaken van de context vindt dan door de applicatieserver plaats die na verzending van het request een proces ‘on hold’ zet en bij binnenkomst van een response het proces opstart dat hier op stond te wachten.</p>
+</li>
+<li><p>Contextbewaking met expliciete referentie (ebMS2)<br>  In het geval van ebMS2 kan als standaard oplossing een referentie meegegeven worden. Dit kan door deze op te nemen in de contextID van de metadata. Bij voorkeur komt deze overeen met de MessageID of ConversationID van het bericht:</p>
+</li>
+</ul><ol>
+<li><p>Als het bestand specifiek bij één bericht hoort: MessageID</p>
+</li>
+<li><p>Als het bestand bij een conversatie van meerdere berichten hoort of als een conversatie maar één bericht bevat: ConversationID.</p>
+<p> Om de oplossing robuuster te maken kan de contextID uit de metadata aanvullend overgenomen worden in het bestand.</p>
+</li>
+</ol><ul>
+<li>Contextbewaking met expliciete referentie (WUS)<br>  In het geval van synchrone WUS maar ook bij asynchrone WUS (geen Digikoppeling!) kan als standaard oplossing een referentie meegegeven worden. Dit kan bijvoorbeeld door de applicatie de referentie in de body te laten opnemen. Beter is het echter om dit conform Digikoppeling in de header op te nemen. In het request wordt de referentie dan opgenomen in de MessageID van het WUS-request. De service geeft deze MessageID dan terug als 'contextID' in de (synchrone of asynchrone) WUS-response<sup>1</sup>. Om de oplossing robuuster te maken kan de contextID uit de metadata aanvullend overgenomen worden in het bestand.</li>
+</ul><p><sup>1</sup>: Volgens de WUS koppelvlakstandaard zal ook het headerveld “RelatesTo” van de response overeenkomen met het MessageID van het request.</p></section></section><section id="reliability"><h3 id="x2-4-reliability"><bdi class="secno">2.4 </bdi>Reliability<a class="self-link" href="#reliability" aria-label="Permalink for Section 2.4"></a></h3><section id="retry-strategie"><h4 id="x2-4-1-retry-strategie"><bdi class="secno">2.4.1 </bdi>Retry strategie<a class="self-link" href="#retry-strategie" aria-label="Permalink for Section 2.4.1"></a></h4><p>De bestandsoverdracht is niet “betrouwbaar”; daarom dient de ontvanger een retry mechanisme te implementeren om toch betrouwbaarheid te kunnen afdwingen.</p><p>Op basis van het retry mechanisme zal in voorkomende foutsituaties getracht worden om de bestandsoverdracht te hervatten. Hierbij kan het voorkomen dat de bestandsoverdracht telkens wordt onderbroken, maar ook dat bepaalde service tijdelijk niet beschikbaar is (service window).</p><p>Door het tijdsinterval variabel te maken kan worden voorkomen dat onnodig vaak retries hoeven te worden uitgevoerd, zonder dat hierdoor betrouwbaarheid verloren gaat. Kortere intervallen zijn hierbij zinvol bij onderbrekingen van de bestandsoverdracht, terwijl langere intervallen gebruikt kunnen worden om gaten in de beschikbaarheid te kunnen overbruggen (server uitval, service window, etc.).</p><p>Wanneer er fatale fouten geconstateerd worden of wanneer de geldigheidsduur van een bestand verstreken is, dan zijn verdere retries niet zinvol en dient de bestandsoverdracht te worden afgebroken (give-up).</p><section id="opmerking"><h5 id="x2-4-1-1-opmerking"><bdi class="secno">2.4.1.1 </bdi>Opmerking<a class="self-link" href="#opmerking" aria-label="Permalink for Section 2.4.1.1"></a></h5><p>De noodzaak van een retry-mechanisme doet geen afbreuk aan de standaard. Ook ebMS2 (betrouwbaar protocol) kent beperkingen in het aantal retries en retry-intervallen.</p></section></section><section id="foutafhandeling"><h4 id="x2-4-2-foutafhandeling"><bdi class="secno">2.4.2 </bdi>Foutafhandeling<a class="self-link" href="#foutafhandeling" aria-label="Permalink for Section 2.4.2"></a></h4><p>Indien een bestandsoverdracht niet succesvol voltooid kan worden, dan dienen het meta-bericht, bijbehorende log-bestanden en het eventuele grote bestand bewaard te worden voor een latere handmatige verwerking.</p><p>Het koppelvlak schrijft niet voor hoe te handelen bij optredende foutsituaties; het is de verantwoordelijkheid van de applicaties om hiervoor een adequate oplossing te bieden. Enerzijds zou de ontvanger de bestandsoverdracht kunnen monitoren en eventuele foutsituaties melden aan de verzender; anderzijds kan het ontbreken van een bevestiging voor de verzender aanleiding zijn om actie te ondernemen.</p><p>Belangrijkste foutsituaties bij bestandsoverdracht:</p><table class="dkkvs">
+<thead>
+<tr>
+<th>Statuscode</th>
+<th>Omschrijving</th>
+<th>Vervolgactie</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>200</td>
+<td>OK</td>
+<td>Indien de ontvangst van data wordt onderbroken, dan een nieuwe Range-request; anders GEEN.</td>
+</tr>
+<tr>
+<td>206</td>
+<td>Partial Content</td>
+<td>Idem.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden</td>
+<td>Authenticatie probleem; verder proberen is niet zinvol.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found</td>
+<td>Url niet beschikbaar; verder proberen is niet zinvol, tenzij de geldigheidsperiode nog niet is ingegaan.</td>
+</tr>
+<tr>
+<td>416</td>
+<td>Range Not Satisfiable</td>
+<td>Probleem met byte range; verder proberen is niet zinvol.</td>
+</tr>
+<tr>
+<td>500+</td>
+<td>Internal Server Error</td>
+<td>Server probleem; later opnieuw proberen.</td>
+</tr>
+</tbody></table></section></section><section id="security"><h3 id="x2-5-security"><bdi class="secno">2.5 </bdi>Security<a class="self-link" href="#security" aria-label="Permalink for Section 2.5"></a></h3><section id="oin-en-certificaten"><h4 id="x2-5-1-oin-en-certificaten"><bdi class="secno">2.5.1 </bdi>OIN en certificaten<a class="self-link" href="#oin-en-certificaten" aria-label="Permalink for Section 2.5.1"></a></h4><p>Ten behoeve van DigiKoppeling grote berichten dient gebruik gemaakt te worden van OIN gerelateerde certificaten. Alleen verbindingen waarbij zowel de client als de server over een geldig certificaat beschikken zijn toegestaan (TLS). De gebruikte certificaten mogen dezelfde certificaten zijn die al ten behoeve van ebMS2 / WUS geïnstalleerd zijn, maar dit hoeft niet het geval te zijn (zolang het OIN maar overeenkomt).</p><section id="client-zijde"><h5 id="x2-5-1-1-client-zijde"><bdi class="secno">2.5.1.1 </bdi>Client-zijde<a class="self-link" href="#client-zijde" aria-label="Permalink for Section 2.5.1.1"></a></h5><p>Strik genomen moeten zowel de server als de client controleren op OIN; d.w.z. het OIN uit het certificaat dient overeen te komen met de OIN uit het bericht. In praktijk zal dit voor de client echter niet altijd noodzakelijk zijn. Ook bij ebMS2 en WUS wordt deze controle niet strikt uitgevoerd en bovendien kun je je afvragen waarom de http-client het OIN van de server moet controleren als net daarvoor metadata met een url is ontvangen van een communicatie-partner waarvan het OIN bij de ontvangst van deze meta-data al gecontroleerd is. Bovendien controleert een TLS-client automatisch of het domein van de server overeenkomt met het certificaat.</p><p>Controle van het OIN uit het certificaat van de (bestands)server aan de client-zijde is daarom vaak niet nodig.</p></section><section id="server-zijde"><h5 id="x2-5-1-2-server-zijde"><bdi class="secno">2.5.1.2 </bdi>Server-zijde<a class="self-link" href="#server-zijde" aria-label="Permalink for Section 2.5.1.2"></a></h5><p>Controle van het OIN in het client-certificaat is voor vertrouwelijke (niet-openbare) gegevensbestanden noodzakelijk. Hiervoor zijn onder andere de volgende implementaties mogelijk:</p><ol>
+<li><p>OIN opnemen in de url<br> In deze situatie bevat de url waarmee het bestand opgehaald wordt het OIN van de organisatie die dit mag ophalen. In een security-module (zie voorbeeld Apache Tomcat) vindt dan aan de hand van het certificaat controle plaats of een rechtmatige url toegepast wordt.</p>
+</li>
+<li><p>Autorisatie-database<br> In deze situatie wordt het OIN uit het certificaat vergeleken met autorisaties in een database (zie opmerking in voorbeeld Apache Tomcat). Dit kan bijvoorbeeld nodig zijn omdat meerdere organisaties tot hetzelfde bestand toegang moeten hebben. Een simpele oplossing als hiervoor volstaat dan niet meer.</p>
+</li>
+<li><p>Http basic-authentication (met TLS-offloader)<br> In deze situatie wordt het OIN uit het certificaat door een TLS-offloader toegevoegd in de http-uitwisseling als userid waar de achterliggende bestandsserver op controleert.</p>
+</li>
+</ol></section><section id="certificaat-geldigheid"><h5 id="x2-5-1-3-certificaat-geldigheid"><bdi class="secno">2.5.1.3 </bdi>Certificaat-geldigheid<a class="self-link" href="#certificaat-geldigheid" aria-label="Permalink for Section 2.5.1.3"></a></h5><p>Het document “Gebruik en achtergrond Digikoppeling-certificaten” bevat waardevolle informatie over dit onderwerp.</p><p>Belangrijk is dat niet individuele certificaten van communicatie-partners opgenomen worden in een trust-store. Als dat wel gebeurd zal bij elke certificaat-vernieuwing van deze partner een gelijktijdige aanpassing van de trust-store moeten plaatsvinden. Veel makkelijker is als op basis van een geldige certificaat-hierarchie (root-certificaat van Staat der Nederlanden) controle plaatsvindt. Autorisatie kan vervolgens op basis van een OIN uit dit geldige certificaat ingericht worden.</p></section><section id="tls-offloading"><h5 id="x2-5-1-4-tls-offloading"><bdi class="secno">2.5.1.4 </bdi>TLS-offloading<a class="self-link" href="#tls-offloading" aria-label="Permalink for Section 2.5.1.4"></a></h5><p>Het stelselhandboek (<a href="http://www.stelselhandboek.nl">www.stelselhandboek.nl</a>) bevat informatie over de inrichting van TLS-offloaders en hoe hiermee OIN’s uit een certificaat gehaald kunnen worden.</p><p>Een complicerende factor ten opzichte van berichtenuitwisseling met message-handlers kan zijn dat er sprake kan zijn van meerdere bestandsservers en meerdere clients in de eigen organisatie. Vaak beschikt een organisatie (alleen al vanwege de kosten) niet over meerdere message-handlers; maar meerdere bestandsservers of applicaties die bestanden ophalen is eenvoudiger (en goedkoper) te realiseren. Men kan daarom kiezen om de bestanden rechtstreeks vanuit meerdere (achterliggende) applicaties op te halen en/of aan te bieden (maar hoeft dit niet!). Het stelselhandboek bevat informatie over deze situatie.</p></section></section><section id="server-configuration"><h4 id="x2-5-2-server-configuration"><bdi class="secno">2.5.2 </bdi>Server configuration<a class="self-link" href="#server-configuration" aria-label="Permalink for Section 2.5.2"></a></h4><section id="apache-tomcat"><h5 id="x2-5-2-1-apache-tomcat"><bdi class="secno">2.5.2.1 </bdi>Apache Tomcat<a class="self-link" href="#apache-tomcat" aria-label="Permalink for Section 2.5.2.1"></a></h5><section id="http-connector"><h6 id="x2-5-2-1-1-http-connector"><bdi class="secno">2.5.2.1.1 </bdi>HTTP connector<a class="self-link" href="#http-connector" aria-label="Permalink for Section 2.5.2.1.1"></a></h6><p>Ten behoeve van grote berichten hoeven de http connectors voor DigiKoppeling in principe niet te worden aangepast. Zowel DigiKoppeling als grote berichten maakt gebruikt van client authenticatie en TLS, en ze kunnen derhalve van dezelfde resources gebruik maken (poort 443). Beter is het echter om beide services toch gescheiden te houden en een afzonderlijke logische server in te richten voor grote berichten. Hierdoor kan het berichtenverkeer beter gescheiden worden en kunnen eventuele performance issues beter worden afgehandeld.</p><p>De nieuwe connector dient in <em>server.xml</em> te worden toegevoegd:</p><pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">connector</span> <span class="hljs-attr">port</span>=<span class="hljs-string">"8443"</span> <span class="hljs-attr">protocol</span>=<span class="hljs-string">"org.apache.coyote.http11.Http11Protocol"</span> <span class="hljs-attr">sslenabled</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">maxthreads</span>=<span class="hljs-string">"10"</span> <span class="hljs-attr">scheme</span>=<span class="hljs-string">"https"</span> <span class="hljs-attr">secure</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">keystorefile</span>=<span class="hljs-string">"C:/Documents and Settings/gateway/osbgateway-2.0.11/
+        conf/keystores/ebmsserver.jks"</span> <span class="hljs-attr">keystoretype</span>=<span class="hljs-string">"JKS"</span> <span class="hljs-attr">keystorepass</span>=<span class="hljs-string">"xxxx"</span> <span class="hljs-attr">truststorefile</span>=<span class="hljs-string">"C:/Documents and Settings/gateway/osbgateway-2.0.11/
+        conf/keystores/truststore.jks"</span> <span class="hljs-attr">truststoretype</span>=<span class="hljs-string">"JKS"</span> <span class="hljs-attr">truststorepass</span>=<span class="hljs-string">"xxxx"</span> <span class="hljs-attr">clientauth</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">sslprotocol</span>=<span class="hljs-string">"TLS"</span>&gt;</span>
+</code></pre><p>Merk op dat in dit voorbeeld een poortnummer toegepast wordt dat naar buiten toe (Digikoppeling) niet toegepast mag worden. Dit kan dus wel als interne implementatie maar zal nog via NATting naar poort 443 getransformeerd moeten worden.</p></section><section id="security-filter"><h6 id="x2-5-2-1-2-security-filter"><bdi class="secno">2.5.2.1.2 </bdi>Security Filter<a class="self-link" href="#security-filter" aria-label="Permalink for Section 2.5.2.1.2"></a></h6><p>Ten behoeve van de autorisatie kan ook gebruik gemaakt worden van security filters om de geldigheid van een request aan de hand van het client certificaat te kunnen verifiëren. Hierbij kan gedacht worden aan een controle dat iedere url het OIN van de client dient te bevatten, maar ook aan een database waarin iedere afzonderlijke url geautoriseerd dient te worden.</p><p>Security filters dienen als library (jar) geïmplementeerd te worden en dienen in <em>web.xml</em> geconfigureerd te worden:</p><pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">filter</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">filter-name</span>&gt;</span>shared<span class="hljs-tag">&lt;/<span class="hljs-name">filter-name</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">filter-class</span>&gt;</span>com.filters.Authenticate<span class="hljs-tag">&lt;/<span class="hljs-name">filter-class</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">filter</span>&gt;</span>
+</code></pre><p>De bijbehorende URL-mapping dient eveneens in <em>web.xml</em> geconfigureerd te worden:</p><pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">filter-mapping</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">filter-name</span>&gt;</span>shared<span class="hljs-tag">&lt;/<span class="hljs-name">filter-name</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">url-pattern</span>&gt;</span>/*<span class="hljs-tag">&lt;/<span class="hljs-name">url-pattern</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">filter-mapping</span>&gt;</span>
+</code></pre><p>Het is de verantwoordelijkheid van de verstrekkende partijen om inkomende requests te controleren op geldigheid.</p></section><section id="certificaten"><h6 id="x2-5-2-1-3-certificaten"><bdi class="secno">2.5.2.1.3 </bdi>Certificaten<a class="self-link" href="#certificaten" aria-label="Permalink for Section 2.5.2.1.3"></a></h6><p>Ten behoeve van Tomcat dienen alle benodigde certificaten naar JKS-formaat geconverteerd te worden.</p></section></section></section></section><section id="intermediairs"><h3 id="x2-6-intermediairs"><bdi class="secno">2.6 </bdi>Intermediairs<a class="self-link" href="#intermediairs" aria-label="Permalink for Section 2.6"></a></h3><p>Een veel voorkomende situatie is dat voorgaande use-cases in combinatie met een intermediair toegepast worden. Zo treedt bijvoorbeeld bij Justitie de JustID organisatie centraal als intermediair op voor interacties met alle Justitie-partijen. In deze situatie zijn een tweetal modellen voor intermediairs mogelijk:</p><ol>
+<li><p>Niet-transparante intermediair<br> In deze situatie vindt wel store-and-forward van het grote bestand plaats. Daarom wijzigt de intermediair de meta-data en specifiek de senderUrl waar het bestand opgehaald wordt.</p>
+</li>
+<li><p>Transparante intermediair<br> In deze situatie vindt geen store-and-foreward van het grote bestand plaats. Daarom geeft de intermediair de meta-data transparant door aan het endpoint van de ontvanger. Het maakt daarbij niet uit of op berichtniveau sprake is van protocol-transformatie (bijvoorbeeld van ebMS naar WUS), zolang de meta-data maar transparant doorgegeven wordt.</p>
+</li>
+</ol><p>Merk op dat een niet-transparante intermediair ook protocol-conversie uit kan voeren. Daardoor is het denkbaar dat extern grote berichten volgens de Digikoppeling-standaard Grote Berichten verstuurd worden terwijl op het interne netwerk geen verschil tussen grote en kleine berichten bestaat. In het voorbeeld van Justitie zou JustID ervoor kunnen kiezen om de extern ontvangen grote berichten (na ophalen van het groot bestand) volledig via ebMS2 door te sturen. Dit werkt uiteraard ook omgekeerd, maar dan wordt het ebMS2 bericht gesplitst in een bericht met meta-data en een groot bestand.</p><p>In de beschrijving in deze verdere paragraaf gaan we er van uit dat een intermediair aan beide kanten de Digikoppeling standaard Grote Berichten toepast.</p><section id="niet-transparant"><h4 id="x2-6-1-niet-transparant"><bdi class="secno">2.6.1 </bdi>Niet-transparant<a class="self-link" href="#niet-transparant" aria-label="Permalink for Section 2.6.1"></a></h4><p>Bij Niet-transparante intermediairs is in Digikoppeling-termen de intermediair te zien als een endpoint. De intermediair zal dan ook net als elk ander endpoint het bericht en met name de meta-data en het grote bestand afhandelen.</p><p>Afhankelijk van de use-case (zoals in vorige paragrafen beschreven) zal voorafgaand aan verzending van de meta-data nog enkele bericht-uitwisselingen plaatsvinden. Op enig moment zal echter meta-data verzonden worden naar de intermediair. De intermediair haalt vervolgens het bestand op bij de verzender.</p><p>In een vervolgstap vindt hetzelfde proces plaats, nu echter met de intermediair die de nieuwe meta-data met het aangepaste senderURL verstuurt naar de uiteindelijke ontvanger (of een volgende intermediair). Bij voorkeur wordt het bericht met de meta-data niet eerder verstuurd dan nadat het grote bestand succesvol is opgehaald bij de oorspronkelijke verzender. Anders kunnen timingsprobleren ontstaan wanneer het intermediair het bestand nog niet (volledig) opgehaald heeft op het moment van ophalen door de uiteindelijke ontvanger.</p></section><section id="transparant"><h4 id="x2-6-2-transparant"><bdi class="secno">2.6.2 </bdi>Transparant<a class="self-link" href="#transparant" aria-label="Permalink for Section 2.6.2"></a></h4><p>Bij transparante intermediairs vindt geen tussentijdse opslag van het grote bestand plaats bij de intermediair; verandering van meta-data is niet nodig. Het kan in deze situatie echter soms wel handig of zelfs nodig zijn om de bestandsoverdracht via de intermediair te ontkoppelen met een proxy. Er zijn daarom twee mogelijkheden: zonder proxy of met proxy.</p><p>Afhankelijk van de use-case (zoals in vorige paragrafen beschreven) zal ook nu voorafgaand aan verzending van de meta-data nog enkele bericht-uitwisselingen plaatsvinden. Op enig moment zal echter meta-data verzonden worden naar de intermediair. De intermediair geeft de meta-data transparant door aan het endpoint van de ontvanger. Het maakt daarbij niet uit of op berichtniveau sprake is van protocol-transformatie (bijvoorbeeld van ebMS2 naar WUS), zolang de meta-data maar transparant doorgegeven wordt.</p><p>De ontvanger haalt vervolgens het bestand op bij de verzender. Dit kan door de intermediair op twee manieren zijn ingericht:</p><ul>
+<li><p>zonder proxy<br>  Het bestand wordt door de verzender rechtstreeks met een http-bestandsserver ter beschikking gesteld (bijvoorbeeld bereikbaar vanaf Diginetwerk of bereikbaar vanaf Internet). De ontvanger van de meta-data kan het bestand hier ophalen.</p>
+</li>
+<li><p>met proxy<sup>2</sup><br>  Het bestand wordt door de verzender met een http-bestandsserver beschikbaar gesteld aan de intermediair via bijvoorbeeld een sectoraal netwerk. De intermediair richt een http-(reverse-)proxy in om deze bestandsserver vanaf Diginetwerk of het Internet bereikbaar te maken.</p>
+</li>
+</ul><p><sup>2</sup>: N.B. Behalve een keuze voor het toepassen van een proxy bij het intermediair kan natuurlijk aanvullend bij verzender en/of vervanger voor een (reverse-)proxy gekozen worden.</p><p>In deze situatie vindt dus geen store-and-foreward van het grote bestand plaats. De senderURL in de meta-data blijft daarom ook ongewijzigd. De verzender dient dus al direct de url te gebruiken waarmee het bestand is op te halen; bijvoorbeeld door een url op basis van het organisatiedomein te gebruiken.</p><p>In het geval dat bestanden binnen het interne netwerk door zowel interne als externe partijen opgehaald moeten kunnen worden, vormt netwerk-routering een extra complicatie. Beschrijven van best-practices hiervoor vallen buiten de scope van Digikoppeling, maar globaal is de uitwerking hiervan als volgt:</p><ul>
+<li><p>De domeinnaam van de url zal geresolved worden naar een IP-adres van de server waar het bestand staat.</p>
+</li>
+<li><p>Het IP-adres op een intern netwerk wijkt vaak af van het (publieke) IP-adres op het externe netwerk. Dit kan opgelost worden via een van de volgende mogelijkheden:</p>
+</li>
+</ul><ol>
+<li><p>twee url's toepassen: een interne en externe url die resolven naar het interne respectievelijk publieke IP-adres;</p>
+</li>
+<li><p>één url dat voor interne gebruikers resolved naar het interne IP-adres en voor externe gebruikers naar het publieke IP-adres;</p>
+</li>
+<li><p>één url dat resolved naar het publieke IP-adres en dit publieke IP-adres ook op het interne netwerk routeren;</p>
+</li>
+<li><p>één url dat resolved naar het publieke IP-adres van de proxy en deze proxy ook toepassen voor clients op het interne netwerk<sup>3</sup>.</p>
+</li>
+</ol><p><sup>3</sup>: Soms kan het nodig zijn om de proxy-servers een 'rewrite' van url's te laten uitvoeren.</p></section></section><section id="natting"><h3 id="x2-7-natting"><bdi class="secno">2.7 </bdi>NATting<a class="self-link" href="#natting" aria-label="Permalink for Section 2.7"></a></h3><p>Als een transparante-intermediair zich bevindt op de rand tussen intern en extern netwerk (b.v. Diginetwerk) is vaak ook vertaling van interne naar externe IP-adressen nodig (NATting). Ook in andere situaties kan dit wenselijk zijn. Dit vraagstuk bevindt zich grotendeels buiten de scope van Diginetwerk. Enkele mogelijkheden om aan te denken zijn:</p><ul>
+<li><p>Bereikbaarheid van externe file-servers is eenvoudig in te regelen via een constructie met 'default gateway' voor bereikbaarheid van de firewall en NATting door de firewall.</p>
+</li>
+<li><p>Bereikbaarheid van interne file-servers voor organisaties op het externe netwerk kent enkele alternatieven:</p>
+</li>
+</ul><ol>
+<li><p>ken elke interne file-server een eigen publiek (b.v. Diginetwerk) IP-adres toe dat door de Firewall geNAT wordt naar een intern IP-adres;</p>
+</li>
+<li><p>gebruik één publiek IP-adres dat gerouteerd wordt naar één gemeenschappelijke reverse-proxy en laat deze proxy afhankelijk van url naar de juiste interne IP-adressen doorrouteren;</p>
+</li>
+<li><p>hetzelfde als alternatief b) maar nu vindt geen 'rewrite' naar een intern ip-adres maar naar een interne (andere) url plaats.</p>
+<p> Bij alternatief b) en c) zal de TLS-sessie getermineerd moeten worden om in de proxy de url van het http-protocol te kunnen zien. Controle of de url is toegestaan voor het OIN in dit certificaat zal dan ook door de proxy moeten plaatsvinden danwel de proxy moet dit OIN doorgeven (b.v. met http basic authentication).</p>
+</li>
+</ol></section></section>
+<section data-format="markdown" id="use-cases"><h2 id="x3-use-cases"><bdi class="secno">3. </bdi>Use cases<a class="self-link" href="#use-cases" aria-label="Permalink for Section 3."></a></h2><p>Bij de definitiestudie naar Digikoppeling Grote Berichten zijn een aantal use cases onderkend die bij de uitwerking van de standaard als referentie hebben gediend. Deze use-cases zijn bij toepassing van de standaard nuttig als inspiratiebron voor vormgeving van uitwisselingspatronen.</p><p>Dit hoofdstuk beschrijft deze use-cases en geeft aan hoe deze gerealiseerd kunnen worden. Daarbij maakt de uitwerking duidelijk of gegevens via ebMS2, WUS en/of als groot bericht verstuurd worden. Beschrijving van de use-cases is generiek; specifieke implementaties kunnen variëren maar zullen vaak deze generieke patronen als basis hebben.</p><section id="download"><h3 id="x3-1-download"><bdi class="secno">3.1 </bdi>Download<a class="self-link" href="#download" aria-label="Permalink for Section 3.1"></a></h3><p>In deze use case zijn benodigde gegevens al beschikbaar in een download-server. De afnemer dient echter nog de beschikking te krijgen over een referentie naar de gewenste gegevens. Daartoe worden de volgende processtappen doorlopen:</p><p><figure id="fig-use-case-download"><img src="media/use_case_download.jpeg" alt="Use case 'Download'" title="Use case 'Download'"><figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title">Use case 'Download'</span></figcaption></figure></p><ul>
+<li><p>De Afnemer bevraagt (WUS-request of eventueel ebMS2) de Service Provider met kenmerkende criteria voor de gezochte gegevens. Eventueel kan deze bevraging in enkele tussenstappen verlopen als deze initieel teveel mogelijkheden oplevert.</p>
+</li>
+<li><p>De Service provider levert een verwijzing naar de gezochte gegevens in de vorm van Meta-data (WUS-response of ebMS2).</p>
+</li>
+<li><p>De Afnemer haalt de gewenste gegevens op (Groot Bericht) en krijgt deze op grond van autorisatie (OIN).</p>
+</li>
+</ul></section><section id="selectie"><h3 id="x3-2-selectie"><bdi class="secno">3.2 </bdi>Selectie<a class="self-link" href="#selectie" aria-label="Permalink for Section 3.2"></a></h3><p>In deze use case vraagt een Afnemer een gegevensselectie van een Service-verlener. Daartoe worden de volgende processtappen doorlopen:</p><p><figure id="fig-use-case-selectie"><img src="media/use_case_selectie.jpeg" alt="Use case 'Selectie'" title="Use case 'Selectie'"><figcaption>Figuur <bdi class="figno">3</bdi> <span class="fig-title">Use case 'Selectie'</span></figcaption></figure></p><ol>
+<li><p>De Afnemer bevraagt (ebMS2-request of eventueel WUS) de Service Provider met kenmerkende criteria voor de gezochte gegevens. Eventueel kan deze bevraging in enkele tussenstappen verlopen als deze initieel teveel mogelijkheden oplevert.</p>
+</li>
+<li><p>De Service Provider maakt de gewenste gegevens aan en zet deze klaar in een Groot Bestand.</p>
+</li>
+<li><p>Zodra het Grote Bestand gereed is, Meldt de Service Provider dit aan de eerdere Afnemer met een verwijzing naar de gezochte gegevens in de vorm van Meta-data (ebMS2).</p>
+</li>
+<li><p>De Afnemer haalt de gewenste gegevens op (Groot Bericht) en krijgt deze op grond van autorisatie (OIN).</p>
+</li>
+</ol><p>Merk op dat deze use case vrijwel gelijk is aan “Download”. Alleen stap 2 'aanmaken selectie' is aanvullend. Vanwege de benodigde tijd van dit aanmaken kan gereedmelding niet via een WUS-response plaatsvinden en zal altijd ebMS2 toegepast moeten worden. Als het 'aanmaken van de selectie binnen de time-out van het WUS-request kan plaatsvinden ontstaat als vanzelf het “Download” pattern.</p></section><section id="verzending"><h3 id="x3-3-verzending"><bdi class="secno">3.3 </bdi>Verzending<a class="self-link" href="#verzending" aria-label="Permalink for Section 3.3"></a></h3><p>In deze use case verzendt een Afnemer gegevens naar een Service-verlener. Daartoe worden de volgende processtappen doorlopen:</p><p><figure id="fig-use-case-verzending"><img src="media/use_case_verzending.jpeg" alt="Use case 'Verzending'" title="Use case 'Verzending'"><figcaption>Figuur <bdi class="figno">4</bdi> <span class="fig-title">Use case 'Verzending'</span></figcaption></figure></p><ol>
+<li><p>Op enig moment is er een gebeurtenis waardoor de Service-provider besluit tot verzenden van gegevens. Voorbeelden van triggers zijn: tijd, bericht ontvangst of wijziging van gegevensobjecten.</p>
+</li>
+<li><p>Als gegevens niet beschikbaar zijn in de vorm van een Groot Bestand zal dit aangemaakt worden (bijvoorbeeld door samenstelling vanuit een database).</p>
+</li>
+<li><p>De Service Provider stuurt een 'verzoek tot ophalen' naar de Afnemer (ebMS2). In deze Melding is in ieder geval de Meta-data van het Grote Bestand opgenomen, maar kan bijvoorbeeld ook informatie over de aard en beoogde afhandeling van het Grote Bestand zijn opgenomen.</p>
+</li>
+<li><p>De Afnemer haalt de gegevens op (Groot Bericht) en krijgt deze verstrekt op grond van autorisatie (OIN).</p>
+</li>
+</ol><p>Aanvullend kan het Grote Bestand ook verwijderd worden. Bijvoorbeeld nadat de expiration-time is verstreken of nadat de Afnemer een bericht heeft gestuurd om de succesvolle ontvangst te bevestigen.</p><p>Merk op dat deze interactie identiek is aan “Multi-distributie” maar slechts één (1) afnemer kent.</p></section><section id="multi-distributie"><h3 id="x3-4-multi-distributie"><bdi class="secno">3.4 </bdi>Multi-distributie<a class="self-link" href="#multi-distributie" aria-label="Permalink for Section 3.4"></a></h3><p>In deze use case distribueert een Service-verlener gegevens naar meerdere Afnemers. Daartoe worden de volgende processtappen doorlopen:</p><p><figure id="fig-use-case-multi-distributie"><img src="media/use_case_multidistributie.jpeg" alt="Use case '(multi-) distributie'" title="Use case '(multi-) distributie'"><figcaption>Figuur <bdi class="figno">5</bdi> <span class="fig-title">Use case '(multi-) distributie'</span></figcaption></figure></p><ol>
+<li><p>Op enig moment is er een gebeurtenis waardoor de Service-provider besluit tot distributie van gegevens. Voorbeelden van triggers zijn: tijd, bericht ontvangst of wijziging van gegevensobjecten.</p>
+</li>
+<li><p>Als gegevens niet beschikbaar zijn in de vorm van een Groot Bestand zal dit aangemaakt worden (bijvoorbeeld door samenstelling vanuit een database).</p>
+</li>
+<li><p>De Service Provider stuurt een Melding (ebMS2) naar de Afnemers die deze gegevens (bijvoorbeeld op basis van een abonnement) behoren te ontvangen. In deze Melding is in ieder geval de Meta-data van het Grote Bestand opgenomen, maar kan bijvoorbeeld ook informatie over de aard en beoogde afhandeling van het Grote Bestand zijn opgenomen. Alle Afnemers ontvangen dezelfde Meta-data.</p>
+</li>
+<li><p>Afnemers halen de gegevens op (Groot Bericht) en krijgen deze verstrekt op grond van autorisatie (OIN).</p>
+</li>
+</ol><p>Aanvullend kan het Grote Bestand ook verwijderd worden. Bijvoorbeeld nadat de expiration-time is verstreken of nadat alle Afnemers een bericht hebben gestuurd om de succesvolle ontvangst te bevestigen.</p></section><section id="upload"><h3 id="x3-5-upload"><bdi class="secno">3.5 </bdi>Upload<a class="self-link" href="#upload" aria-label="Permalink for Section 3.5"></a></h3><p><figure id="fig-use-case-upload"><img src="media/use_case_upload.jpeg" alt="Use case 'Upload'" title="Use case 'Upload'"><figcaption>Figuur <bdi class="figno">6</bdi> <span class="fig-title">Use case 'Upload'</span></figcaption></figure></p><p>In deze use case upload een Afnemer gegevens naar een Service-verlener. Deze use case is alleen mogelijk met de 'brengen' interactie die de huidige versie niet ondersteund. De use case “verzenden” is functioneel hiermee gelijkwaardig maar past wel het 'halen' interactiepatroon toe. De processtappen van “upload” zijn daarom niet verder uitgewerkt.</p></section><section id="business-voorbeelden"><h3 id="x3-6-business-voorbeelden"><bdi class="secno">3.6 </bdi>Business voorbeelden<a class="self-link" href="#business-voorbeelden" aria-label="Permalink for Section 3.6"></a></h3><table class="dkkvs">
+<thead>
+<tr>
+<th><strong>Use case</strong></th>
+<th><strong>Voorbeeld</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>upload</td>
+<td>Zie voorbeelden van Verzending.</td>
+</tr>
+<tr>
+<td>download</td>
+<td>Gegevens worden beschikbaar gesteld voor breed (openbaar) gebruik.</td>
+</tr>
+<tr>
+<td>selectie</td>
+<td>Ad hoc informatieverzoeken voor het samenstellen van rapportages of doorsnedes van gegevens .</td>
+</tr>
+<tr>
+<td>verzending</td>
+<td>Maandelijkse verzending van vast afgesproken gegevenssets.</td>
+</tr>
+<tr>
+<td>(multi-)distributie</td>
+<td>Verstrekking van mutaties naar geabonneerde instanties.</td>
+</tr>
+</tbody></table></section></section>
+    
+    
+    <section id="conformance"><h2 id="x4-conformiteit"><bdi class="secno">4. </bdi>Conformiteit<a class="self-link" href="#conformance" aria-label="Permalink for Section 4."></a></h2><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p>
+        
+    </section>
+
+    <section id="tof">
+        
+    <h2 id="x5-lijst-met-figuren"><bdi class="secno">5. </bdi>Lijst met figuren<a class="self-link" href="#tof" aria-label="Permalink for Section 5."></a></h2><ul class="tof">
+        <li class="tofline">
+    <a class="tocxref" href="#fig-opbouw-documentatie-digikoppeling">Figuur <bdi class="figno">1</bdi> <span class="fig-title">Opbouw documentatie Digikoppeling</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-use-case-download">Figuur <bdi class="figno">2</bdi> <span class="fig-title">Use case 'Download'</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-use-case-selectie">Figuur <bdi class="figno">3</bdi> <span class="fig-title">Use case 'Selectie'</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-use-case-verzending">Figuur <bdi class="figno">4</bdi> <span class="fig-title">Use case 'Verzending'</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-use-case-multi-distributie">Figuur <bdi class="figno">5</bdi> <span class="fig-title">Use case '(multi-) distributie'</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-use-case-upload">Figuur <bdi class="figno">6</bdi> <span class="fig-title">Use case 'Upload'</span></a>
+  </li>
+      </ul></section>
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+
+
+
+<p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(setupPanel);
+} else {
+  setupPanel();
+}
+
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
+  /** @type {HTMLElement} */
+  let panel = null;
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    const action = deriveAction(event);
+
+    switch (action) {
+      case "show": {
+        hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = target.closest("dfn, .index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        const coords = deriveCoordinates(event);
+        displayPanel(dfn, panel, coords);
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        panel = null;
+        break;
+      }
+    }
+  };
+}
+
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
+  }
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not([data-cite]), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
+    if (hitALink) {
+      return target.classList.contains("self-link") ? "hide" : "dock";
+    }
+    const panel = target.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : "none";
+  }
+  if (document.querySelector(".dfn-panel:not([hidden])")) {
+    return "hide";
+  }
+  return "none";
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a[href]");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const [record] = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  if (!panel) return;
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>

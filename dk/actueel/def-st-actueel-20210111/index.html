@@ -1,0 +1,949 @@
+<!DOCTYPE html><html lang="nl"><head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta charset="utf-8">
+<meta name="generator" content="ReSpec 26.0.0">
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font:small Helvetica Neue,sans-serif,Droid Sans Fallback;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;margin-top:.25em}
+.dfn-panel ul a[href]{color:#333}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a[href]:hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
+  
+  
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+  
+  
+<title>Digikoppeling Overzicht Actuele Documentatie en Compliance 1.7</title>
+  
+  
+<link rel="shortcut icon" type="image/x-icon" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/logius.ico">
+  
+  
+<link rel="stylesheet" type="text/css" href="./media/style.css">
+
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+.hljs{background:0 0!important}
+a abbr,h1 abbr,h2 abbr,h3 abbr,h4 abbr,h5 abbr,h6 abbr{border:none}
+dfn{font-weight:700}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:normal}
+code{color:#c63501}
+th code{color:inherit}
+a[href].orcid{padding-left:4px;padding-right:4px}
+a[href].orcid>svg{margin-bottom:-2px}
+.toc a,.tof a{text-decoration:none}
+a .figno,a .secno{color:#000}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
+.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
+.simple th a{color:#fff;padding:3px 5px;text-align:left}
+.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
+.simple td{padding:3px 10px;border-top:1px solid #ddd}
+.simple tr:nth-child(even){background:#f0f6ff}
+.section dd>p:first-child{margin-top:0}
+.section dd>p:last-child{margin-bottom:0}
+.section dd{margin-bottom:1em}
+.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+a[href].self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+h2,h3,h4,h5,h6{position:relative}
+aside.example .marker>a.self-link{color:inherit}
+h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{border:none;color:inherit;font-size:83%;height:2em;left:-1.6em;opacity:.5;position:absolute;text-align:center;text-decoration:none;top:0;transition:opacity .2s;width:2em}
+h2>a.self-link::before,h3>a.self-link::before,h4>a.self-link::before,h5>a.self-link::before,h6>a.self-link::before{content:"§";display:block}
+@media (max-width:767px){
+dd{margin-left:0}
+h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{left:auto;top:auto}
+}
+@media print{
+.removeOnSave{display:none}
+}
+</style>
+<meta name="description" content="Dit document Digikoppeling Overzicht Actuele Documentatie &amp; Compliance beschrijft de opzet en huidige versies van de
+    Digikoppeling standaard. Ook geeft dit document aan hoe compliance aan de standaard kan worden bepaald en
+    aangetoond.">
+<link rel="canonical" href="https://www.w3.org/TR/actueel/">
+<script type="application/ld+json">{
+  "@context": [
+    "http://schema.org",
+    {
+      "@vocab": "http://schema.org/",
+      "@language": "nl",
+      "w3p": "http://www.w3.org/2001/02pd/rec54#",
+      "foaf": "http://xmlns.com/foaf/0.1/",
+      "datePublished": {
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      },
+      "inLanguage": {
+        "@language": null
+      },
+      "isBasedOn": {
+        "@type": "@id"
+      },
+      "license": {
+        "@type": "@id"
+      }
+    }
+  ],
+  "id": "https://www.w3.org/TR/actueel/",
+  "type": [
+    "TechArticle"
+  ],
+  "name": "Digikoppeling Overzicht Actuele Documentatie en Compliance 1.7",
+  "inLanguage": "nl",
+  "license": "https://creativecommons.org/licenses/by-nd/4.0/legalcode.nl",
+  "datePublished": "2021-01-11",
+  "copyrightHolder": {
+    "name": "World Wide Web Consortium",
+    "url": "https://www.w3.org/"
+  },
+  "discussionUrl": "https://github.com/Logius-standaarden/Digikoppeling-Overzicht-Actuele-Documentatie-en-Compliance/issues/",
+  "alternativeHeadline": "",
+  "description": "Dit document Digikoppeling Overzicht Actuele Documentatie & Compliance beschrijft de opzet en huidige versies van de\n    Digikoppeling standaard. Ook geeft dit document aan hoe compliance aan de standaard kan worden bepaald en\n    aangetoond.",
+  "editor": [
+    {
+      "type": "Person",
+      "name": "Peter Haasnoot",
+      "url": "https://logius.nl/standaarden"
+    },
+    {
+      "type": "Person",
+      "name": "Pieter Hering",
+      "foaf:mbox": "api@digikoppeling.nl",
+      "worksFor": {
+        "name": "Logius",
+        "url": "https://logius.nl/standaarden"
+      }
+    }
+  ],
+  "contributor": [
+    {
+      "type": "Person",
+      "name": "Pieter Hering",
+      "url": "https://logius.nl/standaarden"
+    }
+  ],
+  "citation": []
+}</script>
+<script id="initialUserConfig" type="application/json">{
+  "specStatus": "DEF",
+  "specType": "ST",
+  "shortName": "actueel",
+  "publishDate": "2021-01-11",
+  "license": "cc-by-nd",
+  "doJsonLd": true,
+  "editors": [
+    {
+      "name": "Peter Haasnoot",
+      "url": "https://logius.nl/standaarden"
+    },
+    {
+      "name": "Pieter Hering",
+      "mailto": "api@digikoppeling.nl",
+      "company": "Logius",
+      "companyURL": "https://logius.nl/standaarden"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Pieter Hering",
+      "url": "https://logius.nl/standaarden"
+    }
+  ],
+  "github": "https://github.com/Logius-standaarden/Digikoppeling-Overzicht-Actuele-Documentatie-en-Compliance",
+  "addSectionLinks": true,
+  "a11y": false,
+  "pubDomain": "dk",
+  "pubSubDomain": "actueel",
+  "nl_emailComments": "digikoppeling@logius.nl",
+  "nl_addReleaseTagTitle": true,
+  "nl_markdownSplitH1sections": true,
+  "nl_github": {
+    "revision": "https://github.com/Logius-standaarden/Digikoppeling-Overzicht-Actuele-Documentatie-en-Compliance/commits"
+  },
+  "nl_organisationName": "Logius",
+  "nl_organisationPrefix": "LS-",
+  "nl_markdownTableClass": "dkkvs",
+  "nl_markdownEmbedImageInFigure": true,
+  "nl_organisationStylesURL": "https://publicatie.centrumvoorstandaarden.nl/respec/style/",
+  "nl_organisationPublishURL": "https://publicatie.centrumvoorstandaarden.nl/",
+  "nl_logo": {
+    "src": "https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg",
+    "alt": "Logius",
+    "id": "Logius",
+    "height": 77,
+    "width": 44,
+    "url": "https://www.logius.nl/standaarden"
+  },
+  "localBiblio": {
+    "NEN3610": {
+      "href": "https://www.nen.nl/nen-3610-2011-a1-2016-nl-217738",
+      "title": "Basismodel Geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten",
+      "authors": [
+        ""
+      ],
+      "date": "Maart 2011",
+      "publisher": "Nederlands Normalisatie-instituut"
+    },
+    "Digikoppeling Architectuur": {
+      "href": "https://centrumvoorstandaarden.github.io/Architectuur2.0-metRestfulAPI/static.html",
+      "title": "Digikoppeling Architectuur",
+      "authors": [
+        "Logius Centrum voor standaarden"
+      ],
+      "date": "december 2020",
+      "publisher": "Logius"
+    },
+    "Digikoppeling Beveiligingsdocument": {
+      "href": "https://www.logius.nl/sites/default/files/bestanden/website/Digikoppeling_Beveiligingsstandaarden_en_voorschriften_v1.3.pdf",
+      "title": "Digikoppeling Beveiligingsstandaarden en voorschriften",
+      "date": "2020",
+      "publisher": "Logius"
+    },
+    "Digikoppeling-Cert": {
+      "href": "http://www.logius.nl/digikoppeling",
+      "title": "Gebruik en achtergrond van Digikoppeling certificaten",
+      "publisher": "Logius"
+    },
+    "PKI Policy": {
+      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen",
+      "title": "Programma van Eisen (PKIoverheid)",
+      "publisher": "Logius"
+    },
+    "PKI CA": {
+      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/toegetreden-vertrouwensdienstverleners",
+      "title": "Toegetreden vertrouwensdienstverleners",
+      "publisher": "Logius"
+    },
+    "PKIoverheid Certificaten": {
+      "href": "https://cert.pkioverheid.nl/",
+      "title": "Pkioverheid certificaten",
+      "publisher": "Logius"
+    },
+    "Logius website": {
+      "href": "https://logius.nl/digikoppeling",
+      "title": "Logius Digikoppeling",
+      "publisher": "Logius"
+    },
+    "Digikoppeling Compliance Voorziening": {
+      "href": "https://portaal.digikoppeling.nl",
+      "title": "Digikoppeling Compliance Voorziening",
+      "publisher": "Logius"
+    }
+  },
+  "publishISODate": "2021-01-11T00:00:00.000Z",
+  "generatedSubtitle": "Vastgestelde versie 11 januari 2021"
+}</script>
+<link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/LS-DEF.css"></head>
+
+<body class="h-entry"><div class="head">
+    <a class="logo" href="https://www.logius.nl/standaarden"><img id="Logius" alt="Logius" src="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg" width="44" height="77"></a> <h1 id="title" class="title">Digikoppeling Overzicht Actuele Documentatie en Compliance 1.7</h1>
+    
+    <h2>
+      Logius Standaard<br>
+      Vastgestelde versie
+      <time class="dt-published" datetime="2021-01-11">11 januari 2021</time>
+    </h2>
+    <dl>
+      <dt>Deze versie:</dt><dd>
+              <a class="u-url" href="https://publicatie.centrumvoorstandaarden.nl/dk/actueel/def-st-actueel-20210111/">https://publicatie.centrumvoorstandaarden.nl/dk/actueel/def-st-actueel-20210111/</a>
+            </dd><dt>Laatst gepubliceerde versie:</dt><dd>
+              <a href="https://publicatie.centrumvoorstandaarden.nl/dk/actueel/">https://publicatie.centrumvoorstandaarden.nl/dk/actueel/</a>
+            </dd>
+      <dt>Laatste werkversie:</dt><dd><a href="https://logius-standaarden.github.io/Digikoppeling-Overzicht-Actuele-Documentatie-en-Compliance/">https://logius-standaarden.github.io/Digikoppeling-Overzicht-Actuele-Documentatie-en-Compliance/</a></dd>
+      
+      
+      
+      
+      
+      <dt>Redacteurs:</dt>
+      <dd class="p-author h-card vcard"><a class="u-url url p-name fn" href="https://logius.nl/standaarden">Peter Haasnoot</a></dd><dd class="p-author h-card vcard"><a class="ed_mailto u-email email p-name" href="mailto:api@digikoppeling.nl">Pieter Hering</a>
+            (<a class="p-org org h-org h-card" href="https://logius.nl/standaarden">Logius</a>)
+          </dd>
+      
+      <dt>Auteur:</dt><dd class="p-author h-card vcard"><a class="u-url url p-name fn" href="https://logius.nl/standaarden">Pieter Hering</a></dd>
+      <dt>Doe mee:</dt><dd>
+    <a href="https://github.com/Logius-standaarden/Digikoppeling-Overzicht-Actuele-Documentatie-en-Compliance/">GitHub Logius-standaarden/Digikoppeling-Overzicht-Actuele-Documentatie-en-Compliance</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/Digikoppeling-Overzicht-Actuele-Documentatie-en-Compliance/issues/">Dien een melding in</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/Digikoppeling-Overzicht-Actuele-Documentatie-en-Compliance/commits">Revisiehistorie</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/Digikoppeling-Overzicht-Actuele-Documentatie-en-Compliance/pulls/">Pull requests</a>
+  </dd>
+    </dl>
+    
+    
+    
+    <p class="copyright">
+          This document is licensed under a
+          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" class="subfoot">Creative Commons Attribution 4.0 License</a>.
+        </p>
+    <hr title="Separator for header">
+  </div>
+  <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Dit document Digikoppeling Overzicht Actuele Documentatie &amp; Compliance beschrijft de opzet en huidige versies van de
+    Digikoppeling standaard. Ook geeft dit document aan hoe compliance aan de standaard kan worden bepaald en
+    aangetoond.</p></section>
+  <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>
+    Dit is de definitieve versie van de  standaard. Wijzigingen naar
+    aanleiding van consultaties zijn doorgevoerd.
+  </p><p>Het OBDO heeft op advies van het Forum Standaardisatie deze versie vastgesteld.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#doel"><bdi class="secno">1.1 </bdi>Doel</a></li><li class="tocline"><a class="tocxref" href="#doelgroep"><bdi class="secno">1.2 </bdi>Doelgroep</a></li><li class="tocline"><a class="tocxref" href="#verantwoording"><bdi class="secno">1.3 </bdi>Verantwoording</a></li></ol></li><li class="tocline"><a class="tocxref" href="#wat-is-digikoppeling"><bdi class="secno">2. </bdi>Wat is Digikoppeling?</a></li><li class="tocline"><a class="tocxref" href="#welke-digikoppeling-documentatie-is-beschikbaar"><bdi class="secno">3. </bdi>Welke Digikoppeling documentatie is beschikbaar?</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#structuur-opbouw-documentatie"><bdi class="secno">3.1 </bdi>Structuur &amp; opbouw documentatie</a></li><li class="tocline"><a class="tocxref" href="#overzicht-documentatie"><bdi class="secno">3.2 </bdi>Overzicht documentatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#algemene-documentatie"><bdi class="secno">3.2.1 </bdi>Algemene documentatie</a></li><li class="tocline"><a class="tocxref" href="#technische-documentatie"><bdi class="secno">3.2.2 </bdi>Technische documentatie</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#wat-zijn-de-huidige-versies-van-documenten"><bdi class="secno">4. </bdi>Wat zijn de huidige versies van documenten?</a></li><li class="tocline"><a class="tocxref" href="#wanneer-ben-ik-digikoppeling-compliant"><bdi class="secno">5. </bdi>Wanneer ben ik Digikoppeling compliant?</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#documenten-per-koppelvlak"><bdi class="secno">5.1 </bdi>Documenten per koppelvlak</a></li><li class="tocline"><a class="tocxref" href="#toelichting-compliance"><bdi class="secno">5.2 </bdi>Toelichting compliance</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">6. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">7. </bdi>Lijst met figuren</a></li></ol></nav>
+  <section class="introductory" data-format="markdown"><h1>Documentbeheer</h1><table class="dkkvs">
+<thead>
+<tr>
+<th>Datum</th>
+<th>Versie</th>
+<th>Auteur</th>
+<th>Opmerkingen</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>12/10/2017</td>
+<td>1.0</td>
+<td>Logius</td>
+<td>1e versie</td>
+</tr>
+<tr>
+<td>09/07/2018</td>
+<td>1.1</td>
+<td>Logius</td>
+<td>Versionering documentniveau</td>
+</tr>
+<tr>
+<td>21/08/2018</td>
+<td>1.2</td>
+<td>Logius</td>
+<td>RFC WUS Oin in wsa:to/from</td>
+</tr>
+<tr>
+<td>16/05/2019</td>
+<td>1.3</td>
+<td>Logius</td>
+<td>RFC WUS Interoperabiliteit Signing RFC ebMS SyncReply</td>
+</tr>
+<tr>
+<td>17/12/2019</td>
+<td>1.4</td>
+<td>Logius</td>
+<td>NCSC TLS Voorschriften</td>
+</tr>
+<tr>
+<td>02/09/2020</td>
+<td>1.5</td>
+<td>Logius</td>
+<td>Beveiligingsstandaarden PKIO</td>
+</tr>
+<tr>
+<td>14/10/2020</td>
+<td>1.6</td>
+<td>Logius</td>
+<td>DK KVS Grote Berichten v3.3</td>
+</tr>
+<tr>
+<td>11/01/2021</td>
+<td>1.7</td>
+<td>Logius</td>
+<td>RFC 2020-2, RFC 2020-3</td>
+</tr>
+</tbody></table></section>
+  <section class="introductory" data-format="markdown"><h1>Colofon</h1><table class="dkkvs">
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Logius Servicecentrum:</td>
+<td>Postbus 96810 2509<br>JE Den Haag<br>t. 0900 555 4555 (10 ct p/m)<br>e.<a href="mailto:servicecentrum@logius.nl">servicecentrum@logius.nl</a></td>
+</tr>
+</tbody></table></section>
+  <section data-format="markdown" id="inleiding"><h2 id="x1-inleiding"><bdi class="secno">1. </bdi>Inleiding<a class="self-link" aria-label="§" href="#inleiding"></a></h2><p>Digikoppeling is een standaard voor berichtuitwisseling waarmee overheden op een veilige manier gegevens met elkaar kunnen uitwisselen.</p><section id="doel"><h3 id="x1-1-doel"><bdi class="secno">1.1 </bdi>Doel<a class="self-link" aria-label="§" href="#doel"></a></h3><p>Dit document <em>Digikoppeling Overzicht Actuele Documentatie &amp; Compliance</em> beschrijft de opzet en huidige versies van de Digikoppeling standaard. Ook geeft dit document aan hoe compliance aan de standaard kan worden bepaald en aangetoond.</p></section><section id="doelgroep"><h3 id="x1-2-doelgroep"><bdi class="secno">1.2 </bdi>Doelgroep<a class="self-link" aria-label="§" href="#doelgroep"></a></h3><p>Dit document is bedoeld voor ICT-professionals in de publieke sector en voor ICT-leveranciers die Digikoppeling (willen gaan) gebruiken.</p></section><section id="verantwoording"><h3 id="x1-3-verantwoording"><bdi class="secno">1.3 </bdi>Verantwoording<a class="self-link" aria-label="§" href="#verantwoording"></a></h3><p>Dit document is tot stand gekomen in samenwerking met leden van het Technisch Overleg Digikoppeling.</p></section></section><section data-format="markdown" id="wat-is-digikoppeling"><h2 id="x2-wat-is-digikoppeling"><bdi class="secno">2. </bdi>Wat is Digikoppeling?<a class="self-link" aria-label="§" href="#wat-is-digikoppeling"></a></h2><p>De Digikoppeling standaard is een verzameling van afspraken en principes voor berichtuitwisseling. Digikoppeling richt zich niet op de inhoud van het bericht maar op de “envelop” en op de logistiek van berichtenverkeer, kortom: de communicatiepatronen, adressering, beveiliging en betrouwbaarheid van berichten. Digikoppeling definieert verschillende koppelvlakken. In de koppelvlak specificaties worden de afspraken, eisen en te gebruiken technische standaarden in detail vastgelegd. Twee systemen die beiden hetzelfde digikoppeling koppelvlak ondersteunen kunnen gekoppeld worden en berichten uitwisselen op basis van een vooraf bepaald profiel.</p><p>Er zijn 3 soorten koppelvlakken:</p><ul>
+<li><p>WUS (voor bevragingen met direct antwoord)</p>
+</li>
+<li><p>EBMS2 (voor zowel meldingen (transacties) als bevragingen met een uitgesteld antwoord)</p>
+</li>
+<li><p>Grote Berichten (voor uitwisselen van grote bestanden)</p>
+</li>
+</ul><p>Daarnaast zijn er algemene afspraken die voor elk koppelvlak gelden:</p><ul>
+<li><p>Architectuur</p>
+</li>
+<li><p>Beveiliging</p>
+</li>
+<li><p>Identificatie en authenticatie</p>
+</li>
+</ul><p>De onderstaande figuur geeft de verschillende onderdelen van de digikoppeling standaard weer:</p><p><figure id="onderdelen_dk_specificatie"><img src="media/onderdelen_dk_specificatie.png" alt="Onderdelen Digikoppeling specificatie" title="Onderdelen Digikoppeling specificatie" width="607" height="202"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">Onderdelen Digikoppeling specificatie</span></figcaption></figure></p><p>Deze onderverdeling komt ook terug in de documentatie van de Digikoppeling standaard. Het volgende hoofdstuk behandelt de beschikbare documentatie en geeft per document aan wat de inhoud is.</p></section><section data-format="markdown" id="welke-digikoppeling-documentatie-is-beschikbaar"><h2 id="x3-welke-digikoppeling-documentatie-is-beschikbaar"><bdi class="secno">3. </bdi>Welke Digikoppeling documentatie is beschikbaar?<a class="self-link" aria-label="§" href="#welke-digikoppeling-documentatie-is-beschikbaar"></a></h2><p>De Digikoppeling standaard is vastgelegd in een aantal documenten.</p><p>Dit hoofdstuk geeft aan welk onderdeel van de standaard in welk document wordt beschreven en geeft ook de samenhang weer tussen de verschillende soorten documenten.</p><section id="structuur-opbouw-documentatie"><h3 id="x3-1-structuur-opbouw-documentatie"><bdi class="secno">3.1 </bdi>Structuur &amp; opbouw documentatie<a class="self-link" aria-label="§" href="#structuur-opbouw-documentatie"></a></h3><p>De onderstaande figuur geeft de opbouw weer van de Digikoppeling documentatie.</p><p><figure id="DK_Specificatie_structuur"><img src="media/DK_Specificatie_structuur.png" alt="Opbouw documentatie Digikoppeling" title="Opbouw documentatie Digikoppeling" width="978" height="570"><figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title">Opbouw documentatie Digikoppeling</span></figcaption></figure></p><p><strong>Legenda</strong></p><table class="legendum dkkvs">
+    <thead>
+        <tr>
+            <th><strong>Kleur</strong></th>
+            <th><strong>Soort Document</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="green"></td>
+            <td>Standaard documentatie</td>
+        </tr>
+        <tr>
+            <td class="grey"></td>
+            <td>Ondersteunende documentatie</td>
+        </tr>
+    </tbody>
+</table><p><strong>Beheer</strong></p><ul>
+<li><p>De standaarddocumenten (groen aangegeven) vallen onder het beheer zoals geformaliseerd in het document [Beheermodel en releasebeleid].</p>
+</li>
+<li><p>De ondersteunende documentatie wordt onderhouden door Logius als de beheerder van de standaard (en afgestemd met stakeholders/ gebruikers).</p>
+</li>
+<li><p>Alle goedgekeurde documenten zijn te vinden op de website van Logius, <a href="http://www.logius.nl/digikoppeling">www.logius.nl</a>.</p>
+</li>
+</ul></section><section id="overzicht-documentatie"><h3 id="x3-2-overzicht-documentatie"><bdi class="secno">3.2 </bdi>Overzicht documentatie<a class="self-link" aria-label="§" href="#overzicht-documentatie"></a></h3><section id="algemene-documentatie"><h4 id="x3-2-1-algemene-documentatie"><bdi class="secno">3.2.1 </bdi>Algemene documentatie<a class="self-link" aria-label="§" href="#algemene-documentatie"></a></h4><ul>
+<li><p><em>Wat is Digikoppeling?</em><br>  Inleidend document over Digikoppeling</p>
+</li>
+<li><p><em>DK Overzicht Actuele Documentatie en Compliance</em><br>  Totaal overzicht van de documentatie en toelichting op compliance aan de standaard;</p>
+</li>
+<li><p><em>DK Beheermodel en Releasebeleid</em></p>
+<p>  Governance van de Digikoppeling standaard;</p>
+</li>
+</ul></section><section id="technische-documentatie"><h4 id="x3-2-2-technische-documentatie"><bdi class="secno">3.2.2 </bdi>Technische documentatie<a class="self-link" aria-label="§" href="#technische-documentatie"></a></h4><p><em>Technische documentatie algemeen</em></p><ul>
+<li><p><em>DK Architectuur</em></p>
+<p>  Overzicht van de standaard, samenhang en architectuur. Dit document beschrijft op hoofdlijnen welke manier de standaard moet worden toegepast;</p>
+</li>
+<li><p>*DK Identificatie en Authenticatie<br>  *Uitgangspunten en principes voor identificatie- en authenticatieafspraken die gehanteerd worden tussen overheidsorganisaties bij gebruik van de Digikoppeling standaard;</p>
+</li>
+<li><p>*DK Beveiliging standaarden en voorschriften<br>  *Centraal document van beveiligingsvoorschriften en -standaarden die door de Digikoppeling Standaard verplicht worden gesteld;</p>
+</li>
+</ul><p><em>Technische documentatie koppelvlakken</em></p><ul>
+<li><p><em>DK Koppelvlakstandaard WUS</em><br>  Koppelvlakspecificatie voor het gebruik van WUS voor het doen van bevragingen conform Digikoppeling;</p>
+</li>
+<li><p><em>DK Koppelvlakstandaard EBMS2</em><br>  Koppelvlakspecificatie voor het gebruik van ebMS 2.0 voor het doen van meldingen conform Digikoppeling;</p>
+</li>
+<li><p><em>DK Koppelvlakstandaard Grote Berichten</em><br>  Koppelvlakspecificatie voor het uitwisselen van grote berichten conform Digikoppeling. Grote berichten zijn XML berichten of bijlagen die een bepaalde bestandsgrootte overschrijden;</p>
+</li>
+</ul><p><em>Ondersteunende Documentatie</em></p><ul>
+<li><p><em>DK Best Practices WUS</em><br>  Best Practices voor WUS implementatie;</p>
+</li>
+<li><p><em>DK Best Practices EBMS2</em><br>  Best Practices voor EBMS2 implementatie;</p>
+</li>
+<li><p><em>DK Best Practices Grote Berichten</em><br>  Best Practices voor Grote Berichten implementatie;</p>
+</li>
+<li><p><em>DK Gebruik en achtergrond certificaten</em><br>  Toelichting gebruik en achtergrond DK certificaten;</p>
+</li>
+</ul></section></section></section><section data-format="markdown" id="wat-zijn-de-huidige-versies-van-documenten"><h2 id="x4-wat-zijn-de-huidige-versies-van-documenten"><bdi class="secno">4. </bdi>Wat zijn de huidige versies van documenten?<a class="self-link" aria-label="§" href="#wat-zijn-de-huidige-versies-van-documenten"></a></h2><p>De onderstaande tabel geeft de huidige versies van de Digikoppeling documenten weer.</p><table class="dkkvs">
+<thead>
+<tr>
+<th>Document</th>
+<th>Versie</th>
+<th>Normatief</th>
+<th>Geldig vanaf</th>
+<th>Geldig  tot</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Wat is Digikoppeling</td>
+<td>1.1.1</td>
+<td></td>
+<td>23-07-2018</td>
+<td></td>
+</tr>
+<tr>
+<td>DK Beheermodel en releasebeleid</td>
+<td>1.5</td>
+<td></td>
+<td>19-10-2017</td>
+<td></td>
+</tr>
+<tr>
+<td>DK Architectuur</td>
+<td>1.5.1</td>
+<td>X</td>
+<td>23-07-2018</td>
+<td></td>
+</tr>
+<tr>
+<td>DK Koppelvlakstandaard WUS</td>
+<td>3.8</td>
+<td>X</td>
+<td>11-01-2021</td>
+<td></td>
+</tr>
+<tr>
+<td>DK Koppelvlakstandaard EBMS2</td>
+<td>3.3</td>
+<td>X</td>
+<td>16-05-2019</td>
+<td></td>
+</tr>
+<tr>
+<td>DK Koppelvlakstandaard Grote Berichten</td>
+<td>3.3</td>
+<td>X</td>
+<td>14-10-2020</td>
+<td></td>
+</tr>
+<tr>
+<td>DK Identificatie en Authenticatie</td>
+<td>1.4</td>
+<td>X</td>
+<td>19-10-2017</td>
+<td></td>
+</tr>
+<tr>
+<td>DK Beveiliging standaarden en voorschriften</td>
+<td>1.3</td>
+<td>X</td>
+<td>02-09-2020</td>
+<td></td>
+</tr>
+<tr>
+<td>DK Overzicht  Actuele Documentatie en Compliance</td>
+<td>1.7</td>
+<td>X</td>
+<td>11-01-2021</td>
+<td></td>
+</tr>
+<tr>
+<td>DK Best Practices WUS</td>
+<td>1.10</td>
+<td></td>
+<td>19-10-2017</td>
+<td></td>
+</tr>
+<tr>
+<td>DK Best Practices EBMS2</td>
+<td>3.2</td>
+<td></td>
+<td>16-05-2019</td>
+<td></td>
+</tr>
+<tr>
+<td>DK Best Practices Grote Berichten</td>
+<td>3.1</td>
+<td></td>
+<td>19-10-2017</td>
+<td></td>
+</tr>
+<tr>
+<td>DK Gebruik en achtergrond certificaten</td>
+<td>1.6</td>
+<td></td>
+<td>02-09-2020</td>
+<td></td>
+</tr>
+</tbody></table><p>Tabel 1: Digikoppeling document versies</p><p>Toelichting Normatief:  </p><p>In de kolom ‘Normatief’ wordt met ‘X’ aangegeven dat het document specifieke regels bevat waar men zich aan moet houden om te voldoen aan de Digikoppeling standaard (Zie ook H5 Wanneer ben ik Digikoppeling compliant).</p><p>De onderstaande tabel geeft de voorgaande versies van de Digikoppeling documenten weer.</p><table class="dkkvs">
+<thead>
+<tr>
+<th>Document</th>
+<th>Versie</th>
+<th>Normatief</th>
+<th>Geldig vanaf</th>
+<th>Geldig tot</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DK Koppelvlakstandaard ebMS2</td>
+<td>3.2</td>
+<td>x</td>
+<td>19-10-2017</td>
+<td>16-05-2019</td>
+</tr>
+<tr>
+<td>DK Best Practices ebMS2</td>
+<td>3.1</td>
+<td></td>
+<td>19-10-2017</td>
+<td>16-05-2019</td>
+</tr>
+<tr>
+<td>DK Koppelvlakstandaard WUS</td>
+<td>3.7</td>
+<td>X</td>
+<td>16-05-2019</td>
+<td>10-01-2021</td>
+</tr>
+<tr>
+<td>DK Koppelvlakstandaard WUS</td>
+<td>3.6</td>
+<td>X</td>
+<td>21-08-2018</td>
+<td>16-05-2019</td>
+</tr>
+<tr>
+<td>DK Koppelvlakstandaard WUS</td>
+<td>3.5</td>
+<td>X</td>
+<td>19-07-2018</td>
+<td>21-08-2018</td>
+</tr>
+<tr>
+<td>Wat is Digikoppeling</td>
+<td>1.1</td>
+<td></td>
+<td>19-10-2017</td>
+<td>23-07-2018</td>
+</tr>
+<tr>
+<td>DK Architectuur</td>
+<td>1.5</td>
+<td>X</td>
+<td>19-10-2017</td>
+<td>23-07-2018</td>
+</tr>
+<tr>
+<td>DK Koppel vlakstandaard Grote Berichten</td>
+<td>3.2</td>
+<td>X</td>
+<td>19-10-2017</td>
+<td>14-10-2020</td>
+</tr>
+<tr>
+<td>DK Beveiliging standaarden en voorschriften</td>
+<td>1.1</td>
+<td>X</td>
+<td>19-10-2017</td>
+<td>17-12-2019</td>
+</tr>
+<tr>
+<td>DK Beveiliging standaarden en voorschriften</td>
+<td>1.2</td>
+<td>X</td>
+<td>17-12-2019</td>
+<td>02-09-2020</td>
+</tr>
+<tr>
+<td>DK Gebruik en achtergrond certificaten</td>
+<td>1.5</td>
+<td></td>
+<td>19-10-2017</td>
+<td>02-09-2020</td>
+</tr>
+<tr>
+<td>DK Overzicht Actuele Documentatie en Compliance</td>
+<td>1.5</td>
+<td>X</td>
+<td>02-09-2020</td>
+<td>10-01-2021</td>
+</tr>
+<tr>
+<td>DK Overzicht Actuele Documentatie en Compliance</td>
+<td>1.4</td>
+<td>X</td>
+<td>17-12-2019</td>
+<td>02-09-2020</td>
+</tr>
+<tr>
+<td>DK Overzicht Actuele Documentatie en Compliance</td>
+<td>1.3</td>
+<td>X</td>
+<td>16-05-2019</td>
+<td>17-12-2019</td>
+</tr>
+<tr>
+<td>DK Overzicht Actuele Documentatie en Compliance</td>
+<td>1.2</td>
+<td>X</td>
+<td>30-07-2018</td>
+<td>16-05-2019</td>
+</tr>
+<tr>
+<td>DK Overzicht Actuele Documentatie en Compliance</td>
+<td>1.1</td>
+<td>X</td>
+<td>23-07-2018</td>
+<td>30-07-2018</td>
+</tr>
+<tr>
+<td>DK Overzicht Actuele Documentatie en Compliance</td>
+<td>1.0</td>
+<td>X</td>
+<td>19-07-2018</td>
+<td>23-07-2018</td>
+</tr>
+</tbody></table><p>Tabel 2: Vorige versies Digikoppeling documenten per koppelvlak</p></section><section data-format="markdown" id="wanneer-ben-ik-digikoppeling-compliant"><h2 id="x5-wanneer-ben-ik-digikoppeling-compliant"><bdi class="secno">5. </bdi>Wanneer ben ik Digikoppeling compliant?<a class="self-link" aria-label="§" href="#wanneer-ben-ik-digikoppeling-compliant"></a></h2><p>Voor de implementatie van een bepaald koppelvlak volgens de Digikoppeling standaard gebruikt u de algemene documenten van de standaard samen met de technische specificatie van het specifieke koppelvlak (bv WUS, EBMS2 of Grote Berichten).</p><section id="documenten-per-koppelvlak"><h3 id="x5-1-documenten-per-koppelvlak"><bdi class="secno">5.1 </bdi>Documenten per koppelvlak<a class="self-link" aria-label="§" href="#documenten-per-koppelvlak"></a></h3><p>De onderstaande tabel laat zien welke documenten van toepassing zijn voor de implementatie van een bepaald koppelvlak. De kolom Koppelvlak toont per koppelvlak WUS, EBMS2, Grote Berichten de bijbehorende documentatie.</p><table class="dkcomp dkkvs">
+    <thead>
+        <tr>
+            <th><strong>Digikoppeling Compliance</strong></th>
+            <th colspan="3" style="text-align: center;"><strong>Koppelvlak</strong></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Document</strong></td>
+            <td><strong>WUS</strong></td>
+            <td><strong>EBMS2</strong></td>
+            <td><strong>GB</strong></td>
+            <td><strong>Type</strong></td>
+            <td><strong>Normatief</strong></td>
+        </tr>
+        <tr>
+            <td class="normative">DK Beheermodel en Releasebeleid</td>
+            <td class="wus">X</td>
+            <td class="ebms">X</td>
+            <td class="gb">X</td>
+            <td class="normative">Standaard</td>
+            <td class="normative"></td>
+        </tr>
+        <tr>
+            <td class="normative">DK Overzicht Actuele Documentatie en Compliance</td>
+            <td class="wus">X</td>
+            <td class="ebms">X</td>
+            <td class="gb">X</td>
+            <td class="normative">Standaard</td>
+            <td class="normative"></td>
+        </tr>
+        <tr>
+            <td class="normative">DK Architectuur</td>
+            <td class="wus">X</td>
+            <td class="ebms">X</td>
+            <td class="gb">X</td>
+            <td class="normative">Standaard</td>
+            <td class="normative">X</td>
+        </tr>
+        <tr>
+            <td class="normative">DK Koppelvlakstandaard WUS</td>
+            <td class="wus">X</td>
+            <td class="ebms"></td>
+            <td class="gb">O<sup>1</sup></td>
+            <td class="normative">Standaard</td>
+            <td class="normative">X</td>
+        </tr>
+        <tr>
+            <td class="normative">DK Koppelvlakstandaard EBMS2</td>
+            <td class="wus"></td>
+            <td class="ebms">X</td>
+            <td class="gb">O<sup>1</sup></td>
+            <td class="normative">Standaard</td>
+            <td class="normative">X</td>
+        </tr>
+        <tr>
+            <td class="normative">DK Koppelvlakstandaard Grote Berichten</td>
+            <td class="wus">O<sup>1</sup></td>
+            <td class="ebms">O<sup>1</sup></td>
+            <td class="gb">X</td>
+            <td class="normative">Standaard</td>
+            <td class="normative">X</td>
+        </tr>
+        <tr>
+            <td class="normative">DK Identificatie en Authenticatie</td>
+            <td class="wus">X</td>
+            <td class="ebms">X</td>
+            <td class="gb">X</td>
+            <td class="normative">Standaard</td>
+            <td class="normative">X</td>
+        </tr>
+        <tr>
+            <td class="normative">DK Beveiliging standaarden en voorschriften</td>
+            <td class="wus">X</td>
+            <td class="ebms">X</td>
+            <td class="gb">X</td>
+            <td class="normative">Standaard</td>
+            <td class="normative">X</td>
+        </tr>
+        <tr>
+            <td class="informative">DK Best Practices WUS</td>
+            <td class="wus">X</td>
+            <td class="ebms"></td>
+            <td class="gb"></td>
+            <td class="informative">Ondersteuning Standaard</td>
+            <td class="informative"></td>
+        </tr>
+        <tr>
+            <td class="informative">DK Best Practices EBMS</td>
+            <td class="wus"></td>
+            <td class="ebms">X</td>
+            <td class="gb"></td>
+            <td class="informative">Ondersteuning Standaard</td>
+            <td class="informative"></td>
+        </tr>
+        <tr>
+            <td class="informative">DK Best Practices Grote Berichten</td>
+            <td class="wus"></td>
+            <td class="ebms"></td>
+            <td class="gb">X</td>
+            <td class="informative">Ondersteuning Standaard</td>
+            <td class="informative"></td>
+        </tr>
+        <tr>
+            <td class="informative">DK Gebruik en achtergrond certificaten</td>
+            <td class="wus">X</td>
+            <td class="ebms">X</td>
+            <td class="gb">X</td>
+            <td class="informative">Ondersteuning Standaard</td>
+            <td class="informative"></td>
+        </tr>
+    </tbody>
+</table><p><sup>1</sup> O=gebruik van WUS óf ebMS2. Binnen de Grote Berichten standaard wordt eerst een metadatabericht gestuurd om een aan te kondigen dat een bestand klaar staat om te downloaden. Voor dit metadatabericht dient hetzij WUS, hetzij ebMS2 gebruikt te worden.</p><p>Tabel 3: Digikoppeling documentatie per koppelvlak</p></section><section id="toelichting-compliance"><h3 id="x5-2-toelichting-compliance"><bdi class="secno">5.2 </bdi>Toelichting compliance<a class="self-link" aria-label="§" href="#toelichting-compliance"></a></h3><p>De tabel in de voorgaande paragraaf geeft aan welke combinatie van documenten tezamen een complete specificatie vormt voor Digikoppeling op basis van WUS, EBMS2 of Grote berichten. Een koppelvlak implementatie voldoet aan de digikoppeling standaard als deze conform de principes, afspraken en gestelde eisen uit de normatieve documenten is uitgewerkt. Om de compliance van software in de een praktijksituatie te testen is de Digikoppeling Compliancy Voorziening ontwikkeld. Deze voorziening is onderdeel van het Digikoppeling Portaal en beschikbaar op &lt;https: portaal.digikoppeling.nl=""&gt;.</p><p>De Digikoppeling Compliancy Voorziening moet gezien worden als een hulpmiddel. Bij afwijking tussen de documentatie en de Compliance Voorziening zijn de eisen in de documentatie leidend bij het beoordelen of software de Digikoppeling standaard correct implementeert.
+</p></section></section>
+  
+  <section id="conformance"><h2 id="x6-conformiteit"><bdi class="secno">6. </bdi>Conformiteit<a class="self-link" aria-label="§" href="#conformance"></a></h2><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p>
+    
+  </section>
+
+  <section id="tof">
+    
+  <h2 id="x7-lijst-met-figuren"><bdi class="secno">7. </bdi>Lijst met figuren<a class="self-link" aria-label="§" href="#tof"></a></h2><ul class="tof">
+        <li class="tofline">
+    <a class="tocxref" href="#onderdelen_dk_specificatie">Figuur <bdi class="figno">1</bdi> <span class="fig-title">Onderdelen Digikoppeling specificatie</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#DK_Specificatie_structuur">Figuur <bdi class="figno">2</bdi> <span class="fig-title">Opbouw documentatie Digikoppeling</span></a>
+  </li>
+      </ul></section>
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+
+
+<p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(dfnPanel);
+} else {
+  dfnPanel();
+}
+
+function dfnPanel() {
+  /** @type {HTMLElement} */
+  let panel;
+  document.body.addEventListener("click", event => {
+    if (!(event.target instanceof HTMLElement)) return;
+
+    /** @type {HTMLElement} */
+    const el = event.target;
+
+    const action = deriveAction(el);
+    switch (action) {
+      case "show": {
+        if (panel) hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = el.closest("dfn, .index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        displayPanel(dfn, panel, { x: event.clientX, y: event.clientY });
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        break;
+      }
+    }
+  });
+}
+
+/** @param {HTMLElement} clickTarget */
+function deriveAction(clickTarget) {
+  const hitALink = !!clickTarget.closest("a");
+  if (clickTarget.closest("dfn, .index-term")) {
+    return hitALink ? null : "show";
+  }
+  if (clickTarget.closest(".dfn-panel")) {
+    if (hitALink) {
+      const clickedSelfLink = clickTarget.classList.contains("self-link");
+      return clickedSelfLink ? "hide" : "dock";
+    }
+    const panel = clickTarget.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : null;
+  }
+  if (document.querySelector(".dfn-panel:not([hidden])")) {
+    return "hide";
+  }
+  return null;
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script></body></html>

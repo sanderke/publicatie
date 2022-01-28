@@ -1,0 +1,1481 @@
+<!DOCTYPE html><html lang="nl"><head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta charset="utf-8">
+<meta name="generator" content="ReSpec 28.1.0 Logius profile 20220106">
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font:small Helvetica Neue,sans-serif,Droid Sans Fallback;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;margin-top:.25em}
+.dfn-panel ul a[href]{color:#333}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a[href]:hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
+  
+  
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+  
+  
+<title>Digikoppeling Koppelvlakstandaard Grote Berichten 3.8</title>
+  
+  
+<link rel="shortcut icon" type="image/x-icon" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/logius.ico">
+  
+  
+<link rel="stylesheet" type="text/css" href="./media/style.css">
+
+  
+  
+
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+:is(h1,h2,h3,h4,h5,h6,a) abbr{border:none}
+dfn{font-weight:700}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:normal}
+code{color:#c63501}
+th code{color:inherit}
+a[href].orcid{padding-left:4px;padding-right:4px}
+a[href].orcid>svg{margin-bottom:-2px}
+.toc a,.tof a{text-decoration:none}
+a .figno,a .secno{color:#000}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
+.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
+.simple th a{color:#fff;padding:3px 5px;text-align:left}
+.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
+.simple td{padding:3px 10px;border-top:1px solid #ddd}
+.simple tr:nth-child(even){background:#f0f6ff}
+.section dd>p:first-child{margin-top:0}
+.section dd>p:last-child{margin-bottom:0}
+.section dd{margin-bottom:1em}
+.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+a[href].self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+h2,h3,h4,h5,h6{position:relative}
+aside.example .marker>a.self-link{color:inherit}
+:is(h2,h3,h4,h5,h6)>a.self-link{border:none;color:inherit;font-size:83%;height:2em;left:-1.6em;opacity:.5;position:absolute;text-align:center;text-decoration:none;top:0;transition:opacity .2s;width:2em}
+:is(h2,h3,h4,h5,h6)>a.self-link::before{content:"§";display:block}
+@media (max-width:767px){
+dd{margin-left:0}
+:is(h2,h3,h4,h5,h6)>a.self-link{left:auto;top:auto}
+}
+@media print{
+.removeOnSave{display:none}
+}
+</style>
+<meta name="description" content="Dit document beschrijft de functionele specificaties voor de Digikoppeling
+koppelvlakstandaard Grote Berichten, onderdeel van Digikoppeling.">
+<style>
+.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
+.hljs-comment,.hljs-quote{color:#717277;font-style:italic}
+.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4}
+.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;font-weight:700}
+.hljs-literal{color:#0b76c5}
+.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c}
+.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01}
+.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801}
+.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3}
+.hljs-emphasis{font-style:italic}
+.hljs-strong{font-weight:700}
+.hljs-link{text-decoration:underline}
+</style>
+<style>
+var{position:relative;cursor:pointer}
+var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
+var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
+var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
+var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
+</style>
+<script id="initialUserConfig" type="application/json">{
+  "specStatus": "DEF",
+  "specType": "ST",
+  "pubDomain": "dk",
+  "shortName": "gb",
+  "publishDate": "2020-09-09",
+  "publishVersion": "3.8",
+  "license": "cc-by-nd",
+  "doJsonLd": true,
+  "editors": [
+    {
+      "name": "Peter Haasnoot",
+      "url": "https://logius.nl/standaarden"
+    },
+    {
+      "name": "Pieter Hering",
+      "mailto": "api@digikoppeling.nl",
+      "company": "Logius",
+      "companyURL": "https://logius.nl/standaarden",
+      "url": "mailto:api@digikoppeling.nl"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Pieter Hering",
+      "url": "https://logius.nl/standaarden"
+    }
+  ],
+  "github": "https://github.com/Logius-standaarden/Digikoppeling-Koppelvlakstandaard-GB",
+  "addSectionLinks": true,
+  "a11y": false,
+  "alternateFormats": [
+    {
+      "label": "pdf",
+      "uri": "Digikoppeling-Koppelvlakstandaard-GB.pdf"
+    }
+  ],
+  "pubSubDomain": "gb",
+  "nl_emailComments": "digikoppeling@logius.nl",
+  "nl_addReleaseTagTitle": true,
+  "nl_markdownSplitH1sections": true,
+  "nl_github": {
+    "revision": "https://github.com/Logius-standaarden/Digikoppeling-Koppelvlakstandaard-GB/commits/"
+  },
+  "nl_organisationName": "Logius",
+  "nl_organisationPrefix": "LS-",
+  "nl_markdownTableClass": "dkkvs",
+  "nl_markdownEmbedImageInFigure": true,
+  "nl_organisationStylesURL": "https://publicatie.centrumvoorstandaarden.nl/respec/style/",
+  "nl_organisationPublishURL": "https://publicatie.centrumvoorstandaarden.nl/",
+  "nl_logo": {
+    "src": "https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg",
+    "alt": "Logius",
+    "id": "Logius",
+    "height": 77,
+    "width": 44,
+    "url": "https://www.logius.nl/standaarden"
+  },
+  "localBiblio": {
+    "NEN3610": {
+      "href": "https://www.nen.nl/nen-3610-2011-a1-2016-nl-217738",
+      "title": "Basismodel Geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten",
+      "authors": [
+        ""
+      ],
+      "date": "Maart 2011",
+      "publisher": "Nederlands Normalisatie-instituut"
+    },
+    "Digikoppeling Architectuur": {
+      "href": "https://centrumvoorstandaarden.github.io/Architectuur2.0-metRestfulAPI/static.html",
+      "title": "Digikoppeling Architectuur",
+      "authors": [
+        "Logius Centrum voor standaarden"
+      ],
+      "date": "december 2020",
+      "publisher": "Logius"
+    },
+    "Digikoppeling Beveiligingsdocument": {
+      "href": "https://www.logius.nl/sites/default/files/bestanden/website/Digikoppeling_Beveiligingsstandaarden_en_voorschriften_v1.3.pdf",
+      "title": "Digikoppeling Beveiligingsstandaarden en voorschriften",
+      "date": "2020",
+      "publisher": "Logius",
+      "id": "digikoppeling beveiligingsdocument"
+    },
+    "Digikoppeling-Cert": {
+      "href": "http://www.logius.nl/digikoppeling",
+      "title": "Gebruik en achtergrond van Digikoppeling certificaten",
+      "publisher": "Logius",
+      "id": "digikoppeling-cert"
+    },
+    "PKI Policy": {
+      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen",
+      "title": "Programma van Eisen (PKIoverheid)",
+      "publisher": "Logius",
+      "id": "pki policy"
+    },
+    "PKI CA": {
+      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/toegetreden-vertrouwensdienstverleners",
+      "title": "Toegetreden vertrouwensdienstverleners",
+      "publisher": "Logius",
+      "id": "pki ca"
+    },
+    "PKIoverheid Certificaten": {
+      "href": "https://cert.pkioverheid.nl/",
+      "title": "Pkioverheid certificaten",
+      "publisher": "Logius",
+      "id": "pkioverheid certificaten"
+    },
+    "Logius website": {
+      "href": "https://logius.nl/digikoppeling",
+      "title": "Logius Digikoppeling",
+      "publisher": "Logius"
+    },
+    "Digikoppeling Compliance Voorziening": {
+      "href": "https://portaal.digikoppeling.nl",
+      "title": "Digikoppeling Compliance Voorziening",
+      "publisher": "Logius"
+    }
+  },
+  "publishISODate": "2020-09-09T00:00:00.000Z",
+  "generatedSubtitle": "Vastgestelde versie 09 september 2020"
+}</script>
+<link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/LS-DEF.css"></head>
+
+<body class="h-entry toc-inline"><div class="head">
+    <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg" width="44">
+  </a> <h1 id="title" class="title">Digikoppeling Koppelvlakstandaard Grote Berichten 3.8</h1>
+    
+    <h2>
+      Logius Standaard<br>
+      Vastgestelde versie
+      <time class="dt-published" datetime="2020-09-09">09 september 2020</time>
+    </h2>
+	<a lang="nl" href="https://publicatie.centrumvoorstandaarden.nl/">Overzicht standaarden</a>
+    <dl>
+      <dt>Deze versie:</dt><dd class="status">
+              <a class="u-url status" href="https://publicatie.centrumvoorstandaarden.nl/dk/gb/3.8">https://publicatie.centrumvoorstandaarden.nl/dk/gb/3.8</a>
+            </dd><dt>Laatst gepubliceerde versie:</dt><dd>
+              <a href="https://publicatie.centrumvoorstandaarden.nl/dk/gb/">https://publicatie.centrumvoorstandaarden.nl/dk/gb/</a>
+            </dd>
+      <dt>Laatste werkversie:</dt><dd><a href="https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-GB/">https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-GB/</a></dd>
+      
+      
+      
+      
+      
+      <dt>Redacteurs:</dt>
+      <dd class="editor p-author h-card vcard">
+    <a class="u-url url p-name fn" href="https://logius.nl/standaarden">Peter Haasnoot</a>
+  </dd><dd class="editor p-author h-card vcard">
+    <a class="ed_mailto u-email email p-name" href="mailto:api@digikoppeling.nl">Pieter Hering</a> (<a class="p-org org h-org" href="https://logius.nl/standaarden">Logius</a>)
+  </dd>
+      
+      <dt>Auteur:</dt><dd class="editor p-author h-card vcard">
+    <a class="u-url url p-name fn" href="https://logius.nl/standaarden">Pieter Hering</a>
+  </dd>
+      <dt>Doe mee:</dt><dd>
+    <a href="https://github.com/Logius-standaarden/Digikoppeling-Koppelvlakstandaard-GB/">GitHub Logius-standaarden/Digikoppeling-Koppelvlakstandaard-GB</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/Digikoppeling-Koppelvlakstandaard-GB/issues/">Dien een melding in</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/Digikoppeling-Koppelvlakstandaard-GB/commits/">Revisiehistorie</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/Digikoppeling-Koppelvlakstandaard-GB/pulls/">Pull requests</a>
+  </dd>
+    </dl>
+    
+    
+    <p lang="en">
+          This document is also available in this non-normative format:
+          <a rel="alternate" href="Digikoppeling-Koppelvlakstandaard-GB.pdf">pdf</a>
+        </p>
+    <p class="copyright" lang="en">
+          This document is licensed under a
+          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" class="subfoot">Creative Commons Attribution 4.0 License</a>.
+        </p>
+    <hr title="Separator for header">
+  </div>
+  <section id="abstract" class="introductory"><h2 id="samenvatting">Samenvatting<a class="self-link" href="#abstract" aria-label="Permalink for Section"></a></h2><p>Dit document beschrijft de functionele specificaties voor de Digikoppeling
+koppelvlakstandaard Grote Berichten, onderdeel van Digikoppeling.</p>
+
+<p>Het document is bestemd voor architecten en ontwikkelaars die op basis van
+Digikoppeling Grote Berichten gegevens willen uitwisselen. Zie onderstaande
+tabel bij welke taken dit document ondersteunt. Alle webservices die op Grote
+Berichten gebaseerd zijn, moeten conformeren aan de koppelvlakstandaard Grote
+Berichten. Deze wordt tot in detail in dit document gespecificeerd. Het doel van
+dit document is ontwikkelaars te informeren wat deze koppelvlakstandaard nu
+precies inhoudt en waar zij zich aan moeten conformeren. Het gaat hierbij om
+zowel (service) aanbieders als (service) afnemers.</p></section>
+  <section id="sotd" class="introductory"><h2 id="status-van-dit-document">Status van dit document<a class="self-link" href="#sotd" aria-label="Permalink for Section"></a></h2>Dit is de definitieve versie van de  standaard. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.<p>Het OBDO heeft op advies van het Forum Standaardisatie deze versie vastgesteld.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#doel-en-doelgroep"><bdi class="secno">1.1 </bdi>Doel en doelgroep</a></li><li class="tocline"><a class="tocxref" href="#opbouw-digikoppeling-documentatie"><bdi class="secno">1.2 </bdi>Opbouw Digikoppeling documentatie</a></li><li class="tocline"><a class="tocxref" href="#doel-en-scope-van-digikoppeling"><bdi class="secno">1.3 </bdi>Doel en scope van Digikoppeling</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#leidend-principe"><bdi class="secno">1.3.1 </bdi>Leidend principe</a></li></ol></li><li class="tocline"><a class="tocxref" href="#koppelvlak-koppelvlakstandaard"><bdi class="secno">1.4 </bdi>Koppelvlak &amp; koppelvlakstandaard</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#specificatie-van-de-koppelvlakstandaard"><bdi class="secno">1.4.1 </bdi>Specificatie van de koppelvlakstandaard</a></li></ol></li><li class="tocline"><a class="tocxref" href="#opbouw-van-dit-document"><bdi class="secno">1.5 </bdi>Opbouw van dit document</a></li></ol></li><li class="tocline"><a class="tocxref" href="#koppelvlakstandaard-grote-berichten"><bdi class="secno">2. </bdi>Koppelvlakstandaard Grote Berichten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding-0"><bdi class="secno">2.1 </bdi>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#nieuw-in-deze-versie"><bdi class="secno">2.2 </bdi>Nieuw in deze versie</a></li><li class="tocline"><a class="tocxref" href="#verzenden-van-grote-berichten"><bdi class="secno">2.3 </bdi>Verzenden van Grote Berichten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#pull-principe"><bdi class="secno">2.3.1 </bdi>Pull Principe</a></li><li class="tocline"><a class="tocxref" href="#push-principe"><bdi class="secno">2.3.2 </bdi>Push Principe</a></li></ol></li><li class="tocline"><a class="tocxref" href="#gebruiksvoorwaarden"><bdi class="secno">2.4 </bdi>Gebruiksvoorwaarden</a></li></ol></li><li class="tocline"><a class="tocxref" href="#metadata"><bdi class="secno">3. </bdi>Metadata</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#functionele-beschrijving"><bdi class="secno">3.1 </bdi>Functionele beschrijving</a></li><li class="tocline"><a class="tocxref" href="#opbouw-en-structuur-xml-schema-definities"><bdi class="secno">3.2 </bdi>Opbouw en structuur XML Schema definities</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#pull-schema"><bdi class="secno">3.2.1 </bdi>PULL Schema</a></li><li class="tocline"><a class="tocxref" href="#push-schema"><bdi class="secno">3.2.2 </bdi>PUSH Schema</a></li><li class="tocline"><a class="tocxref" href="#push-response-bericht-statuscodes"><bdi class="secno">3.2.3 </bdi>PUSH response bericht statuscodes</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#bestandsoverdracht"><bdi class="secno">4. </bdi>Bestandsoverdracht</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#functionaliteit"><bdi class="secno">4.1 </bdi>Functionaliteit</a></li><li class="tocline"><a class="tocxref" href="#beveiliging"><bdi class="secno">4.2 </bdi>Beveiliging</a></li><li class="tocline"><a class="tocxref" href="#betrouwbaarheid"><bdi class="secno">4.3 </bdi>Betrouwbaarheid</a></li></ol></li><li class="tocline"><a class="tocxref" href="#grote-berichten-bijlagen"><bdi class="secno">5. </bdi>Grote berichten bijlagen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#xsd-voor-dk-gb-pull-principe"><bdi class="secno">5.1 </bdi>XSD voor DK GB PULL principe</a></li><li class="tocline"><a class="tocxref" href="#xml-voorbeeld-pull-bericht"><bdi class="secno">5.2 </bdi>XML Voorbeeld PULL Bericht</a></li><li class="tocline"><a class="tocxref" href="#xsd-voor-dk-gb-push-principe"><bdi class="secno">5.3 </bdi>XSD voor DK GB PUSH principe</a></li><li class="tocline"><a class="tocxref" href="#xml-voorbeeld-push-bericht"><bdi class="secno">5.4 </bdi>XML Voorbeeld PUSH Bericht</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#data-reference-request-bericht-1-push"><bdi class="secno">5.4.1 </bdi>Data-reference-request bericht 1 (PUSH)</a></li><li class="tocline"><a class="tocxref" href="#data-reference-response-bericht-1-push"><bdi class="secno">5.4.2 </bdi>Data-reference-response bericht 1 (PUSH)</a></li><li class="tocline"><a class="tocxref" href="#data-reference-request-bericht-2-push"><bdi class="secno">5.4.3 </bdi>Data-reference-request bericht 2 (PUSH)</a></li><li class="tocline"><a class="tocxref" href="#data-reference-response-bericht-2-push"><bdi class="secno">5.4.4 </bdi>Data-reference-response bericht 2 (PUSH)</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">6. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">7. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">A.1 </bdi>Normatieve referenties</a></li><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">A.2 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
+  <section class="introductory" data-format="markdown"><h1>Documentbeheer</h1><table class="dkkvs">
+<thead>
+<tr>
+<th>Datum</th>
+<th>Versie</th>
+<th>Auteur</th>
+<th>Opmerkingen</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>04/04/2016</td>
+<td>3.4</td>
+<td>Logius</td>
+<td>Referenties naar Beveiligingsvoorschriften aangepast naar nieuwe Document Digikoppeling beveiligingsvoorschrift type wsa:TO gecorrigeerd Bijlagen met voorbeelden verwijderd</td>
+</tr>
+<tr>
+<td>01/10/2017</td>
+<td>3.5</td>
+<td>Logius</td>
+<td>Verwijzingen naar WS-RM verwijderd</td>
+</tr>
+<tr>
+<td>23/08/2018</td>
+<td>3.6</td>
+<td>Logius</td>
+<td>RFC 2018-01 OIN in WSA:to/from</td>
+</tr>
+<tr>
+<td>23/10/2018</td>
+<td>3.7</td>
+<td>Logius</td>
+<td>Verscherpingen n.a.v. onderzoek interop problemen.</td>
+</tr>
+<tr>
+<td>06/10/2020</td>
+<td>3.8</td>
+<td>Logius</td>
+<td>RFC 2020-2, RFC 2020-3</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table></section>
+  <section class="introductory" data-format="markdown"><h1>Colofon</h1><table class="dkkvs">
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Logius Servicecentrum:</td>
+<td>Postbus 96810 2509<br>JE Den Haag<br>t. 0900 555 4555 (10 ct p/m)<br>e.<a href="mailto:servicecentrum@logius.nl">servicecentrum@logius.nl</a></td>
+</tr>
+</tbody></table></section>
+  
+<section data-format="markdown" id="inleiding"><h2 id="x1-inleiding"><bdi class="secno">1. </bdi>Inleiding<a class="self-link" href="#inleiding" aria-label="Permalink for Section 1."></a></h2><section id="doel-en-doelgroep"><h3 id="x1-1-doel-en-doelgroep"><bdi class="secno">1.1 </bdi>Doel en doelgroep<a class="self-link" href="#doel-en-doelgroep" aria-label="Permalink for Section 1.1"></a></h3><p>Dit document beschrijft de functionele specificaties voor de Digikoppeling
+koppelvlakstandaard Grote Berichten, onderdeel van Digikoppeling.</p><p>Het document is bestemd voor architecten en ontwikkelaars die op basis van
+Digikoppeling Grote Berichten gegevens willen uitwisselen. Zie onderstaande
+tabel bij welke taken dit document ondersteunt. Alle webservices die op Grote
+Berichten gebaseerd zijn, moeten conformeren aan de koppelvlakstandaard Grote
+Berichten. Deze wordt tot in detail in dit document gespecificeerd. Het doel van
+dit document is ontwikkelaars te informeren wat deze koppelvlakstandaard nu
+precies inhoudt en waar zij zich aan moeten conformeren. Het gaat hierbij om
+zowel (service) aanbieders als (service) afnemers.</p><table class="dkkvs">
+<thead>
+<tr>
+<th>Afkorting</th>
+<th>Rol</th>
+<th>Taak</th>
+<th>Doelgroep?</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[MT]</td>
+<td>Management</td>
+<td>Bevoegdheid om namens organisatie (strategische) besluiten te nemen.</td>
+<td><strong>Nee</strong></td>
+</tr>
+<tr>
+<td>[PL]</td>
+<td>Projectleiding</td>
+<td>Verzorgen van de aansturing van projecten.</td>
+<td><strong>Nee</strong></td>
+</tr>
+<tr>
+<td>[A&amp;D]</td>
+<td>Analyseren &amp; ontwerpen (design)</td>
+<td>Analyseren en ontwerpen van oplossings-richtingen. Het verbinden van Business aan de IT.</td>
+<td><strong>Ja</strong></td>
+</tr>
+<tr>
+<td>[OT&amp;B]</td>
+<td>Ontwikkelen, testen en beheer</td>
+<td>Ontwikkelt, bouwt en configureert de techniek conform specificaties. Zorgen voor beheer na ingebruikname.</td>
+<td><strong>Ja</strong></td>
+</tr>
+</tbody></table></section><section id="opbouw-digikoppeling-documentatie"><h3 id="x1-2-opbouw-digikoppeling-documentatie"><bdi class="secno">1.2 </bdi>Opbouw Digikoppeling documentatie<a class="self-link" href="#opbouw-digikoppeling-documentatie" aria-label="Permalink for Section 1.2"></a></h3><p>Digikoppeling is beschreven in een set van documenten. Deze set is als volgt
+opgebouwd:</p><p><figure id="fig-opbouw-documentatie-digikoppeling"><img src="media/DK_Specificatie_structuur.svg" alt="Overzicht van de onderdelen van de Digikoppeling Standaard, de standaard is onderverdeeld in normatieve en ondersteunende onderdelen" title="Opbouw documentatie Digikoppeling"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">Opbouw documentatie Digikoppeling</span></figcaption></figure></p><details>
+    <summary> Tekstalternatief </summary>
+<ul>
+    <li>Digikoppeling Standaard
+        <ul>
+            <li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/beheer/">DK Beheermodel en releasebeleid</a>* </li>
+            <li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/actueel/">DK Overzicht Actuele Documentatie en Compliance</a>* </li>
+            <li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/architectuur">DK Architectuur</a>*
+                <ul>
+                    <li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/idauth/">DK Identificatie en Authenticatie</a>*
+                        <ul>
+                            <li><i> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/gbachtcert/">Digikoppeling Gebruik en Achtergronden Certificaten</a></i>† </li>
+                        </ul>
+                    </li>
+                    <li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/beveilig/">DK Beveiligingsstandaarden en voorschriften</a>* </li>
+                    <li>Koppelvlakstandaarden
+                        <ul>
+                            <li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/wus/">DK Koppelvlakstandaard WUS</a>*
+                                <ul>
+                                    <li><i><a href="https://publicatie.centrumvoorstandaarden.nl/dk/bpwus">Best-practice WUS</a></i>† </li>
+                                </ul>
+                            </li>
+                            <li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/ebms/">DK Koppelvlakstandaard ebMS2</a>*
+                                <ul>
+                                    <li> <i><a href="https://publicatie.centrumvoorstandaarden.nl/dk/bpebms">Best-practice ebMS2</a></i>† </li>
+                                </ul>
+                            </li>
+                            <li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/gb/">DK Koppelvlakstandaard Grote Berichten</a>*
+                                <ul>
+                                    <li> <i><a href="https://publicatie.centrumvoorstandaarden.nl/dk/bpgb">Best-practice Grote Berichten</a></i>†</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+    <i><a href="https://publicatie.centrumvoorstandaarden.nl/dk/watisdk/">Wat is Digikoppeling</a></i>†
+  </li>
+        </ul>
+    </li>
+</ul>
+<p>* Normatief document</p>
+<p>† Ondersteunend document</p>
+</details></section><section id="doel-en-scope-van-digikoppeling"><h3 id="x1-3-doel-en-scope-van-digikoppeling"><bdi class="secno">1.3 </bdi>Doel en scope van Digikoppeling<a class="self-link" href="#doel-en-scope-van-digikoppeling" aria-label="Permalink for Section 1.3"></a></h3><p>Digikoppeling biedt de mogelijkheid om op een gestandaardiseerde wijze berichten
+uit te wisselen tussen partijen. De uitwisseling tussen partijen wordt in drie
+lagen opgedeeld:</p><ul>
+<li><p>Inhoud: Op deze laag worden de afspraken gemaakt de inhoud van het uit te
+  wisselen bericht, dus de structuur, semantiek en waardebereiken.
+  Digikoppeling houdt zich <strong>niet</strong> met de inhoud bezig, ‘Digikoppeling heeft
+  geen boodschap aan de boodschap’.</p>
+</li>
+<li><p>Logistiek: Op deze laag bevinden zich de afspraken betreffende</p>
+<p>  transportprotocollen (HTTP), messaging (SOAP), beveiliging</p>
+<p>  (authenticatie en encryptie)en betrouwbaarheid. <em>Dit is de</em></p>
+<p>  <em>Digikoppeling-laag.</em></p>
+</li>
+<li><p>Transport: deze laag verzorgt het daadwerkelijke transport van</p>
+<p>  het bericht.</p>
+</li>
+</ul><p>Digikoppeling richt zich dus uitsluitend op de logistieke laag. Deze afspraken
+komen in de koppelvlakstandaards en andere voorzieningen. In het geval van WUS
+en ebMS2 komt de logistieke laag overeen met de ‘header’ van het bericht en gaat
+de ‘body’ uitsluitend over de inhoud. In het geval van Digikoppeling grote
+berichten is een deel van de logistieke informatie opgenomen in de ‘body’ van
+het bericht in de vorm van gestandaardiseerde meta-data.</p><section id="leidend-principe"><h4 id="x1-3-1-leidend-principe"><bdi class="secno">1.3.1 </bdi>Leidend principe<a class="self-link" href="#leidend-principe" aria-label="Permalink for Section 1.3.1"></a></h4><p>De koppelvlakstandaarden dienen te leiden tot een maximum aan interoperabiliteit
+met een minimum aan benodigde ontwikkelinspanning.</p><p>Daarom wordt gekozen voor bewezen interoperabele internationale standaarden.</p><p>Digikoppeling maakt berichtenuitwisseling mogelijk op basis van de ebXML/ebMS2
+en WUS families van standaarden inclusief de daarbij behorende verwante
+standaarden.</p><p>Aan te sluiten overheidsorganisaties hebben aangegeven op een uniforme manier
+(één stekker) te willen aansluiten aan Digikoppeling. Organisaties die
+beschikken over eigen middleware (ESB, Broker, Gateway) kunnen de aansluiting
+aan Digikoppeling, de adapters, in het algemeen realiseren via voorzieningen in
+die middleware.</p><p>De architectuur voor toepassing van Digikoppeling standaard is beschreven in het
+document “Digikoppeling_Architectuur”.</p></section></section><section id="koppelvlak-koppelvlakstandaard"><h3 id="x1-4-koppelvlak-koppelvlakstandaard"><bdi class="secno">1.4 </bdi>Koppelvlak &amp; koppelvlakstandaard<a class="self-link" href="#koppelvlak-koppelvlakstandaard" aria-label="Permalink for Section 1.4"></a></h3><p>Een koppelvlak is een interface die volgens standaarden de gegevensuitwisseling
+verzorgt. Het werken met vaste standaarden is essentieel voor een koppelvlak.
+Hierdoor wordt implementatie vergemakkelijkt. Ook wordt het mogelijk diverse
+soorten berichten door te sturen met een grote mate van interoperabiliteit,
+omdat via de standaard afspraken over hun inhoud gemaakt is.</p><p>Een van de belangrijkste eisen die door de overheid gesteld worden bij de
+inrichting van generieke voorzieningen is dat er niet veel maatwerk ontwikkeld
+hoeft te worden, maar dat er van “off the shelf” commercieel of OPEN geleverde
+software gebruik gemaakt kan worden. Voor Digikoppeling, dus voor de logistieke
+laag, betreft dat het niet willen ontwikkelen van software voor de adapters. Dit
+doel kan bereikt (benaderd) worden doordat gekozen wordt voor internationale (de
+jure of de facto) vastgelegde standaards, die door “alle” leveranciers
+interoperabel zijn geïmplementeerd.</p><p>Een andere eis is dat met name afnemers gebruik kunnen maken van één “stekker”
+(één logistiek koppelpunt).</p><section id="specificatie-van-de-koppelvlakstandaard"><h4 id="x1-4-1-specificatie-van-de-koppelvlakstandaard"><bdi class="secno">1.4.1 </bdi>Specificatie van de koppelvlakstandaard<a class="self-link" href="#specificatie-van-de-koppelvlakstandaard" aria-label="Permalink for Section 1.4.1"></a></h4><p>De koppelvlakspecificatie beschrijft de eisen waar de adapters aan moeten
+voldoen om interoperabel met elkaar te kunnen communiceren.</p><p>De Digikoppeling Grote Berichten Standaard beschrijft dan ook niet de inhoud van
+het grote bericht. Wel richt de standaard zich op de beschrijving (metadata) van
+het grote bericht.</p></section></section><section id="opbouw-van-dit-document"><h3 id="x1-5-opbouw-van-dit-document"><bdi class="secno">1.5 </bdi>Opbouw van dit document<a class="self-link" href="#opbouw-van-dit-document" aria-label="Permalink for Section 1.5"></a></h3><p>Hoofdstuk 1 bevat een aantal algemene inleidende onderwerpen. Hoofdstuk 2 bevat
+de kern van de standaard met de algemene gebruiksvoorwaarden.</p><p>Hoofdstuk 3 gaat in op het gebruik van de metadata.</p><p>Hoofdstuk 4 gaat in op de wijze waarop grote bestanden uitgewisseld worden.</p><p>Hoofdstuk 5 bevat de referenties en bijlagen.</p><p>Begrippen en afkortingen worden toegelicht in het document
+“Digikoppeling_Architectuur”.</p><p>Dit document en andere documentatie is beschikbaar op
+<a href="http://www.logius.nl/digikoppeling">www.logius.nl/Digikoppeling</a></p></section></section>
+<section data-format="markdown" id="koppelvlakstandaard-grote-berichten"><h2 id="x2-koppelvlakstandaard-grote-berichten"><bdi class="secno">2. </bdi>Koppelvlakstandaard Grote Berichten<a class="self-link" href="#koppelvlakstandaard-grote-berichten" aria-label="Permalink for Section 2."></a></h2><section id="inleiding-0"><h3 id="x2-1-inleiding"><bdi class="secno">2.1 </bdi>Inleiding<a class="self-link" href="#inleiding-0" aria-label="Permalink for Section 2.1"></a></h3><p>De situatie kan zich voordoen dat een WUS en/of ebMS2 bericht een grootte krijgt
+die niet meer efficiënt door de WUS/ebMS2 adapters verwerkt kan worden. Ook kan
+het zich voordoen dat er behoefte bestaat aan het buiten de normale procesgang
+('out-of-band') uitwisselen van grote hoeveelheden informatie tussen systemen.
+In die gevallen zal dit “grote bericht” op een andere wijze verstuurd moeten
+worden: middels de Digikoppeling Koppelvlakstandaard Grote Berichten. De
+volgende aanpak wordt dan gehanteerd:</p><ul>
+<li><p>De verzender stelt een bestand samen uit (een deel van) de gegevens die
+  normaliter in het “grote bericht” verzonden zou worden. Het resultaat wordt
+  aangeduid met de term “groot bestand”. Merk op dat dit ook een “groot” xml
+  bestand kan zijn, een CAD bestand, een PDF document, een ZIP bestand, et
+  cetera.</p>
+</li>
+<li><p>De verzender stelt metadata samen over het grote bestand en deelt deze
+  metadata in een WUS- of ebMS2-bericht [in een zgn. stuurbericht].</p>
+</li>
+<li><p>Uitwisseling van het grote bestand vindt plaats via een PULL of een PUSH
+  principe.<br>  Bij Het PULL principe biedt de verzender het groot bestand aan via een Grote
+  Berichten File service aan de ontvanger.<br>  Bij het PUSH principe stuurt de verzender het groot bestand naar de Grote
+  Berichten File service van de ontvanger</p>
+</li>
+<li><p>De bestandsoverdracht is niet “betrouwbaar”; hiervoor dient de ontvanger
+  aanvullende maatregelen te implementeren (retry-mechanisme,
+  foutafhandeling). De Koppelvlakstandaard bevat hiervoor handvatten.
+  Toepassing van deze handvatten in concrete implementaties vallen buiten de
+  scope van het koppelvlak.</p>
+</li>
+</ul><p>Merk op dat het stuurbericht naast metadata ook voorzien kan zijn van
+inhoudelijke informatie die al nodig is bij de verwerking van het bericht.</p><p>Dit document beschrijft welke gegevens er in de metadata opgenomen moeten worden
+en hoe het HTTP 1.1 protocol gebruikt moet worden voor de overdracht van het
+grote bestand.</p></section><section id="nieuw-in-deze-versie"><h3 id="x2-2-nieuw-in-deze-versie"><bdi class="secno">2.2 </bdi>Nieuw in deze versie<a class="self-link" href="#nieuw-in-deze-versie" aria-label="Permalink for Section 2.2"></a></h3><p>In deze versie wordt de Digikoppeling Grote Berichten PUSH variant
+geïntroduceerd, naast de reeds bestaande PULL variant. We hebben ervoor gekozen
+de beschrijving van de PULL variant te integreren in de bestaande PUSH versie,
+omdat de voorwaarden en regels voor beide richtingen vrijwel identiek zijn.</p></section><section id="verzenden-van-grote-berichten"><h3 id="x2-3-verzenden-van-grote-berichten"><bdi class="secno">2.3 </bdi>Verzenden van Grote Berichten<a class="self-link" href="#verzenden-van-grote-berichten" aria-label="Permalink for Section 2.3"></a></h3><section id="pull-principe"><h4 id="x2-3-1-pull-principe"><bdi class="secno">2.3.1 </bdi>Pull Principe<a class="self-link" href="#pull-principe" aria-label="Permalink for Section 2.3.1"></a></h4><p>Het principe is dat de verzender het grote bestand aanbiedt via een Grote
+Berichten File Service en een bericht stuurt aan de ontvanger dat het bericht
+geplaatst is, de ontvanger kan het bestand vervolgens ophalen.</p><p><figure id="fig-uitwisseling-groot-bestand-via-grote-berichten-file-service-van-de-zender"><img src="media/UitwisselingGrootbestandviaGBfileservice_zender.png" alt="Uitwisseling groot bestand via Grote Berichten file service van de zender" title="Uitwisseling groot bestand via Grote Berichten file service van de zender"><figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title">Uitwisseling groot bestand via Grote Berichten file service van de zender</span></figcaption></figure></p><p>In bovenstaand figuur is dit grafisch weergegeven.</p><ul>
+<li><p>Stap 1: De verzender verstuurt het bericht met de meta-data van het bestand,
+bijvoorbeeld naam, locatie, grootte etc.</p>
+</li>
+<li><p>Stap 2: De ontvanger ontvangt het bericht met de meta-data, en download en
+verwerkt vervolgens het bestand (PULL).</p>
+</li>
+</ul><p>Opmerking<br>De verzender maakt hiervoor het te verzenden bestand gereed , eventueel wordt
+dit in meerdere delen gesplitst als dit wenselijk is.</p></section><section id="push-principe"><h4 id="x2-3-2-push-principe"><bdi class="secno">2.3.2 </bdi>Push Principe<a class="self-link" href="#push-principe" aria-label="Permalink for Section 2.3.2"></a></h4><p>Het principe is dat de verzender het grote bestand aanbiedt aan de Grote
+Berichten File Service van de ontvanger (via een upload) en een bericht stuurt
+aan de ontvanger dat het grote bestand verstuurd is, de ontvanger kan het
+bestand vervolgens verwerken.</p><p><figure id="fig-uitwisseling-groot-bestand-via-grote-berichten-file-service-van-de-ontvanger"><img src="media/UitwisselingGrootbestandviaGBfileservice_ontvanger.png" alt="Uitwisseling groot bestand via Grote Berichten file service van de ontvanger" title="Uitwisseling groot bestand via Grote Berichten file service van de ontvanger"><figcaption>Figuur <bdi class="figno">3</bdi> <span class="fig-title">Uitwisseling groot bestand via Grote Berichten file service van de ontvanger</span></figcaption></figure></p><p>In bovenstaand figuur is dit grafisch weergegeven.</p><ul>
+<li><p>Stap 1: De verzender verstuurt het grote bericht naar de Grote berichten File
+service van de ontvanger.</p>
+</li>
+<li><p>Stap 2: De verzender verstuurt het bericht met de meta-data van het bestand,
+bijvoorbeeld naam, locatie, grootte etc.</p>
+</li>
+</ul><p>Opmerking<br>De verzender maakt hiervoor het te verzenden bestand gereed, eventueel wordt dit
+in meerdere delen gesplitst als dit wenselijk is.</p></section></section><section id="gebruiksvoorwaarden"><h3 id="x2-4-gebruiksvoorwaarden"><bdi class="secno">2.4 </bdi>Gebruiksvoorwaarden<a class="self-link" href="#gebruiksvoorwaarden" aria-label="Permalink for Section 2.4"></a></h3><p>Voor het gebruik van het Digikoppeling Koppelvlakstandaard Grote Berichten
+gelden onderstaande algemene eisen:</p><table class="dkkvs">
+<thead>
+<tr>
+<th><strong>Referentie</strong></th>
+<th><strong>Specificatie</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>VW000</td>
+<td>Partijen <em class="rfc2119">MOGEN</em> bilateraal overeen komen bij welke MiB berichtomvang de standaard Grote Berichten van toepassing is of dat volstaan kan worden met Digikoppeling WUS (bevragingen) dan wel Digikoppeling ebMS2 (meldingen) sec</td>
+</tr>
+<tr>
+<td></td>
+<td>Een harde grens voor de berichtomvang is lastig te bepalen en in praktische zin is er sprake van overlap. Daarom is er voor gekozen dat partijen bilaterale afspraken kunnen maken waarin afgeweken wordt van de genoemde grens onder VW001, met dien verstande dat door het bilateraal karakter het nooit als argument gebruikt kan worden om andere organisaties te verplichten hieraan te voldoen.</td>
+</tr>
+<tr>
+<td>VW001</td>
+<td>Als partijen niet tot overeenstemming komen <em class="rfc2119">MOETEN</em> zij berichten groter dan 20 MiB via het Koppelvlak Grote Berichten afhandelen.</td>
+</tr>
+<tr>
+<td></td>
+<td>Niet elke ontvanger is in staat om grote berichten te ontvangen (en te verwerken). Daarnaast dient te worden voorkomen dat grote berichten het transactionele berichtenverkeer eventueel zouden kunnen verstoren. Daarom dient ten aanzien van de omvang een harde grens te worden afgesproken.</td>
+</tr>
+<tr>
+<td>VW002</td>
+<td>Voor de overdracht van metadata <em class="rfc2119">MOET</em> gebruik gemaakt worden van Digikoppeling, zoals aangeven in het hoofdstuk Metadata in dit document.</td>
+</tr>
+<tr>
+<td>VW003</td>
+<td>Voor de overdracht van grote bestanden <em class="rfc2119">MOET</em> gebruik gemaakt worden van het mechanisme zoals aangeven in het hoofdstuk Bestandsoverdracht in dit document.</td>
+</tr>
+</tbody></table></section></section>
+<section data-format="markdown" id="metadata"><h2 id="x3-metadata"><bdi class="secno">3. </bdi>Metadata<a class="self-link" href="#metadata" aria-label="Permalink for Section 3."></a></h2><p>De metadata beschrijft de informatie over het bestand dat verstuurd wordt met
+HTTP 1.1. De metadata zelf wordt verzonden via het WUS/ebMS2 Koppelvlak.</p><section id="functionele-beschrijving"><h3 id="x3-1-functionele-beschrijving"><bdi class="secno">3.1 </bdi>Functionele beschrijving<a class="self-link" href="#functionele-beschrijving" aria-label="Permalink for Section 3.1"></a></h3><p>De onderstaande regels zijn van toepassing.</p><table class="dkkvs">
+<thead>
+<tr>
+<th><strong>Referentie</strong></th>
+<th><strong>Specificatie</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MD000</td>
+<td>Metadata <em class="rfc2119">MOET</em> verstuurd worden middels een WUS en/of ebMS bericht.</td>
+</tr>
+<tr>
+<td>MD001</td>
+<td>De metadata XML-structuur <em class="rfc2119">MOET</em> voldoen aan het XML schema in hoofdstuk Metadata XML Schema Definitie.  <em>De metadata kan een op zichzelf staand bericht zijn, maar ook een deel van een groter bericht. Het is daarbij ook toegestaan om meerdere grote bestanden in een bericht op te nemen; voor ieder afzonderlijk bestand dient dan afzonderlijk metadata in het bericht te worden opgenomen.</em></td>
+</tr>
+<tr>
+<td>MD002</td>
+<td>Voor ieder groot bestand <em class="rfc2119">MOET</em> een unieke URL gegenereerd te worden; deze URL dient gebruikt te worden om het betreffende bestand op te halen. De URL is dus uniek voor het gehele Digikoppeling domein en wordt in het meta-bericht via het element <code>&lt;location&gt;</code> verstrekt aan de ontvanger. Bij een pull wordt hier <code>&lt;senderurl&gt;</code> gevuld en bij push wordt hier <code>&lt;receiverurl&gt;</code> gevuld.  <em>Door aan ieder bestand een unieke URL toe te kennen kan gegarandeerd worden dat het meta-bericht altijd aan het juiste bestand refereert. Het is wel toegestaan om hetzelfde bestand meerdere keren te verzenden (meerdere ontvangers); iedere ontvanger ontvangt dan wel een eigen meta-bericht, maar de URL verwijst dan telkens naar hetzelfde bestand. Ook is het toegestaan om meerdere unieke URL’s naar hetzelfde bestand te laten verwijzen.</em></td>
+</tr>
+<tr>
+<td>MD003</td>
+<td>De metadata <em class="rfc2119">MAG</em> het moment aangeven (datum/tijd) waarop het grote bestand beschikbaar zal zijn (element <code>&lt;creationtime&gt;</code>) ALS dit veld ontbreekt of het moment ligt in het verleden <em class="rfc2119">MOET</em> het bestand, uiterlijk op het moment dat de metadata verzonden wordt, beschikbaar zijn.</td>
+</tr>
+<tr>
+<td>MD004</td>
+<td>De metadata <em class="rfc2119">MAG</em> het moment aangeven tot wanneer het grote bestand beschikbaar zal zijn. Het grote bestand <em class="rfc2119">MOET</em> dan tenminste beschikbaar zijn tot het moment dat in de metadata aangegeven wordt (element <code>&lt;expirationtime&gt;</code>) na dat moment is de beschikbaarheid van het bestand niet meer gegarandeerd.  <em>Door een beperking op te leggen aan de beschikbaarheid wordt voorkomen dat het niet duidelijk is wanneer de betreffende bestanden weer mogen worden verwijderd.</em></td>
+</tr>
+<tr>
+<td>MD005</td>
+<td>De metadata <em class="rfc2119">MOET</em> aangeven hoe groot het bestand is, uitgedrukt in het aantal bytes (element <code>&lt;size&gt;</code>). Indien met deelbestanden wordt gewerkt: de metadata <em class="rfc2119">MOET</em> aangeven hoeveel deelbestanden het zijn, hoe groot elk van de deelbestanden is zijn en hoe groot het totale bestand is   <em>Door de omvang van een bestand vooraf ter beschikking te stellen kunnen de benodigde resources al vooraf gepland worden.</em></td>
+</tr>
+<tr>
+<td>MD006</td>
+<td>De metadata <em class="rfc2119">MOET</em> een checksum geven van het bestand (element <code>&lt;checksum)&gt;</code>. Indien met deelbestanden wordt gewerkt: de metadata <em class="rfc2119">MOET</em> een checksum geven van het totale bestand (element <code>&lt;checksum&gt;</code>). Deze checksum dient te worden weergegeven als een string van hexadecimale digits.<br>Toegestane algoritmen zijn: MD5, SHA-1, SHA256, SHA384, SHA512.<br>Aanbevolen algoritmen zijn: SHA256, SHA384, SHA512. <br><br><em>Door een checksum toe te voegen kan de inhoud van een bestand na de overdracht geverifieerd worden.</em><br><em>(De toepassing van deze algoritmen is hier gericht op (en beperkt tot) detectie van transmissiefouten mbv een checksum. MD5 en SHA-1 zijn daarom in deze context en in verband met backwards compatibiliteit opgenomen als toegestaan).</em></td>
+</tr>
+<tr>
+<td>MD007</td>
+<td>De metadata <em class="rfc2119">MOET</em> de naam van het bestand opgeven, als string, met een lengte van maximaal 200 karakters (element <code>&lt;filename&gt;</code>). De toegestane karakters zijn letters, cijfers, punt, underscore, en hyphen.  De naam van het bestand moet uniek zijn in de context van de uitwisseling tussen twee partijen (OIN verzender – OIN ontvanger).  <em>De eisen ten aanzien van bestandnamen kunnen voor ieder platform verschillend zijn; daarom kan de opgegeven bestandsnaam niet altijd als bestandsnaam aan de zijde van de ontvanger gebruikt worden.</em></td>
+</tr>
+<tr>
+<td>MD008</td>
+<td>De metadata <em class="rfc2119">MAG</em> aangeven wat de context is van het WUS/ebMS bericht waar het onderdeel vanuit maakt (attribuut <code>&lt;contextid&gt;</code>).  <em>Met behulp van de contextID is het mogelijk om de context van de applicatie op te nemen. Ook is het mogelijk een correlatie aan te brengen tussen het bestand en de metadata. Daarvoor moet het bestand dezelfde contextID bevatten.</em></td>
+</tr>
+<tr>
+<td>MD009</td>
+<td>De metadata <em class="rfc2119">MOET</em> het Internet media type (MIME type of Content-type) specificeren van het bestand (element <code>&lt;contenttype&gt;</code>) [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2046" title="Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types">rfc2046</a></cite>].</td>
+</tr>
+<tr>
+<td>MD010</td>
+<td>De metadata <em class="rfc2119">MOET</em> bij pull de URL van de verzender (element <code>&lt;senderurl&gt;</code> en bij push de URL van de ontvanger (element <code>&lt;receiverurl&gt;</code>) bevatten.</td>
+</tr>
+</tbody></table><p>In de bijlagen zijn de XML Schema definities (XSD) en XML voorbeeldberichten
+opgenomen.</p></section><section id="opbouw-en-structuur-xml-schema-definities"><h3 id="x3-2-opbouw-en-structuur-xml-schema-definities"><bdi class="secno">3.2 </bdi>Opbouw en structuur XML Schema definities<a class="self-link" href="#opbouw-en-structuur-xml-schema-definities" aria-label="Permalink for Section 3.2"></a></h3><p>Om volledig backwards compatible te blijven met de vorige versie van de DK GB
+standaard waarin alleen het PULL principe was gespecificeerd worden voor PULL en
+PUSH aparte schema’s gehanteerd waarbij het PULL schema ongewijzigd is t.o.v. de
+vorige versie.</p><section id="pull-schema"><h4 id="x3-2-1-pull-schema"><bdi class="secno">3.2.1 </bdi>PULL Schema<a class="self-link" href="#pull-schema" aria-label="Permalink for Section 3.2.1"></a></h4><p>Het PULL schema bevat een request bericht definitie. De DK GB PULL variant laat
+de invulling van de response verder vrij en definieert alleen (size error) en
+(checksum error) in algemene zin.</p></section><section id="push-schema"><h4 id="x3-2-2-push-schema"><bdi class="secno">3.2.2 </bdi>PUSH Schema<a class="self-link" href="#push-schema" aria-label="Permalink for Section 3.2.2"></a></h4><p>Het PUSH schema kent een request en een response bericht definitie.</p><p>De PUSH request biedt de mogelijkheid om eventueel aan te geven in het bericht
+dat het grote bestand uit meerdere onderdelen (‘parts’) bestaat.</p><p>Gebruik van de PUSH response definitie is optioneel. Partijen mogen ook
+overeenkomen om een eigen berichtstructuur voor de response te gebruiken. Indien
+het responsebericht van het PUSH XML Schema wordt gebruikt moet het volledig
+worden ingevuld (D.w.z. de ontvangststatus van het grote bestand en van de
+eventuele onderdelen zowel bij succesvolle ontvangst als bij fouten).</p></section><section id="push-response-bericht-statuscodes"><h4 id="x3-2-3-push-response-bericht-statuscodes"><bdi class="secno">3.2.3 </bdi>PUSH response bericht statuscodes<a class="self-link" href="#push-response-bericht-statuscodes" aria-label="Permalink for Section 3.2.3"></a></h4><p>De volgende statuscodes zijn voorgedefinieerd in het PUSH responsebericht:</p><ul>
+<li><p>OK</p>
+</li>
+<li><p>FILE_NOT_FOUND</p>
+</li>
+<li><p>CHECKSUM_TYPE_NOT_SUPPORTED</p>
+</li>
+<li><p>CHECKSUM_ERROR</p>
+</li>
+<li><p>INCORRECT_FILE_SIZE</p>
+</li>
+<li><p>COMPRESSION_NOT_SUPPORTED</p>
+</li>
+<li><p>DECOMPRESSION_ERROR</p>
+</li>
+<li><p>UNKNOWN_ERROR</p>
+</li>
+</ul><p>Zie ook de XSD’s in de bijlage.</p><p>&lt;/checksum)&gt;</p></section></section></section>
+<section data-format="markdown" id="bestandsoverdracht"><h2 id="x4-bestandsoverdracht"><bdi class="secno">4. </bdi>Bestandsoverdracht<a class="self-link" href="#bestandsoverdracht" aria-label="Permalink for Section 4."></a></h2><section id="functionaliteit"><h3 id="x4-1-functionaliteit"><bdi class="secno">4.1 </bdi>Functionaliteit<a class="self-link" href="#functionaliteit" aria-label="Permalink for Section 4.1"></a></h3><p>Bij elke bestandsoverdracht dient een bijbehorend meta-bericht via Digikoppeling
+te worden verzonden.</p><table class="dkkvs">
+<thead>
+<tr>
+<th><strong>Referentie</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Specificatie</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GB000</td>
+<td>PUSH / PULL</td>
+<td>De bestandsoverdracht <em class="rfc2119">MOET</em> gerealiseerd worden op basis van het HTTP protocol, versie 1.1, conform [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7230" title="Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing">rfc7230</a></cite>], [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7231" title="Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content">rfc7231</a></cite>], [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7232" title="Hypertext Transfer Protocol (HTTP/1.1): Conditional Requests">rfc7232</a></cite>], [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7233" title="Hypertext Transfer Protocol (HTTP/1.1): Range Requests">rfc7233</a></cite>], [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7234" title="Hypertext Transfer Protocol (HTTP/1.1): Caching">rfc7234</a></cite>] en [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7235" title="Hypertext Transfer Protocol (HTTP/1.1): Authentication">rfc7235</a></cite>].</td>
+</tr>
+<tr>
+<td>GB001</td>
+<td>PULL</td>
+<td>Zowel de client als de server <em class="rfc2119">MOET</em> de BYTE-RANGE optie ondersteunen conform [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7233" title="Hypertext Transfer Protocol (HTTP/1.1): Range Requests">rfc7233</a></cite>] (i.e. Range, If-match, If-range, ETag en Content-range) [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7232" title="Hypertext Transfer Protocol (HTTP/1.1): Conditional Requests">rfc7232</a></cite>] en [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7233" title="Hypertext Transfer Protocol (HTTP/1.1): Range Requests">rfc7233</a></cite>].   De BYTE-RANGE optie wordt gebruikt om in geval van een resume onnodige hertransmissie van data te voorkomen. Hierdoor kan de voortgang van de bestandsoverdracht gegarandeerd worden.  De ondersteuning van de byte ranges is niet verplicht conform de RFC maar in de Digikoppeling-context wel.</td>
+</tr>
+<tr>
+<td>GB002</td>
+<td>PUSH / PULL</td>
+<td>De client <em class="rfc2119">MOET</em> de bestandsoverdracht initiëren door middel van een HTTP GET request (bij PULL) of een HTTP PUT (bij PUSH) conform [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7231" title="Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content">rfc7231</a></cite>].</td>
+</tr>
+<tr>
+<td>GB003</td>
+<td>PULL</td>
+<td>Indien de client een OK response ontvangt (200), dan kan de client het grote bestand op basis van deze response reconstrueren; eventuele eerder ontvangen bytes <em class="rfc2119">MOET</em> de client daarbij negeren (of overschrijven).</td>
+</tr>
+<tr>
+<td>GB004</td>
+<td>PULL</td>
+<td>Indien de client een Partial Content response ontvangt (206), dan <em class="rfc2119">MOET</em> de client het grote bestand op basis van deze en alle eerdere (partiële) responses reconstrueren; eventuele overlappende byte ranges <em class="rfc2119">MOET</em> de client daarbij overschrijven met de laatst ontvangen data.</td>
+</tr>
+<tr>
+<td>GB005</td>
+<td>PULL</td>
+<td>Indien de HTTP verbinding verbroken wordt voordat het volledige grote bestand ontvangen is, en de client wil de overdracht hervatten dan <em class="rfc2119">MOET</em> dit plaatsvinden door middel van een “Range” request conform [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7233" title="Hypertext Transfer Protocol (HTTP/1.1): Range Requests">rfc7233</a></cite>].   De “Range” request maakt deel uit van de BYTE-RANGE optie. Indien de server byte ranges ondersteunt, dan zal deze een Partial Content response (206) naar de client sturen; indien de server geen byte ranges ondersteunt, dan zal deze een OK response sturen. De exacte response van de server is afhankelijke van eventueel aanwezige condities (if-range, if-match en if-unmodified-since) [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7233" title="Hypertext Transfer Protocol (HTTP/1.1): Range Requests">rfc7233</a></cite>].</td>
+</tr>
+<tr>
+<td>GB016</td>
+<td>PUSH</td>
+<td>Bij elke HTTP PUT <em class="rfc2119">MOET</em> het bestand aan de ontvangende kant worden overschreven.</td>
+</tr>
+<tr>
+<td>GB017</td>
+<td>PUSH</td>
+<td>Verzender KAN ZIP toepassen als container om de payload heen. Ook moet multipart met zip worden ondersteund. Compressie is geen vereiste of doel van ZIP. Wel een mogelijkheid.</td>
+</tr>
+<tr>
+<td>GB018</td>
+<td>Algemeen</td>
+<td>De verzender <em class="rfc2119">MOET</em> foutherstel kunnen uitvoeren nav het response bericht. (Het response bericht dient aan te geven welke fout is opgetreden. Het GB PUSH XSD schema kent hiervoor een optioneel te gebruiken berichtstructuur – zie de voorgedefinieerde foutcodes en foutmeldingen van het GB PUSH XSD schema).</td>
+</tr>
+</tbody></table></section><section id="beveiliging"><h3 id="x4-2-beveiliging"><bdi class="secno">4.2 </bdi>Beveiliging<a class="self-link" href="#beveiliging" aria-label="Permalink for Section 4.2"></a></h3><p>Alleen de beoogde verzender en ontvanger moeten in staat zijn om een groot
+bestand te plaatsen of op te halen. Autorisatie moet daarom plaatsvinden aan de
+hand van het OIN uit het certificaat van deze partijen.</p><table class="dkkvs">
+<thead>
+<tr>
+<th>Referentie</th>
+<th><strong>Type</strong></th>
+<th><strong>Specificatie</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GB006</td>
+<td>PUSH / PULL</td>
+<td>Het HTTP transport <em class="rfc2119">MOET</em> beveiligd zijn met TLS. Aanbieder en afnemer ondersteunen de minimaal ondersteunde TLS encryptie algoritmen en sleutellengtes zoals beschreven in het [<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling beveiligingsdocument" title="Digikoppeling Beveiligingsstandaarden en voorschriften">Digikoppeling Beveiligingsdocument</a></cite>]) op basis van een valide PKIoverheid certificaat [<cite><a class="bibref" data-link-type="biblio" href="#bib-pkioverheid certificaten" title="Pkioverheid certificaten">PKIoverheid Certificaten</a></cite>].</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Meer informatie in het [<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling beveiligingsdocument" title="Digikoppeling Beveiligingsstandaarden en voorschriften">Digikoppeling Beveiligingsdocument</a></cite>]</td>
+</tr>
+<tr>
+<td>GB007</td>
+<td>PUSH / PULL</td>
+<td>De minimaal ondersteunde TLS encryptie algoritmen en sleutellengtes worden beschreven in het [<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling beveiligingsdocument" title="Digikoppeling Beveiligingsstandaarden en voorschriften">Digikoppeling Beveiligingsdocument</a></cite>].</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Meer informatie in het [<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling beveiligingsdocument" title="Digikoppeling Beveiligingsstandaarden en voorschriften">Digikoppeling Beveiligingsdocument</a></cite>]</td>
+</tr>
+<tr>
+<td>GB008</td>
+<td>PUSH / PULL</td>
+<td>Zowel de client als de server organisatie <em class="rfc2119">MOET</em> zich authentiseren met een PKIoverheid certificaat [<cite><a class="bibref" data-link-type="biblio" href="#bib-pki ca" title="Toegetreden vertrouwensdienstverleners">PKI CA</a></cite>], [<cite><a class="bibref" data-link-type="biblio" href="#bib-pkioverheid certificaten" title="Pkioverheid certificaten">PKIoverheid Certificaten</a></cite>].</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>De basis voor authenticatie en autorisatie in Digikoppeling is OIN. Achtergronden over dit gebruik zijn opgenomen in de Digikoppeling richtlijnen [<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling-cert" title="Gebruik en achtergrond van Digikoppeling certificaten">Digikoppeling-Cert</a></cite>] (2-zijdig TLS).</td>
+</tr>
+<tr>
+<td>GB009</td>
+<td>PUSH / PULL</td>
+<td>De server organisatie <em class="rfc2119">MOET</em> het transport autoriseren op basis van het OIN van een valide client certificaat [<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling-cert" title="Gebruik en achtergrond van Digikoppeling certificaten">Digikoppeling-Cert</a></cite>].</td>
+</tr>
+<tr>
+<td>GB010</td>
+<td>PUSH / PULL</td>
+<td>Indien de server een HTTP request ontvangt van een niet geautoriseerd OIN (in het client certificaat) dan <em class="rfc2119">MOET</em> een HTTP 403 (Forbidden) response naar de client gestuurd worden</td>
+</tr>
+<tr>
+<td>GB011</td>
+<td>PUSH / PULL</td>
+<td>De server moet certificaat-revocatie-lijsten (CRL) gebruiken [<cite><a class="bibref" data-link-type="biblio" href="#bib-pki policy" title="Programma van Eisen (PKIoverheid)">PKI Policy</a></cite>].</td>
+</tr>
+<tr>
+<td>GB012</td>
+<td>PUSH / PULL</td>
+<td>Het HTTPS transport <em class="rfc2119">MOET</em> over poort 443 plaatsvinden.</td>
+</tr>
+<tr>
+<td>GB019</td>
+<td>PUSH / PULL</td>
+<td>IP whitelisting KAN worden toegepast om toegang tot de PUSH server af te schermen</td>
+</tr>
+<tr>
+<td>GB020</td>
+<td>PUSH / PULL</td>
+<td>Afschermen van de PUSH server KAN door toepassing van Diginetwerk</td>
+</tr>
+</tbody></table></section><section id="betrouwbaarheid"><h3 id="x4-3-betrouwbaarheid"><bdi class="secno">4.3 </bdi>Betrouwbaarheid<a class="self-link" href="#betrouwbaarheid" aria-label="Permalink for Section 4.3"></a></h3><p>De noodzaak van betrouwbaarheid is afhankelijk van de context. Indien de
+bestandsoverdracht een melding (in combinatie met ebMS2) betreft, is ook
+betrouwbaarheid noodzakelijk. Indien de bestandsoverdracht een bevraging (vaak
+in combinatie met WUS) betreft, is dit niet noodzakelijk maar
+hoogstwaarschijnlijk wenselijk.</p><p>Voor de context van meldingen dient de client een retry mechanisme te
+implementeren rekening houdend met eventuele beperkte beschikbaarheid van het
+netwerk en/of de server (service-window).</p><table class="dkkvs">
+<thead>
+<tr>
+<th>Referentie</th>
+<th><strong>Type</strong></th>
+<th><strong>Specificatie</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GB013</td>
+<td>Algemeen</td>
+<td>Voor meldingen, zoals bedoeld in de Digikoppeling architectuur, <em class="rfc2119">MOET</em> een retry mechanisme toegepast worden dat rekening houdt met eventuele beperkte beschikbaarheid van het netwerk en/of de server (service-window)  De specificatie van het aantal retries en tijdswindow vormt een situationeel af te spreken gegeven. Dit komt overeen met (afspraken over) de configuratie van ebMS2 implementaties.</td>
+</tr>
+<tr>
+<td>GB014</td>
+<td>Algemeen</td>
+<td>Indien na ontvangst de omvang van het bestand niet overeen komt met de omvang uit het meta-bericht, dan <em class="rfc2119">MOET</em> de bestandsoverdracht als niet-succesvol beschouwd worden (size error).</td>
+</tr>
+<tr>
+<td>GB015</td>
+<td>Algemeen</td>
+<td>Indien na ontvangst de checksum van het bestand niet overeen komt met de checksum uit het meta-bericht, dan <em class="rfc2119">MOET</em> de bestandsoverdracht als niet-succesvol beschouwd worden (checksum error).</td>
+</tr>
+</tbody></table></section></section>
+  <section data-format="markdown" id="grote-berichten-bijlagen"><h2 id="x5-grote-berichten-bijlagen"><bdi class="secno">5. </bdi>Grote berichten bijlagen<a class="self-link" href="#grote-berichten-bijlagen" aria-label="Permalink for Section 5."></a></h2><section id="xsd-voor-dk-gb-pull-principe"><h3 id="x5-1-xsd-voor-dk-gb-pull-principe"><bdi class="secno">5.1 </bdi>XSD voor DK GB PULL principe<a class="self-link" href="#xsd-voor-dk-gb-pull-principe" aria-label="Permalink for Section 5.1"></a></h3><pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-comment">&lt;!--?xml version="1.0" encoding="UTF-8"?--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">xs:schema</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema"</span> <span class="hljs-attr">elementformdefault</span>=<span class="hljs-string">"qualified"</span> <span class="hljs-attr">xmlns:tns</span>=<span class="hljs-string">"http://www.logius.nl/digikoppeling/gb/2010/10"</span> <span class="hljs-attr">targetnamespace</span>=<span class="hljs-string">"http://www.logius.nl/digikoppeling/gb/2010/10"</span>&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"digikoppeling-external-data-references"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tns:external-data-reference"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span>
+  
+  <span class="hljs-tag">&lt;<span class="hljs-name">xs:complextype</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"external-data-reference"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">xs:sequence</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"data-reference"</span> <span class="hljs-attr">maxoccurs</span>=<span class="hljs-string">"unbounded"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tns:data-reference"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:sequence</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">xs:attribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"profile"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tns:gb-profile"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">xs:attribute</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:complextype</span>&gt;</span>
+
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">xs:complextype</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"data-reference"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:sequence</span> <span class="hljs-attr">minoccurs</span>=<span class="hljs-string">"1"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"lifetime"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">xs:complextype</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xs:sequence</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"creationTime"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tns:datetimeType"</span> <span class="hljs-attr">minoccurs</span>=<span class="hljs-string">"0"</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"expirationTime"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tns:datetimeType"</span> <span class="hljs-attr">minoccurs</span>=<span class="hljs-string">"0"</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:sequence</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">xs:complextype</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"content"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">xs:complextype</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xs:sequence</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"filename"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:NCName"</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"checksum"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tns:checksumType"</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"size"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:unsignedLong"</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:sequence</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xs:attribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"contentType"</span> <span class="hljs-attr">use</span>=<span class="hljs-string">"required"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:string"</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">xs:attribute</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:complextype</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"transport"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">xs:complextype</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xs:sequence</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"location"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">xs:complextype</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-name">xs:choice</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"senderUrl"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tns:urlType"</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"receiverUrl"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tns:urlType"</span>&gt;</span>
+                  <span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:choice</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">xs:complextype</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">xs:sequence</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">xs:complextype</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">xs:sequence</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:attribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"contextId"</span> <span class="hljs-attr">use</span>=<span class="hljs-string">"optional"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">xs:attribute</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:complextype</span>&gt;</span>
+
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">xs:simpletype</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"gb-profile"</span> <span class="hljs-attr">final</span>=<span class="hljs-string">"restriction"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">xs:restriction</span> <span class="hljs-attr">base</span>=<span class="hljs-string">"xs:string"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:enumeration</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"digikoppeling-gb-1.0"</span>&gt;</span>
+      <span class="hljs-comment">&lt;!--
+        DigiKoppeling GB profiel 1 aanduiding
+      --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">xs:enumeration</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:restriction</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">xs:simpletype</span>&gt;</span>
+
+ <span class="hljs-tag">&lt;<span class="hljs-name">xs:complextype</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"datetimeType"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">xs:simplecontent</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:extension</span> <span class="hljs-attr">base</span>=<span class="hljs-string">"xs:dateTime"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">xs:attribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"type"</span> <span class="hljs-attr">use</span>=<span class="hljs-string">"required"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:string"</span> <span class="hljs-attr">fixed</span>=<span class="hljs-string">"xs:dateTime"</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">xs:attribute</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:extension</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">xs:simplecontent</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">xs:complextype</span>&gt;</span>
+
+ <span class="hljs-tag">&lt;<span class="hljs-name">xs:complextype</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"checksumType"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">xs:simplecontent</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:extension</span> <span class="hljs-attr">base</span>=<span class="hljs-string">"tns:md5String"</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">xs:attribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"type"</span> <span class="hljs-attr">use</span>=<span class="hljs-string">"required"</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">xs:simpletype</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xs:restriction</span> <span class="hljs-attr">base</span>=<span class="hljs-string">"xs:string"</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">xs:enumeration</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"MD5"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xs:enumeration</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"SHA1"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xs:enumeration</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"SHA256"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xs:enumeration</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"SHA384"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xs:enumeration</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"SHA512"</span>&gt;</span>          
+            <span class="hljs-tag">&lt;/<span class="hljs-name">xs:enumeration</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:enumeration</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:enumeration</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:enumeration</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:enumeration</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:restriction</span>&gt;</span>
+           <span class="hljs-tag">&lt;/<span class="hljs-name">xs:simpletype</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">xs:attribute</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">xs:extension</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">xs:simplecontent</span>&gt;</span>
+ <span class="hljs-tag">&lt;/<span class="hljs-name">xs:complextype</span>&gt;</span>
+    
+ <span class="hljs-tag">&lt;<span class="hljs-name">xs:complextype</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"urlType"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">xs:simplecontent</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:extension</span> <span class="hljs-attr">base</span>=<span class="hljs-string">"tns:anyString"</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">xs:attribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"type"</span> <span class="hljs-attr">use</span>=<span class="hljs-string">"required"</span> <span class="hljs-attr">fixed</span>=<span class="hljs-string">"xs:anyURI"</span>&gt;</span>
+     <span class="hljs-tag">&lt;/<span class="hljs-name">xs:attribute</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:extension</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">xs:simplecontent</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">xs:complextype</span>&gt;</span>
+
+ <span class="hljs-tag">&lt;<span class="hljs-name">xs:complextype</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"md5String"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">xs:simplecontent</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:restriction</span> <span class="hljs-attr">base</span>=<span class="hljs-string">"tns:anyString"</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">xs:pattern</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"[0-9a-fA-F]*"</span>&gt;</span>            
+      <span class="hljs-tag">&lt;/<span class="hljs-name">xs:pattern</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:restriction</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">xs:simplecontent</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">xs:complextype</span>&gt;</span>
+
+ <span class="hljs-tag">&lt;<span class="hljs-name">xs:complextype</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"anyString"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">xs:simplecontent</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:extension</span> <span class="hljs-attr">base</span>=<span class="hljs-string">"xs:string"</span>&gt;</span>              
+    <span class="hljs-tag">&lt;/<span class="hljs-name">xs:extension</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:simplecontent</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">xs:complextype</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">xs:schema</span>&gt;</span>
+</code></pre></section><section id="xml-voorbeeld-pull-bericht"><h3 id="x5-2-xml-voorbeeld-pull-bericht"><bdi class="secno">5.2 </bdi>XML Voorbeeld PULL Bericht<a class="self-link" href="#xml-voorbeeld-pull-bericht" aria-label="Permalink for Section 5.2"></a></h3><p>Dit hoofdstuk presenteert een voorbeeld van de metadata van een bestand bij gebruik PULL principe</p><pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-comment">&lt;!--?xml version="1.0" encoding="UTF-8"?--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">tns:digikoppeling-external-data-references</span> <span class="hljs-attr">profile</span>=<span class="hljs-string">"digikoppeling-gb-1.0"</span> <span class="hljs-attr">xmlns:tns</span>=<span class="hljs-string">"http://www.logius.nl/digikoppeling/gb/2010/10"</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="hljs-attr">xsi:schemalocation</span>=<span class="hljs-string">"http://www.logius.nl/digikoppeling/gb/2010/10/gb-meta.xsd"</span>&gt;</span> 
+  <span class="hljs-tag">&lt;<span class="hljs-name">tns:data-reference</span> <span class="hljs-attr">contextid</span>=<span class="hljs-string">"12345"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tns:lifetime</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tns:creationtime</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:dateTime"</span>&gt;</span>2001-12-31T12:00:00Z<span class="hljs-tag">&lt;/<span class="hljs-name">tns:creationtime</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tns:expirationtime</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:dateTime"</span>&gt;</span>2001-12-31T12:00:00Z<span class="hljs-tag">&lt;/<span class="hljs-name">tns:expirationtime</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tns:lifetime</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tns:content</span> <span class="hljs-attr">contenttype</span>=<span class="hljs-string">"application/xml"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tns:filename</span>&gt;</span>NCName<span class="hljs-tag">&lt;/<span class="hljs-name">tns:filename</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tns:checksum</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"MD5"</span>&gt;</span>0123456789abcdef0123456789abcdef<span class="hljs-tag">&lt;/<span class="hljs-name">tns:checksum</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tns:size</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">tns:size</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tns:content</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tns:transport</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tns:location</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tns:senderurl</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:anyURI"</span>&gt;</span>https://any.url/any.name<span class="hljs-tag">&lt;/<span class="hljs-name">tns:senderurl</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">tns:location</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tns:transport</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">tns:data-reference</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">tns:digikoppeling-external-data-references</span>&gt;</span>
+</code></pre></section><section id="xsd-voor-dk-gb-push-principe"><h3 id="x5-3-xsd-voor-dk-gb-push-principe"><bdi class="secno">5.3 </bdi>XSD voor DK GB PUSH principe<a class="self-link" href="#xsd-voor-dk-gb-push-principe" aria-label="Permalink for Section 5.3"></a></h3><pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-comment">&lt;!--?xml version="1.0" encoding="UTF-8"?--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">xs:schema</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema"</span> <span class="hljs-attr">elementformdefault</span>=<span class="hljs-string">"qualified"</span> <span class="hljs-attr">xmlns:tns</span>=<span class="hljs-string">"http://www.logius.nl/digikoppeling/gb/2020/09"</span> <span class="hljs-attr">targetnamespace</span>=<span class="hljs-string">"http://www.logius.nl/digikoppeling/gb/2020/09"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"digikoppeling-external-data-references-request"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tns:external-data-reference-request"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">xs:complextype</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"external-data-reference-request"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">xs:sequence</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"data-reference-request"</span> <span class="hljs-attr">maxoccurs</span>=<span class="hljs-string">"unbounded"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tns:data-reference-request"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:sequence</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">xs:attribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"profile"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tns:gb-profile"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">xs:attribute</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:complextype</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">xs:complextype</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"data-reference-request"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">xs:sequence</span> <span class="hljs-attr">minoccurs</span>=<span class="hljs-string">"1"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"compression"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tns:compression"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"content"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">xs:complextype</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">xs:sequence</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"filename"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:string"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"checksum"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tns:checksumType"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"size"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:unsignedLong"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"transport"</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">xs:complextype</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">xs:sequence</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"location"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tns:location"</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"part"</span> <span class="hljs-attr">minoccurs</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">maxoccurs</span>=<span class="hljs-string">"unbounded"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">xs:complextype</span>&gt;</span>
+                      <span class="hljs-tag">&lt;<span class="hljs-name">xs:sequence</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"filename"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:string"</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"checksum"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tns:checksumType"</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"size"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:unsignedLong"</span>&gt;</span>
+                      <span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:sequence</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">xs:complextype</span>&gt;</span>
+                  <span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:sequence</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">xs:complextype</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:sequence</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">xs:attribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"contentType"</span> <span class="hljs-attr">use</span>=<span class="hljs-string">"required"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:string"</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">xs:attribute</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:complextype</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:sequence</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">xs:attribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"contextId"</span> <span class="hljs-attr">use</span>=<span class="hljs-string">"optional"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">xs:attribute</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:complextype</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"digikoppeling-external-data-references-response"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tns:external-data-reference-response"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">xs:complextype</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"external-data-reference-response"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">xs:sequence</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"data-reference-response"</span> <span class="hljs-attr">maxoccurs</span>=<span class="hljs-string">"unbounded"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tns:data-reference-response"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:sequence</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">xs:attribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"profile"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tns:gb-profile"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">xs:attribute</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:complextype</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">xs:complextype</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"data-reference-response"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">xs:sequence</span> <span class="hljs-attr">minoccurs</span>=<span class="hljs-string">"1"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"compression"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tns:compression"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"content"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">xs:complextype</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">xs:sequence</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"filename"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:string"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"checksum"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tns:checksumType"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"size"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:unsignedLong"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"status"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tns:status"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"reason"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:string"</span> <span class="hljs-attr">minoccurs</span>=<span class="hljs-string">"0"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"transport"</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">xs:complextype</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">xs:sequence</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"location"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tns:location"</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"part"</span> <span class="hljs-attr">minoccurs</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">maxoccurs</span>=<span class="hljs-string">"unbounded"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">xs:complextype</span>&gt;</span>
+                      <span class="hljs-tag">&lt;<span class="hljs-name">xs:sequence</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"filename"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:string"</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"checksum"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tns:checksumType"</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"size"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:unsignedLong"</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"status"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tns:status"</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"reason"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:string"</span> <span class="hljs-attr">minoccurs</span>=<span class="hljs-string">"0"</span>&gt;</span>
+                      <span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:sequence</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">xs:complextype</span>&gt;</span>
+                  <span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:sequence</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">xs:complextype</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:sequence</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">xs:attribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"contentType"</span> <span class="hljs-attr">use</span>=<span class="hljs-string">"required"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:string"</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">xs:attribute</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:complextype</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:sequence</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">xs:attribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"contextId"</span> <span class="hljs-attr">use</span>=<span class="hljs-string">"optional"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">xs:attribute</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:complextype</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">xs:complextype</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"location"</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">xs:element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"receiverUrl"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tns:urlType"</span>&gt;</span>
+    
+  <span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:complextype</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">xs:simpletype</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"gb-profile"</span> <span class="hljs-attr">final</span>=<span class="hljs-string">"restriction"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">xs:restriction</span> <span class="hljs-attr">base</span>=<span class="hljs-string">"xs:string"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:enumeration</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"digikoppeling-gb-2.0"</span>&gt;</span>
+      <span class="hljs-comment">&lt;!-- DigiKoppeling GB profiel aanduiding --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">xs:enumeration</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:restriction</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">xs:simpletype</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">xs:complextype</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"datetimeType"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">xs:simplecontent</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:extension</span> <span class="hljs-attr">base</span>=<span class="hljs-string">"xs:dateTime"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">xs:attribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"type"</span> <span class="hljs-attr">use</span>=<span class="hljs-string">"required"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:string"</span> <span class="hljs-attr">fixed</span>=<span class="hljs-string">"xs:dateTime"</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">xs:attribute</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:extension</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">xs:simplecontent</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">xs:complextype</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">xs:complextype</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"checksumType"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">xs:simplecontent</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:extension</span> <span class="hljs-attr">base</span>=<span class="hljs-string">"tns:checksumString"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">xs:attribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"type"</span> <span class="hljs-attr">use</span>=<span class="hljs-string">"required"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">xs:simpletype</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xs:restriction</span> <span class="hljs-attr">base</span>=<span class="hljs-string">"xs:string"</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">xs:enumeration</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"MD5"</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">xs:enumeration</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"SHA1"</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">xs:enumeration</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"SHA256"</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">xs:enumeration</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"SHA384"</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">xs:enumeration</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"SHA512"</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">xs:enumeration</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:enumeration</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:enumeration</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:enumeration</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:enumeration</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:restriction</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">xs:simpletype</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">xs:attribute</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">xs:extension</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">xs:simplecontent</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">xs:complextype</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">xs:simpletype</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"compression"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">xs:restriction</span> <span class="hljs-attr">base</span>=<span class="hljs-string">"xs:string"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:enumeration</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"NONE"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:enumeration</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"ZIP4J"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">xs:enumeration</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:enumeration</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:restriction</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">xs:simpletype</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">xs:complextype</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"urlType"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">xs:simplecontent</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:extension</span> <span class="hljs-attr">base</span>=<span class="hljs-string">"tns:anyString"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">xs:attribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"type"</span> <span class="hljs-attr">use</span>=<span class="hljs-string">"required"</span> <span class="hljs-attr">fixed</span>=<span class="hljs-string">"xs:anyURI"</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">xs:attribute</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:extension</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">xs:simplecontent</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">xs:complextype</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">xs:complextype</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"checksumString"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">xs:simplecontent</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:restriction</span> <span class="hljs-attr">base</span>=<span class="hljs-string">"tns:anyString"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">xs:pattern</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"[0-9a-fA-F]*"</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">xs:pattern</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:restriction</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">xs:simplecontent</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">xs:complextype</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">xs:simpletype</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"status"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">xs:restriction</span> <span class="hljs-attr">base</span>=<span class="hljs-string">"xs:string"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:enumeration</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"OK"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:enumeration</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"FILE_NOT_FOUND"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:enumeration</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"CHECKSUM_TYPE_NOT_SUPPORTED"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:enumeration</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"CHECKSUM_ERROR"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:enumeration</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"INCORRECT_FILE_SIZE"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:enumeration</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"COMPRESSION_NOT_SUPPORTED"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:enumeration</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"DECOMPRESSION_ERROR"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:enumeration</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"UNKNOWN_ERROR"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">xs:enumeration</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:enumeration</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:enumeration</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:enumeration</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:enumeration</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:enumeration</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:enumeration</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:enumeration</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:restriction</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">xs:simpletype</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">xs:complextype</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"anyString"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">xs:simplecontent</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xs:extension</span> <span class="hljs-attr">base</span>=<span class="hljs-string">"xs:string"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">xs:extension</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:simplecontent</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">xs:complextype</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">xs:schema</span>&gt;</span>
+</code></pre></section><section id="xml-voorbeeld-push-bericht"><h3 id="x5-4-xml-voorbeeld-push-bericht"><bdi class="secno">5.4 </bdi>XML Voorbeeld PUSH Bericht<a class="self-link" href="#xml-voorbeeld-push-bericht" aria-label="Permalink for Section 5.4"></a></h3><section id="data-reference-request-bericht-1-push"><h4 id="x5-4-1-data-reference-request-bericht-1-push"><bdi class="secno">5.4.1 </bdi>Data-reference-request bericht 1 (PUSH)<a class="self-link" href="#data-reference-request-bericht-1-push" aria-label="Permalink for Section 5.4.1"></a></h4><p>Hieronder volgt een voorbeeld van een Grote Berichten data-reference-request bericht voor een PDF bestand genaamd file.pdf met een grootte van 2048MB, die is ge-upload:</p><pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">gb:digikoppeling-external-data-references-request</span> <span class="hljs-attr">profile</span>=<span class="hljs-string">"Digikoppeling-gb-4.0"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">gb:data-reference-request</span>&gt;</span>
+    
+    <span class="hljs-tag">&lt;<span class="hljs-name">gb:compression</span>&gt;</span>none<span class="hljs-tag">&lt;<span class="hljs-name">gb:compression</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">gb:content</span> <span class="hljs-attr">contenttype</span>=<span class="hljs-string">"application/pdf"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">gb:filename</span>&gt;</span>file.pdf<span class="hljs-tag">&lt;/<span class="hljs-name">gb:filename</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">gb:checksum</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"MD5"</span>&gt;</span>01234567890123456789012345678901<span class="hljs-tag">&lt;/<span class="hljs-name">gb:checksum</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">gb:size</span>&gt;</span>2048<span class="hljs-tag">&lt;/<span class="hljs-name">gb:size</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">gb:transport</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">gb:location</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">gb:receiverurl</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:anyURI"</span>&gt;</span>
+            https://my.host.nl/files/file.pdf
+          <span class="hljs-tag">&lt;/<span class="hljs-name">gb:receiverurl</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">gb:location</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">gb:transport</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">gb:content</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">gb:compression</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">gb:compression</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">gb:data-reference-request</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">gb:digikoppeling-external-data-references-request</span>&gt;</span>
+</code></pre></section><section id="data-reference-response-bericht-1-push"><h4 id="x5-4-2-data-reference-response-bericht-1-push"><bdi class="secno">5.4.2 </bdi>Data-reference-response bericht 1 (PUSH)<a class="self-link" href="#data-reference-response-bericht-1-push" aria-label="Permalink for Section 5.4.2"></a></h4><p>Hieronder volgt een voorbeeld van een Grote Berichten data-reference-response bericht voor de PDF bestand genaamd file.pdf met een grootte van 2048MiB, die is ge-upload en gezipped 
+Waarbij file.pdf niet is gevonden.</p><pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">gb:digikoppeling-external-data-references-response</span> <span class="hljs-attr">profile</span>=<span class="hljs-string">"Digikoppeling-gb-4.0"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">gb:data-reference-response</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">gb:compression</span>&gt;</span>none<span class="hljs-tag">&lt;<span class="hljs-name">gb:compression</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">gb:content</span> <span class="hljs-attr">contenttype</span>=<span class="hljs-string">"application/pdf"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">gb:filename</span>&gt;</span>file.pdf<span class="hljs-tag">&lt;/<span class="hljs-name">gb:filename</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">gb:checksum</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"MD5"</span>&gt;</span>01234567890123456789012345678901<span class="hljs-tag">&lt;/<span class="hljs-name">gb:checksum</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">gb:size</span>&gt;</span>2048<span class="hljs-tag">&lt;/<span class="hljs-name">gb:size</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">gb:status</span>&gt;</span>FILE_NOT_FOUND<span class="hljs-tag">&lt;/<span class="hljs-name">gb:status</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">gb:transport</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">gb:location</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">gb:receiverurl</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:anyURI"</span>&gt;</span>
+            https://my.host.nl/files/file.pdf
+          <span class="hljs-tag">&lt;/<span class="hljs-name">gb:receiverurl</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">gb:location</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">gb:transport</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">gb:content</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">gb:compression</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">gb:compression</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">gb:data-reference-response</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">gb:digikoppeling-external-data-references-response</span>&gt;</span>
+</code></pre><p>Alle errors behalve UNKNOWN_ERROR zijn recoverable en hebben geen reason nodig.</p></section><section id="data-reference-request-bericht-2-push"><h4 id="x5-4-3-data-reference-request-bericht-2-push"><bdi class="secno">5.4.3 </bdi>Data-reference-request bericht 2 (PUSH)<a class="self-link" href="#data-reference-request-bericht-2-push" aria-label="Permalink for Section 5.4.3"></a></h4><p>Hieronder volgt een voorbeeld van een Grote Berichten data-reference-request bericht voor een PDF bestand genaamd file.pdf met een grootte van 2048MiB, die moet worden ge-upload en is gezipped in de volgende 2 zip parts:</p><ul>
+<li>file.pdf.z01 met een grootte van 1024MiB is ge-upload naar <a href="https://my.host.nl/files/file.pdf.z01">https://my.host.nl/files/file.pdf.z01</a></li>
+<li>file.pdf.zip met een grootte van 765MiB is ge-upload naar <a href="https://my.host.nl/files/file.pdf.zip">https://my.host.nl/files/file.pdf.zip</a></li>
+</ul><pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">gb:digikoppeling-external-data-references-request</span> <span class="hljs-attr">profile</span>=<span class="hljs-string">"Digikoppeling-gb-4.0"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">gb:data-reference-request</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">gb:compression</span>&gt;</span>zip4j<span class="hljs-tag">&lt;<span class="hljs-name">gb:compression</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">gb:content</span> <span class="hljs-attr">contenttype</span>=<span class="hljs-string">"application/pdf"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">gb:filename</span>&gt;</span>file.pdf<span class="hljs-tag">&lt;/<span class="hljs-name">gb:filename</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">gb:checksum</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"MD5"</span>&gt;</span>01234567890123456789012345678901<span class="hljs-tag">&lt;/<span class="hljs-name">gb:checksum</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">gb:size</span>&gt;</span>2048<span class="hljs-tag">&lt;/<span class="hljs-name">gb:size</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">gb:transport</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">gb:location</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">gb:receiverurl</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:anyURI"</span>&gt;</span>
+            https://my.host.nl/files/
+          <span class="hljs-tag">&lt;/<span class="hljs-name">gb:receiverurl</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">gb:location</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">gb:part</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">gb:filename</span>&gt;</span>file.pdf.z01<span class="hljs-tag">&lt;/<span class="hljs-name">gb:filename</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">gb:checksum</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"MD5"</span>&gt;</span>12345678901234567890123456789012<span class="hljs-tag">&lt;/<span class="hljs-name">gb:checksum</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">gb:size</span>&gt;</span>1024<span class="hljs-tag">&lt;/<span class="hljs-name">gb:size</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">gb:part</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">gb:part</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">gb:filename</span>&gt;</span>file.pdf.zip<span class="hljs-tag">&lt;/<span class="hljs-name">gb:filename</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">gb:checksum</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"MD5"</span>&gt;</span>23456789012345678901234567890123<span class="hljs-tag">&lt;/<span class="hljs-name">gb:checksum</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">gb:size</span>&gt;</span>765<span class="hljs-tag">&lt;/<span class="hljs-name">gb:size</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">gb:part</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">gb:transport</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">gb:content</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">gb:compression</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">gb:compression</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">gb:data-reference-request</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">gb:digikoppeling-external-data-references-request</span>&gt;</span>
+</code></pre></section><section id="data-reference-response-bericht-2-push"><h4 id="x5-4-4-data-reference-response-bericht-2-push"><bdi class="secno">5.4.4 </bdi>Data-reference-response bericht 2 (PUSH)<a class="self-link" href="#data-reference-response-bericht-2-push" aria-label="Permalink for Section 5.4.4"></a></h4><p>Hieronder volgt een voorbeeld van een Grote Berichten data-reference-response bericht voor de PDF bestand genaamd file.pdf met een grootte van 2048MB, die is ge-upload en gezipped in de volgende 2 zip parts:</p><ul>
+<li>file.001.zip met een grootte van 1024MiB is ge-upload naar <a href="https://my.host.nl/files/file.001.zip">https://my.host.nl/files/file.001.zip</a></li>
+<li>file.002.zip met een grootte van 765MiB is ge-upload naar <a href="https://my.host.nl/files/file.002.zip">https://my.host.nl/files/file.002.zip</a></li>
+</ul><p>Waarbij file.001.zip correct is geupload en file.002.zip niet is gevonden.</p><pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">gb:digikoppeling-external-data-references-response</span> <span class="hljs-attr">profile</span>=<span class="hljs-string">"Digikoppeling-gb-4.0"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">gb:data-reference-response</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">gb:compression</span>&gt;</span>zip4j<span class="hljs-tag">&lt;<span class="hljs-name">gb:compression</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">gb:content</span> <span class="hljs-attr">contenttype</span>=<span class="hljs-string">"application/pdf"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">gb:filename</span>&gt;</span>file.pdf<span class="hljs-tag">&lt;/<span class="hljs-name">gb:filename</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">gb:checksum</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"MD5"</span>&gt;</span>01234567890123456789012345678901<span class="hljs-tag">&lt;/<span class="hljs-name">gb:checksum</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">gb:size</span>&gt;</span>2048<span class="hljs-tag">&lt;/<span class="hljs-name">gb:size</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">gb:status</span>&gt;</span>FILE_NOT_FOUND<span class="hljs-tag">&lt;/<span class="hljs-name">gb:status</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">gb:reason</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">gb:reason</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">gb:transport</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">gb:location</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">gb:receiverurl</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xs:anyURI"</span>&gt;</span>
+            https://my.host.nl/files/
+          <span class="hljs-tag">&lt;/<span class="hljs-name">gb:receiverurl</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">gb:location</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">gb:part</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">gb:filename</span>&gt;</span>file.pdf.z01<span class="hljs-tag">&lt;/<span class="hljs-name">gb:filename</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">gb:checksum</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"MD5"</span>&gt;</span>12345678901234567890123456789012<span class="hljs-tag">&lt;/<span class="hljs-name">gb:checksum</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">gb:size</span>&gt;</span>1024<span class="hljs-tag">&lt;/<span class="hljs-name">gb:size</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">gb:status</span>&gt;</span>OK<span class="hljs-tag">&lt;/<span class="hljs-name">gb:status</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">gb:part</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">gb:part</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">gb:filename</span>&gt;</span>file.pdf.zip<span class="hljs-tag">&lt;/<span class="hljs-name">gb:filename</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">gb:checksum</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"MD5"</span>&gt;</span>23456789012345678901234567890123<span class="hljs-tag">&lt;/<span class="hljs-name">gb:checksum</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">gb:size</span>&gt;</span>765<span class="hljs-tag">&lt;/<span class="hljs-name">gb:size</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">gb:status</span>&gt;</span>FILE_NOT_FOUND<span class="hljs-tag">&lt;/<span class="hljs-name">gb:status</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">gb:part</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">gb:transport</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">gb:content</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">gb:compression</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">gb:compression</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">gb:data-reference-response</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">gb:digikoppeling-external-data-references-response</span>&gt;</span>
+</code></pre><p>Alle errors behalve UNKNOWN_ERROR zijn recoverable en hebben geen reason nodig.</p></section></section></section>
+  
+    
+    <section id="conformance"><h2 id="x6-conformiteit"><bdi class="secno">6. </bdi>Conformiteit<a class="self-link" href="#conformance" aria-label="Permalink for Section 6."></a></h2><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p><p>
+        De trefwoorden <em class="rfc2119">MAG</em>, <em class="rfc2119">MOET</em>, <em class="rfc2119">MOETEN</em> en <em class="rfc2119">MOGEN</em> in dit
+        document moeten worden geïnterpreteerd als in
+        <a href="https://tools.ietf.org/html/bcp14">BCP 14</a>
+        [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8174" title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words">RFC8174</a></cite>]
+        als, en alleen als deze in hoofdletters zijn weergegeven, zoals hier
+        getoond.
+      </p>
+      
+    </section>
+  
+    <section id="tof">
+      
+    <h2 id="x7-lijst-met-figuren"><bdi class="secno">7. </bdi>Lijst met figuren<a class="self-link" href="#tof" aria-label="Permalink for Section 7."></a></h2><ul class="tof">
+        <li class="tofline">
+    <a class="tocxref" href="#fig-opbouw-documentatie-digikoppeling">Figuur <bdi class="figno">1</bdi> <span class="fig-title">Opbouw documentatie Digikoppeling</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-uitwisseling-groot-bestand-via-grote-berichten-file-service-van-de-zender">Figuur <bdi class="figno">2</bdi> <span class="fig-title">Uitwisseling groot bestand via Grote Berichten file service van de zender</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-uitwisseling-groot-bestand-via-grote-berichten-file-service-van-de-ontvanger">Figuur <bdi class="figno">3</bdi> <span class="fig-title">Uitwisseling groot bestand via Grote Berichten file service van de ontvanger</span></a>
+  </li>
+      </ul></section>
+  
+    
+      
+    
+  
+    
+      
+    
+  
+      
+    
+
+
+<section id="references" class="appendix"><h2 id="a-referenties"><bdi class="secno">A. </bdi>Referenties<a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></h2><section id="normatieve-referenties">
+    <h3 id="a-1-normatieve-referenties"><bdi class="secno">A.1 </bdi>Normatieve referenties<a class="self-link" href="#normatieve-referenties" aria-label="Permalink for Appendix A.1"></a></h3>
+    <dl class="bibliography"><dt id="bib-digikoppeling beveiligingsdocument">[Digikoppeling Beveiligingsdocument]</dt><dd><a href="https://www.logius.nl/sites/default/files/bestanden/website/Digikoppeling_Beveiligingsstandaarden_en_voorschriften_v1.3.pdf"><cite>Digikoppeling Beveiligingsstandaarden en voorschriften</cite></a>.  Logius. 2020. URL: <a href="https://www.logius.nl/sites/default/files/bestanden/website/Digikoppeling_Beveiligingsstandaarden_en_voorschriften_v1.3.pdf">https://www.logius.nl/sites/default/files/bestanden/website/Digikoppeling_Beveiligingsstandaarden_en_voorschriften_v1.3.pdf</a></dd><dt id="bib-pki ca">[PKI CA]</dt><dd><a href="https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/toegetreden-vertrouwensdienstverleners"><cite>Toegetreden vertrouwensdienstverleners</cite></a>.  Logius. URL: <a href="https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/toegetreden-vertrouwensdienstverleners">https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/toegetreden-vertrouwensdienstverleners</a></dd><dt id="bib-pki policy">[PKI Policy]</dt><dd><a href="https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen"><cite>Programma van Eisen (PKIoverheid)</cite></a>.  Logius. URL: <a href="https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen">https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen</a></dd><dt id="bib-pkioverheid certificaten">[PKIoverheid Certificaten]</dt><dd><a href="https://cert.pkioverheid.nl/"><cite>Pkioverheid certificaten</cite></a>.  Logius. URL: <a href="https://cert.pkioverheid.nl/">https://cert.pkioverheid.nl/</a></dd><dt id="bib-rfc2046">[rfc2046]</dt><dd><a href="https://www.rfc-editor.org/rfc/rfc2046"><cite>Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types</cite></a>. N. Freed; N. Borenstein.  IETF. November 1996. Draft Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc2046">https://www.rfc-editor.org/rfc/rfc2046</a></dd><dt id="bib-rfc2119">[RFC2119]</dt><dd><a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a></dd><dt id="bib-rfc7230">[rfc7230]</dt><dd><a href="https://httpwg.org/specs/rfc7230.html"><cite>Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing</cite></a>. R. Fielding, Ed.; J. Reschke, Ed..  IETF. June 2014. Proposed Standard. URL: <a href="https://httpwg.org/specs/rfc7230.html">https://httpwg.org/specs/rfc7230.html</a></dd><dt id="bib-rfc7231">[rfc7231]</dt><dd><a href="https://httpwg.org/specs/rfc7231.html"><cite>Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content</cite></a>. R. Fielding, Ed.; J. Reschke, Ed..  IETF. June 2014. Proposed Standard. URL: <a href="https://httpwg.org/specs/rfc7231.html">https://httpwg.org/specs/rfc7231.html</a></dd><dt id="bib-rfc7232">[rfc7232]</dt><dd><a href="https://httpwg.org/specs/rfc7232.html"><cite>Hypertext Transfer Protocol (HTTP/1.1): Conditional Requests</cite></a>. R. Fielding, Ed.; J. Reschke, Ed..  IETF. June 2014. Proposed Standard. URL: <a href="https://httpwg.org/specs/rfc7232.html">https://httpwg.org/specs/rfc7232.html</a></dd><dt id="bib-rfc7233">[rfc7233]</dt><dd><a href="https://httpwg.org/specs/rfc7233.html"><cite>Hypertext Transfer Protocol (HTTP/1.1): Range Requests</cite></a>. R. Fielding, Ed.; Y. Lafon, Ed.; J. Reschke, Ed..  IETF. June 2014. Proposed Standard. URL: <a href="https://httpwg.org/specs/rfc7233.html">https://httpwg.org/specs/rfc7233.html</a></dd><dt id="bib-rfc7234">[rfc7234]</dt><dd><a href="https://httpwg.org/specs/rfc7234.html"><cite>Hypertext Transfer Protocol (HTTP/1.1): Caching</cite></a>. R. Fielding, Ed.; M. Nottingham, Ed.; J. Reschke, Ed..  IETF. June 2014. Proposed Standard. URL: <a href="https://httpwg.org/specs/rfc7234.html">https://httpwg.org/specs/rfc7234.html</a></dd><dt id="bib-rfc7235">[rfc7235]</dt><dd><a href="https://httpwg.org/specs/rfc7235.html"><cite>Hypertext Transfer Protocol (HTTP/1.1): Authentication</cite></a>. R. Fielding, Ed.; J. Reschke, Ed..  IETF. June 2014. Proposed Standard. URL: <a href="https://httpwg.org/specs/rfc7235.html">https://httpwg.org/specs/rfc7235.html</a></dd><dt id="bib-rfc8174">[RFC8174]</dt><dd><a href="https://www.rfc-editor.org/rfc/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a></dd></dl>
+  </section><section id="informatieve-referenties">
+    <h3 id="a-2-informatieve-referenties"><bdi class="secno">A.2 </bdi>Informatieve referenties<a class="self-link" href="#informatieve-referenties" aria-label="Permalink for Appendix A.2"></a></h3>
+    <dl class="bibliography"><dt id="bib-digikoppeling-cert">[Digikoppeling-Cert]</dt><dd><a href="http://www.logius.nl/digikoppeling"><cite>Gebruik en achtergrond van Digikoppeling certificaten</cite></a>.  Logius. URL: <a href="http://www.logius.nl/digikoppeling">http://www.logius.nl/digikoppeling</a></dd></dl>
+  </section></section><p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(setupPanel);
+} else {
+  setupPanel();
+}
+
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
+  /** @type {HTMLElement} */
+  let panel = null;
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    const action = deriveAction(event);
+
+    switch (action) {
+      case "show": {
+        hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = target.closest("dfn, .index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        const coords = deriveCoordinates(event);
+        displayPanel(dfn, panel, coords);
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        panel = null;
+        break;
+      }
+    }
+  };
+}
+
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
+  }
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not([data-cite]), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
+    if (hitALink) {
+      return target.classList.contains("self-link") ? "hide" : "dock";
+    }
+    const panel = target.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : "none";
+  }
+  if (document.querySelector(".dfn-panel:not([hidden])")) {
+    return "hide";
+  }
+  return "none";
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a[href]");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const [record] = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  if (!panel) return;
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>

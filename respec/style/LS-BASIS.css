@@ -1,0 +1,7 @@
+/* Style for Logius Document */
+
+@import "base.css";
+
+body {
+    background-image: url('logos/LS-BASIS.svg');
+}

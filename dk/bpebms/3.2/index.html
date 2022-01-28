@@ -1,0 +1,921 @@
+<!DOCTYPE html><html lang="nl"><head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta charset="utf-8">
+<meta name="generator" content="ReSpec 26.0.0">
+<style>
+span.example-title{text-transform:none}
+aside.example,div.example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
+div.illegal-example{color:red}
+div.illegal-example p{color:#000}
+aside.example,div.example{padding:.5em;border-left-width:.5em;border-left-style:solid;border-color:#e0cb52;background:#fcfaee}
+aside.example div.example{border-left-width:.1em;border-color:#999;background:#fff}
+aside.example div.example span.example-title{color:#999}
+</style>
+<style>
+.issue-label{text-transform:initial}
+.warning>p:first-child{margin-top:0}
+.warning{padding:.5em;border-left-width:.5em;border-left-style:solid}
+span.warning{padding:.1em .5em .15em}
+.issue.closed span.issue-number{text-decoration:line-through}
+.warning{border-color:#f11;border-width:.2em;border-style:solid;background:#fbe9e9}
+.warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}
+li.task-list-item{list-style:none}
+input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}
+.issue a.respec-gh-label{padding:5px;margin:0 2px 0 2px;font-size:10px;text-transform:none;text-decoration:none;font-weight:700;border-radius:4px;position:relative;bottom:2px;border:none;display:inline-block}
+</style>
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font:small Helvetica Neue,sans-serif,Droid Sans Fallback;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;margin-top:.25em}
+.dfn-panel ul a[href]{color:#333}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a[href]:hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
+    
+    
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+    
+    
+<title>Digikoppeling Best Practices ebMS2 3.2</title>
+    
+    
+<link rel="shortcut icon" type="image/x-icon" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/logius.ico">
+    
+    
+<link rel="stylesheet" type="text/css" href="./media/style.css">
+
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+.hljs{background:0 0!important}
+a abbr,h1 abbr,h2 abbr,h3 abbr,h4 abbr,h5 abbr,h6 abbr{border:none}
+dfn{font-weight:700}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:normal}
+code{color:#c63501}
+th code{color:inherit}
+a[href].orcid{padding-left:4px;padding-right:4px}
+a[href].orcid>svg{margin-bottom:-2px}
+.toc a,.tof a{text-decoration:none}
+a .figno,a .secno{color:#000}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
+.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
+.simple th a{color:#fff;padding:3px 5px;text-align:left}
+.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
+.simple td{padding:3px 10px;border-top:1px solid #ddd}
+.simple tr:nth-child(even){background:#f0f6ff}
+.section dd>p:first-child{margin-top:0}
+.section dd>p:last-child{margin-bottom:0}
+.section dd{margin-bottom:1em}
+.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+a[href].self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+h2,h3,h4,h5,h6{position:relative}
+aside.example .marker>a.self-link{color:inherit}
+h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{border:none;color:inherit;font-size:83%;height:2em;left:-1.6em;opacity:.5;position:absolute;text-align:center;text-decoration:none;top:0;transition:opacity .2s;width:2em}
+h2>a.self-link::before,h3>a.self-link::before,h4>a.self-link::before,h5>a.self-link::before,h6>a.self-link::before{content:"§";display:block}
+@media (max-width:767px){
+dd{margin-left:0}
+h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{left:auto;top:auto}
+}
+@media print{
+.removeOnSave{display:none}
+}
+</style>
+<meta name="description" content="Alle Digikoppeling profielen die op ebMS2 gebaseerd zijn, moeten zich conformeren aan de Koppelvlakstandaard ebMS2.
+    Dit document is een aanvulling hierop. Het heeft als doel ontwikkelaars te adviseren en te informeren over de
+    huidige werkwijze bij het toepassen van Digikoppeling Koppelvlakstandaard ebMS2 – deze informatie geldt dus alleen
+    voor de ebMS2-variant.">
+<link rel="canonical" href="https://www.w3.org/TR/bpebms/">
+<script type="application/ld+json">{
+  "@context": [
+    "http://schema.org",
+    {
+      "@vocab": "http://schema.org/",
+      "@language": "nl",
+      "w3p": "http://www.w3.org/2001/02pd/rec54#",
+      "foaf": "http://xmlns.com/foaf/0.1/",
+      "datePublished": {
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      },
+      "inLanguage": {
+        "@language": null
+      },
+      "isBasedOn": {
+        "@type": "@id"
+      },
+      "license": {
+        "@type": "@id"
+      }
+    }
+  ],
+  "id": "https://www.w3.org/TR/bpebms/",
+  "type": [
+    "TechArticle"
+  ],
+  "name": "Digikoppeling Best Practices ebMS2 3.2",
+  "inLanguage": "nl",
+  "license": "https://creativecommons.org/licenses/by-nd/4.0/legalcode.nl",
+  "datePublished": "2019-05-16",
+  "copyrightHolder": {
+    "name": "World Wide Web Consortium",
+    "url": "https://www.w3.org/"
+  },
+  "discussionUrl": "https://github.com/Logius-standaarden/<repository>/issues",
+  "alternativeHeadline": "",
+  "description": "Alle Digikoppeling profielen die op ebMS2 gebaseerd zijn, moeten zich conformeren aan de Koppelvlakstandaard ebMS2.\n    Dit document is een aanvulling hierop. Het heeft als doel ontwikkelaars te adviseren en te informeren over de\n    huidige werkwijze bij het toepassen van Digikoppeling Koppelvlakstandaard ebMS2 – deze informatie geldt dus alleen\n    voor de ebMS2-variant.",
+  "editor": [
+    {
+      "type": "Person",
+      "name": "Peter Haasnoot",
+      "url": "https://logius.nl/standaarden",
+      "worksFor": {
+        "name": "Logius"
+      }
+    },
+    {
+      "type": "Person",
+      "name": "Pieter Hering",
+      "url": "https://logius.nl/standaarden",
+      "worksFor": {
+        "name": "Logius"
+      }
+    }
+  ],
+  "contributor": [
+    {
+      "type": "Person",
+      "name": "Logius",
+      "url": "https://logius.nl/standaarden",
+      "foaf:mbox": "digikoppeling@logius.nl"
+    }
+  ],
+  "citation": [
+    {
+      "id": "http://www.ebxml.org/specs/ebcpp-2.0.pdf",
+      "type": "TechArticle",
+      "name": "Collaboration-Protocol Profile and Agreement Specification Version 2.0",
+      "url": "http://www.ebxml.org/specs/ebcpp-2.0.pdf",
+      "creator": [
+        {
+          "name": "Oasis"
+        }
+      ],
+      "publisher": {
+        "name": "Oasis"
+      }
+    },
+    {
+      "id": "https://www.oasis-open.org/committees/download.php/272/ebMS_v2_0.pdf",
+      "type": "TechArticle",
+      "name": "OASIS ebXML Message Service Specification",
+      "url": "https://www.oasis-open.org/committees/download.php/272/ebMS_v2_0.pdf",
+      "creator": [
+        {
+          "name": "Ian Jones"
+        },
+        {
+          "name": "Brian Gibb"
+        },
+        {
+          "name": "David Fischer"
+        }
+      ]
+    },
+    {
+      "id": "https://logius.nl/diensten/digikoppeling/documentatie",
+      "type": "TechArticle",
+      "name": "Logius Digikoppeling",
+      "url": "https://logius.nl/diensten/digikoppeling/documentatie",
+      "publisher": {
+        "name": "Logius"
+      }
+    }
+  ]
+}</script>
+<style>
+.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
+.hljs-comment,.hljs-quote{color:#717277;font-style:italic}
+.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4}
+.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;font-weight:700}
+.hljs-literal{color:#0b76c5}
+.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c}
+.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01}
+.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801}
+.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3}
+.hljs-emphasis{font-style:italic}
+.hljs-strong{font-weight:700}
+.hljs-link{text-decoration:underline}
+</style>
+<script id="initialUserConfig" type="application/json">{
+  "specStatus": "DEF",
+  "specType": "BP",
+  "shortName": "bpebms",
+  "publishDate": "2019-05-16",
+  "license": "cc-by-nd",
+  "doJsonLd": true,
+  "editors": [
+    {
+      "name": "Peter Haasnoot",
+      "url": "https://logius.nl/standaarden",
+      "company": "Logius"
+    },
+    {
+      "name": "Pieter Hering",
+      "url": "https://logius.nl/standaarden",
+      "company": "Logius"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Logius",
+      "url": "https://logius.nl/standaarden",
+      "mailto": "digikoppeling@logius.nl"
+    }
+  ],
+  "github": "https://github.com/Logius-standaarden/Digikoppeling-Best-Practices-ebMS2",
+  "addSectionLinks": true,
+  "a11y": false,
+  "pubDomain": "dk",
+  "pubSubDomain": "bpebms",
+  "nl_addReleaseTagTitle": true,
+  "nl_emailComments": "digikoppeling@logius.nl",
+  "nl_markdownSplitH1sections": true,
+  "nl_github": {
+    "issueBase": "https://github.com/Logius-standaarden/<repository>/issues",
+    "revision": "https://github.com/Logius-standaarden/Digikoppeling-Best-Practices-ebMS2/commits",
+    "pullrequests": "https://github.com/Logius-standaarden/Logius-standaarden/<repository>/pulls"
+  },
+  "nl_organisationName": "Logius",
+  "nl_organisationPrefix": "LS-",
+  "nl_markdownTableClass": "dkkvs",
+  "nl_markdownEmbedImageInFigure": true,
+  "nl_organisationStylesURL": "https://publicatie.centrumvoorstandaarden.nl/respec/style/",
+  "nl_organisationPublishURL": "https://publicatie.centrumvoorstandaarden.nl/",
+  "nl_logo": {
+    "src": "https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg",
+    "alt": "Logius",
+    "id": "Logius",
+    "height": 77,
+    "width": 44,
+    "url": "https://www.logius.nl/standaarden"
+  },
+  "localBiblio": {
+    "NEN3610": {
+      "href": "https://www.nen.nl/nen-3610-2011-a1-2016-nl-217738",
+      "title": "Basismodel Geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten",
+      "authors": [
+        ""
+      ],
+      "date": "Maart 2011",
+      "publisher": "Nederlands Normalisatie-instituut"
+    },
+    "Digikoppeling Architectuur": {
+      "href": "https://centrumvoorstandaarden.github.io/Architectuur2.0-metRestfulAPI/static.html",
+      "title": "Digikoppeling Architectuur",
+      "authors": [
+        "Logius Centrum voor standaarden"
+      ],
+      "date": "december 2020",
+      "publisher": "Logius"
+    },
+    "ebCPP": {
+      "href": "http://www.ebxml.org/specs/ebcpp-2.0.pdf",
+      "title": "Collaboration-Protocol Profile and Agreement Specification Version 2.0",
+      "authors": [
+        "Oasis"
+      ],
+      "date": "september 2002",
+      "publisher": "Oasis",
+      "id": "ebcpp"
+    },
+    "Digikoppeling Beveiligingsdocument": {
+      "href": "https://www.logius.nl/sites/default/files/bestanden/website/Digikoppeling_Beveiligingsstandaarden_en_voorschriften_v1.3.pdf",
+      "title": "Digikoppeling Beveiligingsstandaarden en voorschriften",
+      "date": "2020",
+      "publisher": "Logius"
+    },
+    "Digikoppeling-Cert": {
+      "href": "http://www.logius.nl/digikoppeling",
+      "title": "Gebruik en achtergrond van Digikoppeling certificaten",
+      "publisher": "Logius"
+    },
+    "PKI Policy": {
+      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen",
+      "title": "Programma van Eisen (PKIoverheid)",
+      "publisher": "Logius"
+    },
+    "PKI CA": {
+      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/toegetreden-vertrouwensdienstverleners",
+      "title": "Toegetreden vertrouwensdienstverleners",
+      "publisher": "Logius"
+    },
+    "PKIoverheid Certificaten": {
+      "href": "https://cert.pkioverheid.nl/",
+      "title": "Pkioverheid certificaten",
+      "publisher": "Logius"
+    },
+    "Digikoppeling Logius website": {
+      "href": "https://logius.nl/diensten/digikoppeling/documentatie",
+      "title": "Logius Digikoppeling",
+      "publisher": "Logius",
+      "id": "digikoppeling logius website"
+    },
+    "Digikoppeling Compliance Voorziening": {
+      "href": "https://portaal.digikoppeling.nl",
+      "title": "Digikoppeling Compliance Voorziening",
+      "publisher": "Logius"
+    }
+  },
+  "publishISODate": "2019-05-16T00:00:00.000Z",
+  "generatedSubtitle": "Vastgestelde versie 16 mei 2019"
+}</script>
+<link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/LS-VG.css"></head>
+
+<body class="h-entry"><div class="head">
+    <a class="logo" href="https://www.logius.nl/standaarden"><img id="Logius" alt="Logius" src="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg" width="44" height="77"></a> <h1 id="title" class="title">Digikoppeling Best Practices ebMS2 3.2</h1>
+    
+    <h2>
+      Logius Best Practice<br>
+      Vastgestelde versie
+      <time class="dt-published" datetime="2019-05-16">16 mei 2019</time>
+    </h2>
+    <dl>
+      <dt>Deze versie:</dt><dd>
+              <a class="u-url" href="https://publicatie.centrumvoorstandaarden.nl/dk/bpebms/3.2/">https://publicatie.centrumvoorstandaarden.nl/dk/bpebms/3.2/</a>
+            </dd><dt>Laatst gepubliceerde versie:</dt><dd>
+              <a href="https://publicatie.centrumvoorstandaarden.nl/dk/bpebms/">https://publicatie.centrumvoorstandaarden.nl/dk/bpebms/</a>
+            </dd>
+      <dt>Laatste werkversie:</dt><dd><a href="https://logius-standaarden.github.io/Digikoppeling-Best-Practices-ebMS2/">https://logius-standaarden.github.io/Digikoppeling-Best-Practices-ebMS2/</a></dd>
+      
+      
+      
+      
+      
+      <dt>Redacteurs:</dt>
+      <dd class="p-author h-card vcard"><a class="u-url url p-name fn" href="https://logius.nl/standaarden">Peter Haasnoot</a> (Logius) </dd><dd class="p-author h-card vcard"><a class="u-url url p-name fn" href="https://logius.nl/standaarden">Pieter Hering</a> (Logius) </dd>
+      
+      <dt>Auteur:</dt><dd class="p-author h-card vcard"><a class="ed_mailto u-email email p-name" href="mailto:digikoppeling@logius.nl">Logius</a></dd>
+      <dt>Doe mee:</dt><dd>
+    <a href="https://github.com/Logius-standaarden/Digikoppeling-Best-Practices-ebMS2/">GitHub Logius-standaarden/Digikoppeling-Best-Practices-ebMS2</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/<repository>/issues">Dien een melding in</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/Digikoppeling-Best-Practices-ebMS2/commits">Revisiehistorie</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/Logius-standaarden/<repository>/pulls">Pull requests</a>
+  </dd>
+    </dl>
+    
+    
+    
+    <p class="copyright">
+          This document is licensed under a
+          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" class="subfoot">Creative Commons Attribution 4.0 License</a>.
+        </p>
+    <hr title="Separator for header">
+  </div>
+    <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Alle Digikoppeling profielen die op ebMS2 gebaseerd zijn, moeten zich conformeren aan de Koppelvlakstandaard ebMS2.
+    Dit document is een aanvulling hierop. Het heeft als doel ontwikkelaars te adviseren en te informeren over de
+    huidige werkwijze bij het toepassen van Digikoppeling Koppelvlakstandaard ebMS2 – deze informatie geldt dus alleen
+    voor de ebMS2-variant.</p></section>
+    <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>
+    Dit is de definitieve versie van de  best practice. Wijzigingen naar
+    aanleiding van consultaties zijn doorgevoerd.
+  </p><p></p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#doel-en-doelgroep"><bdi class="secno">1.1 </bdi>Doel en doelgroep</a></li><li class="tocline"><a class="tocxref" href="#opbouw-digikoppeling-documentatie"><bdi class="secno">1.2 </bdi>Opbouw Digikoppeling documentatie</a></li><li class="tocline"><a class="tocxref" href="#doel-en-scope-van-digikoppeling"><bdi class="secno">1.3 </bdi>Doel en scope van Digikoppeling</a></li><li class="tocline"><a class="tocxref" href="#opbouw-van-dit-document"><bdi class="secno">1.4 </bdi>Opbouw van dit document</a></li></ol></li><li class="tocline"><a class="tocxref" href="#werkwijze-aanbevelingen-best-practices"><bdi class="secno">2. </bdi>Werkwijze/Aanbevelingen/Best Practices</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#eb001-ebms2-producten"><bdi class="secno">2.1 </bdi>EB001 ebMS2 Producten</a></li><li class="tocline"><a class="tocxref" href="#eb002-cpa-gebruik"><bdi class="secno">2.2 </bdi>EB002 CPA Gebruik</a></li><li class="tocline"><a class="tocxref" href="#eb003-productie-en-ontwikkelomgevingen"><bdi class="secno">2.3 </bdi>EB003 Productie- en ontwikkelomgevingen</a></li><li class="tocline"><a class="tocxref" href="#eb004-partyid-postfix"><bdi class="secno">2.4 </bdi>EB004 PartyId postfix</a></li><li class="tocline"><a class="tocxref" href="#eb005-certificaten"><bdi class="secno">2.5 </bdi>EB005 Certificaten</a></li><li class="tocline"><a class="tocxref" href="#eb006-service-action-naamgeving"><bdi class="secno">2.6 </bdi>EB006 Service &amp; Action naamgeving</a></li><li class="tocline"><a class="tocxref" href="#eb007-rollen"><bdi class="secno">2.7 </bdi>EB007 Rollen</a></li><li class="tocline"><a class="tocxref" href="#eb008-overdrachtskarakteristieken"><bdi class="secno">2.8 </bdi>EB008 Overdrachtskarakteristieken</a></li><li class="tocline"><a class="tocxref" href="#eb009-vaststelling-cpaid"><bdi class="secno">2.9 </bdi>EB009 Vaststelling CPAId</a></li><li class="tocline"><a class="tocxref" href="#eb010-geldigheidsperiode-van-een-cpa"><bdi class="secno">2.10 </bdi>EB010 Geldigheidsperiode van een CPA</a></li><li class="tocline"><a class="tocxref" href="#eb011-messageorder-en-conversationid"><bdi class="secno">2.11 </bdi>EB011 MessageOrder en ConversationId</a></li><li class="tocline"><a class="tocxref" href="#eb012-messageorder-en-reliablemessaging"><bdi class="secno">2.12 </bdi>EB012 MessageOrder en ReliableMessaging</a></li><li class="tocline"><a class="tocxref" href="#eb013-messageid"><bdi class="secno">2.13 </bdi>EB013 MessageId</a></li><li class="tocline"><a class="tocxref" href="#eb014-meerdere-partyid-s"><bdi class="secno">2.14 </bdi>EB014 Meerdere PartyId's</a></li><li class="tocline"><a class="tocxref" href="#eb015-syncreplymode"><bdi class="secno">2.15 </bdi>EB015 SyncReplyMode</a></li></ol></li><li class="tocline"><a class="tocxref" href="#cpa-gebruik-en-kenmerken"><bdi class="secno">3. </bdi>CPA Gebruik en Kenmerken</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding-0"><bdi class="secno">3.1 </bdi>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#wat-is-een-cpa"><bdi class="secno">3.2 </bdi>Wat is een CPA?</a></li><li class="tocline"><a class="tocxref" href="#waarom-wordt-er-een-cpa-gebruikt"><bdi class="secno">3.3 </bdi>Waarom wordt er een CPA gebruikt?</a></li><li class="tocline"><a class="tocxref" href="#wat-zijn-de-uitgangspunten-voor-de-cpa"><bdi class="secno">3.4 </bdi>Wat zijn de uitgangspunten voor de CPA?</a></li><li class="tocline"><a class="tocxref" href="#hoe-wordt-een-cpa-gemaakt"><bdi class="secno">3.5 </bdi>Hoe wordt een CPA gemaakt?</a></li></ol></li><li class="tocline"><a class="tocxref" href="#het-gebruik-van-berichtvolgordelijkheid"><bdi class="secno">4. </bdi>Het gebruik van berichtvolgordelijkheid</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#granulariteit"><bdi class="secno">4.1 </bdi>Granulariteit</a></li><li class="tocline"><a class="tocxref" href="#verwerking-in-de-organisatie"><bdi class="secno">4.2 </bdi>Verwerking in de organisatie</a></li><li class="tocline"><a class="tocxref" href="#alternatieven-voor-berichtvolgorde"><bdi class="secno">4.3 </bdi>Alternatieven voor berichtvolgorde</a></li></ol></li><li class="tocline"><a class="tocxref" href="#message-ordering-in-ebxml"><bdi class="secno">5. </bdi>Message Ordering in ebXML</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#messageorder-module"><bdi class="secno">5.1 </bdi>MessageOrder Module**</a></li><li class="tocline"><a class="tocxref" href="#messageorder-element"><bdi class="secno">5.2 </bdi>MessageOrder Element**</a></li><li class="tocline"><a class="tocxref" href="#productondersteuning"><bdi class="secno">5.3 </bdi>Productondersteuning</a></li><li class="tocline"><a class="tocxref" href="#zelfbouwoverwegingen"><bdi class="secno">5.4 </bdi>Zelfbouwoverwegingen</a></li><li class="tocline"><a class="tocxref" href="#ontwerp-pattern"><bdi class="secno">5.5 </bdi>Ontwerp Pattern</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#specificatie-design-time"><bdi class="secno">5.5.1 </bdi>Specificatie (Design Time)</a></li><li class="tocline"><a class="tocxref" href="#verwerking-run-time"><bdi class="secno">5.5.2 </bdi>Verwerking (Run Time)</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">6. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">7. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">A.1 </bdi>Normatieve referenties</a></li><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">A.2 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
+    <section class="introductory" data-format="markdown"><h1>Documentbeheer</h1><table class="dkkvs">
+<thead>
+<tr>
+<th>Datum</th>
+<th>Versie</th>
+<th>Auteur</th>
+<th>Opmerkingen</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>22-11-2011</td>
+<td>1.5</td>
+<td>Logius</td>
+<td>-</td>
+</tr>
+<tr>
+<td>09-06-2014</td>
+<td>1.6</td>
+<td>Logius</td>
+<td>Redactioneel bijwerken</td>
+</tr>
+<tr>
+<td>13-01-2015</td>
+<td>3.0</td>
+<td>Logius</td>
+<td>Redactioneel</td>
+</tr>
+<tr>
+<td>01-10-2017</td>
+<td>3.1</td>
+<td>Logius</td>
+<td>Herzien nav:  - Compliance Voorziening  - Begrippen ebMS2 en CPA   Register</td>
+</tr>
+<tr>
+<td>16-05-2019</td>
+<td>3.2</td>
+<td>Logius</td>
+<td>EB015 SyncReply toegevoegd</td>
+</tr>
+</tbody></table></section>
+    <section class="introductory" data-format="markdown"><h1>Colofon</h1><table class="dkkvs">
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Logius Servicecentrum:</td>
+<td>Postbus 96810 2509<br>JE Den Haag<br>t. 0900 555 4555 (10 ct p/m)<br>e.<a href="mailto:servicecentrum@logius.nl">servicecentrum@logius.nl</a></td>
+</tr>
+</tbody></table></section>
+    <section data-format="markdown" id="inleiding"><h2 id="x1-inleiding"><bdi class="secno">1. </bdi>Inleiding<a class="self-link" aria-label="§" href="#inleiding"></a></h2><section id="doel-en-doelgroep"><h3 id="x1-1-doel-en-doelgroep"><bdi class="secno">1.1 </bdi>Doel en doelgroep<a class="self-link" aria-label="§" href="#doel-en-doelgroep"></a></h3><p>Alle Digikoppeling profielen die op ebMS2 gebaseerd zijn, moeten zich conformeren aan de Koppelvlakstandaard ebMS2. Dit document is een aanvulling hierop. Het heeft als doel ontwikkelaars te adviseren en te informeren over de huidige werkwijze bij het toepassen van Digikoppeling Koppelvlakstandaard ebMS2 – deze informatie geldt dus alleen voor de ebMS2-variant.</p><p>Het document is bestemd voor Architecten, integratie specialisten en ontwikkelaars van webservices die zijn aangesloten op Digikoppeling. Het gaat hierbij om zowel (service) aanbieders als (service) afnemers. Zie onderstaande tabel bij welke taken dit document ondersteunt.</p><table class="dkkvs">
+<thead>
+<tr>
+<th>Afkorting</th>
+<th>Rol</th>
+<th>Taak</th>
+<th>Doelgroep?</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[MT]</td>
+<td>Management</td>
+<td>Bevoegdheid om namens organisatie (strategische) besluiten te nemen.</td>
+<td><strong>Nee</strong></td>
+</tr>
+<tr>
+<td>[PL]</td>
+<td>Projectleiding</td>
+<td>Verzorgen van de aansturing van projecten.</td>
+<td><strong>Nee</strong></td>
+</tr>
+<tr>
+<td>[A&amp;D]</td>
+<td>Analyseren &amp; ontwerpen (design)</td>
+<td>Analyseren en ontwerpen van oplossings-richtingen. Het verbinden van Business aan de IT.</td>
+<td><strong>Nee</strong></td>
+</tr>
+<tr>
+<td>[OT&amp;B]</td>
+<td>Ontwikkelen, testen en beheer</td>
+<td>Ontwikkelt, bouwt en configureert de techniek conform specificaties. Zorgen voor beheer na ingebruikname.</td>
+<td><strong>Ja</strong></td>
+</tr>
+</tbody></table></section><section id="opbouw-digikoppeling-documentatie"><h3 id="x1-2-opbouw-digikoppeling-documentatie"><bdi class="secno">1.2 </bdi>Opbouw Digikoppeling documentatie<a class="self-link" aria-label="§" href="#opbouw-digikoppeling-documentatie"></a></h3><p>Digikoppeling is beschreven in een set van documenten. Deze set is als volgt opgebouwd:</p><p><figure id="DK_Specificatie_structuur"><img src="media/DK_Specificatie_structuur.png" alt="Opbouw documentatie Digikoppeling" title="Opbouw documentatie Digikoppeling" width="978" height="570"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">Opbouw documentatie Digikoppeling</span></figcaption></figure></p><p>Alle met de kleur groen aangegeven documenten vallen onder het beheer zoals geformaliseerd in het Beheermodel en releasebeleid.</p></section><section id="doel-en-scope-van-digikoppeling"><h3 id="x1-3-doel-en-scope-van-digikoppeling"><bdi class="secno">1.3 </bdi>Doel en scope van Digikoppeling<a class="self-link" aria-label="§" href="#doel-en-scope-van-digikoppeling"></a></h3><p>Voor de Overheid als geheel is interoperabiliteit tussen een groot aantal serviceaanbieders en serviceafnemers van essentieel belang. Die grootschalige interoperabiliteit wordt bereikt door sterke standaardisatie van het koppelvlak tussen de communicatiepartners.</p><p>Deze communicatie vindt plaats in het domein van Digikoppeling, en daarbij worden Digikoppeling Koppelvlakstandaarden toegepast. Dat is een beperkte set van standaarden waaruit onder gedefinieerde omstandigheden gekozen kan worden.</p><p>Digikoppeling biedt de mogelijkheid om op deze gestandaardiseerde wijze berichten uit te wisselen tussen service aanbieders en service afnemers. Digikoppeling richt zich voornamelijk op uitwisselingen tussen overheidsorganisaties maar er zijn ook implementaties bekend van de toepassing van Digikoppeling bij uitwisseling tussen bedrijven en overheden.</p><p><strong>Uitwisseling binnen Digikoppeling</strong></p><p>De uitwisseling tussen partijen is in drie lagen opgedeeld:</p><ul>
+<li><p>Inhoud (gegevens): deze laag bevat afspraken over de inhoud van het uit te wisselen bericht, dus de structuur, semantiek en waardebereiken<br>  Digikoppeling houdt zich niet met de inhoud bezig, ' heeft geen boodschap aan de boodschap'.</p>
+</li>
+<li><p>Logistiek (processen): op deze laag bevinden zich de afspraken betreffende transportprotocollen (HTTP/TLS), messaging (SOAP), adressering, beveiliging (authenticatie en encryptie) en betrouwbaarheid. Dit is laag van Digikoppeling.</p>
+</li>
+<li><p>Transport (techniek): deze laag verzorgt het daadwerkelijke transport van het bericht (TCP/IP).</p>
+</li>
+</ul><p>Digikoppeling richt zich uitsluitend op de logistieke laag.</p></section><section id="opbouw-van-dit-document"><h3 id="x1-4-opbouw-van-dit-document"><bdi class="secno">1.4 </bdi>Opbouw van dit document<a class="self-link" aria-label="§" href="#opbouw-van-dit-document"></a></h3><p>Hoofdstuk 1 bevat een aantal algemene inleidende onderwerpen.</p><p>Hoofdstuk 2 bevat de aanbevelingen, werkwijze en best practices.</p><p>Hoofdstuk 3 gaat in op de kenmerken van een CPA.</p><p>Hoofdstuk 4 gaat over bericht volgordelijkheid.</p><p>Begrippen en afkortingen worden toegelicht in het document “DigikoppelingArchitectuur”. Deze zit in de Digikoppeling standaard.</p><p>Dit document en andere documentatie is beschikbaar op</p><p><a href="http://www.logius.nl/digikoppeling">www.logius.nl/digikoppeling</a>.</p></section></section><section data-format="markdown" id="werkwijze-aanbevelingen-best-practices"><h2 id="x2-werkwijze-aanbevelingen-best-practices"><bdi class="secno">2. </bdi>Werkwijze/Aanbevelingen/Best Practices<a class="self-link" aria-label="§" href="#werkwijze-aanbevelingen-best-practices"></a></h2><section id="eb001-ebms2-producten"><h3 id="x2-1-eb001-ebms2-producten"><bdi class="secno">2.1 </bdi>EB001 ebMS2 Producten<a class="self-link" aria-label="§" href="#eb001-ebms2-producten"></a></h3><p>Gebruik een ebMS2 product met aantoonbare ervaring binnen het Digikoppeling domein. Op de website van Logius is een overzicht van Digikoppeling leveranciers te vinden en ook in de marktscan van KING en Logius is een overzicht te vinden van het aanbod van Digikoppeling adapters dat voldoet aan de eisen die KING stelt aan een Digikoppeling Adapter voor de gemeentelijke markt.</p></section><section id="eb002-cpa-gebruik"><h3 id="x2-2-eb002-cpa-gebruik"><bdi class="secno">2.2 </bdi>EB002 CPA Gebruik<a class="self-link" aria-label="§" href="#eb002-cpa-gebruik"></a></h3><p>Voor het definiëren van een CPA geldt het volgende advies:</p><ol>
+<li><p>Raadpleeg het hoofdstuk 3 'CPA Gebruik en Kenmerken'.</p>
+</li>
+<li><p>Maak gebruik van het online CPA Register<sup>1</sup>, zie document 'Digikoppeling CPA Creatie Handleiding'.</p>
+</li>
+</ol><p><sup>1</sup>: Het online CPA Register wordt gehost door Justid en is beschikbaar op <a href="https://cparegister.minvenj.nl/logius">https://cparegister.minvenj.nl/logius</a></p></section><section id="eb003-productie-en-ontwikkelomgevingen"><h3 id="x2-3-eb003-productie-en-ontwikkelomgevingen"><bdi class="secno">2.3 </bdi>EB003 Productie- en ontwikkelomgevingen<a class="self-link" aria-label="§" href="#eb003-productie-en-ontwikkelomgevingen"></a></h3><p>Het is raadzaam om test- en productieservices ('OTAP') op aparte machines onder te brengen om het onderscheid tussen beide helder te houden. Geef ze een eigen DNS naam (en dus verschillende PKI overheid certificaten), bijvoorbeeld door het gebruik van verschillende subdomeinnamen.</p></section><section id="eb004-partyid-postfix"><h3 id="x2-4-eb004-partyid-postfix"><bdi class="secno">2.4 </bdi>EB004 PartyId postfix<a class="self-link" aria-label="§" href="#eb004-partyid-postfix"></a></h3><p>Voorzie de PartyId van een postfix voor het onderscheid tussen test- en productieservices ('OTAP'). De naamgevingsconventie is hierbij:</p><ul>
+<li><p>Ontwikkelomgeving met de postfix ‘_O’</p>
+</li>
+<li><p>Testomgeving met de postfix ‘_T’</p>
+</li>
+<li><p>Acceptatieomgeving met de postfix ‘_A’</p>
+</li>
+<li><p>Productieomgeving zonder postfix (het oorspronkelijke nummer).</p>
+</li>
+</ul><p>Samenstellingen zijn ook mogelijk, bijvoorbeeld de postfix ‘_OTA’ als er één specifiek adres gebruikt wordt voor de ontwikkel-, test-, en acceptatieomgeving. Aangezien Digikoppeling een strikte scheiding tussen test en productie nastreeft zou een combinatie van productie met andere omgevingen nooit moeten voorkomen<sup>2</sup>.</p><p><sup>2</sup>: De scheiding komt ook. tot uitdrukking in het gebruik van een andere certificaat-root voor productie en andere omgevingen. Zie hiervoor het document “Gebruik en achtergrond Digikoppeling-certificaten”.</p></section><section id="eb005-certificaten"><h3 id="x2-5-eb005-certificaten"><bdi class="secno">2.5 </bdi>EB005 Certificaten<a class="self-link" aria-label="§" href="#eb005-certificaten"></a></h3><p>Vanuit het oogpunt van beveiliging is het dringende advies om aparte certificaten te gebruiken voor de 'OTA' omgevingen aan de ene kant en de productie ('P') omgeving aan de andere kant.</p><p>Ook wordt geadviseerd om autorisaties te baseren op het OIN dat uit het certificaat verkregen wordt. Indien autorisaties plaatsvinden met het PartyId (dat ook het OIN bevat) dient zeker gesteld te worden dat de beide voorkomens van het OIN (certificaat en PartyId) identiek zijn of dat de organisatie in het certificaat mag handelen namens de organisatie in het PartyId. Dit kan met geautomatiseerde controle (bijvoorbeeld bij ontvangst/verzending van een bericht op de TLS-offloader) of door handmatige controle (bijvoorbeeld bij het aanmaken van het CPA dat in de Digikoppeling-adapter ingelezen wordt).</p></section><section id="eb006-service-action-naamgeving"><h3 id="x2-6-eb006-service-action-naamgeving"><bdi class="secno">2.6 </bdi>EB006 Service &amp; Action naamgeving<a class="self-link" aria-label="§" href="#eb006-service-action-naamgeving"></a></h3><p><strong>Advies 1</strong>: gebruik een functionele naam voor de naamgeving van de Service. Verwerk de versie in de service naam. De servicenaam mag de URN zijn.</p><aside class="example" id="example-1"><div class="marker">
+    <a class="self-link" href="#example-1">Voorbeeld<bdi> 1</bdi></a>
+  </div>
+Voor Digimelding  wordt een service gedefinieerd voor de verwerking van de berichten tussen de afnemer en Digimelding en tussen de registratiehouders en de Digimelding. De service krijgt de naam:
+
+<p>Digimelding:1:0</p>
+</aside><p><strong>Advies 2:</strong> als er gebruik gemaakt wordt van het CPA Register, gebruik dan als Identificerende naam de naam van de service (het laatste onderdeel van het pad in de URN.)</p><aside class="example" id="example-2"><div class="marker">
+    <a class="self-link" href="#example-2">Voorbeeld<bdi> 2</bdi></a>
+  </div>
+Voor Digimelding wordt een service gedefinieerd voor de verwerking van de berichten tussen de afnemer en Digimelding en tussen de registratiehouders en Digimelding. De service wordt opgeslagen in het CPA Register met de Identificerende naam:
+
+<p>Digimelding.1.0</p>
+</aside><p>Met deze Identificerende naam kan een afnemer een CPA laten maken op basis van de naam (zie 'Digikoppeling CPA Creatievoorziening Handleiding' op Digikoppeling website).</p><p><strong>Advies 3</strong>: gebruik een functionele naam (liefst een werkwoord) voor de naamgeving van de Actions. Denk eraan dat een Service meerdere Actions mag bevatten (meldingen).</p><aside class="example" id="example-3"><div class="marker">
+    <a class="self-link" href="#example-3">Voorbeeld<bdi> 3</bdi></a>
+  </div>
+Voor de Digimelding wordt in een service de Action gedefinieerd voor het terugmelden van een geconstateerde foutieve registratie. De naam voor de service is:
+terugmelden
+</aside><p>In Digikoppeling Koppelvlakstandaard WUS staat bij voorschrift WW003 hoe de payload in de SOAP body opgenomen moet worden: op basis van de 'document-literal style'. Bij document-literal mag de payload slechts 1 XML element bevatten; hierbinnen kunnen wel meerdere elementen opgenomen worden. Het is ook bijvoorbeeld mogelijk om meerdere elementen van het type {<code>http://www.w3.org/2001/XMLSchema</code>} base64Binary op te nemen binnen dit eerste element. Daarmee ondersteunt deze koppelvlakstandaard het versturen van attachments met binaire data impliciet.</p><p>Het wordt sterk aangeraden om voor ebMS2 deze werkwijze over te nemen. De naam van het payload element zal dan gebruikt worden als naam voor de Action.</p></section><section id="eb007-rollen"><h3 id="x2-7-eb007-rollen"><bdi class="secno">2.7 </bdi>EB007 Rollen<a class="self-link" aria-label="§" href="#eb007-rollen"></a></h3><p>Als een overheidsorganisatie in een bepaalde service zowel berichten kan versturen als wel berichten kan ontvangen, ga dan na wat de functionele rol is. In welke hoedanigheid wordt de functie uitgevoerd? Deze functionele rol zal een bepaalde naam hebben. Gebruik dan die naam voor de rol in de CPA.</p><aside class="example" id="example-4"><div class="marker">
+    <a class="self-link" href="#example-4">Voorbeeld<bdi> 4</bdi></a>
+  </div>
+Een abonnementen service biedt de mogelijkheid om organisaties zich te laten inschrijven op een topic, of om zich te laten uitschrijven op een topic. De abonnementen service zal op gezette tijden een nieuw item van een topic naar een afnemer sturen. Merk op dat de berichten in alle gevallen meldingen zijn.
+
+<p>Vanuit een eenvoudig oogpunt zou je kunnen zeggen dat de organisatie die de abonnementen service implementeert, zowel berichten verstuurt als ontvangt:</p>
+<ul>
+<li><p>ontvangt, voor het verwerken van de aanvragen van de afnemer, en</p>
+</li>
+<li><p>verstuurt, voor het verzenden van nieuwe topics.</p>
+</li>
+</ul>
+<p>Vanuit de optiek dat de organisatie een samenhangende verzameling van berichten gedefinieerd heeft voor de implementatie de abonnementen service, is het zinvol om de organisatie die de service aanbiedt een en dezelfde rol te geven: bijvoorbeeld 'TopicHouder'.</p>
+<p>De service krijgt de naam “AbonnementenService”. Afnemers krijgen de rol 'Abonnee'. De organisatie die de service implementeert krijgt de rol 'TopicHouder'. De volgende meldingen zijn mogelijk:</p>
+<ul>
+<li><p>Van 'Abonnee' rol naar 'TopicHouder' rol: melding InschrijvenOpTopic(topic)</p>
+</li>
+<li><p>Van 'Abonnee' rol naar 'TopicHouder' rol: melding UitschrijvenOpTopic(topic)</p>
+</li>
+<li><p>Van 'Abonnee' rol naar 'TopicHouder' rol: bevraging RaadpleegTopics()</p>
+</li>
+<li><p>Van 'TopicHouder' rol naar 'Abonnee' rol: melding NieuwTopicItem()</p>
+</li>
+</ul>
+<p>(Voor de volledigheid: het opvragen van de beschikbare topics is een 'bevraging' op Digikoppeling en zal met WUS gedaan moeten worden.)</p>
+<p>De Abonnee kan dus berichten versturen (om zich in- of uit te schrijven), maar ook ontvangen (een nieuw item van een topic). De topic houder kan berichten ontvangen (de in of uitschrijvingen van afnemers), maar ook berichten versturen (de nieuwe items van een topic).</p>
+</aside></section><section id="eb008-overdrachtskarakteristieken"><h3 id="x2-8-eb008-overdrachtskarakteristieken"><bdi class="secno">2.8 </bdi>EB008 Overdrachtskarakteristieken<a class="self-link" aria-label="§" href="#eb008-overdrachtskarakteristieken"></a></h3><p>De karakteristieken voor de betrouwbare overdracht worden uitgedrukt in ‘RetryInterval’ en ‘RetryCount’. Digikoppeling Koppelvlakstandaard ebMS2 heeft hiervoor een aanname gemaakt. Evalueer met de betrokken partijen of deze waardes van toepassing zijn. Wijzig de waardes zo nodig. Houd hierbij rekening met zowel de bedrijfsmatige verwerking van de meldingen als met de netwerk karakteristieken (beschikbare bandbreedte, omvang van de payload, quality of service en dergelijke) tussen de twee overheidsinstanties. Raadpleeg voor meer informatie hoofdstuk 3 'CPA Gebruik en Kenmerken'.</p></section><section id="eb009-vaststelling-cpaid"><h3 id="x2-9-eb009-vaststelling-cpaid"><bdi class="secno">2.9 </bdi>EB009 Vaststelling CPAId<a class="self-link" aria-label="§" href="#eb009-vaststelling-cpaid"></a></h3><p>Geef zowel een CPAId als een start- en einddatum op bij het maken van een overeenkomst tussen een service requester en een service provider. Deze invulling moet in overleg met de twee partijen bepaald worden. Raadpleeg voor meer informatie hoofdstuk 3 'CPA Gebruik en kenmerken'.</p></section><section id="eb010-geldigheidsperiode-van-een-cpa"><h3 id="x2-10-eb010-geldigheidsperiode-van-een-cpa"><bdi class="secno">2.10 </bdi>EB010 Geldigheidsperiode van een CPA<a class="self-link" aria-label="§" href="#eb010-geldigheidsperiode-van-een-cpa"></a></h3><p>Laat de start- en einddatum van de CPA mede afhangen van de geldigheid van de gebruikte client- &amp; servercertificaten.</p><p>Een CPA voor testdoeleinden kan een korte geldigheidsperiode krijgen, afgestemd op de test periode.</p></section><section id="eb011-messageorder-en-conversationid"><h3 id="x2-11-eb011-messageorder-en-conversationid"><bdi class="secno">2.11 </bdi>EB011 MessageOrder en ConversationId<a class="self-link" aria-label="§" href="#eb011-messageorder-en-conversationid"></a></h3><p>Als de MessageOrder functionaliteit gebruikt word, moeten alle betreffende (samenhangende) berichten dezelfde ConversationId krijgen.</p><p>Er zijn meerdere, onafhankelijke, berichtstromen mogelijk waar MessageOrder op van toepassing is als elke berichtstroom zijn eigen ConversationId krijgt.</p></section><section id="eb012-messageorder-en-reliablemessaging"><h3 id="x2-12-eb012-messageorder-en-reliablemessaging"><bdi class="secno">2.12 </bdi>EB012 MessageOrder en ReliableMessaging<a class="self-link" aria-label="§" href="#eb012-messageorder-en-reliablemessaging"></a></h3><p>Als MessageOrder gebruikt wordt is dit van invloed op de overdrachtskarakteristieken (EB008). Als een enkel bericht in de overdracht faalt, heeft dit tot gevolg dat alle opvolgende berichten niet verzonden kunnen worden, of afgeleverd kunnen worden. De waardes voor de RetryCount en RetryInterval zullen daarom met zorg gekozen moeten worden.</p></section><section id="eb013-messageid"><h3 id="x2-13-eb013-messageid"><bdi class="secno">2.13 </bdi>EB013 MessageId<a class="self-link" aria-label="§" href="#eb013-messageid"></a></h3><p>De Koppelvlakstandaard ebMS2 schrijft het gebruik van een MessageId voor conform RFC2822, in de vorm van “<a href="mailto:UUID@URI">UUID@URI</a>”.</p><p>De URI in de MessageId kan ook het domein kan zijn van Digikoppeling messagehandler.</p></section><section id="eb014-meerdere-partyid-s"><h3 id="x2-14-eb014-meerdere-partyid-s"><bdi class="secno">2.14 </bdi>EB014 Meerdere PartyId's<a class="self-link" aria-label="§" href="#eb014-meerdere-partyid-s"></a></h3><p>Als een grote organisatie, bestaande uit meerdere deel-organisaties, via een gateway (in de algemene zin, niet te verwarren met Digikoppeling Gateway) aangesloten wordt op Digikoppeling, kan de situatie ontstaan dat de deel-organisaties een ander OIN hebben dan het OIN van de gehele organisatie. Ook kan de situatie ontstaan dat voor de cliënt authenticatie van de gateway er maar 1 certificaat gebruikt kan worden (namelijk die van de organisatie als geheel).</p><p>Het is toegestaan om op transport niveau het cliënt certificaat te gebruiken voor de authenticatie van de organisatie als geheel. Als waarde voor de PartyId mogen OIN's gebruikt worden die afwijken van het OIN in het authenticatie certificaat. Het is aan de samenwerkende partijen om er op toe te zien dat de juiste PartyId's gebruikt worden. In dergelijke situaties is het tevens toegestaan om PartyId's te gebruiken die afwijken van de gangbare OIN's, mits er een ander PartyId type aangegeven wordt. (Voor de OIN geldt urn:osb:oin.) Vanuit Digikoppeling wordt in dergelijke gevallen een dringend advies gegeven om de deel-organisaties een eigen OIN te laten aanvragen. (Het toestaan van een eigen PartyId waarde in de communicatie op Digikoppeling tussen de Nederlandse overheden wordt gezien als een tijdelijke situatie).</p></section><section id="eb015-syncreplymode"><h3 id="x2-15-eb015-syncreplymode"><bdi class="secno">2.15 </bdi>EB015 SyncReplyMode<a class="self-link" aria-label="§" href="#eb015-syncreplymode"></a></h3><p>Het Digikoppeling ebMS2 Reliable Messaging (RM) profiel vereist dat berichten bevestigd worden met een <em>acknowledgement</em> bericht. Binnen het Digikoppeling ebMS2 RM-profiel moet deze acknowledgement <em>asynchroon</em> worden verzonden. Een Digikoppeling oplossing houdt hiervoor een administratie bij zodat de acknowledgement aan het initiële <em>MessageId</em> van het bericht kan worden kan worden gerefereerd</p><p>Bij het gebruik van het uitwisselen van zeer hoge volumes van berichten in beperkte tijd via het Digikoppeling ebMS RM-profiel <em>kan</em> de overhead van het asynchroon bevestigen van het bericht via asynchrone acknowledgement (te) groot worden. Vandaar dat sinds versie 3.3 van dit profiel het gebruik van SyncReply Profile in de Digikoppeling ebMS2 Specificatie wordt toegestaan voor een aantal uitzonderingsgevallen. Vanaf deze versie is het in bepaalde gevallen mogelijk om een bericht synchroon – dus in dezelfde http-sessie- te bevestigen met een acknowledgement (of een foutsituatie synchroon te beantwoorden met een <em>errormessage</em>)</p><p><strong>Toepassen van Synchrone acknowledgement is uitzondering</strong></p><p>Het gebruik van Syncreply wordt in de regel afgeraden. Tot aan versie 3.3 van Digikoppeling ebMS was een invulling van het attribuut SyncReplyMode in het CPA anders dan “none” niet toegestaan, met als onderbouwing: Asynchronous messaging does not preclude fast response times, as is required to support interactive applications. <em>Asynchronous messaging supports higher levels of scalability and supports scenarios where a response message may be sent minutes, hours or days after the initial request message.</em> Asynchronous messaging may be combined transparently with store-and-forward intermediaries.</p><p>In de praktijk blijkt dat er toch situaties bestaan waarin het synchroon bevestigen van een bericht voordeel biedt:</p><p>Casusbeschrijving</p><p>Bij uitwisseling tussen een GDI-voorziening en een grote afnemer worden door de verzendende partij aan de ontvangende partij in korte tijd zeer hoge volumes berichten aangeboden. Vanwege de eis op betrouwbaarheid is voor de uitwisseling gekozen voor het ebMS2 RM-profiel. Deze ebMS berichten bevatten per zending 1 functioneel bericht. Hierdoor is de overhead van het ebMS protocol voor de ontvangende partij relatief hoog.</p><p>De berichtuitwisseling in de keten was oorspronkelijk opgezet volgens asynchrone bevestiging. Bij de ketenintegratietest tussen beide partijen kwamen verwerkingsproblemen aan de ontvangende kant aan het licht. In onderling overleg tussen de ketenpartners is afgesproken om de ebMS2 uitwisseling zo in te stellen dat acknowledgements synchroon verstuurd worden. Hierna verliep de uitwisseling volgens de afgesproken eisen aan capaciteit, performance en betrouwbaarheid.</p><p><strong>Voorwaarden voor toepassen van het synchrone bevestiging</strong></p><ul>
+<li><p><strong>Scope</strong>: Dit profiel is alleen geldig voor de Digikoppeling ebMS2 RM-profielen</p>
+</li>
+<li><p><strong>Aanleiding</strong>: Door omvang van het volume van uitwisseling van berichten in beperkte tijd bestaan verwerkingsproblemen bij (een van beide) providers. Asynchrone uitwisseling van berichten binnen het ebMS profiel blijft de defaultmodus. Dus als de verwerking probleemloos verloopt is er geen reden om over te gaan op synchrone uitwisseling.</p>
+</li>
+<li><p><strong>Voorwaarde</strong>: De Digikoppeling oplossing van beide partijen ondersteunen het instellen van SyncReplymode op mshSignalsOnly. Het instellen van deze mode kan dus niet eenzijdig worden opgelegd.</p>
+</li>
+</ul><div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="4"><span>Noot</span></div><aside class="">
+    Indien de berichtuitwisseling via een intermediary verloopt dient deze ook de SyncReplymode te ondersteunen om de synchrone communicatie tussen partijen mogelijk te maken.
+</aside></div></section></section><section data-format="markdown" id="cpa-gebruik-en-kenmerken"><h2 id="x3-cpa-gebruik-en-kenmerken"><bdi class="secno">3. </bdi>CPA Gebruik en Kenmerken<a class="self-link" aria-label="§" href="#cpa-gebruik-en-kenmerken"></a></h2><section id="inleiding-0"><h3 id="x3-1-inleiding"><bdi class="secno">3.1 </bdi>Inleiding<a class="self-link" aria-label="§" href="#inleiding-0"></a></h3><p>Digikoppeling 1.0 Koppelvlakstandaard definieert twee protocollen (WUS en ebMS2) voor de overdracht van gegevens via Digikoppeling. Dit document gaat in op het gebruik van een Collaboration Protocol Agreement (CPA) in het geval dat ebMS2 gebruikt wordt voor de gegevensoverdracht.</p></section><section id="wat-is-een-cpa"><h3 id="x3-2-wat-is-een-cpa"><bdi class="secno">3.2 </bdi>Wat is een CPA?<a class="self-link" aria-label="§" href="#wat-is-een-cpa"></a></h3><p>Een CPA is een formeel xml document om de gebruikte functionele en technische eigenschappen van de ebMS2 protocol-karakteristieken vast te leggen. Het is dus een formele beschrijving voor het vastleggen van de gegevensuitwisseling.</p><p>De CPA is gestandaardiseerd in [ISO 15000-1: ebXML Collaborative Partner Profile Agreement (afgekort tot ebCPP<sup>3</sup>). Het ebMS2 protocol is gestandaardiseerd in ebXML Messaging Service Specification (afgekort tot ebMS2<sup>4</sup>).</p><p><sup>3</sup>: [<cite><a class="bibref" data-link-type="biblio" href="#bib-ebcpp" title="Collaboration-Protocol Profile and Agreement Specification Version 2.0">ebCPP</a></cite>] Collaboration-Protocol Profile and Agreement Specification Version 2.0, September 23, 2002. Url: <a href="http://www.oasis-open.org/committees/ebxml-cppa/documents/ebcpp-2.0c.pdf">http://www.oasis-open.org/committees/ebxml-cppa/documents/ebcpp-2.0c.pdf</a></p><p><sup>4</sup>: Message Service Specification, Version 2.0, 1 April 2002. Url: <a href="http://www.oasis-open.org/committees/ebxml-msg/documents/ebMS_v2_0.pdf">http://www.oasis-open.org/committees/ebxml-msg/documents/ebMS_v2_0.pdf</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-ebxml-msg" title="OASIS ebXML Message Service Specification">EBXML-MSG</a></cite>] </p><p>De eigenschappen van de gegevensoverdracht geven onder andere aan:</p><ul>
+<li><p>tussen welke partijen er informatie uitgewisseld wordt;</p>
+</li>
+<li><p>welke services en actions ('functies') er zijn waar de berichtuitwisseling op wordt gebaseerd;</p>
+</li>
+<li><p>hoe certificaten gebruikt worden voor bijvoorbeeld transportbeveiliging, payload encryptie en/of ondertekening van berichten;</p>
+</li>
+<li><p>wat de overdrachts karakteristieken zijn, zoals de intervallen voor hertransmissie als betrouwbare overdracht gewenst is;</p>
+</li>
+<li><p>hoe om te gaan met acknowledements;</p>
+</li>
+<li><p>wat de eigenschappen zijn van de transportkanalen;</p>
+</li>
+</ul></section><section id="waarom-wordt-er-een-cpa-gebruikt"><h3 id="x3-3-waarom-wordt-er-een-cpa-gebruikt"><bdi class="secno">3.3 </bdi>Waarom wordt er een CPA gebruikt?<a class="self-link" aria-label="§" href="#waarom-wordt-er-een-cpa-gebruikt"></a></h3><p>Redenen voor het toepassen van een CPA:</p><ul>
+<li><p>het is een formeel contract tussen twee partijen, die op basis van ebMS2 gegevens willen uitwisselen;</p>
+</li>
+<li><p>het automatiseert de e-configuratie van de ebMS-adapter (het inlezen van de CPA volstaat);</p>
+</li>
+<li><p>het biedt de zekerheid dat beide partijen dezelfde instellingen gebruiken;</p>
+</li>
+</ul><p>Daarom is het hebben van een CPA het uitgangspunt voor de specificatie en configuratie van de gegevensuitwisseling tussen twee partijen op Digikoppeling.</p></section><section id="wat-zijn-de-uitgangspunten-voor-de-cpa"><h3 id="x3-4-wat-zijn-de-uitgangspunten-voor-de-cpa"><bdi class="secno">3.4 </bdi>Wat zijn de uitgangspunten voor de CPA?<a class="self-link" aria-label="§" href="#wat-zijn-de-uitgangspunten-voor-de-cpa"></a></h3><p>De kenmerken van het ebMS2 verkeer op Digikoppeling zijn beschreven in het document:</p><p>' Digikoppeling Koppelvlakstandaard ebMS2'. Dit document is op de website van Digikoppeling te vinden [<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling logius website" title="Logius Digikoppeling">Digikoppeling Logius website</a></cite>].</p><p>De kenmerken zijn vertaald naar relevante onderdelen van een CPA. Deze CPA onderdelen worden hieronder beschreven in termen zoals benoemd in [<cite><a class="bibref" data-link-type="biblio" href="#bib-ebcpp" title="Collaboration-Protocol Profile and Agreement Specification Version 2.0">ebCPP</a></cite>].</p><ul>
+<li><p>Service</p>
+<p>  Een Service is een unieke aanduiding voor een set van samenhangende operaties.</p>
+<p>  De service moet uniek zijn. Advies voor de naamgeving is als volgt:</p>
+<p>  <code>[organisatie]:[service]:[versie]</code></p>
+<p>  De service heeft als type “urn:osb:services” (zonder quotes).</p>
+<p>  Een service wordt als volgt in het ebMS2 contract opgenomen (met een voorbeeld service “OSB:Service:1:0”):<br>  &lt;tns:Service tns:type="urn:osb:services"&gt;OSB:Service:1:0&lt;/tns:Service&gt;</p>
+</li>
+<li><p>CPAId</p>
+<p>  Een CPAId is een unieke aanduiding voor een overeenkomst voor een bepaalde service. De CPAId moet uniek zijn voor die bepaalde service. Denk hierbij aan het feit dat er één service wordt gespecificeerd door een service provider en dat meerdere service requesters een samenwerking aangaan. Elke samenwerking tussen twee partijen moet een ander CPAId krijgen. Een CPAId moet uniek zijn. Advies voor de naamgeving is als volgt:</p>
+<p>  <code>[ServiceID]_[PartyId-A]_[PartyId-B]_[versie]</code></p>
+<p>  NB. Gebruik geen punten of andere vreemde tekens, want sommige ebMS-adapters zouden de CPAId wel eens als filenaam kunnen gebruiken...</p>
+<p>  Hierbij zijn:</p>
+<ul>
+<li><p><code>[ServiceID]</code> de unieke Service ID</p>
+</li>
+<li><p><code>[PartyId-A]</code> de PartyId van partij A</p>
+</li>
+<li><p><code>[PartyId-B]</code> de PartyId van partij B</p>
+</li>
+<li><p><code>[versie]</code> een UUID (of een versie nummer mits de uitgever van de CPA kan garanderen dat de CPAId uniek blijft)</p>
+</li>
+</ul>
+</li>
+<li><p>Start- en einddatum</p>
+<p>  Elke CPA heeft een start en einddatum. Dit moet afgestemd worden tussen de twee partijen die een samenwerking aangaan. Merk op dat er een afhankelijkheid is met de geldigheidsperiode van de gebruikte client- en servercertificaten.</p>
+</li>
+<li><p>Default Message Channel<br>  Een CPA bevat twee PartyInfo elementen: voor elke deelnemer in de samenwerking één. Elk PartyInfo element kent precies één 'default channel' dat gebruikt wordt voor de verzending van onderliggende protocol berichten (zoals de acknowledgments). In de CPA wordt deze 'default channel' aangegeven met het defaultMshChannelId attribuut. De eigenschappen van dit channel worden bepaald op basis van het Digikoppeling ebMS2 profiel met de hoogste beveiliging. Als een CPA verschillende Actions bevat waarvoor de acknowledgements verschillende profiel eigenschappen hebben, zullen de Actions verdeeld moeten worden over meerdere CPA's: in elke CPA komen die Actions die dezelfde profiel eigenschappen hebben. Als er gebruik gemaakt wordt van de CPA Creatievoorziening zullen er verschillende Digikoppeling-ebMS2 Servicespecificaties gemaakt moeten worden. </p>
+ <aside class="example" id="example-5"><div class="marker">
+    <a class="self-link" href="#example-5">Voorbeeld<bdi> 5</bdi></a>
+  </div>
+  Er zijn twee Actions:  
+  Action1 : profiel osb-rm-e  
+  Action2 : profiel osb-be  
+  De default channel zal de eigenschappen overnemen van het profiel osb-rm-e. Als dit NIET wenselijk is, zullen de twee actions in twee verschillende CPA's geplaatst moeten worden.
+  </aside>
+</li>
+<li><p>PartyName</p>
+<p>  De naam van de partij zoals die opgegeven moet worden in de CPA. Dit zal voor elke organisatie anders zijn, maar blijft wel hetzelfde voor alle CPA’s die gemaakt zullen worden.</p>
+</li>
+<li><p>PartyId</p>
+<p>  Het Organisatie Identificatie nummer (OIN) van de organisatie. De PartyId is de (logische) aanduiding waarmee de organisatie geïdentificeerd wordt. Als de organisatie nog geen OIN heeft moet een nummer aangevraagd worden bij Logius. De COR (De Centrale OIN Raadpleegvoorziening) wordt gebruikt om informatie vast te leggen over de organisatie en het OIN. Het nummer zal ook gebruikt worden in het cliënt certificaat voor het subject.Serialnumber veld. Zie ook EB014 in hoofdstuk 2. Organisaties die op basis van standaarden met andere overheden communiceren wordt sterk aangeraden om een OIN aan te vragen.</p>
+</li>
+<li><p>PartyId Type</p>
+<p>  Deze heeft de waarde urn:osb:oin voor PartyId's met een OIN.(Dit is ook de default waarde voor de CPA's zoals die door het CPA register wordt gehanteerd.)</p>
+<p>  De PartyId type wordt als volgt opgenomen in het ebMS2 contract (met een voorbeeld van de PartyId waarde “0123456789”):<br>  &lt;tns:PartyId tns:type="urn:osb:oin"&gt;123456789&lt;/tns:PartyId&gt;</p>
+<p>  Het is toegestaan om een andere PartyId type te hanteren als de organisatie reeds andersoortige (geen OIN's) PartyId’s heeft voor de organisatie identificatie. Het moge duidelijk zijn dat het in overleg met de samenwerkende organisaties vastgesteld moet worden. Zie ook EB014 in hoofdstuk 2.</p>
+</li>
+<li><p>BusinessCharacteristics</p>
+<p>  Deze heeft de volgende verplichte waarde, waarbij alleen de timeToPerform een andere waarde kan krijgen (afhankelijk van de timing karakteristieken van de RequestingBusinessActivity en de RespondingBusinessActivity):</p>
+<pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">tns:businesstransactioncharacteristics</span> <span class="hljs-attr">tns:isauthenticated</span>=<span class="hljs-string">"transient"</span> <span class="hljs-attr">tns:isauthorizationrequired</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">tns:isconfidential</span>=<span class="hljs-string">"transient"</span> <span class="hljs-attr">tns:isintelligiblecheckrequired</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">tns:isnonrepudiationreceiptrequired</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">tns:isnonrepudiationrequired</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">tns:istamperproof</span>=<span class="hljs-string">"transient"</span> <span class="hljs-attr">tns:timetoperform</span>=<span class="hljs-string">"P2D"</span>&gt;</span></code></pre>
+</li>
+</ul><p>TransportProtocol over HTTP met TLS met server certificaat.<br>Deze hebben de verplichte waardes:</p><p>&lt;tns:TransportProtocol tns:version="1.1"&gt;HTTP&lt;/tns:TransportProtocol&gt;</p><p>en voor bijvoorbeeld versie 1 van TLS</p><p>&lt;tns:TransportSecurityProtocol tns:version="1.0"&gt;TLS&lt;/tns:TransportSecurityProtocol&gt;</p><ul>
+<li><p>Client Authentication over HTTP met client certificaat. Dit is verplicht. In het client certificaat staat in het subject.Serialnumber de PartyId van de ‘client’ organisatie.</p>
+</li>
+<li><p>Endpoint</p>
+<p>  Deze heeft de waarde van de URL (FQDN, met pad namen) van de ebMS-adapter waarmee over Digikoppeling gegevens uitgewisseld worden. De FQDN van de URL moet overeenkomen met de FQDN die in het server certificaat vermeld staat.</p>
+</li>
+<li><p>MessageOrder</p>
+<p>  De MessageOrder geeft aan of er wel of geen gebruik gemaakt wordt van ordening van berichten. De default waarde voor MessageOrder is “NotGuaranteed” en wordt als volgt opgenomen in het ebMS2 contract:</p>
+<p>  &lt;tns:MessageOrderSemantics&gt;NotGuaranteed&lt;/tns:MessageOrderSemantics&gt;</p>
+<p>  Indien er wel gebruik gemaakt wordt van MessageOrder is de waarde:</p>
+<p>  &lt;tns:MessageOrderSemantics&gt;Guaranteed&lt;/tns:MessageOrderSemantics&gt;</p>
+<p>  Noot: MessageOrder wordt niet door alle ebMS-adapters implementaties ondersteund. Als het wel het geval is zal de interoperabiliteit goed getest moeten worden. Zie hoofdstuk “Het gebruik van bericht volgordelijkheid”.</p>
+</li>
+<li><p>ReliableMessaging</p>
+<p>  Deze heeft default een retryCount van 8 en een retryInterval van 3 uur, zonder MessageOrder:</p>
+<pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">tns:messagingcharacteristics</span> <span class="hljs-attr">tns:syncreplymode</span>=<span class="hljs-string">"none"</span> <span class="hljs-attr">tns:ackrequested</span>=<span class="hljs-string">"always"</span> <span class="hljs-attr">tns:actor</span>=<span class="hljs-string">"urn:oasis:names:tc:ebxml-msg:actor:toPartyMSH"</span> <span class="hljs-attr">tns:acksignaturerequested</span>=<span class="hljs-string">"never"</span> <span class="hljs-attr">tns:duplicateelimination</span>=<span class="hljs-string">"always"</span>&gt;</span></code></pre>
+<p>  De waardes kunnen per CPA bepaald worden, en liggen dus niet bij voorbaat vast.</p>
+<p>  In het geval dat MessageOrder wel gebruikt wordt, komt in de CPA:</p>
+<p>  &lt;tns:MessageOrderSemantics&gt;Guaranteed&lt;/tns:MessageOrderSemantics&gt;</p>
+<p>  Conform de ebMS2 specificatie zal de applicatie dezelfde ConversationId moeten gebruiken voor de opeenvolgende berichten<sup>5</sup>.</p>
+</li>
+</ul><p><sup>5</sup>: [<cite><a class="bibref" data-link-type="biblio" href="#bib-ebxml-msg" title="OASIS ebXML Message Service Specification">EBXML-MSG</a></cite>] H9.1.1 “The REQUIRED SequenceNumber element indicates the sequence a Receiving MSH MUST process messages. The SequenceNumber <strong>is unique within</strong> the ConversationId and MSH.”</p><ul>
+<li><p>PersistDuration</p>
+<p>  Deze heeft default de waarde van 1 dag, maar zal anders zijn als er andere waardes voor ReliableMessaging gebruikt worden:</p>
+<p>  &lt;tns:PersistDuration&gt;P1D&lt;/tns:PersistDuration&gt;</p>
+</li>
+<li><p>MessagingCharacteristic</p>
+<p>  Deze heeft de waarde:</p>
+<pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">tns:messagingcharacteristics</span> <span class="hljs-attr">tns:syncreplymode</span>=<span class="hljs-string">"none"</span> <span class="hljs-attr">tns:ackrequested</span>=<span class="hljs-string">"always"</span> <span class="hljs-attr">tns:actor</span>=<span class="hljs-string">"urn:oasis:names:tc:ebxml-msg:actor:toPartyMSH"</span> <span class="hljs-attr">tns:acksignaturerequested</span>=<span class="hljs-string">"never"</span> <span class="hljs-attr">tns:duplicateelimination</span>=<span class="hljs-string">"always"</span>&gt;</span></code></pre>
+<p>  Geen gebruik van Signing of (payload) Encryption. (Alleen op HTTP nivo wordt informatie beveiligd)</p>
+<p>  Er moet gebruik gemaakt worden van certificaten die voldoen aan de eisen van de PKI Overheid.</p>
+</li>
+</ul></section><section id="hoe-wordt-een-cpa-gemaakt"><h3 id="x3-5-hoe-wordt-een-cpa-gemaakt"><bdi class="secno">3.5 </bdi>Hoe wordt een CPA gemaakt?<a class="self-link" aria-label="§" href="#hoe-wordt-een-cpa-gemaakt"></a></h3><p>Op basis van de hierboven genoemde CPA onderdelen kan alleen een 'CPA template' gemaakt worden. Wat ontbreekt zijn de specifieke zaken rondom:</p><ul>
+<li><p>De services en functies (Actions in ebMS2 terminologie) die aangesproken kunnen worden, inclusief procesnaam waar ze deel van uitmaken.</p>
+</li>
+<li><p>De technische gegevens van een ebMS-gateway van een organisatie, zoals de te hanteren transport URL, de publieke sleutels van de client en server certificaten ende PartyId van de organisatie</p>
+</li>
+</ul><p>In het document 'Digikoppeling CPA Creatiehandleiding' is te lezen met welke gegevens een CPA gemaakt wordt, in combinatie met Digikoppeling CPA Creatievoorziening.</p><table class="dkkvs">
+<thead>
+<tr>
+<th><strong>Meer informatie</strong></th>
+<th><strong>Zie document in de aansluitkit</strong></th>
+<th><strong>Doelgroep</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Handleiding CPA register</td>
+<td><a href="https://www.logius.nl/diensten/digikoppeling/aanvragen/voorbereiden">https://www.logius.nl/diensten/digikoppeling/aanvragen/voorbereiden</a></td>
+<td>[A&amp;D] [OT&amp;B]</td>
+</tr>
+</tbody></table><p></p></section></section><section data-format="markdown" id="het-gebruik-van-berichtvolgordelijkheid"><h2 id="x4-het-gebruik-van-berichtvolgordelijkheid"><bdi class="secno">4. </bdi>Het gebruik van berichtvolgordelijkheid<a class="self-link" aria-label="§" href="#het-gebruik-van-berichtvolgordelijkheid"></a></h2><p>Digikoppeling Koppelvlakstandaard ebMS2 raadt het gebruik van volgordelijkheid van berichten sterk af. Reden hiervoor is dat niet elk product dat ebMS2 implementeert de volgordelijkheid ondersteunt (in ebMS2 wordt dit MessageOrder genoemd). Voor situaties waar beide partijen bi-lateraal over een product beschikken dat dit ondersteund, wordt het gebruik ervan voor het Digikoppeling ebMS2 Koppelvlak wel toegestaan. Voorwaarde daarbij is dat vooraf bekend is dat alle (ook toekomstige) communicatiepartners dit kunnen ondersteunen. Gebruik lijkt daarom alleen realistisch voor bilaterale situaties of een zeer beperkt aantal vooraf bekende communicatiepartners. Gebruik door landelijke voorzieningen zoals basisregistraties is onwenselijk.</p><p>Partijen die gebruik willen maken van de volgordelijkheid zullen daarom vooraf onderling moeten verifiëren of de functionaliteit door de andere partij ondersteund wordt en of de ebMS-adapters op dit onderdeel ook interoperabel zijn. (Het moge duidelijk zijn dat als beide partijen van hetzelfde product gebruik maken, de interoperabiliteit gegarandeerd zou moeten zijn.)</p><p>Het heeft tot gevolg dat veel partijen deze functionaliteit niet kunnen gebruiken. In deze situaties is volgordelijkheid op applicatieniveau een beter alternatief. Dit heeft als extra voordeel dat niet alleen zekeerheid bestaat over het in volgorde ontvangen, maar ook over het in volgorde verwerken van berichten.</p><p>De granulariteit (zie hieronder) van de berichten waarop volgordelijkheid toegepast moet worden en de verwerking in de organisatie zal nader bekeken moeten worden. De volgende twee hoofdstukken geven hierover enkele overwegingen.</p><section id="granulariteit"><h3 id="x4-1-granulariteit"><bdi class="secno">4.1 </bdi>Granulariteit<a class="self-link" aria-label="§" href="#granulariteit"></a></h3><p>Granulariteit betekent letterlijk: (fijn)korreligheid, ofwel de mate van detaillering. De granulariteit van de berichten waarvoor volgordelijkheid van belang is zal verstandig moeten worden gekozen.</p><p>De uitersten worden hieronder beschreven:</p><ul>
+<li><p>Alle berichten die op basis van een ebMS2 contract (CPA) verzonden worden zijn van elkaar afhankelijk ten aanzien van de volgorde.</p>
+<ul>
+<li><p>Als één enkel bericht faalt in de overdracht, heeft dit tot gevolg dat de gehele berichtenstroom stokt. Deze berichtenstroom kan dan pas weer op gang gebracht worden als het falende bericht opnieuw gesynchroniseerd is.</p>
+</li>
+<li><p>Bij grote hoeveelheden berichten die in een kort tijdsbestek verzonden worden zullen aan de ontvangende kant tijdelijk bewaard moeten worden: dit legt een claim op de resources van de ebMS-adapter.</p>
+</li>
+<li><p>Berichten die mogelijk een hogere prioriteit hebben kunnen niet eerder verwerkt worden dan passend is ten aanzien van de volgorde van reeds verzonden berichten.</p>
+</li>
+</ul>
+</li>
+<li><p>Voor elk afzonderlijk bericht wordt gekeken of het onderdeel uitmaakt van een nieuwe berichtenstroom waarvoor volgordelijkheid van belang is.</p>
+</li>
+<li><p>Er kunnen meerdere berichtstromen actief zijn die onafhankelijk van elkaar de volgordelijkheid ondersteunen.</p>
+</li>
+<li><p>Per object moet aangegeven worden (of bekend zijn) of de message order van belang is.</p>
+</li>
+</ul><p>De granulariteit wordt in essentie bepaald door het object waarover berichten uitgewisseld worden en waarvan de volgordelijkheid van belang is: het gaat dan om transactionele berichten over hetzelfde object.</p></section><section id="verwerking-in-de-organisatie"><h3 id="x4-2-verwerking-in-de-organisatie"><bdi class="secno">4.2 </bdi>Verwerking in de organisatie<a class="self-link" aria-label="§" href="#verwerking-in-de-organisatie"></a></h3><p>Als de berichten op Digikoppeling in volgorde moeten worden afgeleverd, zal dit tot gevolg hebben dat diezelfde berichten ook in de juiste volgorde aangeboden worden aan de verwerkende applicatie in de organisatie.</p></section><section id="alternatieven-voor-berichtvolgorde"><h3 id="x4-3-alternatieven-voor-berichtvolgorde"><bdi class="secno">4.3 </bdi>Alternatieven voor berichtvolgorde<a class="self-link" aria-label="§" href="#alternatieven-voor-berichtvolgorde"></a></h3><p>Het garanderen van de volgordelijkheid binnen een keten kan in zijn algemeenheid op meerdere manieren worden geregeld:</p><ol>
+<li><p>Vermijden van de behoefte<br> Een zuivere gebeurtenis-gedreven architectuur kan de behoefte aan volgordelijkheid vaak vermijden. In deze architectuur worden gegevens niet meegeleverd met gebeurtenissen, maar naar aanleiding van gebeurtenissen bij de bron geraadpleegd. Als in een dergelijke situatie bijvoorbeeld overlijden eerder dan de geboorte doorgegeven wordt zal de actie die op overlijden (of geboorte) volgt altijd de meest actuele gegevens opleveren.</p>
+</li>
+<li><p>Risico-reductie<br> Bewuste vertragingen aan de bron tussen twee opeenvolgende (gerelateerde) gebeurtenissen, kan het risico op het uit volgorde raken van berichten beperken.</p>
+</li>
+<li><p>Applicatief: mitigatie<br> In deze situatie verwerkt de afnemer gebeurtenissen zodanig dat eventuele volgordeproblemen worden gemitigeerd (simpelste algoritme: als het BSN binnenkomt voordat de persoon bekend is, wordt het BSN terzijde gelegd totdat de persoon wél bekend is).</p>
+</li>
+<li><p>Applicatief: unipotente operaties<br> In deze situatie wordt er voor gezorgd dat de operatie naar aanleiding van een bericht slechts op één manier interpreteerbaar is. Bijvoorbeeld door bij verandering van een subsidie of burgelijke staat zowel de oude als de nieuwe situatie mee te geven. Of bij ‘saldo-informatie’ een verhoging of verlaging te sturen in plaats van de nieuwe waarde.</p>
+</li>
+<li><p>Applicatieve volgorde door ontvanger<br> In deze situatie geeft de applicatie aan het bericht informatie mee waarmee de ontvanger de volgorde kan bepalen. Dit kan bijvoorbeeld met tellers, zodat de applicatie de berichten voor verwerking in volgorde kan plaatsen, maar ook met timestamps zodat de applicatie na verwerking eventuele correcties kan uitvoeren (zie ook bijlage 1 onder “zelfbouwoverwegingen”). Dit zal liefst selectief alleen voor kritische berichten gebeuren zodat andere berichten ongestoord doorgang vinden.</p>
+</li>
+<li><p>Applicatieve volgorde door verzender<br> In deze situatie wacht de verzendende applicatie op een ontvangstbevestiging of verwerkingsbevestiging van de ontvanger voordat een nieuw bericht gestuurd wordt. Dit zal liefst selectief alleen voor kritische berichten gebeuren zodat andere berichten ongestoord doorgang vinden.</p>
+</li>
+<li><p>Logistieke volgorde<br> Digikoppeling biedt als optie om berichten in volgorde af te leveren aan de ontvangende applicatie. Deze functie van de Digikoppeling-adapter software wordt echter door enkele belangrijke leveranciers niet ondersteund. Digikoppeling stelt daarom dat deze optie alleen gebruikt kan worden als vóóraf bilateraal overeenstemming bereikt is over ondersteuning.</p>
+</li>
+</ol></section></section><section data-format="markdown" id="message-ordering-in-ebxml"><h2 id="x5-message-ordering-in-ebxml"><bdi class="secno">5. </bdi>Message Ordering in ebXML<a class="self-link" aria-label="§" href="#message-ordering-in-ebxml"></a></h2><p>Een onderdeel van de ebMS 2.0 specificatie is de volgordelijkheid van berichten, aangeduid met MessageOrder. overgenomen uit hoofdstuk 9 van [<cite><a class="bibref" data-link-type="biblio" href="#bib-ebxml-msg" title="OASIS ebXML Message Service Specification">EBXML-MSG</a></cite>]</p><section id="messageorder-module"><h3 id="x5-1-messageorder-module"><bdi class="secno">5.1 </bdi>MessageOrder Module**<a class="self-link" aria-label="§" href="#messageorder-module"></a></h3><p>The MessageOrder module allows messages to be presented to the To Party in a particular order. This is accomplished through the use of the MessageOrder element. Reliable Messaging MUST be used when a MessageOrder element is present.</p><p>MessageOrder module MUST only be used in conjunction with the ebXML Reliable Messaging Module (section 6) with a scheme of Once-And-Only-Once (sections 6.6). If a sequence is sent and one message fails to arrive at the To Party MSH, all subsequent messages will also fail to be presented to the To Party Application (see status attribute section 9.1.1).</p></section><section id="messageorder-element"><h3 id="x5-2-messageorder-element"><bdi class="secno">5.2 </bdi>MessageOrder Element**<a class="self-link" aria-label="§" href="#messageorder-element"></a></h3><p>The MessageOrder element is an OPTIONAL extension to the SOAP Header requesting the preservation of message order in this conversation.</p><p>De ebMS standaard biedt daarmee de mogelijkheid om de volgordelijkheid van berichten te garanderen.</p><p>Maar het is wel een OPTIONAL<sup>7</sup> element, dus bekijk per product of het ook daadwerkelijk ondersteund wordt.</p><p><sup>7</sup>: OPTIONAL, uit [<cite><a class="bibref" data-link-type="biblio" href="#bib-ebxml-msg" title="OASIS ebXML Message Service Specification">EBXML-MSG</a></cite>]: “This word means that an item is truly optional. One vendor may choose to include the item because a particular marketplace requires it or because the vendor feels that it enhances the product while another vendor may omit the same item.”</p></section><section id="productondersteuning"><h3 id="x5-3-productondersteuning"><bdi class="secno">5.3 </bdi>Productondersteuning<a class="self-link" aria-label="§" href="#productondersteuning"></a></h3><p>De ondersteuning voor de MessageOrder verschilt per product. Hermes 2.0 en OrionMsg ondersteunen het wel, AxWay ondersteunt het niet, en de recente IBM release 'WebSphere Partner Gateway V6.1' ondersteunt het wel.</p><p>De Drummond Group voert jaarlijks ebXML interoperabiliteitstesten uit, waarmee leveranciers hun ebMS producten kunnen laten certificeren. Er wordt echter niet getest op MessageOrder.</p><p>Uit het test rapport van de Drummond Group, blz 18, hoofdstuk “Differing interpretations on the use of ConversationId”:</p><blockquote>
+<p>(..) The ebMS v2.0 specification requires that ConversationId be present in all messages, and requires that if you implement the optional MessageOrdering feature (not tested by DGI) that ConversationId must stay the same over all ordered messages. (..)</p>
+</blockquote></section><section id="zelfbouwoverwegingen"><h3 id="x5-4-zelfbouwoverwegingen"><bdi class="secno">5.4 </bdi>Zelfbouwoverwegingen<a class="self-link" aria-label="§" href="#zelfbouwoverwegingen"></a></h3><p>Als het niet mogelijk is om de MessageOrder functionaliteit te gebruiken, kan zelfbouw overwogen worden. Het is wel raadzaam om een aantal aspecten in overweging te nemen voordat de implementatie van de volgordelijkheid in een applicatie opgepakt wordt.</p><ul>
+<li><p>Worden berichten die niet in volgorde verwerkt hoeven te worden onderscheiden van berichten die wel in volgorde verwerkt moeten worden? Door verschillende berichttypes te gebruiken kan er op eenvoudige wijze onderscheid gemaakt worden tussen berichtstromen waarin volgordelijkheid al dan niet van belang is. De achterliggende gedachte is, dat het niet noodzakelijk is om alle berichten in volgorde te verwerken.</p>
+</li>
+<li><p>Is er een functionele behoefte aan bevestigingen? Zo ja, dan is volgordelijkheid niet van belang.</p>
+</li>
+<li><p>Hoe vaak komt het voor dat de volgorde wel van belang is? Als dat incidenteel voorkomt, zou een ontvangstbevestiging retour kunnen gaan, waarna een volgend bericht verzonden mag worden.</p>
+</li>
+<li><p>Er zullen afspraken gemaakt moeten worden om situaties te kunnen identificeren (en bijbehorende acties uit te voeren) als bijvoorbeeld één specifiek bericht niet aangekomen is, ook niet met behulp van de betrouwbare overdracht. De stroom van de te verwerken berichten “stokt” dan.</p>
+</li>
+<li><p>Welke acties onderneemt de ontvangende applicatie om de verzendende applicatie hierover te informeren?</p>
+</li>
+<li><p>Welke consequenties heeft dit voor verzendende partij?</p>
+</li>
+<li><p>In hoeverre moet dit proces geautomatiseerd worden?</p>
+</li>
+<li><p>Het inregelen van dit proces is lastig en het is dan de vraag of een andere oplossing (zoals met bevestigingsberichten) een goed alternatief is.</p>
+</li>
+</ul></section><section id="ontwerp-pattern"><h3 id="x5-5-ontwerp-pattern"><bdi class="secno">5.5 </bdi>Ontwerp Pattern<a class="self-link" aria-label="§" href="#ontwerp-pattern"></a></h3><p>Als uitgangspunt voor de realisatie van de volgordelijkheid kan het Resequencer patroon gebruikt worden: <a href="http://www.enterpriseintegrationpatterns.com/Resequencer.html">http://www.enterpriseintegrationpatterns.com/Resequencer.html</a></p><hr><p>A <a href="http://www.enterpriseintegrationpatterns.com/MessageRouter.html">Message Router</a> can route messages from one channel to different channels based on message content or other criteria. Because individual messages may follow different routes, some messages are likely to pass through the processing steps sooner than others, resulting in the messages getting out of order. However, some subsequent processing steps do require in-sequence processing of messages, for example to maintain referential integrity.</p><p><strong>How can we get a stream of related but out-of-sequence messages back into the correct order?</strong></p><p><figure id="resequencer_pattern"><img src="media/resequencer_pattern.png" alt="Resequencer Pattern" title="Resequencer Pattern" width="403" height="106"><figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title">Resequencer Pattern</span></figcaption></figure></p><p><strong>Use a stateful filter, a Resequencer, to collect and re-order messages so that they can be published to the output channel in a specified order.</strong></p><p>The Resequencer can receive a stream of messages that may not arrive in order. The Resequencer contains in internal buffer to store out-of-sequence messages until a complete sequence is obtained. The in-sequence messages are then published to the output channel. It is important that the output channel is order-preserving so messages are guaranteed to arrive in order at the next component. Like most other routers, a Resequencer usually does not modify the message contents.  </p><hr><p>De oplossingsrichtingen voor berichten waarvoor een volgnummer van belang is wordt hieronder globaal beschreven. Er wordt uitgegaan van een 'push' mechanisme: de ontvangende applicatie wordt dus actief doordat de ebMS adapter een functie van de applicatie aanroept voor het afleveren van een bericht (bijvoorbeeld met behulp van een web service of JMS queue). Dit in tegenstelling tot een 'pull' mechanisme waarbij het initiatief bij de applicatie ligt om te bepalen of er een nieuw bericht is ontvangen.</p><section id="specificatie-design-time"><h4 id="x5-5-1-specificatie-design-time"><bdi class="secno">5.5.1 </bdi>Specificatie (Design Time)<a class="self-link" aria-label="§" href="#specificatie-design-time"></a></h4><ul>
+<li><p>Voeg aan de specificatie van het bericht een element 'Volgnummer' toe.</p>
+</li>
+<li><p>Definieer een 'Aanvang' en en een 'Afsluit'-bericht waarmee de ontvangde partij geinformeerd wordt over de te verwerken berichten. Dit kan met name van belang zijn als er meerdere parallelle stromen van berichten zijn die ieder afzonderlijk gebruik maken van volgordelijkheid. Het is dan wel van belang de ConversationId te gebruiken.</p>
+</li>
+<li><p>Indien gewenst kan er een bericht gedefinieerd worden waarmee de ontvangende partij de verzendende partij kan informeren over de verwerkings toestand.</p>
+</li>
+<li><p>De applicatie moet bijhouden wat het volgnummer is van het laatst verwerkte bericht.</p>
+</li>
+<li><p>Er is een 'berichtenpool' beschikbaar waar berichten met een volgnummer in bewaard worden. Hierbij is het volgnummer een sleutel om berichten uit de ‘berichtenpool' te halen.</p>
+</li>
+</ul></section><section id="verwerking-run-time"><h4 id="x5-5-2-verwerking-run-time"><bdi class="secno">5.5.2 </bdi>Verwerking (Run Time)<a class="self-link" aria-label="§" href="#verwerking-run-time"></a></h4><ul>
+<li><p>Bij ontvangst van een 'Aanvang'-bericht wordt de toestand geïnitieerd voor de volgordelijke verwerking van de berichten.</p>
+</li>
+<li><p>Handel bij ontvangst van een bericht als volgt:</p>
+</li>
+<li><p>Plaats het bericht in een ‘berichtenpool’.</p>
+</li>
+<li><p>Als bericht nummer N verwerkt is, moet de applicatie bericht nummer N+1 ophalen uit de ‘berichtenpool’.</p>
+<ul>
+<li><p>Als deze er niet is, zal de applicatie geen bericht verwerken.</p>
+</li>
+<li><p>Als deze er wel is, zal de applicatie het bericht verwerken EN daarna stap 2 opnieuw uitvoeren om een volgend bericht uit de ‘berichtenpool’ te verwerken.</p>
+</li>
+</ul>
+</li>
+</ul><p>Om te voorkomen dat een applicatie in een 'wait lock' terecht komt (één van de berichten in de sequentie komt niet aan, ook niet binnen de gestelde termijn van de betrouwbare overdracht), zal bekeken moeten worden wat de timingkarakteristieken zijn voor de verwerking van een volgend bericht.</p><p>Bij gebruik van het 'pull' mechanisme kan de berichtenpool gebruikt worden zoals in stap 2 beschreven: de applicatie zal dan op gezette tijden (op eigen initiatief) een bericht halen uit de berichtenpool. De ebMS adapter zal de berichten dan wel moeten afleveren aan de berichtenpool (zoals in stap 1).</p></section></section></section>
+    
+    
+    <section id="conformance"><h2 id="x6-conformiteit"><bdi class="secno">6. </bdi>Conformiteit<a class="self-link" aria-label="§" href="#conformance"></a></h2><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p>
+        
+    </section>
+
+    <section id="tof">
+        
+    <h2 id="x7-lijst-met-figuren"><bdi class="secno">7. </bdi>Lijst met figuren<a class="self-link" aria-label="§" href="#tof"></a></h2><ul class="tof">
+        <li class="tofline">
+    <a class="tocxref" href="#DK_Specificatie_structuur">Figuur <bdi class="figno">1</bdi> <span class="fig-title">Opbouw documentatie Digikoppeling</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#resequencer_pattern">Figuur <bdi class="figno">2</bdi> <span class="fig-title">Resequencer Pattern</span></a>
+  </li>
+      </ul></section>
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+
+
+
+<section id="references" class="appendix"><h2 id="a-referenties"><bdi class="secno">A. </bdi>Referenties<a class="self-link" aria-label="§" href="#references"></a></h2><section id="normatieve-referenties">
+    <h3 id="a-1-normatieve-referenties"><bdi class="secno">A.1 </bdi>Normatieve referenties<a class="self-link" aria-label="§" href="#normatieve-referenties"></a></h3>
+    <dl class="bibliography"><dt id="bib-ebcpp">[ebCPP]</dt><dd><a href="http://www.ebxml.org/specs/ebcpp-2.0.pdf"><cite>Collaboration-Protocol Profile and Agreement Specification Version 2.0</cite></a>. Oasis.  Oasis. september 2002. URL: <a href="http://www.ebxml.org/specs/ebcpp-2.0.pdf">http://www.ebxml.org/specs/ebcpp-2.0.pdf</a></dd><dt id="bib-ebxml-msg">[EBXML-MSG]</dt><dd><a href="https://www.oasis-open.org/committees/download.php/272/ebMS_v2_0.pdf"><cite>OASIS ebXML Message Service Specification</cite></a>. Ian Jones; Brian Gibb; David Fischer. 1 April 2002. URL: <a href="https://www.oasis-open.org/committees/download.php/272/ebMS_v2_0.pdf">https://www.oasis-open.org/committees/download.php/272/ebMS_v2_0.pdf</a></dd></dl>
+  </section><section id="informatieve-referenties">
+    <h3 id="a-2-informatieve-referenties"><bdi class="secno">A.2 </bdi>Informatieve referenties<a class="self-link" aria-label="§" href="#informatieve-referenties"></a></h3>
+    <dl class="bibliography"><dt id="bib-digikoppeling logius website">[Digikoppeling Logius website]</dt><dd><a href="https://logius.nl/diensten/digikoppeling/documentatie"><cite>Logius Digikoppeling</cite></a>.  Logius. URL: <a href="https://logius.nl/diensten/digikoppeling/documentatie">https://logius.nl/diensten/digikoppeling/documentatie</a></dd></dl>
+  </section></section><p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(dfnPanel);
+} else {
+  dfnPanel();
+}
+
+function dfnPanel() {
+  /** @type {HTMLElement} */
+  let panel;
+  document.body.addEventListener("click", event => {
+    if (!(event.target instanceof HTMLElement)) return;
+
+    /** @type {HTMLElement} */
+    const el = event.target;
+
+    const action = deriveAction(el);
+    switch (action) {
+      case "show": {
+        if (panel) hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = el.closest("dfn, .index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        displayPanel(dfn, panel, { x: event.clientX, y: event.clientY });
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        break;
+      }
+    }
+  });
+}
+
+/** @param {HTMLElement} clickTarget */
+function deriveAction(clickTarget) {
+  const hitALink = !!clickTarget.closest("a");
+  if (clickTarget.closest("dfn, .index-term")) {
+    return hitALink ? null : "show";
+  }
+  if (clickTarget.closest(".dfn-panel")) {
+    if (hitALink) {
+      const clickedSelfLink = clickTarget.classList.contains("self-link");
+      return clickedSelfLink ? "hide" : "dock";
+    }
+    const panel = clickTarget.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : null;
+  }
+  if (document.querySelector(".dfn-panel:not([hidden])")) {
+    return "hide";
+  }
+  return null;
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script></body></html>

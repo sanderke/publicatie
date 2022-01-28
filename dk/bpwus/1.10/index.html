@@ -1,0 +1,762 @@
+<!DOCTYPE html><html lang="nl"><head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta charset="utf-8">
+<meta name="generator" content="ReSpec 28.1.0 Logius profile 20220106">
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font:small Helvetica Neue,sans-serif,Droid Sans Fallback;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;margin-top:.25em}
+.dfn-panel ul a[href]{color:#333}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a[href]:hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
+    
+    
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+    
+    
+<title>Digikoppeling Best Practices WUS 1.10</title>
+    
+    
+<link rel="shortcut icon" type="image/x-icon" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/logius.ico">
+    
+    
+<link rel="stylesheet" type="text/css" href="./media/style.css">
+
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+:is(h1,h2,h3,h4,h5,h6,a) abbr{border:none}
+dfn{font-weight:700}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:normal}
+code{color:#c63501}
+th code{color:inherit}
+a[href].orcid{padding-left:4px;padding-right:4px}
+a[href].orcid>svg{margin-bottom:-2px}
+.toc a,.tof a{text-decoration:none}
+a .figno,a .secno{color:#000}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
+.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
+.simple th a{color:#fff;padding:3px 5px;text-align:left}
+.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
+.simple td{padding:3px 10px;border-top:1px solid #ddd}
+.simple tr:nth-child(even){background:#f0f6ff}
+.section dd>p:first-child{margin-top:0}
+.section dd>p:last-child{margin-bottom:0}
+.section dd{margin-bottom:1em}
+.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+a[href].self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+h2,h3,h4,h5,h6{position:relative}
+aside.example .marker>a.self-link{color:inherit}
+:is(h2,h3,h4,h5,h6)>a.self-link{border:none;color:inherit;font-size:83%;height:2em;left:-1.6em;opacity:.5;position:absolute;text-align:center;text-decoration:none;top:0;transition:opacity .2s;width:2em}
+:is(h2,h3,h4,h5,h6)>a.self-link::before{content:"§";display:block}
+@media (max-width:767px){
+dd{margin-left:0}
+:is(h2,h3,h4,h5,h6)>a.self-link{left:auto;top:auto}
+}
+@media print{
+.removeOnSave{display:none}
+}
+</style>
+<meta name="description" content="Alle Digikoppeling webservices die op WUS gebaseerd zijn, moeten conformeren aan Digikoppeling Koppelvlakstandaard
+    WUS. Dit document beschrijft een aantal Best Practices voor het gebruik van de Koppelvlakstandaard WUS.">
+<style>
+.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
+.hljs-comment,.hljs-quote{color:#717277;font-style:italic}
+.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4}
+.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;font-weight:700}
+.hljs-literal{color:#0b76c5}
+.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c}
+.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01}
+.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801}
+.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3}
+.hljs-emphasis{font-style:italic}
+.hljs-strong{font-weight:700}
+.hljs-link{text-decoration:underline}
+</style>
+<style>
+var{position:relative;cursor:pointer}
+var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
+var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
+var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
+var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
+</style>
+<script id="initialUserConfig" type="application/json">{
+  "specStatus": "DEF",
+  "specType": "BP",
+  "pubDomain": "dk",
+  "shortName": "bpwus",
+  "publishDate": "2017-10-01",
+  "publishVersion": "1.10",
+  "license": "cc-by-nd",
+  "doJsonLd": true,
+  "editors": [
+    {
+      "name": "Peter Haasnoot",
+      "url": "https://logius.nl/standaarden",
+      "company": "Logius"
+    },
+    {
+      "name": "Pieter Hering",
+      "url": "https://logius.nl/standaarden",
+      "company": "Logius"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Logius",
+      "url": "mailto:digikoppeling@logius.nl",
+      "mailto": "digikoppeling@logius.nl"
+    }
+  ],
+  "github": "https://github.com/Logius-standaarden/Digikoppeling-Best-Practices-WUS",
+  "addSectionLinks": true,
+  "a11y": false,
+  "alternateFormats": [
+    {
+      "label": "pdf",
+      "uri": "Digikoppeling-Best-Practices-WUS.pdf"
+    }
+  ],
+  "nl_emailComments": "digikoppeling@logius.nl",
+  "nl_addReleaseTagTitle": true,
+  "nl_markdownSplitH1sections": true,
+  "nl_github": {
+    "revision": "https://github.com/Logius-standaarden/Digikoppeling-Best-Practices-WUS/commits/"
+  },
+  "nl_organisationName": "Logius",
+  "nl_organisationPrefix": "LS-",
+  "nl_markdownTableClass": "dkkvs",
+  "nl_markdownEmbedImageInFigure": true,
+  "nl_organisationStylesURL": "https://publicatie.centrumvoorstandaarden.nl/respec/style/",
+  "nl_organisationPublishURL": "https://publicatie.centrumvoorstandaarden.nl/",
+  "nl_logo": {
+    "src": "https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg",
+    "alt": "Logius",
+    "id": "Logius",
+    "height": 77,
+    "width": 44,
+    "url": "https://www.logius.nl/standaarden"
+  },
+  "localBiblio": {
+    "NEN3610": {
+      "href": "https://www.nen.nl/nen-3610-2011-a1-2016-nl-217738",
+      "title": "Basismodel Geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten",
+      "authors": [
+        ""
+      ],
+      "date": "Maart 2011",
+      "publisher": "Nederlands Normalisatie-instituut"
+    },
+    "Digikoppeling Architectuur": {
+      "href": "https://centrumvoorstandaarden.github.io/Architectuur2.0-metRestfulAPI/static.html",
+      "title": "Digikoppeling Architectuur",
+      "authors": [
+        "Logius Centrum voor standaarden"
+      ],
+      "date": "december 2020",
+      "publisher": "Logius"
+    },
+    "Digikoppeling Beveiligingsdocument": {
+      "href": "https://www.logius.nl/sites/default/files/bestanden/website/Digikoppeling_Beveiligingsstandaarden_en_voorschriften_v1.3.pdf",
+      "title": "Digikoppeling Beveiligingsstandaarden en voorschriften",
+      "date": "2020",
+      "publisher": "Logius"
+    },
+    "Digikoppeling-Cert": {
+      "href": "http://www.logius.nl/digikoppeling",
+      "title": "Gebruik en achtergrond van Digikoppeling certificaten",
+      "publisher": "Logius"
+    },
+    "PKI Policy": {
+      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen",
+      "title": "Programma van Eisen (PKIoverheid)",
+      "publisher": "Logius"
+    },
+    "PKI CA": {
+      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/toegetreden-vertrouwensdienstverleners",
+      "title": "Toegetreden vertrouwensdienstverleners",
+      "publisher": "Logius"
+    },
+    "PKIoverheid Certificaten": {
+      "href": "https://cert.pkioverheid.nl/",
+      "title": "Pkioverheid certificaten",
+      "publisher": "Logius"
+    },
+    "Logius website": {
+      "href": "https://logius.nl/digikoppeling",
+      "title": "Logius Digikoppeling",
+      "publisher": "Logius"
+    },
+    "Digikoppeling Compliance Voorziening": {
+      "href": "https://portaal.digikoppeling.nl",
+      "title": "Digikoppeling Compliance Voorziening",
+      "publisher": "Logius"
+    }
+  },
+  "publishISODate": "2017-10-01T00:00:00.000Z",
+  "generatedSubtitle": "Vastgestelde versie 01 oktober 2017"
+}</script>
+<link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/LS-VG.css"></head>
+
+<body class="h-entry toc-inline"><div class="head">
+    <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg" width="44">
+  </a> <h1 id="title" class="title">Digikoppeling Best Practices WUS 1.10</h1>
+    
+    <h2>
+      Logius Best practice<br>
+      Vastgestelde versie
+      <time class="dt-published" datetime="2017-10-01">01 oktober 2017</time>
+    </h2>
+	<a lang="nl" href="https://publicatie.centrumvoorstandaarden.nl/">Overzicht standaarden</a>
+    <dl>
+      <dt>Deze versie:</dt><dd class="status">
+              <a class="u-url status" href="https://publicatie.centrumvoorstandaarden.nl/dk/bpwus/1.10">https://publicatie.centrumvoorstandaarden.nl/dk/bpwus/1.10</a>
+            </dd><dt>Laatst gepubliceerde versie:</dt><dd>
+              <a href="https://publicatie.centrumvoorstandaarden.nl/dk/bpwus/">https://publicatie.centrumvoorstandaarden.nl/dk/bpwus/</a>
+            </dd>
+      <dt>Laatste werkversie:</dt><dd><a href="https://logius-standaarden.github.io/Digikoppeling-Best-Practices-WUS/">https://logius-standaarden.github.io/Digikoppeling-Best-Practices-WUS/</a></dd>
+      
+      
+      
+      
+      
+      <dt>Redacteurs:</dt>
+      <dd class="editor p-author h-card vcard">
+    <a class="u-url url p-name fn" href="https://logius.nl/standaarden">Peter Haasnoot</a> (<span class="p-org org h-org">Logius</span>)
+  </dd><dd class="editor p-author h-card vcard">
+    <a class="u-url url p-name fn" href="https://logius.nl/standaarden">Pieter Hering</a> (<span class="p-org org h-org">Logius</span>)
+  </dd>
+      
+      <dt>Auteur:</dt><dd class="editor p-author h-card vcard">
+    <a class="ed_mailto u-email email p-name" href="mailto:digikoppeling@logius.nl">Logius</a>
+  </dd>
+      <dt>Doe mee:</dt><dd>
+    <a href="https://github.com/Logius-standaarden/Digikoppeling-Best-Practices-WUS/">GitHub Logius-standaarden/Digikoppeling-Best-Practices-WUS</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/Digikoppeling-Best-Practices-WUS/issues/">Dien een melding in</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/Digikoppeling-Best-Practices-WUS/commits/">Revisiehistorie</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/Digikoppeling-Best-Practices-WUS/pulls/">Pull requests</a>
+  </dd>
+    </dl>
+    
+    
+    <p lang="en">
+          This document is also available in this non-normative format:
+          <a rel="alternate" href="Digikoppeling-Best-Practices-WUS.pdf">pdf</a>
+        </p>
+    <p class="copyright" lang="en">
+          This document is licensed under a
+          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" class="subfoot">Creative Commons Attribution 4.0 License</a>.
+        </p>
+    <hr title="Separator for header">
+  </div>
+    <section id="abstract" class="introductory"><h2 id="samenvatting">Samenvatting<a class="self-link" href="#abstract" aria-label="Permalink for Section"></a></h2><p>Alle Digikoppeling webservices die op WUS gebaseerd zijn, moeten conformeren aan Digikoppeling Koppelvlakstandaard
+    WUS. Dit document beschrijft een aantal Best Practices voor het gebruik van de Koppelvlakstandaard WUS.</p></section>
+    <section id="sotd" class="introductory"><h2 id="status-van-dit-document">Status van dit document<a class="self-link" href="#sotd" aria-label="Permalink for Section"></a></h2>Dit is de definitieve versie van de  best practice. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.<p></p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#doel-en-doelgroep"><bdi class="secno">1.1 </bdi>Doel en doelgroep</a></li><li class="tocline"><a class="tocxref" href="#opbouw-digikoppeling-documentatie"><bdi class="secno">1.2 </bdi>Opbouw Digikoppeling documentatie</a></li><li class="tocline"><a class="tocxref" href="#digikoppeling"><bdi class="secno">1.3 </bdi>Digikoppeling</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#doel-en-scope-van-digikoppeling"><bdi class="secno">1.3.1 </bdi>Doel en scope van Digikoppeling</a></li><li class="tocline"><a class="tocxref" href="#uitwisseling-binnen-digikoppeling"><bdi class="secno">1.3.2 </bdi>Uitwisseling binnen Digikoppeling</a></li></ol></li><li class="tocline"><a class="tocxref" href="#opbouw-van-dit-document"><bdi class="secno">1.4 </bdi>Opbouw van dit document</a></li><li class="tocline"><a class="tocxref" href="#gehanteerde-terminologie-digikoppeling-glossary"><bdi class="secno">1.5 </bdi>Gehanteerde terminologie: Digikoppeling Glossary</a></li></ol></li><li class="tocline"><a class="tocxref" href="#werkwijze-aanbevelingen-best-practices"><bdi class="secno">2. </bdi>Werkwijze/Aanbevelingen/Best Practices</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#servicedefinities"><bdi class="secno">2.1 </bdi>Servicedefinities</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#wsdl"><bdi class="secno">2.1.1 </bdi>WSDL</a></li><li class="tocline"><a class="tocxref" href="#karakterset-en-codering"><bdi class="secno">2.1.2 </bdi>Karakterset en codering</a></li><li class="tocline"><a class="tocxref" href="#versie-aanduiding"><bdi class="secno">2.1.3 </bdi>Versie aanduiding</a></li><li class="tocline"><a class="tocxref" href="#xsd"><bdi class="secno">2.1.4 </bdi>XSD</a></li><li class="tocline"><a class="tocxref" href="#namespaces"><bdi class="secno">2.1.5 </bdi>Namespaces</a></li><li class="tocline"><a class="tocxref" href="#naamgeving-conventies"><bdi class="secno">2.1.6 </bdi>Naamgeving conventies</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#contract-first-vs-contract-last"><bdi class="secno">2.1.6.1 </bdi>Contract First vs Contract Last</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#foutafhandeling"><bdi class="secno">2.2 </bdi>Foutafhandeling</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#protocol-en-transportfouten-dus-tls-of-http-fouten"><bdi class="secno">2.2.1 </bdi>Protocol- en transportfouten (dus TLS of HTTP fouten)</a></li><li class="tocline"><a class="tocxref" href="#functionele-fouten"><bdi class="secno">2.2.2 </bdi>Functionele fouten</a></li><li class="tocline"><a class="tocxref" href="#technische-fouten"><bdi class="secno">2.2.3 </bdi>Technische fouten</a></li></ol></li><li class="tocline"><a class="tocxref" href="#ws-addressing"><bdi class="secno">2.3 </bdi>WS-Addressing</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#maak-gebruik-van-messageid"><bdi class="secno">2.3.1 </bdi>Maak gebruik van MessageID</a></li><li class="tocline"><a class="tocxref" href="#routeren-van-berichten-over-meerdere-intermediairs"><bdi class="secno">2.3.2 </bdi>Routeren van berichten over meerdere intermediairs</a></li><li class="tocline"><a class="tocxref" href="#afhandeling-from-in-combinatie-met-een-proxy-gateway"><bdi class="secno">2.3.3 </bdi>Afhandeling From in combinatie met een proxy/gateway</a></li></ol></li><li class="tocline"><a class="tocxref" href="#ws-policies"><bdi class="secno">2.4 </bdi>WS-Policies</a></li></ol></li><li class="tocline"><a class="tocxref" href="#technische-foutmeldingen"><bdi class="secno">3. </bdi>Technische foutmeldingen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#categorieen"><bdi class="secno">3.1 </bdi>Categorieën</a></li><li class="tocline"><a class="tocxref" href="#codes"><bdi class="secno">3.2 </bdi>Codes</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">4. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">5. </bdi>Lijst met figuren</a></li></ol></nav>
+    
+    <section class="introductory" data-format="markdown"><h1>Colofon</h1><table class="dkkvs">
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Logius Servicecentrum:</td>
+<td>Postbus 96810 2509<br>JE Den Haag<br>t. 0900 555 4555 (10 ct p/m)<br>e.<a href="mailto:servicecentrum@logius.nl">servicecentrum@logius.nl</a></td>
+</tr>
+</tbody></table></section>
+    
+<section data-format="markdown" id="inleiding"><h2 id="x1-inleiding"><bdi class="secno">1. </bdi>Inleiding<a class="self-link" href="#inleiding" aria-label="Permalink for Section 1."></a></h2><section id="doel-en-doelgroep"><h3 id="x1-1-doel-en-doelgroep"><bdi class="secno">1.1 </bdi>Doel en doelgroep<a class="self-link" href="#doel-en-doelgroep" aria-label="Permalink for Section 1.1"></a></h3><p>Alle Digikoppeling webservices die op WUS gebaseerd zijn, moeten conformeren aan Digikoppeling Koppelvlakstandaard WUS. Dit document is een aanvulling hierop. Het heeft als doel ontwikkelaars te adviseren en te informeren over de huidige werkwijze bij het toepassen van Digikoppeling Koppelvlakstandaard WUS – deze informatie geldt dus alleen voor de WUS-variant.</p><p>Het document is bestemd voor ontwikkelaars van webservices, die Digikoppeling toepassen. Het gaat hierbij om zowel service providers als service requesters (clients).</p></section><section id="opbouw-digikoppeling-documentatie"><h3 id="x1-2-opbouw-digikoppeling-documentatie"><bdi class="secno">1.2 </bdi>Opbouw Digikoppeling documentatie<a class="self-link" href="#opbouw-digikoppeling-documentatie" aria-label="Permalink for Section 1.2"></a></h3><p>Digikoppeling is beschreven in een set van documenten. Deze set is als volgt opgebouwd:</p><p><figure id="fig-opbouw-documentatie-digikoppeling"><img src="media/DK_Specificatie_structuur.svg" alt="Overzicht van de onderdelen van de Digikoppeling Standaard, de standaard is onderverdeeld in normatieve en ondersteunende onderdelen" title="Opbouw documentatie Digikoppeling"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">Opbouw documentatie Digikoppeling</span></figcaption></figure></p><details>
+    <summary> Tekstalternatief </summary>
+<ul>
+    <li>Digikoppeling Standaard
+        <ul>
+            <li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/beheer/">DK Beheermodel en releasebeleid</a>* </li>
+            <li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/actueel/">DK Overzicht Actuele Documentatie en Compliance</a>* </li>
+            <li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/architectuur">DK Architectuur</a>*
+                <ul>
+                    <li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/idauth/">DK Identificatie en Authenticatie</a>*
+                        <ul>
+                            <li><i> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/gbachtcert/">Digikoppeling Gebruik en Achtergronden Certificaten</a></i>† </li>
+                        </ul>
+                    </li>
+                    <li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/beveilig/">DK Beveiligingsstandaarden en voorschriften</a>* </li>
+                    <li>Koppelvlakstandaarden
+                        <ul>
+                            <li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/wus/">DK Koppelvlakstandaard WUS</a>*
+                                <ul>
+                                    <li><i><a href="https://publicatie.centrumvoorstandaarden.nl/dk/bpwus">Best-practice WUS</a></i>† </li>
+                                </ul>
+                            </li>
+                            <li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/ebms/">DK Koppelvlakstandaard ebMS2</a>*
+                                <ul>
+                                    <li> <i><a href="https://publicatie.centrumvoorstandaarden.nl/dk/bpebms">Best-practice ebMS2</a></i>† </li>
+                                </ul>
+                            </li>
+                            <li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/gb/">DK Koppelvlakstandaard Grote Berichten</a>*
+                                <ul>
+                                    <li> <i><a href="https://publicatie.centrumvoorstandaarden.nl/dk/bpgb">Best-practice Grote Berichten</a></i>†</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+    <i><a href="https://publicatie.centrumvoorstandaarden.nl/dk/watisdk/">Wat is Digikoppeling</a></i>†
+  </li>
+        </ul>
+    </li>
+</ul>
+<p>* Normatief document</p>
+<p>† Ondersteunend document</p>
+</details></section><section id="digikoppeling"><h3 id="x1-3-digikoppeling"><bdi class="secno">1.3 </bdi>Digikoppeling<a class="self-link" href="#digikoppeling" aria-label="Permalink for Section 1.3"></a></h3><section id="doel-en-scope-van-digikoppeling"><h4 id="x1-3-1-doel-en-scope-van-digikoppeling"><bdi class="secno">1.3.1 </bdi>Doel en scope van Digikoppeling<a class="self-link" href="#doel-en-scope-van-digikoppeling" aria-label="Permalink for Section 1.3.1"></a></h4><p>Voor de Overheid als geheel is interoperabiliteit tussen een groot aantal serviceaanbieders en serviceafnemers van essentieel belang. Die grootschalige interoperabiliteit wordt bereikt door een sterke standaardisatie van het koppelvlak tussen de communicatiepartners.</p><p>Deze communicatie vindt plaats in het domein van Digikoppeling, en daarbij worden Digikoppeling koppelvlakstandaarden toegepast. Dat is een zeer beperkte set van standaarden waaruit onder gedefinieerde omstandigheden gekozen kan worden.</p><p>Digikoppeling biedt de mogelijkheid om op die sterk gestandaardiseerde wijze berichten uit te wisselen tussen serviceaanbieders (service providers) en serviceafnemers (service requesters of clients). Digikoppeling richt zich (in elk geval voorlopig) uitsluitend op uitwisselingen tussen overheidsorganisaties.</p></section><section id="uitwisseling-binnen-digikoppeling"><h4 id="x1-3-2-uitwisseling-binnen-digikoppeling"><bdi class="secno">1.3.2 </bdi>Uitwisseling binnen Digikoppeling<a class="self-link" href="#uitwisseling-binnen-digikoppeling" aria-label="Permalink for Section 1.3.2"></a></h4><p>De uitwisseling tussen service providers en - requesters is in drie lagen opgedeeld:</p><ul>
+<li><p>Inhoud: deze laag bevat afspraken over de inhoud van het uit te wisselen bericht, dus de structuur, semantiek en waardebereiken . Digikoppeling houdt zich niet met de inhoud bezig, “heeft geen boodschap aan de boodschap”.</p>
+</li>
+<li><p>Logistiek: op deze laag bevinden zich de afspraken betreffende transportprotocollen (HTTP), messaging (SOAP), adressering, beveiliging (authenticatie en encryptie) en betrouwbaarheid. Dit is de laag van Digikoppeling.</p>
+</li>
+<li><p>Transport: deze laag verzorgt het daadwerkelijke transport van het bericht.</p>
+</li>
+</ul><p>Digikoppeling richt zich uitsluitend op de logistieke laag. Deze afspraken komen in de koppelvlakstandaarden en andere voorzieningen.</p></section></section><section id="opbouw-van-dit-document"><h3 id="x1-4-opbouw-van-dit-document"><bdi class="secno">1.4 </bdi>Opbouw van dit document<a class="self-link" href="#opbouw-van-dit-document" aria-label="Permalink for Section 1.4"></a></h3><p>Hoofdstuk 1 bevat een aantal algemene inleidende onderwerpen.</p><p>Hoofdstuk 2 bevat aanbevelingen, werkwijzes en Best Practices.</p></section><section id="gehanteerde-terminologie-digikoppeling-glossary"><h3 id="x1-5-gehanteerde-terminologie-digikoppeling-glossary"><bdi class="secno">1.5 </bdi>Gehanteerde terminologie: Digikoppeling Glossary<a class="self-link" href="#gehanteerde-terminologie-digikoppeling-glossary" aria-label="Permalink for Section 1.5"></a></h3><p>Voor de definities die binnen het Digikoppeling project gehanteerd worden, zie de ‘Digikoppeling Glossary’ die via Digikoppeling website te vinden is.</p></section></section>
+<section data-format="markdown" id="werkwijze-aanbevelingen-best-practices"><h2 id="x2-werkwijze-aanbevelingen-best-practices"><bdi class="secno">2. </bdi>Werkwijze/Aanbevelingen/Best Practices<a class="self-link" href="#werkwijze-aanbevelingen-best-practices" aria-label="Permalink for Section 2."></a></h2><section id="servicedefinities"><h3 id="x2-1-servicedefinities"><bdi class="secno">2.1 </bdi>Servicedefinities<a class="self-link" href="#servicedefinities" aria-label="Permalink for Section 2.1"></a></h3><p>Deze paragraaf bevat de aanbevelingen t.a.v. het omgaan met servicedefinities.</p><section id="wsdl"><h4 id="x2-1-1-wsdl"><bdi class="secno">2.1.1 </bdi>WSDL<a class="self-link" href="#wsdl" aria-label="Permalink for Section 2.1.1"></a></h4><p>In WSDL 1.1 is een Authoring Style advies (zie hieronder) opgenomen: “separate the definitions in three documents: data type definitions, abstract definitions, and specific service bindings”. Dit advies, met name het apart beschrijven van de “specific service bindings” (WSDL onderdelen Binding en Service) wordt overgenomen.</p><p>Onderstaande tekst is een citaat uit de WSDL 1.1 Standaard. Het vormt een door Digikoppeling overgenomen best practice bij het schrijven van duidelijke WSDL’s.</p><blockquote>
+<p>  <em>Wijze van notatie (© W3C Note 15 March 2001, vertaald uit het Engels)</em></p>
+</blockquote><blockquote>
+<p>  <em>“Door gebruik van het importelement wordt het mogelijk, de diverse elementen van een servicedefinitie te scheiden in afzonderlijke documenten, die dan naar behoefte geïmporteerd kunnen worden. Met behulp van deze techniek kun je duidelijker servicedefinities schrijven, omdat de definities gescheiden worden al naar gelang hun abstractieniveau. Het vergroot ook het vermogen om allerlei soorten servicedefinities nogmaals te gebruiken. Het gevolg is, dat WSDL documenten die op deze manier gestructureerd zijn, gemakkelijker te gebruiken en te onderhouden zijn. In het 2e voorbeeld hieronder is te zien hoe deze manier van schrijven gebruikt wordt om de service in het 1e voorbeeld* te definiëren. Hier scheiden we de definities in drie documenten: gegevenstype definities, abstracte definities en specifieke service bindings. Natuurlijk is het gebruik van dit mechanisme niet beperkt tot de definities uit het voorbeeld, dat alleen taalelementen gebruikt die in deze specificatie gedefinieerd zijn. Andere typen definities, die op meerdere taalextensies gebaseerd zijn, kunnen op dezelfde manier gecodeerd en hergebruikt worden.”</em></p>
+</blockquote><p>* Het voorbeeld waar deze tekst van de WSDL 1.1 standaard naar verwijst wordt is niet in overeenstemming met het Digikoppeling Koppelvlakstandaard WUS profiel (zie voor details CRF 12). Om een indruk te krijgen van de opdeling (authoring style) van een WSDL wordt verwezen naar de berichtvoorbeelden. De voorbeelden van berichten zijn gepubliceerd op de Logius website. Voorbeelden van WSDL’s zijn beschikbaar als onderdeel van de Digikoppeling Compliance Voorziening.</p><p>Voor de specificatie van zaken die buiten het bereik van de WSDL vallen (TLS, WS-Security) wordt aanbevolen om in de WSDL van een service “documentation elements” (&lt;(wsdl:documentation&gt; of &lt;!-- xxx --&gt;) op te nemen die de eisen ten aanzien van metadata verwoorden, of een verwijzing naar betreffende documenten bevat.</p></section><section id="karakterset-en-codering"><h4 id="x2-1-2-karakterset-en-codering"><bdi class="secno">2.1.2 </bdi>Karakterset en codering<a class="self-link" href="#karakterset-en-codering" aria-label="Permalink for Section 2.1.2"></a></h4><p>Voor communicatie binnen het Digikoppeling WUS kanaal wordt de UCS karakterset (ISO/IEC 10646) gebruikt. Deze karakterset omvat (is superset van) de set Unicode, Latin (ISO/IEC 8859-x) en de GBA karakterset.</p><p>Bij berichtenverkeer speelt de gebruikte karakterset een belangrijke rol. Een serviceafnemer kan in de vraagaanroep karakters gebruikt hebben die niet door de serviceaanbieder ondersteund worden. Voor goede communicatie is het dus belangrijk dat hiervoor afspraken gelden. UCS is de meest uitgebreide karakterset. Toepassen van UTF-8 zorgt er voor dat efficiënt omgegaan wordt met het aantal bytes in het bericht.</p></section><section id="versie-aanduiding"><h4 id="x2-1-3-versie-aanduiding"><bdi class="secno">2.1.3 </bdi>Versie aanduiding<a class="self-link" href="#versie-aanduiding" aria-label="Permalink for Section 2.1.3"></a></h4><p>Er zijn een aantal elementen waaraan een versie aanduiding moet worden toegevoegd. Dit zijn:</p><p>WSDL/namespace</p><p>WSDL/Servicenaam</p><p>WSDL/PortType</p><p>WSDL/Type(s) (XSD) namespace</p><p>Er zijn een aantal manieren om de versie van een service aan te duiden. De meest gangbare zijn “Major.Minor”, “Enkelvoudige versie” (bijv V1) en “YYYY/MM”.</p><p>Het voorstel is om voor zowel de XSD als de WSDL de Enkelvoudige versie aanduiding te gebruiken.</p><p>Waarom gebruiken we geen major.minor? Er zijn verschillende mogelijkheden om Minor wijzigingen backward compatible te houden, deze worden echter als erg omslachtig beschouwd en/of ze vereisen speciale tooling ondersteuning. Daarom wordt voorgesteld geen onderscheid tussen major en minor te maken, en dus alleen met enkelvoudige versies te werken. Dit heeft als resultaat dat de WSDL en XSD namespace dus alleen de “Enkelvoudige” aanduiding, zoals _v1 krijgt.</p><p>Een aantal voorbeelden:</p><p>WSDL namespace “<a href="http://wus.osb.gbo.overheid.nl/wsdl/compliance-v1%E2%80%9D">http://wus.osb.gbo.overheid.nl/wsdl/compliance-v1”</a></p><p>XSD namespace “http:// wus.osb.gbo.overheid.nl/xsd/compliance/xsd/compliance-v1”.</p><p>Servicenaam “OSBComplianceService_v1”</p><p>PortType “IOSBComplianceService_v1”</p><p>De aanduiding YYYY/MM slaat ook op een enkelvoudige versie, d.w.z. zonder onderscheid tussen major en minor. Die aanduiding kan dus ook gebruikt worden. Het lijkt echter aan te bevelen om versies van webservices aan te duiden met (oplopende) versienummers, omdat communicatie daarover iets eenduidiger is.</p><p>WB005</p><p>Voor het onderscheid tussen test- en productieservices heeft het de voorkeur dat deze twee op aparte machines komen met een eigen DNS naam (en dus met verschillende PKI overheid certificaten).</p><p>Aan de locatie (uri) van de service is daardoor te zien of het om een productie- of een testservice gaat.</p></section><section id="xsd"><h4 id="x2-1-4-xsd"><bdi class="secno">2.1.4 </bdi>XSD<a class="self-link" href="#xsd" aria-label="Permalink for Section 2.1.4"></a></h4><p>Gebruik van document/literal wrapped style. In Digikoppeling Koppelvlakstandaard WUS staat de bij voorschrift WW003 dat bij de document literal style de body maar 1 element mag bevatten. Het wordt sterk aangeraden dat dit element de operatie naam bevat voor een bepaald bericht. Deze wordt dus door de xsd beschreven en bevat een beschrijving van de payload. Door deze methode te gebruiken wordt de interoperabiliteit verhoogd, met name tussen Microsoft en andere omgevingen. (zie <a href="http://www-128.ibm.com/developerworks/webservices/library/ws-whichwsdl">http://www-128.ibm.com/developerworks/webservices/library/ws-whichwsdl</a>)</p><p>Wsdl definition</p><pre><code class="XML hljs xml" aria-busy="false">...
+<span class="hljs-tag">&lt;<span class="hljs-name">types</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">schema</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"myMethod"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">complextype</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">sequence</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"x"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xsd:int"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"y"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"xsd:float"</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">element</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">sequence</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">complextype</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">element</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"myMethodResponse"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">complextype</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">complextype</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">element</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">schema</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">types</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">message</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"myMethodRequest"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">part</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"parameters"</span> <span class="hljs-attr">element</span>=<span class="hljs-string">"myMethod"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">part</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">message</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">message</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"empty"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">part</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"parameters"</span> <span class="hljs-attr">element</span>=<span class="hljs-string">"myMethodResponse"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">part</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">message</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">porttype</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"PT"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">operation</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"myMethod"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">message</span>=<span class="hljs-string">"myMethodRequest"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">output</span> <span class="hljs-attr">message</span>=<span class="hljs-string">"empty"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">output</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">operation</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">porttype</span>&gt;</span>
+...
+</code></pre><p>bericht:</p><pre><code class="XML hljs xml" aria-busy="false">...
+<span class="hljs-tag">&lt;<span class="hljs-name">envelope</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">payloadbody</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mymethod</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">x</span>&gt;</span>
+                5
+            <span class="hljs-tag">&lt;/<span class="hljs-name">x</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">y</span>&gt;</span>
+                5.0
+            <span class="hljs-tag">&lt;/<span class="hljs-name">y</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">mymethod</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">payloadbody</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">envelope</span>&gt;</span>
+...
+</code></pre></section><section id="namespaces"><h4 id="x2-1-5-namespaces"><bdi class="secno">2.1.5 </bdi>Namespaces<a class="self-link" href="#namespaces" aria-label="Permalink for Section 2.1.5"></a></h4><p>Met betrekking tot het verkrijgen van eenduidigheid in de WSDL bestanden, wordt sterk aangeraden dat xml namespace prefixen volgens de WSDL 1.1 specificatie gebruikt worden. (<a href="http://www.w3.org/TR/wsdlhttps://www.w3.org/TR/wsdl/#notation">https://www.w3.org/TR/wsdl/#notation</a>).</p><p>Het heeft de voorkeur dat een namespace wordt opgebouwd op basis van de domeinnaam van de web service.</p></section><section id="naamgeving-conventies"><h4 id="x2-1-6-naamgeving-conventies"><bdi class="secno">2.1.6 </bdi>Naamgeving conventies<a class="self-link" href="#naamgeving-conventies" aria-label="Permalink for Section 2.1.6"></a></h4><p>Over het algemeen moet de service naam een goede weerspiegeling zijn van de context waarin de service wordt gebruikt. De operatienamen die door deze service ondersteund worden, moeten passen binnen de context van de service en overdadige lange tekststrings moet worden voorkomen.</p><section id="contract-first-vs-contract-last"><h5 id="x2-1-6-1-contract-first-vs-contract-last"><bdi class="secno">2.1.6.1 </bdi>Contract First vs Contract Last<a class="self-link" href="#contract-first-vs-contract-last" aria-label="Permalink for Section 2.1.6.1"></a></h5><p>Het ontwikkelen van webservices kan grofweg ingedeeld worden in twee categorieën, namelijk:</p><ul>
+<li><p>contract first</p>
+</li>
+<li><p>contract last</p>
+</li>
+</ul><p>Met ‘contract’ wordt gewezen op het WSDL contract dat de webservice definieert. Nagenoeg alle webservice toolkits ondersteunen beide manieren van ontwikkeling.</p><p>Bij een contract first approach wordt in feite gestart met het handmatig samenstellen van het WSDL. Gebaseerd op het WSDL wordt vervolgens door toolkits de code gegenereerd. De ontwikkelaar maakt gebruik van de genereerde code om vervolgens een implementatie te schrijven. Hierbij maakt de ontwikkelaar gebruik van technieken als interfaces en overerving.</p><p>Bij Contract last approach is dit proces net andersom. Een ontwikkelaar begint met het ontwikkelen van de logica en het schrijven de code. Daarna voegt de ontwikkelaar meta informatie toe aan de code waarmee bepaald wordt hoe de WSDL eruit ziet. Meta informatie verschilt per toolkit/framework hoe dit gedaan wordt. Binnen de Javawereld wordt dit vaak gedaan met jaxws annotations. Bij het opstarten van de applicatie wordt vervolgens door de toolkit bepaald welke meta informatie het tot zijn beschikking heeft en zal vervolgens op runtime een WSDL publiceren.</p><p>Beide manieren hebben hun voor- en nadelen. Ervaring leert wel dat bij trajecten waarbij strikte eisen worden gesteld met betrekking tot de WSDL dat een contract first approach uiteindelijk de meest robuuste manier is. Doordat een WSDL volledig handmatig wordt samengesteld, is dit ook de meest flexibele en toolkit-onafhankelijke manier van werken.</p></section></section></section><section id="foutafhandeling"><h3 id="x2-2-foutafhandeling"><bdi class="secno">2.2 </bdi>Foutafhandeling<a class="self-link" href="#foutafhandeling" aria-label="Permalink for Section 2.2"></a></h3><p>Bij berichtenuitwisseling tussen een service requester en service provider kunnen fouten optreden. Het is van belang dat er nagedacht wordt over het nut van het communiceren van een bepaalde foutmelding. De beschrijving van een of andere interne fout bij een service provider zal in het algemeen niet interessant zijn voor een requester; het terugmelden van de specifieke oorzaak heeft dan geen zin.</p><p>Als de oorzaak van de fout bij de service requester ligt, dan dient de foutmelding er op gericht te zijn dat de service requester op basis van de foutmelding de fout kan achterhalen en actie ondernemen.</p><p>Voor communicatie in het Digikoppeling domein volgens de Koppelvlakstandaard WUS zijn vier verschillende fouttypen te onderkennen: protocolfouten, transportfouten, functionele fouten en technische fouten.</p><section id="protocol-en-transportfouten-dus-tls-of-http-fouten"><h4 id="x2-2-1-protocol-en-transportfouten-dus-tls-of-http-fouten"><bdi class="secno">2.2.1 </bdi>Protocol- en transportfouten (dus TLS of HTTP fouten)<a class="self-link" href="#protocol-en-transportfouten-dus-tls-of-http-fouten" aria-label="Permalink for Section 2.2.1"></a></h4><p>Protocol- en transportfouten zijn in het algemeen in het protocol gedefinieerd. Wijzigingen daarin - dus aanpassing van standaard software - zijn niet wenselijk. Protocol- en transportfouten worden daarom niet beschreven. De hier beschreven foutmeldingen hebben betrekking op situaties waarin het requestbericht door de web service is ontvangen. Deze kan het echter niet goed verwerken en stuurt daarom een foutmelding terug.</p></section><section id="functionele-fouten"><h4 id="x2-2-2-functionele-fouten"><bdi class="secno">2.2.2 </bdi>Functionele fouten<a class="self-link" href="#functionele-fouten" aria-label="Permalink for Section 2.2.2"></a></h4><p>Functionele fouten zijn in het kader van Digikoppeling moeilijk te standaardiseren. Deze zullen voor veel organisaties verschillen en ook het communiceren van de foutmelding zal niet altijd eenduidig zijn. Dit is weliswaar iets wat om aandacht vraagt, maar het valt buiten de scope van Digikoppeling.</p></section><section id="technische-fouten"><h4 id="x2-2-3-technische-fouten"><bdi class="secno">2.2.3 </bdi>Technische fouten<a class="self-link" href="#technische-fouten" aria-label="Permalink for Section 2.2.3"></a></h4><p>Voor technische foutmeldingen kan een standaard bericht gedefinieerd worden. In de SOAP specificatie is de SOAP Fault beschreven die je hiervoor goed kunt gebruiken.</p><p>Communiceren van een fout via een SOAP Fault heeft een aantal voordelen:</p><p>Uitzonderingen op een consistente manier afgehandeld worden;</p><p>De SOAPFault wordt beschreven in de SOAP specificatie;</p><p>De verschillende elementen waaruit een SOAP Fault is opgebouwd biedt de mogelijkheid tot het communiceren van uitgebreide informatie;</p><p>De FaultCode kan aanduiden of de fout was veroorzaakt door Client of Server.</p><p>Een aantal nadelen zijn:</p><p>Soapfaults kunnen geen binding (HTTP) gerelateerde fout communiceren. In dat geval wordt over het onderliggende protocol de fout gecommuniceerd</p><p>Bij een SOAPFault bericht mag geen additionele data toegevoegd worden</p><p>Het ‘detail’ element van de SOAP Fault is bedoeld om applicatie specifieke foutmeldingen te communiceren die gerelateerd zijn aan het SOAP ‘Body’ element. Het moet aanwezig zijn in de SOAP Fault indien de fout werd veroorzaakt door het ‘Body’ element. Indien er geen ‘detail’ element in de SOAP Fault aanwezig is, dan betekent dit dat de fout niet is ontstaan bij het verwerken van het ‘body’ element.</p><p>Voor een web service in het Digikoppeling domein moeten foutmeldingen gedefinieerd worden</p></section></section><section id="ws-addressing"><h3 id="x2-3-ws-addressing"><bdi class="secno">2.3 </bdi>WS-Addressing<a class="self-link" href="#ws-addressing" aria-label="Permalink for Section 2.3"></a></h3><section id="maak-gebruik-van-messageid"><h4 id="x2-3-1-maak-gebruik-van-messageid"><bdi class="secno">2.3.1 </bdi>Maak gebruik van MessageID<a class="self-link" href="#maak-gebruik-van-messageid" aria-label="Permalink for Section 2.3.1"></a></h4><p>Binnen WS-Addressing wordt de wsa:MessageID gebruikt om een bericht uniek te definiëren. Dit veld is verplicht binnen de specificatie. De meeste frameworks/toolkits genereren daarom standaard een unieke messageID voor elk bericht indien deze niet is meegegeven door de applicatie.</p><p>Hoewel dit in de meeste gevallen prima werkt, is het aan te raden om gebruik van de MessageID en deze via de applicatie te laten bepalen.</p><p>Bijvoorbeeld in het scenario dat een bericht wordt verstuurd door een andere interne applicatie proces, kan door gebruik te maken van het interne proces nummer als onderdeel van de messageID, een correlatie over verschillende processen tot stand gebracht worden. Van een foutbericht kan via de relatesTo eenvoudig bepaald worden welke interne applicatie proces een fout heeft veroorzaakt.</p><p>Daarnaast zou het formaat van een messageID ook gebruikt kunnen worden om naast een unieke waarde ook gedeeltelijk aan te vullen met een logische waarde. Indien bijvoorbeeld gewerkt wordt met een interactie waarbij meerdere berichten uitgewisseld worden voor 1 business conversatie, kan het correleren versimpeld worden door een conversationID te verwerken in de messageID.</p><p>Voorkeur is om consistentie in de opbouw van de messageID aan te houden. De volgende opbouw heeft de voorkeur: “CUSTOM@<a href="mailto:UUID@URI">UUID@URI</a> “ of “CUSTOM@<a href="mailto:UUID@URI">GUID@URI”</a>. UUID of GUID volgens <a href="http://www.ietf.org/rfc/rfc4122.txt">http://www.ietf.org/rfc/rfc4122.txt</a></p><p>URI is een anyURI volgens <a href="http://www.w3.org/2001/XMLSchema">http://www.w3.org/2001/XMLSchema</a></p><p>De URI kan de domeinnaam zijn van Digikoppeling messagehandler of de web service namespace.</p></section><section id="routeren-van-berichten-over-meerdere-intermediairs"><h4 id="x2-3-2-routeren-van-berichten-over-meerdere-intermediairs"><bdi class="secno">2.3.2 </bdi>Routeren van berichten over meerdere intermediairs<a class="self-link" href="#routeren-van-berichten-over-meerdere-intermediairs" aria-label="Permalink for Section 2.3.2"></a></h4><p>WS-Addressing biedt de mogelijkheid om via vaste metadata informatie berichten te voorzien van routeer informatie. Hiervoor gebruikt men met name het ‘TO’ adres. Het is aan te raden om in het TO adres, het beoogde eindadres op te nemen. De endpoint die het bericht ontvangt kan door middel van de waarde van TO adres bepalen hoe het bericht doorgezet wordt. Intern dient de intermediair een mapping tabel bij te houden naar wie een bericht doorgestuurd moet worden afhankelijk van de TO waarde van het bericht. Dit kan dus naar de eindbestemming zijn, of weer naar een andere intermediair. De mapping inrichting dient vooraf afgesproken en ingericht te zijn.</p><p>Het is geen optie om het TO adres continu te herschrijven bij elke intermediair, waarin de TO adres de waarde krijgt waar het naar toe moet gaan. Dit is namelijk niet mogelijk, als het bericht ondertekend is want de TO waarde is onderdeel van de ondertekening en mag dus niet gewijzigd worden.</p><p>Ter verduidelijking, de volgende sequence diagram:</p><p><figure id="fig-sequence-diagram-routeren-van-berichten-over-meerdere-intermediairs"><img src="media/sequence_diagram_routering.jpeg" alt="Sequence diagram routeren van berichten over meerdere intermediairs" title="sequence diagram routeren van berichten over meerdere intermediairs"><figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title">sequence diagram routeren van berichten over meerdere intermediairs</span></figcaption></figure></p><p>Zoals in het diagram getoond wordt, blijft de addressing informatie gelijk tijdens de hele verzending. Indien het bericht ondertekend en versleuteld is, hoeven gateway 1 en gateway 2 het bericht niet te valideren of ontcijferen. Zolang de addressing informatie niet veranderd wordt, is de meegestuurde ‘signature’ nog steeds valide. De gateway componenten lezen enkel de To address uit, om te bepalen waar het bericht naartoe gestuurd moet worden.</p></section><section id="afhandeling-from-in-combinatie-met-een-proxy-gateway"><h4 id="x2-3-3-afhandeling-from-in-combinatie-met-een-proxy-gateway"><bdi class="secno">2.3.3 </bdi>Afhandeling From in combinatie met een proxy/gateway<a class="self-link" href="#afhandeling-from-in-combinatie-met-een-proxy-gateway" aria-label="Permalink for Section 2.3.3"></a></h4><p>Een from adres geeft aan waar het bericht vandaan is gekomen. Dit adres wordt vervolgens gebruikt om te bepalen waar het bericht vandaan is gekomen. In complexe infrastructuur oplossingen waarbij gebruik is gemaakt van een reverse proxy kan dit voor bepaalde complicaties zorgen (zie <a href="http://en.wikipedia.org/wiki/Reverse_proxy">http://en.wikipedia.org/wiki/Reverse_proxy</a>). Een server kan namelijk niet het from adres als endpoint gebruiken omdat deze moet wijzen naar de interne proxy. Extern verkeer dient vaak in dergelijke situaties altijd over de proxy te gaan. Om dit probleem op te lossen dient ook hier gebruik gemaakt te worden van een endpoint mapping functionaliteit.</p></section></section><section id="ws-policies"><h3 id="x2-4-ws-policies"><bdi class="secno">2.4 </bdi>WS-Policies<a class="self-link" href="#ws-policies" aria-label="Permalink for Section 2.4"></a></h3><p>WS-Policies is onderdeel van de WS-* specificaties en is sinds 2007 is versie 1.5 final. De doelstelling van WS-Policies is om een framework aan te bieden waarmee domein specifieke definities in een WSDL opgenomen kunnen worden. Gebaseerd op deze framework kunnen specifieke WS-* standaarden extensies definiëren op een eenduidig manier. De extensies worden dan in de policy elementen toegevoegd zodat ze vast gelegd zijn in de WSDL. Frameworks/toolkits kunnen tijdens het inlezen van de WSDL dan al bepalen hoe met de policy elementen omgegaan moet worden en kunnen hiervoor al de voorbereidingen treffen. Bijvoorbeeld: indien op WSDL niveau al aangegeven is dat een bericht gesigned moet worden, kan een framework zoals Apache CXF al de benodigde interceptor registreren die het signing proces afhandelt. Dit gebeurt dan transparant voor de ontwikkelaar.</p><p>Hoewel de standaarden reeds geruime tijd zijn uitgewerkt en gefinaliseerd, is in de praktijk de implementatie ondersteuning nog wisselvallig. Hierdoor is gekozen om het gebruik van policies niet binnen de koppelvlakstandaard op te nemen maar optioneel te houden. De meerwaarde van het gebruik van policies is daarentegen dusdanig evident dat het binnen de best practices is opgenomen.</p><p>Het gebruik van policies kunnen verschillende zaken zowel versimpelen als verduidelijken in de ontwikkelfase maar zijn niet noodzakelijk om ingezet te worden. In de praktijk blijkt wel dat zaken als signing en encryption zonder policies tijdens het ontwikkelen voor de nodige complexiteit zorgt. Uiteraard is het onderhouden van meerdere WSDL varianten voor dezelfde service niet wenselijk. Daarentegen kan de impact daarvan beperkt worden door te werken met een externe policy file dat in de WSDL wordt geïmporteerd en vervolgens met policy references aan specifieke methodes te koppelen. Door de policies extern te houden, is het zelfs mogelijk om verschillende policy varianten te maken indien een veel gebruikte framework een policy niet interoperabel ondersteund. De kans op implementatie fouten zou hiermee verlaagd kunnen worden wat zal resulteren in een sneller adoptieproces. De baten die hiermee behaald kunnen worden zijn hoogstwaarschijnlijk hoger dan de kosten die ermee gemoeid zijn.</p><p>Voorbeeld: Partij A besluit om een melding dienst aan te bieden waar andere partijen zich kunnen abonneren en meldingen kunnen ontvangen. Dit houdt in dat alle partijen de service moeten implementeren om de meldingen te kunnen ontvangen. Indien er 1000 verschillende partijen zijn waarbij het bekend is dat 50% gebruik maakt van Oracle Webcenter technologie en 30% gebruik maakt van Microsoft technologie. Dan zou de case om een policy attachment aan te bieden voor beide technologieën dat getest is op een correcte werking zeer goed te maken zijn. Door het inlezen van de WSDL met de bijbehorende policy attachments staan alle webservice instellingen zoals signing onderdelen gelijk goed.</p></section></section>
+<section data-format="markdown" id="technische-foutmeldingen"><h2 id="x3-technische-foutmeldingen"><bdi class="secno">3. </bdi>Technische foutmeldingen<a class="self-link" href="#technische-foutmeldingen" aria-label="Permalink for Section 3."></a></h2><section id="categorieen"><h3 id="x3-1-categorieen"><bdi class="secno">3.1 </bdi>Categorieën<a class="self-link" href="#categorieen" aria-label="Permalink for Section 3.1"></a></h3><p>Bij gegevensuitwisseling kunnen er fouten optreden door verschillende oorzaken. Fouten kunnen in één van de volgende categorieën ingedeeld worden:</p><ol>
+<li><p>syntax fouten, hebben betrekking op de structuur van de berichten (XSD) en standaarden zoals WSA en SOAP</p>
+</li>
+<li><p>inhoudelijke fouten, hebben betrekking op inhoudelijke verwerking en zijn context/domein of sector specifiek en worden niet binnen DK gestandaardiseerd</p>
+</li>
+<li><p>protocolfouten, hebben betrekking op TLS of HTTP</p>
+</li>
+<li><p>fouten doordat een service niet (onvoldoende QoS) beschikbaar is, waaronder ook time-out en autorisatie problemen/fouten.</p>
+</li>
+</ol><p>Per categorie kan op hoofdlijnen een procedure voor de foutafhandeling gedefinieerd worden.</p><ol start="5">
+<li><p>bij syntax fouten dient zo mogelijk aangegeven te worden welk element fout is (zoals in foutmeldingen 0005 t/m 0008 aangegeven staat)</p>
+</li>
+<li><p>Zo mogelijk aangeven waarom. Bij inhoudelijke fouten aangeven dat het bericht vanwege inconsistentie niet verwerkt kan worden. (dit is eigenlijk geen transport/koppelvlak probleem, maar veeleer een business probleem met een bijbehorende afhandelingsprocedure, vgl. de terugmelding in het stelsel).</p>
+</li>
+</ol></section><section id="codes"><h3 id="x3-2-codes"><bdi class="secno">3.2 </bdi>Codes<a class="self-link" href="#codes" aria-label="Permalink for Section 3.2"></a></h3><p>Lijst van technische foutmeldingen met classificatie naar fout-categorieën</p><table class="dkkvs">
+<thead>
+<tr>
+<th><strong>Code</strong></th>
+<th><strong>Omschrijving</strong></th>
+<th><strong>Categorie</strong></th>
+<th><strong>toelichting</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0001</td>
+<td>Invalide soap envelope</td>
+<td>1</td>
+<td>Voldoet niet aan verwachte syntax. Structuur van de envelope matcht niet met wat er verwacht wordt</td>
+</tr>
+<tr>
+<td>0002</td>
+<td>Niet geautoriseerd</td>
+<td>3</td>
+<td>Service niet beschikbaar (QoS). Door gebrek aan bevoegdheden.</td>
+</tr>
+<tr>
+<td>0003</td>
+<td>Invalide soapaction</td>
+<td>1</td>
+<td>De inhoud leidt niet tot een voltooide actie, is niet gedefinieerd of onbegrijpelijk. Protocol fout</td>
+</tr>
+<tr>
+<td>0004</td>
+<td>Niet conform xsd</td>
+<td>1</td>
+<td>Voldoet niet aan verwachte syntax</td>
+</tr>
+<tr>
+<td>0005</td>
+<td>WS-Addressing header “to” ontbreekt</td>
+<td>1</td>
+<td>Ontbreekt of voldoet niet aan verwachte syntax</td>
+</tr>
+<tr>
+<td>0006</td>
+<td>WS-Addressing header “action” ontbreekt</td>
+<td>1</td>
+<td>Ontbreekt of voldoet niet aan verwachte syntax</td>
+</tr>
+<tr>
+<td>0007</td>
+<td>WS-Addressing header “messageID” ontbreekt</td>
+<td>1</td>
+<td>Ontbreekt of voldoet niet aan verwachte syntax</td>
+</tr>
+<tr>
+<td>0008</td>
+<td>WS-Addressing header “relates to” ontbreekt</td>
+<td>1</td>
+<td>Ontbreekt of voldoet niet aan verwachte syntax</td>
+</tr>
+<tr>
+<td>0009</td>
+<td>Niet volgens UTF</td>
+<td>1</td>
+<td>Voldoet niet aan verwachte characterset</td>
+</tr>
+<tr>
+<td>0010</td>
+<td>Headers anders dan WSA-headers</td>
+<td>1</td>
+<td>Voldoet niet aan verwachte syntax</td>
+</tr>
+<tr>
+<td>0011</td>
+<td>Header andere waarde dan voorgeschreven</td>
+<td>1</td>
+<td>Voldoet niet aan verwachte spec/waarde</td>
+</tr>
+<tr>
+<td>0051</td>
+<td>Service niet beschikbaar</td>
+<td>3</td>
+<td>Service niet beschikbaar (QoS). Door gebrek aan resources/ verwerkingscapaciteit.</td>
+</tr>
+</tbody></table></section></section>
+    
+    
+    <section id="conformance"><h2 id="x4-conformiteit"><bdi class="secno">4. </bdi>Conformiteit<a class="self-link" href="#conformance" aria-label="Permalink for Section 4."></a></h2><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p>
+        
+    </section>
+
+    <section id="tof">
+        
+    <h2 id="x5-lijst-met-figuren"><bdi class="secno">5. </bdi>Lijst met figuren<a class="self-link" href="#tof" aria-label="Permalink for Section 5."></a></h2><ul class="tof">
+        <li class="tofline">
+    <a class="tocxref" href="#fig-opbouw-documentatie-digikoppeling">Figuur <bdi class="figno">1</bdi> <span class="fig-title">Opbouw documentatie Digikoppeling</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-sequence-diagram-routeren-van-berichten-over-meerdere-intermediairs">Figuur <bdi class="figno">2</bdi> <span class="fig-title">sequence diagram routeren van berichten over meerdere intermediairs</span></a>
+  </li>
+      </ul></section>
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+
+
+
+<p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(setupPanel);
+} else {
+  setupPanel();
+}
+
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
+  /** @type {HTMLElement} */
+  let panel = null;
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    const action = deriveAction(event);
+
+    switch (action) {
+      case "show": {
+        hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = target.closest("dfn, .index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        const coords = deriveCoordinates(event);
+        displayPanel(dfn, panel, coords);
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        panel = null;
+        break;
+      }
+    }
+  };
+}
+
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
+  }
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not([data-cite]), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
+    if (hitALink) {
+      return target.classList.contains("self-link") ? "hide" : "dock";
+    }
+    const panel = target.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : "none";
+  }
+  if (document.querySelector(".dfn-panel:not([hidden])")) {
+    return "hide";
+  }
+  return "none";
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a[href]");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const [record] = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  if (!panel) return;
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>

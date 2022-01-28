@@ -1,0 +1,7 @@
+/* Style for Logius ingetrokken standaard */
+
+@import "base.css";
+
+body {
+    background-image: url('logos/LS-TG.svg');
+}

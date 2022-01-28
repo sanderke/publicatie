@@ -1,0 +1,7 @@
+/* Style for Geonovum Versie ter vaststelling */
+
+@import "base.css";
+
+body {
+  background-image: url('logos/GN-VV.svg');
+}

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="Layer_1"
+   data-name="Layer 1"
+   viewBox="0 0 25 380"
+   version="1.1"
+   sodipodi:docname="LS-DEF.svg"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   width="25"
+   height="380">
+  <style
+     id="style6641" />
+  <metadata
+     id="metadata6677">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Logius CvS Werkversie</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1361"
+     id="namedview3801"
+     showgrid="true"
+     inkscape:zoom="2.6526316"
+     inkscape:cx="82.164162"
+     inkscape:cy="167.69572"
+     inkscape:window-x="1911"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1"
+     inkscape:document-rotation="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid30"
+       originx="2e-07"
+       originy="1e-06" />
+  </sodipodi:namedview>
+  <defs
+     id="defs3761">
+    <style
+       id="style3759">.cls-1{fill:red;}.cls-2{fill:#fff;}</style>
+  </defs>
+  <title
+     id="title3763">Logius CvS Werkversie</title>
+  <g
+     id="Foreground"
+     style="fill:#154273;fill-opacity:1">
+    <rect
+       class="cls-1"
+       width="25"
+       height="380"
+       id="rect3765"
+       style="fill:#154273;fill-opacity:1"
+       x="0"
+       y="0" />
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:20px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.5"
+     text-anchor="start"
+     id="text4620"
+     transform="rotate(-90)"
+     y="17.975769"
+     x="-266.31128"><tspan
+       sodipodi:role="line"
+       id="tspan6693"
+       x="-266.31128"
+       y="17.975769">Logius - Standaard</tspan></text>
+</svg>
