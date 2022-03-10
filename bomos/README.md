@@ -1,0 +1,1 @@
+Directory voor BOMOS documentatie.
