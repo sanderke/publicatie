@@ -1,0 +1,14 @@
+name: Push
+on:
+  push:
+jobs:
+  main:
+    name: Map
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Generate README      
+        run: python ./scripts/map.py      
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Updated README
