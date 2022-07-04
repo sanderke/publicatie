@@ -24,6 +24,10 @@ De inhoud van deze repository wordt dagelijks gepubliceerd naar `gitdocumentatie
 - [bomos/fundament/](https://gitdocumentatie.logius.nl/publicatie/bomos/fundament/)
 - [bomos/verdieping/](https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping/)
 
+### digimelding
+
+- [digimelding/koppelvlak/](https://gitdocumentatie.logius.nl/publicatie/digimelding/koppelvlak/)
+
 ### dk
 
 - [dk/actueel/](https://gitdocumentatie.logius.nl/publicatie/dk/actueel/)
