@@ -21,6 +21,8 @@ De inhoud van deze repository wordt dagelijks gepubliceerd naar `gitdocumentatie
 ### bomos
 
 - [bomos/aanvullend/](https://gitdocumentatie.logius.nl/publicatie/bomos/aanvullend/)
+- [bomos/bomos/](https://gitdocumentatie.logius.nl/publicatie/bomos/bomos/)
+   - [bomos/bomos/3.0.0/](https://gitdocumentatie.logius.nl/publicatie/bomos/bomos/3.0.0/)
 - [bomos/fundament/](https://gitdocumentatie.logius.nl/publicatie/bomos/fundament/)
 - [bomos/verdieping/](https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping/)
 
