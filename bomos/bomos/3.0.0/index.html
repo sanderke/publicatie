@@ -1,0 +1,656 @@
+<!DOCTYPE html><html lang="nl"><head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+<meta name="generator" content="ReSpec 32.1.10 Logius profile 20220628">
+<style>
+span.example-title{text-transform:none}
+:is(aside,div).example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
+div.illegal-example{color:red}
+div.illegal-example p{color:#000}
+:is(aside,div).example{border-left-width:.5em;border-left-style:solid;border-color:#e0cb52;background:#fcfaee}
+aside.example div.example{border-left-width:.1em;border-color:#999;background:#fff}
+.example pre{background-color:rgba(0,0,0,.03)}
+</style>
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;margin-top:.25em}
+.dfn-panel ul a[href]{color:#333}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a[href]:hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
+    
+    
+    
+<link rel="shortcut icon" type="image/x-icon" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/logius.ico">
+    
+<title>BOMOS aanvullende modules: Linked data</title>
+    
+    
+    
+<link rel="stylesheet" type="text/css" href="./media/style.css">
+   
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+:is(h1,h2,h3,h4,h5,h6,a) abbr{border:none}
+dfn{font-weight:700}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:normal}
+code{color:#c63501}
+th code{color:inherit}
+a[href].orcid{padding-left:4px;padding-right:4px}
+a[href].orcid>svg{margin-bottom:-2px}
+.toc a,.tof a{text-decoration:none}
+a .figno,a .secno{color:#000}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
+.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
+.simple th a{color:#fff;padding:3px 5px;text-align:left}
+.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
+.simple td{padding:3px 10px;border-top:1px solid #ddd}
+.simple tr:nth-child(even){background:#f0f6ff}
+.section dd>p:first-child{margin-top:0}
+.section dd>p:last-child{margin-bottom:0}
+.section dd{margin-bottom:1em}
+.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+.self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+aside.example .marker>a.self-link{color:inherit}
+.header-wrapper{display:flex;align-items:baseline}
+:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2){position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.5}
+:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
+:is(h2,h3)+a.self-link{top:-.2em}
+:is(h4,h5,h6)+a.self-link::before{color:#000}
+@media (max-width:767px){
+dd{margin-left:0}
+}
+@media print{
+.removeOnSave{display:none}
+}
+</style>
+<meta name="description" content="BOMOS (Beheer- en OntwikkelModel voor Open Standaarden) is een hulpmiddel
+  van en voor de standaardisatiewereld. Dit deel bevat een aanvullende
+  module over linked data. Het is een voorbeeld uit de praktijk die buiten
+  scope van het BOMOS Fundament valt maar waarbinnen BOMOS wel toegepast kan worden.">
+<style>
+var{position:relative;cursor:pointer}
+var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
+var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
+var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
+var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
+</style>
+<script id="initialUserConfig" type="application/json">{
+  "specStatus": "WV",
+  "specType": "ST",
+  "pubDomain": "bomos",
+  "shortName": "bomos",
+  "publishDate": "2020-04-05",
+  "publishVersion": "3.0.0",
+  "previousMaturity": "DEF",
+  "license": "cc-by-nd",
+  "doJsonLd": true,
+  "maxTocLevel": 3,
+  "editors": [
+    {
+      "name": "Erwin Folmer",
+      "company": "Kadaster",
+      "companyURL": "https://www.utwente.nl/"
+    },
+    {
+      "name": "Edwin Wisse",
+      "company": "Logius",
+      "companyURL": "https://www.logius.nl/"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Wouter van den Berg",
+      "company": "TNO",
+      "companyURL": "https://www.tno.nl/"
+    }
+  ],
+  "github": "https://github.com/Logius-standaarden/BOMOS-LinkedData",
+  "addSectionLinks": true,
+  "a11y": false,
+  "alternateFormats": [
+    {
+      "label": "pdf",
+      "uri": "BOMOS-LinkedData.pdf"
+    }
+  ],
+  "nl_markdownSplitH1sections": false,
+  "nl_organisationName": "Logius",
+  "nl_organisationPrefix": "LS-",
+  "nl_markdownTableClass": "dkkvs",
+  "nl_markdownEmbedImageInFigure": true,
+  "nl_organisationStylesURL": "https://publicatie.centrumvoorstandaarden.nl/respec/style/",
+  "nl_organisationPublishURL": "https://publicatie.centrumvoorstandaarden.nl/",
+  "nl_logo": {
+    "src": "https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg",
+    "alt": "Logius",
+    "id": "Logius",
+    "height": 77,
+    "width": 44,
+    "url": "https://www.logius.nl/standaarden"
+  },
+  "localBiblio": {
+    "NEN3610": {
+      "href": "http://www.nen.nl/web/Normshop/Norm/NEN-36102011-nl.htm",
+      "title": "Basismodel Geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten",
+      "authors": [
+        ""
+      ],
+      "date": "Maart 2011",
+      "publisher": "Nederlands Normalisatie-instituut"
+    }
+  },
+  "publishISODate": "2020-04-05T00:00:00.000Z",
+  "generatedSubtitle": "Werkversie 06 juli 2022"
+}</script>
+<link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/LS-WV.css"></head>
+  <body class="h-entry informative toc-inline"><div class="head">
+    <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg" width="44">
+  </a> <h1 id="title" class="title">BOMOS aanvullende modules: Linked data</h1>
+    
+    <h2>
+      Logius Standaard<br>
+      Werkversie
+      <time class="dt-published" datetime="2020-04-05">06 juli 2022</time>
+    </h2>
+    <dl>
+      <dt>Deze versie:</dt><dd class="status">
+              <a class="u-url status" href="https://logius-standaarden.github.io/BOMOS-LinkedData/">https://logius-standaarden.github.io/BOMOS-LinkedData/</a>
+            </dd><dt>Laatst gepubliceerde versie:</dt><dd>
+              <a href="https://publicatie.centrumvoorstandaarden.nl/bomos/bomos/">https://publicatie.centrumvoorstandaarden.nl/bomos/bomos/</a>
+            </dd>
+      <dt>Laatste werkversie:</dt><dd><a href="https://logius-standaarden.github.io/BOMOS-LinkedData/">https://logius-standaarden.github.io/BOMOS-LinkedData/</a></dd>
+      
+      
+      
+      
+      
+      <dt>Redacteurs:</dt>
+      <dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Erwin Folmer</span> (<a class="p-org org h-org" href="https://www.utwente.nl/">Kadaster</a>)
+  </dd><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Edwin Wisse</span> (<a class="p-org org h-org" href="https://www.logius.nl/">Logius</a>)
+  </dd>
+      
+      <dt>Auteur:</dt><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Wouter van den Berg</span> (<a class="p-org org h-org" href="https://www.tno.nl/">TNO</a>)
+  </dd>
+      <dt>Doe mee:</dt><dd>
+    <a href="https://github.com/Logius-standaarden/BOMOS-LinkedData/">GitHub Logius-standaarden/BOMOS-LinkedData</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/BOMOS-LinkedData/issues/">Dien een melding in</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/BOMOS-LinkedData/commits/">Revisiehistorie</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/BOMOS-LinkedData/pulls/">Pull requests</a>
+  </dd>
+    </dl>
+    
+    
+    <p lang="en">
+          This document is also available in this non-normative format:
+          <a rel="alternate" href="BOMOS-LinkedData.pdf">pdf</a>
+        </p>
+    <p class="copyright" lang="en">
+          This document is licensed under a
+          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" class="subfoot">Creative Commons Attribution 4.0 License</a>.
+        </p>
+    <hr title="Separator for header">
+  </div>
+
+    <section id="abstract" class="introductory"><h2>Samenvatting</h2><p> BOMOS (Beheer- en OntwikkelModel voor Open Standaarden) is een hulpmiddel
+  van en voor de standaardisatiewereld. Dit deel bevat een aanvullende
+  module over linked data. Het is een voorbeeld uit de praktijk die buiten
+  scope van het BOMOS Fundament valt maar waarbinnen BOMOS wel toegepast kan worden.
+ </p>
+</section>
+    <section id="sotd" class="introductory"><h2>Status van dit document</h2>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het Technisch Overleg goedgekeurde consultatieversie.<p></p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#linked-data-ontologien"><bdi class="secno">1. </bdi>LINKED DATA &amp; ONTOLOGIËN</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#opkomst-van-linked-data"><bdi class="secno">1.1 </bdi>Opkomst van Linked Data</a></li><li class="tocline"><a class="tocxref" href="#publieke-sector"><bdi class="secno">1.2 </bdi>Publieke sector</a></li><li class="tocline"><a class="tocxref" href="#private-sector"><bdi class="secno">1.3 </bdi>Private sector</a></li><li class="tocline"><a class="tocxref" href="#de-fair-beweging"><bdi class="secno">1.4 </bdi>De FAIR-beweging</a></li><li class="tocline"><a class="tocxref" href="#waarom-linked-data"><bdi class="secno">1.5 </bdi>Waarom Linked Data?</a></li><li class="tocline"><a class="tocxref" href="#impact-op-standaardisatie-en-beheer"><bdi class="secno">1.6 </bdi>Impact op standaardisatie en beheer</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#hergebruik"><bdi class="secno">1.6.1 </bdi>Hergebruik</a></li><li class="tocline"><a class="tocxref" href="#training-en-opleiding"><bdi class="secno">1.6.2 </bdi>Training en opleiding</a></li></ol></li><li class="tocline"><a class="tocxref" href="#een-tussen-weg-kiezen"><bdi class="secno">1.7 </bdi>Een (tussen)weg kiezen</a></li><li class="tocline"><a class="tocxref" href="#doorontwikkelen"><bdi class="secno">1.8 </bdi>Doorontwikkelen</a></li><li class="tocline"><a class="tocxref" href="#gebruiksanalyse"><bdi class="secno">1.9 </bdi>Gebruiksanalyse</a></li><li class="tocline"><a class="tocxref" href="#hulpmiddelen"><bdi class="secno">1.10 </bdi>Hulpmiddelen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#neoneologism"><bdi class="secno">1.10.1 </bdi>NeoNeoLogism</a></li><li class="tocline"><a class="tocxref" href="#pool-party"><bdi class="secno">1.10.2 </bdi>Pool Party</a></li><li class="tocline"><a class="tocxref" href="#protege"><bdi class="secno">1.10.3 </bdi>Protégé</a></li><li class="tocline"><a class="tocxref" href="#semantic-treehouse"><bdi class="secno">1.10.4 </bdi>Semantic Treehouse</a></li><li class="tocline"><a class="tocxref" href="#topbraid-composer"><bdi class="secno">1.10.5 </bdi>TopBraid Composer</a></li><li class="tocline"><a class="tocxref" href="#vocbench"><bdi class="secno">1.10.6 </bdi>VocBench</a></li><li class="tocline"><a class="tocxref" href="#matey"><bdi class="secno">1.10.7 </bdi>Matey</a></li></ol></li></ol></li></ol></nav>
+    <section class="introductory"><h1>Documentbeheer</h1>
+<table class="dkkvs">
+<thead>
+<tr>
+<th>Datum</th>
+<th>Versie</th>
+<th>Auteur</th>
+<th>Opmerkingen</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2009</td>
+<td>1.0</td>
+<td>Erwin Folmer</td>
+<td>Toevoeging vanuit Werkgroep CMO: Activiteiten Diagram</td>
+</tr>
+<tr>
+<td>2011</td>
+<td>2.0</td>
+<td>Erwin Folmer &amp; Matthijs Punter</td>
+<td>Toevoeging: De Best Practices</td>
+</tr>
+<tr>
+<td>01/06/2022</td>
+<td>3.0</td>
+<td>Wouter van den Berg</td>
+<td>Aanvullende modules in eigen documenten ondergebracht</td>
+</tr>
+</tbody></table>
+</section>
+    <section class="introductory"><h1>Colofon</h1>
+<table class="dkkvs">
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Logius Servicecentrum:</td>
+<td>Postbus 96810 <br>2509 JE Den Haag<br>tel. 0900 555 4555 (10 ct p/m)<br>email <a href="mailto:servicecentrum@logius.nl">servicecentrum@logius.nl</a></td>
+</tr>
+</tbody></table>
+</section>
+
+    <section id="linked-data-ontologien"><div class="header-wrapper"><h2 id="x1-linked-data-ontologien"><bdi class="secno">1. </bdi>LINKED DATA &amp; ONTOLOGIËN</h2><a class="self-link" href="#linked-data-ontologien" aria-label="Permalink for Section 1."></a></div>
+<p>Linked data is al langere tijd in opkomst. De standaarden en technologiën die hieronder vallen -- zoals RDF, SPARQL en OWL -- worden steeds meer in de praktijk geadopteerd. Dat begon in de academische wereld maar heeft zich de afgelopen jaren uitgebreid naar de publieke sector en het bedrijfsleven.<br>Linked Data brengt veranderingen in de semantische standaardisatiediscipline die BOMOS omschrijft. Dit hoofdstuk licht die veranderingen toe. Het gaat niet enkel om het gebruik van nieuwe technologieën en hulpmiddelen. Linked Data betekent een andere benadering tot semantische interoperabiliteit: de nadruk verschuift van het standaardiseren van berichten (of 'transacties') naar het standaardiseren van de onderliggende domeinbeschrijving.</p>
+<p>Enige basiskennis van de werking van Linked Data wordt in dit hoofdstuk verondersteld. Eerst komen de verschillen met conventionele semantische standaarden aan bod, zowel op het vlak van beheer en doorontwikkeling als in de toepassing door gebruikers. Tenslotte wordt er een overzicht geboden van digitale middelen die van nut kunnen zijn bij beheer en (door)ontwikkeling van met name ontologiën.</p>
+<p>Toch eerst een toelichting op de betekenis van het woord 'ontologie'. Er is geen duidelijke scheiding tussen wat in de wereld van Linked Data wordt aangeduid als "vocabulaires" en "ontologiën". <a href="https://www.w3.org/standards/semanticweb/ontology">Volgens de W3C</a> is het de trend om het woord "ontologie" te gebruiken voor complexere en formele verzamelingen van termen, terwijl "vocabulaire" wordt gebruikt voor simpelere varianten of waar minder strikt formalisme wordt gebruikt. In dit hoofdstuk wordt met het woord 'ontologie' het hele spectrum bedoeld.  </p>
+<p>Aan de basis van het hoofdstuk staat verder het volgende onderscheid tussen de twee soorten semantische standaarden (zie ook figuur 1):  </p>
+<ol>
+<li>Conventionele semantische standaarden. Deze standaarden lossen het interoperabiliteitsprobleem op door middel van gezamenlijke afspraken over de inhoudelijke structuur van berichten of transacties.</li>
+<li>Semantische standaarden op basis van Linked Data. Deze standaarden lossen het interoperabiliteitsprobleem op door een gezamenlijke taal voor het beschrijven van dingen of gebeurtenissen in een domein vast te leggen (in een ontologie). Dankzij die gezamenlijke taal is de gemeenschap niet meer afhankelijk van vaste berichtstructuren voor eenduidige interpretatie van de gedeelde data. (Het uitwisselen van gestandaardiseerde berichten blijft overigens gewoon mogelijk als daar binnen de gemeenschap behoefte toe is.)</li>
+</ol>
+<section id="opkomst-van-linked-data"><div class="header-wrapper"><h3 id="x1-1-opkomst-van-linked-data"><bdi class="secno">1.1 </bdi>Opkomst van Linked Data</h3><a class="self-link" href="#opkomst-van-linked-data" aria-label="Permalink for Section 1.1"></a></div>
+<p>In de afgelopen jaren is in zowel de publieke als private sector steeds vaker de Linked Data benadering toegepast. Dit hoofdstuk beschrijft initiatieven in de publieke sector en de private sector, plus een die daar tussenin zit: de FAIR-beweging.</p>
+</section><section id="publieke-sector"><div class="header-wrapper"><h3 id="x1-2-publieke-sector"><bdi class="secno">1.2 </bdi>Publieke sector</h3><a class="self-link" href="#publieke-sector" aria-label="Permalink for Section 1.2"></a></div>
+<p>Binnen de publieke sector heeft de cultuursector altijd vooropgelopen. Het Europeana project (al gestart in 2008) was baanbrekend: Europeana Collections biedt inmiddels toegang tot meer dan 50 miljoen  gedigitaliseerde items - boeken, muziek, kunst en meer - met geavanceerde zoek- en filterfuncties om het zoeken te vergemakkelijken. Net als in de andere sectoren begon het ook hier met de ontwikkeling van de modellen om de metadata van de collecties in te beschrijven. Ook andere culture instellingen hebben verschillende modellen in Linked Data uitgedrukt, bijvoorbeeld de Koninklijke Bibliotheek met de Nederlandse Thesaurus van Auteursnamen en de Rijksdienst Cultureel Erfgoed met onder andere het Archeologisch Basisregister.</p>
+<p>Op het gebied van bouw en infrastructuur zijn zogenaamde Object Type Libraries (OTL) een bekend fenomeen. Een OTL is een soort semantische bibliotheek binnen de eigen organisatie. ProRail en Rijkswaterstaat zijn bekende organisaties die dit toepassen. Daarnaast is daar COINS, een andere belangrijke standaard die op Linked Data is gebaseerd, bedoeld voor de uitwisseling van BIM-modellen.
+Organisaties in de sector van geografische informatie waren er ook vroeg bij, met Geonovum als trekker van het Platform Linked Data Nederland. Het Kadaster had al snel de eerste modellen van de Basisregistraties Adressen en Gebouwen gepubliceerd, en vervolgens ook andere datasets. Na de publicatie van de modellen zijn de basisregistraties zelf als Linked Data gepubliceerd, en dan ook op 'productie'-niveau, dat wil zeggen met persistente URIs, actueel en gemonitord. Daarnaast wordt op <a href="https://labs.kadaster.nl/">labs.kadaster.nl</a> ter inspiratie een groot aantal voorbeelden gegeven van de mogelijkheden die Linked Data biedt. Een belangrijke vervolgstap is dat de NEN3610 (het semantische 'moedermodel' van Nederlandse geo-informatiemodellen) inmiddels ook als Linked Data beschikbaar is.</p>
+<p>Zo zijn er nog vele andere initiatieven in de publieke sector te noemen, zoals die in de landbouw en de vreemdelingenketen. Maar ook de Onderwijssector heeft al vele stappen richting Linked Data gezet op basis van de ROSA, waarbij wederom de semantische modellen het startpunt zijn. Het voert te ver om die in dit hoofdstuk allemaal te belichten.</p>
+</section><section id="private-sector"><div class="header-wrapper"><h3 id="x1-3-private-sector"><bdi class="secno">1.3 </bdi>Private sector</h3><a class="self-link" href="#private-sector" aria-label="Permalink for Section 1.3"></a></div>
+<p>In de private sector komen Linked Data-ontwikkelingen in alle lagen voor: op het niveau van de branche en ketenprocessen, in individuele bedrijven, en in specifieke bedrijfsprocessen.</p>
+<p>In het bedrijfsleven zijn er branches en gemeenschappen waar de rol van Linked Data steeds groter wordt, al is dat meestal in een verkennende fase. Het bedrijfsleven lijkt vooral nieuwsgierig naar de enorme hoeveelheid werk die in de academische wereld is verricht naar semantische technologieën en wat dit concreet kan betekenen om hun problemen te adresseren.</p>
+<p>Een voorbeeld is te vinden in de uitzendbranche. Partijen uit die branche hebben in samenwerking met TNO het meerjarige Flexible IT (FIT) with Ontologies-project opgezet. Met dit project testen zij de voordelen van een overstap van uitwisseling middels de SETU-berichtstandaarden naar flexibelere uitwisseling middels de SETU-ontologie.</p>
+<p>Daarnaast zijn er individuele bedrijven die met Linked Data aan de slag gaan. Bijvoorbeeld firma NXP Semiconductors, die in 2015 met hun Enterprise Datahub in de prijzen vielen in Nederlandse en Europese Linked Data competities. Dit systeem zorgt ervoor dat data hun vele producten (meer dan 20.000) uit verschillende databases geÃƒÂ¯ntegreerd kunnen worden. Waar mogelijk heeft NXP gebruik gemaakt van
+bestaande standaard ontologiën als Dublin Core, SKOS, FOAF en Schema.org. Omdat er een aantal voor de sector benodigde termen en concepten ontbraken, is ook een NXP-vocabulaire ontwikkeld en aan de eerdergenoemde set gekoppeld. Op deze manier kan  NXP Semiconductors de data rijk genoeg beschrijven en kunnen externe gebruikers de betekenis van begrippen gemakkelijker nagaan.</p>
+<p>Tot slot worden Linked Data technologiën steeds meer toegepast in de processen in het bedrijfsleven. Een bekend voorbeeld is te vinden in de online marketing, specifiek in zoekmachineoptimalisatie (Engels: search engine optimization, of SEO). Met SEO streven bedrijven ernaar om een webpagina zo hoog mogelijk te laten scoren in de zoekresultaten van een zoekmachine. Tegenwoordig past men hiervoor JSON-LD toe. JSON-LD, een methode om Linked Data over te dragen via het bekende JSON-formaat, wordt gebruikt door zoekmachines om informatie over websites te verzamelen om zo de gewenste zoekresultaten te bepalen. Google, eigenaar van 's werelds meest gebruikte zoekmachine, raadt de toepassing van JSON-LD aan. De opkomst van JSON-LD is ook een voorbeeld van Linked Data die verbinding vindt met veelgebruikte data-formaten.</p>
+</section><section id="de-fair-beweging"><div class="header-wrapper"><h3 id="x1-4-de-fair-beweging"><bdi class="secno">1.4 </bdi>De FAIR-beweging</h3><a class="self-link" href="#de-fair-beweging" aria-label="Permalink for Section 1.4"></a></div>
+<p>De hoeveelheden data waar wetenschappers en andere data-analyisten mee te maken hebben blijven groeien. Daarmee groeit ook de vraag naar meer machine-ondersteuning bij verwerking en analyse van die data. Maar hier bestond simpelweg de benodigde data-infrastructuur niet voor. De FAIR Data Principes is een reactie op dit gemis. FAIR staat voor een set richtlijnen om data meer vindbaar (<strong>F</strong>indable), toegankelijk (<strong>A</strong>ccesible), <strong>I</strong>nteroperabel en herbruikbaar (<strong>R</strong>eusable) te maken. De nadruk van FAIR ligt op het vergroten van het vermogen van machines om data automatisch te vinden en te gebruiken.</p>
+<p>De FAIR-principes zijn in 2016 in een wetenschappelijk artikel geïntroduceerd. De FAIR-beweging is daarna in korte tijd flink in kracht toegenomen. Zo spraken de leiders van de G20 in hetzelfde jaar hun steun uit voor FAIR, en richtten Duitsland, Nederland en Frankrijk in 2017 samen het GO FAIR initiatief op.</p>
+<p>De <em>I</em> in FAIR onderstreept het belang van geautomatiseerde data-interoperabiliteit. Het doel is het bereiken en bewaken van interoperabiliteit, zelfs wanneer gegevens in een heel ander formaat, in verschillende talen en in verschillende onderzoeksdomeinen zijn gemaakt. De link tussen FAIR en Linked Data is hier heel sterk. Dat blijkt uit de drie FAIR-principes die onder de <em>I</em> van <em>Interoperability</em> vallen:</p>
+<ol>
+<li>(meta)data gebruiken een formele, toegankelijke, gedeelde en breed toepasbare taal voor kennisrepresentatie.</li>
+<li>(meta)data gebruiken vocabulaires die FAIR-principes volgen.</li>
+<li>(meta)data bevatten gekwalificeerde verwijzingen naar andere (meta)data.</li>
+</ol>
+<p>Voor het implementeren van de Interoperability principes van FAIR wordt veel gebruik gemaakt van ontologiën (voor punt 1) en andere Linked Data standaarden (voor punten 2 en 3).</p>
+<p>Links:  </p>
+<ul>
+<li><a href="https://www.nature.com/articles/sdata201618">The FAIR Guiding Principles for scientific data management and stewardship</a>, Nature, 2016, <em>het</em> wetenschappelijk artikel over FAIR</li>
+<li><a href="https://www.go-fair.org/fair-principles/">FAIR Principles</a>, GO FAIR Initiative, de FAIR-principes</li>
+</ul>
+</section><section id="waarom-linked-data"><div class="header-wrapper"><h3 id="x1-5-waarom-linked-data"><bdi class="secno">1.5 </bdi>Waarom Linked Data?</h3><a class="self-link" href="#waarom-linked-data" aria-label="Permalink for Section 1.5"></a></div>
+<p>Linked Data maakt het mogelijk om rijke datasets te delen en gecontroleerd open te stellen zonder dat de die dataset de bron hoeft te verlaten. De Europeana Collections zijn hier een voorbeeld van. Niet alleen de data binnen zo een dataset is gelinkt, ook de datasets onderling zijn dat. Met een query-taal als SPARQL wordt het vervolgens mogelijk om de hele set van datasets te bevragen. Dit is waar de visie van het Semantische Web over gaat. Hoe meer Linked Data, hoe krachtiger de query's die mogelijk worden.  </p>
+<p>Met name overheden gebruiken Linked Data steeds meer om data openbaar te maken voor het publiek, het liefst op een manier waarmee geïnteresseerden de data makkelijk automatisch kunnen opvragen en verwerken. Hier is het bekende vijf-sterren model op van toepassing:</p>
+<p><strong>1 ster:</strong> de data is beschikbaar via internet; in welk formaat maakt niet uit.<br><strong>2 sterren:</strong> de beschikbare data heeft een machine-leesbaar structuur (geen scan bijvoorbeeld).<br><strong>3 sterren:</strong> de data is beschikbaar in een niet-gepatenteerd formaat (zoals .csv en niet MS Excel).<br><strong>4 sterren:</strong> Linked Data gepubliceerd met behulp van W3C standaarden (RDF en SPARQL).<br><strong>5 sterren:</strong> al het bovenstaande en de dataset is gelinkt aan andere Linked Open Data.  </p>
+<p>Linked Data wordt ook ingezet door digitaliserende organisaties om hun data en systemen verder te integreren, zoals te zien bij Rijkswaterstaat en ProRail met hun OTLs. De scope van dit soort inspanningen is vaak eerst intern en breidt zich vervolgens uit naar grote leveranciers of andere vaste partnerorganisaties. Door die uitbreiding wordt er met relatief weinig inspanning extra voordeel uit de stap naar Linked Data behaald.</p>
+<p>Linked Data maakt het verder mogelijk voor machines om automatisch de betekenis (semantiek) van data in te lezen en zo zelf nieuwe verbindingen te leggen, verbindingen die normaal gesproken alleen door mensen gelegd konden worden. Linked Data is een essentieel component van nieuwe generatie Kunstmatige Intelligentie (A.I.) technieken, waarbij enorme hoeveelheden ruwe data wordt gecombineerd met geformaliseerde domeinbeschrijvingen om steeds slimmere machines te bouwen.</p>
+<p>Ten slotte vormt Linked Data de kern van een nieuwe aanpak tot het vergroten van interoperabiliteit tussen partijen in een branche of waardeketen. De semantische standaard die men hiervoor vastlegt, bevat dan een of meer ontologiën. Net als bij andere soorten semantische standaarden is het doel om het voor de gebruikers zo makkelijk mogelijk te maken om onderling koppelvlakken in te richten die aan alle wensen voldoen. Het Flexible IT with Ontologies-project van de uitzendbranche is een voorbeeld van een gebruikersgemeenschap die de overstap verkent naar informatie-uitwisseling middels een gestandaardiseerde ontologie.</p>
+<p>Het gebruik van Linked Data is onderhevig aan het bekende netwerk-effect. Voor elk van bovenstaande toepassingen geldt: hoe meer wijdverspreid het gebruik van Linked Data wordt, des te groter de voordelen voor gebruikers.</p>
+<p>Ga naar de website van Platform Linked Data Nederland (<a href="https://www.pldn.nl/">www.pldn.nl</a>) voor meer informatie over hoe Linked Data in zijn werk gaat</p>
+</section><section id="impact-op-standaardisatie-en-beheer"><div class="header-wrapper"><h3 id="x1-6-impact-op-standaardisatie-en-beheer"><bdi class="secno">1.6 </bdi>Impact op standaardisatie en beheer</h3><a class="self-link" href="#impact-op-standaardisatie-en-beheer" aria-label="Permalink for Section 1.6"></a></div>
+<p>Oorspronkelijk werd in BOMOS geen nader onderscheid gemaakt tussen de soorten semantische standaarden. Het is bij zowel de conventionele aanpak als bij de Linked Data-benadering van toepassing. Maar de precieze invulling van de activiteiten verschilt wel degelijk tussen de twee. Invulling geven aan het BOMOS-model was overigens altijd al een opgave, omdat elke context maatwerk behoeft. Maar bij de Linked Data-benadering tot semantische standaarden komen nieuwe uitdagingen kijken.</p>
+<p>Hieronder volgen wat uitdagingen en lessen uit het FIT with Ontologies-innovatietraject van de uitzendbranche. De volgorde is grofweg van vroege ontwikkelingsfase naar beheerfase.</p>
+<section id="hergebruik"><div class="header-wrapper"><h4 id="x1-6-1-hergebruik"><bdi class="secno">1.6.1 </bdi>Hergebruik</h4><a class="self-link" href="#hergebruik" aria-label="Permalink for Section 1.6.1"></a></div>
+<p>Ontologies ontstaan zelden in een <code>green-field</code> scenario. Juist digitale waardeketens waar al vergevorderde uitwisselingsafspraken gemaakt zijn maken sneller de stap naar een oplossing op basis van Linked Data. De documentatie van deze standaarden bevat vaak veel informatie die van waarde is voor de nieuwe oplossing, zoals gedetailleerde beschrijvingen van ketenprocessen en bedrijfsregels (<em>business rules</em> in het Engels). Het is belangrijk dat die kennis en informatie zoveel mogelijk wordt hergebruikt.  Hergebruik zorgt niet alleen voor tijdsbesparing in het ontwikkelproces van de nieuwe oplossing, maar ook voor meer vertrouwen in het eindresultaat en dus voor betere adoptie door de gebruikersgemeenschap.</p>
+</section><section id="training-en-opleiding"><div class="header-wrapper"><h4 id="x1-6-2-training-en-opleiding"><bdi class="secno">1.6.2 </bdi>Training en opleiding</h4><a class="self-link" href="#training-en-opleiding" aria-label="Permalink for Section 1.6.2"></a></div>
+<p>De overstap naar gestandaardiseerde uitwisseling op basis van Linked Data betekent vrijwel altijd dat er een andere technology stack gebruik wordt (bijvoorbeeld met o.a. OWL, RDF en/of SPARQL). Dat vraagt om andere kennis en vaardigheden, zowel van de betrokkenen bij ontwikkeling en beheer van de standaard als bij de gebruikers.<br>De beheerorganisatie dient voldoende expertise over deze technologieën in huis te hebben om haar beheertaken uit te kunnen voeren, zoals het inschatten van impact van verandervoorstellen op de standaard of het beantwoorden van technische vragen. Dat spreekt voor zich. Maar ook aan de kant van de gebruikersorganisaties zal men waarschijnlijk het een en ander moeten bijleren. Uit ervaring blijkt dat de meeste softwareontwikkelaars weinig of geen ervaring hebben met deze technologieën. Om de actieve deelname van gebruikers in het ontwikkelproces te borgen is het belangrijk dat er voldoende training en opleiding beschikbaar is, en dat gebruikers de tijd krijgen om de technologie zich eigen te maken. De beheerdersorganisatie kan daarin op allerlei manieren voorzien, zoals het schrijven van gidsen, het geven van demo's, of zelfs het organiseren van een Linked Data hackathon.</p>
+<p>Training en opleiding is ook van belang wanneer de gebruikersgemeenschap al standaarden voor informatie-uitwisseling toepaste voordat men de overstap naar Linked Data maakte. De gebruikers en zelfs de beheerders zijn dan gewend te denken in termen van de oude technology stack en de gebruikte methoden van uitwisseling. In die gevallen wordt de stap naar de Linked Data aanpak vaak behandeld als een wisseling van syntax, terwijl er in werkelijkheid ook een andere denkwijze nodig is. Dat geldt voor zowel de ontwikkelingsfase als voor de daadwerkelijke toepassing van de semantische standaard. Bij de ontwikkeling loop je anders het risico dat de status quo een te grote invloed heeft op hoe de ontologie gemodelleerd wordt, met verarming van semantiek van het model tot gevolg. Bij de toepassing kan de oude denkwijze leiden tot omslachtige manieren van data opvragen of uitwisselen, wat leidt tot verarming in de semantiek van de data. Zo observeerde de beheerders van de Basisregistratie Adressen en Gebouwen (BAG) dat veel gebruikers bij het opvragen van data onbedoeld ook de hele historie van de data meevroegen.  </p>
+</section></section><section id="een-tussen-weg-kiezen"><div class="header-wrapper"><h3 id="x1-7-een-tussen-weg-kiezen"><bdi class="secno">1.7 </bdi>Een (tussen)weg kiezen</h3><a class="self-link" href="#een-tussen-weg-kiezen" aria-label="Permalink for Section 1.7"></a></div>
+<p>Het is overigens niet zo dat de keuze enkel bestaat uit ofwel een volledige overstap maken naar Linked Data, of alles te houden bij het oude. Er zijn gradaties en tussenstappen denkbaar.</p>
+<p>Een technologie die hierin een essentiële rol speelt is RML (RDF Mapping Language), ontwikkeld door een team van de Universiteit van Gent. Met RML is het mogelijk om semi-gestructureerde data als JSON, XML en CSV te transformeren naar Linked Data. Dat doe je door eerst de RML regels die voor de betreffende data moeten gelden op te schrijven. Daarna voed je deze RML regels plus de oorspronkelijke data aan een zogenaamde RMLMapper, die er Linked Data triples van maakt.</p>
+<p>Het toepassen van RML zou wel eens voor veel gemeenschappen met standaarden het beste alternatief balans kunnen zijn op volledig overstappen op Linked Data of niets doen. In principe volstaat het om door middel van RML mappings een tussenlaag aan te brengen die de vertaling maakt tussen de relevante interne systemen van de gebruiker en de gemeenschappelijke ontologie. Dankzij die mappings kan men vervolgens door middel van RESTful APIs toch Linked Data uitwisselen, terwijl de huidige systemen in stand kunnen blijven.</p>
+<aside class="example" id="example-1"><div class="marker">
+    <a class="self-link" href="#example-1">Voorbeeld<bdi> 1</bdi></a>
+  </div>
+Deze strategie werd ook in het FIT with Ontologies-project gehanteerd. Een belangrijk doel in dat project was het bewaken van backwards compatibility met de berichtuitwisseling volgens de conventionele SETU-standaarden. Met andere woorden, het moest met de nieuwe techniek mogelijk blijven om SETU-berichten te ontvangen en verwerken. Men heeft daarom gewerkt aan de FIT engine: een softwarecomponent dat RML toepast om SETU-berichten om te zetten naar Linked Data. Met de FIT engine kunnen de partijen die de overstap naar uitwisseling van Linked Data gemaakt hadden alle vruchten hiervan plukken, zonder dat hun bestaande koppelingen met klanten daarvoor op de schop hoeven.  
+</aside>
+
+</section><section id="doorontwikkelen"><div class="header-wrapper"><h3 id="x1-8-doorontwikkelen"><bdi class="secno">1.8 </bdi>Doorontwikkelen</h3><a class="self-link" href="#doorontwikkelen" aria-label="Permalink for Section 1.8"></a></div>
+<p>Stel: de eerste versie van de nieuwe semantische standaard op basis van Linked Data is af. De gebruikersgemeenschap is naarstig aan de slag met implementeren. Waar wordt het beheer en doorontwikkeling vanaf nu door gekenmerkt?  </p>
+<p>Ten eerste is hetgeen dat in beheer genomen wordt, de nieuwe standaardontologie, meer modulair van aard dan je als beheerder van een conventionelere standaard gewend bent. Doorontwikkeling is nog meer gericht op samenstelling van bestaande ontologiën en andere bouwblokken dan bij de conventionele aanpak het geval was.  Dit is bijvoorbeeld te zien in de Geo-standaarden. Daar hebben nieuwe ontologiën relatief weinig toegevoegd. Er zijn veel bestaande vocabulaires geassembleerd. De gezamenlijke afspraken gaan dan over hoe je die zaken compileert. Dat was met de conventionele aanpak voor semantische standaarden al in mindere mate zo, bijvoorbeeld met XML Schema, maar met ontologieën is dat meer en voor grotere blokken.</p>
+<p>Dat neemt niet weg dat een deel van de domeinbeschrijving in een eigen ontologie gemodelleerd is. Die eigen ontologie moet doorontwikkeld worden om met de tijd mee te gaan. De uitdaging hierbij is om dit zo zorgvuldig en precies te blijven doen. De geavanceerdere toepassingen van ontologiën, zoals complexe queryÃ¢â‚¬â„¢s of automatisch redeneren, zijn namelijk gevoeliger voor fouten. Meer nog dan bij andere semantische standaarden is dus de nauwkeurigheid en coherentie van de ontologie van kritisch belang.</p>
+<p>Niet alle wijzigingsverzoeken leiden tot veranderingen in de gemeenschappelijke ontologie. Soms is het beter om een uitbreiding te ontwikkelen, die vervolgens in gebruik wordt genomen door het deel van de gebruikersgemeenschap dat hier profijt van heeft. Ontologiën en andere Linked Data standaarden zijn hiervoor ontworpen. Als beheerder is het zaak om uitbreidingen voor de gebruikers expliciet en inzichtelijk te maken. Hier kan je vervolgens controle en analysen op uitvoeren.</p>
+</section><section id="gebruiksanalyse"><div class="header-wrapper"><h3 id="x1-9-gebruiksanalyse"><bdi class="secno">1.9 </bdi>Gebruiksanalyse</h3><a class="self-link" href="#gebruiksanalyse" aria-label="Permalink for Section 1.9"></a></div>
+<p>In het FIT with Ontologies-project maakt men gebruik van een webapplicatie om, uit de SETU-ontologie, zelf berichtdefinities bij elkaar te klikken. Deze specifieke berichtdefinities zien er anders uit, maar voldoen allemaal aan de ontologie en zijn eenduidig te vertalen naar feiten uit die ontologie. Doordat deze verschillende berichtdefinities centraal opgeslagen staan, wordt gedetailleerde gebruiksanalyse mogelijk, vergelijkbaar met het code coverage concept uit de software engineering. Deze term duidt op het uitzoeken welke delen (e.g. concepten, relaties) van een ontologie door wie in welke berichten daadwerkelijk worden gebruikt, alsmede de trends daarin.  Bevindingen uit code coverage testen bieden belangrijke aanwijzingen voor doorontwikkeling en kunnen discussies over de standaard voeden met echte gebruiksdata.  </p>
+</section><section id="hulpmiddelen"><div class="header-wrapper"><h3 id="x1-10-hulpmiddelen"><bdi class="secno">1.10 </bdi>Hulpmiddelen</h3><a class="self-link" href="#hulpmiddelen" aria-label="Permalink for Section 1.10"></a></div>
+<p>Hier zijn een aantal hulpmiddelen die voor beheerders van gemeenschappelijke ontologiën van nut kunnen zijn. Pool Party, Protégé en TopBraid Composer hebben aanzienlijke overlap; met alle drie is het mogelijk om ontologiën te modelleren. Semantic Treehouse is niet gericht op modelleren maar op het beheer- en doorontwikkelingsproces, en is de enige van de vier met een directe link met BOMOS. Matey (en de gerelateerde RML en YARRRML talen) zijn gericht op de transformatie van traditionele dataformaten zoals JSON, XML en CVS naar Linked Data die voldoet aan een specifieke ontologie.  </p>
+<table class="dkkvs">
+<thead>
+<tr>
+<th>Middel</th>
+<th>Ontwikkelaar</th>
+<th>Omschrijving</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://netage.nl/neoneologism/">NeoNeoLogism</a></td>
+<td>Netage B.V.</td>
+<td>Een met de webbrowser te gebruiken RDF Schema vocabulaire-editor en publicatieomgeving.</td>
+</tr>
+<tr>
+<td><a href="https://www.poolparty.biz/">Pool Party</a></td>
+<td>Semantic Web Company GmbH</td>
+<td>Knowledge management, data analytics &amp; content organization</td>
+</tr>
+<tr>
+<td><a href="https://protege.stanford.edu/">Protégé</a></td>
+<td>Stanford University School of Medicine</td>
+<td>Ontology editor (gratis en open source)</td>
+</tr>
+<tr>
+<td><a href="https://www.semantic-treehouse.nl/">Semantic Treehouse</a></td>
+<td>TNO</td>
+<td>Publicatie- en beheeromgeving voor gezamenlijke ontologiën en andere datamodellen</td>
+</tr>
+<tr>
+<td><a href="https://www.topquadrant.com/products/TopBraid-composer/">TopBraid Composer</a></td>
+<td>TopQuadrant</td>
+<td>Integrated Development Environment (IDE) voor Semantic Web, inclusief ontology editor</td>
+</tr>
+<tr>
+<td><a href="https://ec.europa.eu/isa2/isa2conf18/VocBench-3_en">VocBench</a></td>
+<td>EU Publicatiebureau</td>
+<td>Open-source publicatie- en beheeromgeving van meertalige vocabulaires</td>
+</tr>
+<tr>
+<td><a href="https://rml.io/yarrrml/matey/">Matey</a></td>
+<td>Universiteit Gent</td>
+<td>Matey is een browsergebaseerde editor waarmee je YARRRML-regels kunt schrijven.</td>
+</tr>
+</tbody></table>
+<section id="neoneologism"><div class="header-wrapper"><h4 id="x1-10-1-neoneologism"><bdi class="secno">1.10.1 </bdi>NeoNeoLogism</h4><a class="self-link" href="#neoneologism" aria-label="Permalink for Section 1.10.1"></a></div>
+<p>NeoNeologisme is een eenvoudig hulpmiddel voor het schrijven en publiceren van vocabulaires in RDF(S), niets zoals TopBraid, Protégé, VocBench of PoolParty. Het is bedoeld om eenvoudig maar expressief genoeg te zijn om subklassen en subattributen en verschillende vormen van relaties te ondersteunen.</p>
+</section><section id="pool-party"><div class="header-wrapper"><h4 id="x1-10-2-pool-party"><bdi class="secno">1.10.2 </bdi>Pool Party</h4><a class="self-link" href="#pool-party" aria-label="Permalink for Section 1.10.2"></a></div>
+<p>De PoolParty Semantic Suite biedt verschillende functies waarmee organisaties meer waarde uit hun eigen gegevens kunnen halen. Het product commercialiseert Semantic Web-technologiën. In 2009 kwam de eerste release van de PoolParty Semantic Software op de markt. Sindsdien is het product geëvolueerd van een taxonomiebeheertool naar een functierijk semantisch softwareplatform waarmee bedrijven ontologiën kunnen inzetten om gestructureerde en ongestructureerde gegevens te integreren.</p>
+</section><section id="protege"><div class="header-wrapper"><h4 id="x1-10-3-protege"><bdi class="secno">1.10.3 </bdi>Protégé</h4><a class="self-link" href="#protege" aria-label="Permalink for Section 1.10.3"></a></div>
+<p>Protégé is een gratis, open-source platform dat een reeks tools aanbiedt om domeinmodellen en applicaties met ontologiën te bouwen. Er bestaat een webversie en een desktopversie. WebProtégé is een ontologie-ontwikkelomgeving voor het web om ontologiën te creëren, uploaden, wijzigen en delen. Gebruikers kunnen deze gezamenlijk bekijken en bewerken. Protégé Desktop bevat daarnaast extra functionaliteit zoals 'semantic reasoners' en visualisatietools.</p>
+</section><section id="semantic-treehouse"><div class="header-wrapper"><h4 id="x1-10-4-semantic-treehouse"><bdi class="secno">1.10.4 </bdi>Semantic Treehouse</h4><a class="self-link" href="#semantic-treehouse" aria-label="Permalink for Section 1.10.4"></a></div>
+<p>Semantic Treehouse is het communityplatform dat het beheer van ontologiën en andere soorten datamodellen ondersteunt. Wat Semantic Treehouse uniek maakt, is dat het de publicatie, het onderhoud en het beheer van uw datamodellen op één plek combineert. Semantic Treehouse is gebaseerd op meer dan 10 jaar ervaring met het ontwikkelen, onderhouden en delen van datastandaarden volgens BOMOS. Semantic Treehouse valt onder de categorie Software as a Service, en afnemers hebben de mogelijkheid om een eigen huisstijl in te richten voor de gebruikersinterface voor een herkenbare gebruikerservaring.</p>
+</section><section id="topbraid-composer"><div class="header-wrapper"><h4 id="x1-10-5-topbraid-composer"><bdi class="secno">1.10.5 </bdi>TopBraid Composer</h4><a class="self-link" href="#topbraid-composer" aria-label="Permalink for Section 1.10.5"></a></div>
+<p>TopBraid Composer is een desktoptool om ontologiemodellen mee te maken en gegevensbronnen te integreren. Het ondersteunt visuele bewerking van ontologiën en kan verbinden met database-backends zoals Oracle en verschillende populaire triplestores. De uitgebreide editie is een IDE die de mogelijkheid toevoegt om snel semantische webapplicaties te ontwikkelen.</p>
+</section><section id="vocbench"><div class="header-wrapper"><h4 id="x1-10-6-vocbench"><bdi class="secno">1.10.6 </bdi>VocBench</h4><a class="self-link" href="#vocbench" aria-label="Permalink for Section 1.10.6"></a></div>
+<p>VocBench 3 is gefinancierd door het ISA²-programma van de Europese Commissie.
+Het is een gratis platform dat gezamenlijke bewerking en beheer van codelijsten, taxonomieën, thesauri en ontologiën mogelijk maakt. Naast community management (beheer van meerdere gebruikers, roldefinitie, toegangscontrole), biedt VocBench 3 een mechanisme waarmee gebruikers hun model kunnen koppelen aan Jira, een soort issue en bug tracking platform voor software.</p>
+</section><section id="matey"><div class="header-wrapper"><h4 id="x1-10-7-matey"><bdi class="secno">1.10.7 </bdi>Matey</h4><a class="self-link" href="#matey" aria-label="Permalink for Section 1.10.7"></a></div>
+<p>Het idee van Matey is dat het RML toegankelijker maakt.</p>
+<p>De RDF Mapping Language (RML) is een generieke mappingtaal om regels uit te drukken die gegevens in heterogene structuren en serialisaties (o.a. JSON, XML, CSV) toewijzen aan het RDF-gegevensmodel. Zie <a href="https://rml.io/docs/rml/introduction/">https://rml.io/docs/rml/introduction/</a> voor meer informatie over RML.</p>
+<p>YARRRML is een voor mensen leesbare op tekst gebaseerde weergave voor declaratieve regels voor het genereren van Linked Data. Het is een subset van YAML, een veelgebruikte data-serialisatie-taal die is ontworpen om mensvriendelijk te zijn. YARRRML kan worden gebruikt om RML-regels weer te geven. Zie <a href="https://rml.io/yarrrml/">https://rml.io/yarrrml/</a> voor meer informatie over YARRRML.</p>
+</section></section></section>
+
+    
+    <section id="tof"></section>
+  
+
+<p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(setupPanel);
+} else {
+  setupPanel();
+}
+
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
+  /** @type {HTMLElement} */
+  let panel = null;
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    const action = deriveAction(event);
+
+    switch (action) {
+      case "show": {
+        hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = target.closest("dfn, .index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        const coords = deriveCoordinates(event);
+        displayPanel(dfn, panel, coords);
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        panel = null;
+        break;
+      }
+    }
+  };
+}
+
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
+  }
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not([data-cite]), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
+    if (hitALink) {
+      return target.classList.contains("self-link") ? "hide" : "dock";
+    }
+    const panel = target.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : "none";
+  }
+  if (document.querySelector(".dfn-panel:not([hidden])")) {
+    return "hide";
+  }
+  return "none";
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a[href]");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const [record] = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  if (!panel) return;
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
