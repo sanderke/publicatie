@@ -1,0 +1,1 @@
+ln -s /home/jdg/dev/Digikoppeling/watisdk/ /home/jdg/dev/pub-cvs-tilaa/webroot/dk/watidk
