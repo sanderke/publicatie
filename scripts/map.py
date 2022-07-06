@@ -30,11 +30,12 @@ for item in found:
     prev = split
     entry = item
     # entry = f"{item} ({datetime.utcfromtimestamp(ts).strftime('%d/%m/%Y %H:%M:%S')} UTC)"
-    content += f"- [{entry}](https://gitdocumentatie.logius.nl/publicatie/{entry})\n"
+    content += f"- [{entry}](https://gitdocumentatie.logius.nl/publicatie/{entry}) [:scroll:](https://logius-standaarden.github.io/publicatie/{entry})\n"
 print(content)
 
 f = open("README.md", "w")
 f.write("# publicatie\n\nDe inhoud van deze repository wordt dagelijks gepubliceerd naar "
-        "`gitdocumentatie.logius.nl/publicatie`.\n\n## Paginalijst\n\n")
+        "`gitdocumentatie.logius.nl/publicatie`.\n\n## Paginalijst\n\n"
+        "Klik op het pad om naar de pagina op logius.nl te gaan. Klik op :scroll: om de pagina op GitHub Pages te zien.\n")
 f.write(content)
 f.close()
