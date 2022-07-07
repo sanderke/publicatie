@@ -1,0 +1,594 @@
+<!DOCTYPE html><html lang="nl"><head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+<meta name="generator" content="ReSpec 32.1.10 Logius profile 20220628">
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;margin-top:.25em}
+.dfn-panel ul a[href]{color:#333}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a[href]:hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
+    
+    
+    
+<link rel="shortcut icon" type="image/x-icon" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/logius.ico">
+    
+<title>BOMOS aanvullende modules: Stelsels</title>
+    
+    
+    
+<link rel="stylesheet" type="text/css" href="./media/style.css">
+   
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+:is(h1,h2,h3,h4,h5,h6,a) abbr{border:none}
+dfn{font-weight:700}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:normal}
+code{color:#c63501}
+th code{color:inherit}
+a[href].orcid{padding-left:4px;padding-right:4px}
+a[href].orcid>svg{margin-bottom:-2px}
+.toc a,.tof a{text-decoration:none}
+a .figno,a .secno{color:#000}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
+.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
+.simple th a{color:#fff;padding:3px 5px;text-align:left}
+.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
+.simple td{padding:3px 10px;border-top:1px solid #ddd}
+.simple tr:nth-child(even){background:#f0f6ff}
+.section dd>p:first-child{margin-top:0}
+.section dd>p:last-child{margin-bottom:0}
+.section dd{margin-bottom:1em}
+.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+.self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+aside.example .marker>a.self-link{color:inherit}
+.header-wrapper{display:flex;align-items:baseline}
+:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2){position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.5}
+:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
+:is(h2,h3)+a.self-link{top:-.2em}
+:is(h4,h5,h6)+a.self-link::before{color:#000}
+@media (max-width:767px){
+dd{margin-left:0}
+}
+@media print{
+.removeOnSave{display:none}
+}
+</style>
+<meta name="description" content="BOMOS (Beheer- en OntwikkelModel voor Open Standaarden) is een hulpmiddel
+  van en voor de standaardisatiewereld. Dit deel bevat een aanvullende
+  module voor stelsels. Een voorbeelden uit de praktijk dat buiten scope
+  van het BOMOS Fundament valt maar waarbinnen BOMOS wel toegepast kan worden.">
+<style>
+var{position:relative;cursor:pointer}
+var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
+var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
+var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
+var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
+</style>
+<script id="initialUserConfig" type="application/json">{
+  "specStatus": "WV",
+  "specType": "ST",
+  "pubDomain": "bomos",
+  "shortName": "stelsels",
+  "publishDate": "2020-04-05",
+  "publishVersion": "3.0.0",
+  "previousMaturity": "DEF",
+  "license": "cc-by-nd",
+  "doJsonLd": true,
+  "maxTocLevel": 3,
+  "editors": [
+    {
+      "name": "Erwin Folmer",
+      "company": "Kadaster",
+      "companyURL": "https://www.utwente.nl/"
+    },
+    {
+      "name": "Edwin Wisse",
+      "company": "Logius",
+      "companyURL": "https://www.logius.nl/"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Sander Boer",
+      "company": "Logius",
+      "companyURL": "http://www.logius.nl/"
+    }
+  ],
+  "github": "https://github.com/Logius-standaarden/BOMOS-Stelsels",
+  "addSectionLinks": true,
+  "a11y": false,
+  "alternateFormats": [
+    {
+      "label": "pdf",
+      "uri": "BOMOS-Stelsels.pdf"
+    }
+  ],
+  "nl_markdownSplitH1sections": false,
+  "nl_organisationName": "Logius",
+  "nl_organisationPrefix": "LS-",
+  "nl_markdownTableClass": "dkkvs",
+  "nl_markdownEmbedImageInFigure": true,
+  "nl_organisationStylesURL": "https://publicatie.centrumvoorstandaarden.nl/respec/style/",
+  "nl_organisationPublishURL": "https://publicatie.centrumvoorstandaarden.nl/",
+  "nl_logo": {
+    "src": "https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg",
+    "alt": "Logius",
+    "id": "Logius",
+    "height": 77,
+    "width": 44,
+    "url": "https://www.logius.nl/standaarden"
+  },
+  "localBiblio": {
+    "NEN3610": {
+      "href": "http://www.nen.nl/web/Normshop/Norm/NEN-36102011-nl.htm",
+      "title": "Basismodel Geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten",
+      "authors": [
+        ""
+      ],
+      "date": "Maart 2011",
+      "publisher": "Nederlands Normalisatie-instituut"
+    }
+  },
+  "publishISODate": "2020-04-05T00:00:00.000Z",
+  "generatedSubtitle": "Werkversie 07 juli 2022"
+}</script>
+<link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/LS-WV.css"></head>
+  <body class="h-entry informative toc-inline"><div class="head">
+    <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg" width="44">
+  </a> <h1 id="title" class="title">BOMOS aanvullende modules: Stelsels</h1>
+    
+    <h2>
+      Logius Standaard<br>
+      Werkversie
+      <time class="dt-published" datetime="2020-04-05">07 juli 2022</time>
+    </h2>
+    <dl>
+      <dt>Deze versie:</dt><dd class="status">
+              <a class="u-url status" href="https://logius-standaarden.github.io/BOMOS-Stelsels/">https://logius-standaarden.github.io/BOMOS-Stelsels/</a>
+            </dd><dt>Laatst gepubliceerde versie:</dt><dd>
+              <a href="https://publicatie.centrumvoorstandaarden.nl/bomos/stelsels/">https://publicatie.centrumvoorstandaarden.nl/bomos/stelsels/</a>
+            </dd>
+      <dt>Laatste werkversie:</dt><dd><a href="https://logius-standaarden.github.io/BOMOS-Stelsels/">https://logius-standaarden.github.io/BOMOS-Stelsels/</a></dd>
+      
+      
+      
+      
+      
+      <dt>Redacteurs:</dt>
+      <dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Erwin Folmer</span> (<a class="p-org org h-org" href="https://www.utwente.nl/">Kadaster</a>)
+  </dd><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Edwin Wisse</span> (<a class="p-org org h-org" href="https://www.logius.nl/">Logius</a>)
+  </dd>
+      
+      <dt>Auteur:</dt><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Sander Boer</span> (<a class="p-org org h-org" href="http://www.logius.nl/">Logius</a>)
+  </dd>
+      <dt>Doe mee:</dt><dd>
+    <a href="https://github.com/Logius-standaarden/BOMOS-Stelsels/">GitHub Logius-standaarden/BOMOS-Stelsels</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/BOMOS-Stelsels/issues/">Dien een melding in</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/BOMOS-Stelsels/commits/">Revisiehistorie</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/BOMOS-Stelsels/pulls/">Pull requests</a>
+  </dd>
+    </dl>
+    
+    
+    <p lang="en">
+          This document is also available in this non-normative format:
+          <a rel="alternate" href="BOMOS-Stelsels.pdf">pdf</a>
+        </p>
+    <p class="copyright" lang="en">
+          This document is licensed under a
+          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" class="subfoot">Creative Commons Attribution 4.0 License</a>.
+        </p>
+    <hr title="Separator for header">
+  </div>
+
+    <section id="abstract" class="introductory"><h2>Samenvatting</h2><p> BOMOS (Beheer- en OntwikkelModel voor Open Standaarden) is een hulpmiddel
+  van en voor de standaardisatiewereld. Dit deel bevat een aanvullende
+  module voor stelsels. Een voorbeelden uit de praktijk dat buiten scope
+  van het BOMOS Fundament valt maar waarbinnen BOMOS wel toegepast kan worden.
+ </p>
+</section>
+    <section id="sotd" class="introductory"><h2>Status van dit document</h2>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het Technisch Overleg goedgekeurde consultatieversie.<p></p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#invulling-van-bomos-voor-het-beheer-van-afsprakenstelsels"><bdi class="secno">1. </bdi>Invulling van BOMOS voor het beheer van afsprakenstelsels</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#wat-zijn-afsprakenstelsels"><bdi class="secno">1.1 </bdi>Wat zijn afsprakenstelsels?</a></li><li class="tocline"><a class="tocxref" href="#inhoud-van-een-afsprakenstelsel"><bdi class="secno">1.2 </bdi>Inhoud van een afsprakenstelsel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#voorbeeld-van-een-afsprakenstelsel-medmij"><bdi class="secno">1.2.1 </bdi>Voorbeeld van een afsprakenstelsel: Medmij</a></li></ol></li><li class="tocline"><a class="tocxref" href="#hoe-is-bomos-als-best-practice-inzetbaar-voor-het-beheer-van-afsprakenstelsels"><bdi class="secno">1.3 </bdi>Hoe is BOMOS als best practice inzetbaar voor het beheer van afsprakenstelsels?</a></li><li class="tocline"><a class="tocxref" href="#bomos-toegepast-op-afsprakenstelsels"><bdi class="secno">1.4 </bdi>BOMOS toegepast op afsprakenstelsels</a></li><li class="tocline"><a class="tocxref" href="#strategie"><bdi class="secno">1.5 </bdi>Strategie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#governance"><bdi class="secno">1.5.1 </bdi>Governance</a></li><li class="tocline"><a class="tocxref" href="#visie"><bdi class="secno">1.5.2 </bdi>Visie</a></li><li class="tocline"><a class="tocxref" href="#financien"><bdi class="secno">1.5.3 </bdi>Financiën</a></li></ol></li><li class="tocline"><a class="tocxref" href="#tactiek"><bdi class="secno">1.6 </bdi>Tactiek</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#community"><bdi class="secno">1.6.1 </bdi>Community</a></li><li class="tocline"><a class="tocxref" href="#adoptie-en-erkenning"><bdi class="secno">1.6.2 </bdi>Adoptie en Erkenning</a></li><li class="tocline"><a class="tocxref" href="#architectuur"><bdi class="secno">1.6.3 </bdi>Architectuur</a></li><li class="tocline"><a class="tocxref" href="#stelselrisico-analyse-extra-activiteit"><bdi class="secno">1.6.4 </bdi>Stelselrisico analyse (extra activiteit)</a></li></ol></li><li class="tocline"><a class="tocxref" href="#operationeel"><bdi class="secno">1.7 </bdi>Operationeel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#wensen-eisen"><bdi class="secno">1.7.1 </bdi>Wensen &amp; Eisen</a></li><li class="tocline"><a class="tocxref" href="#operationeel-handboek-extra-activiteit"><bdi class="secno">1.7.2 </bdi>Operationeel handboek (extra activiteit)</a></li></ol></li><li class="tocline"><a class="tocxref" href="#implementatieondersteuning"><bdi class="secno">1.8 </bdi>Implementatieondersteuning</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#validatie-certificatie"><bdi class="secno">1.8.1 </bdi>Validatie&amp; certificatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#communicatie"><bdi class="secno">1.9 </bdi>Communicatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#promotie"><bdi class="secno">1.9.1 </bdi>Promotie</a></li><li class="tocline"><a class="tocxref" href="#publicatie"><bdi class="secno">1.9.2 </bdi>Publicatie</a></li><li class="tocline"><a class="tocxref" href="#klachtenafhandeling"><bdi class="secno">1.9.3 </bdi>Klachtenafhandeling</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">2. </bdi>Lijst met figuren</a></li></ol></nav>
+    <section class="introductory"><h1>Documentbeheer</h1>
+<table class="dkkvs">
+<thead>
+<tr>
+<th>Datum</th>
+<th>Versie</th>
+<th>Auteur</th>
+<th>Opmerkingen</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2009</td>
+<td>1.0</td>
+<td>Erwin Folmer</td>
+<td>Toevoeging vanuit Werkgroep CMO: Activiteiten Diagram</td>
+</tr>
+<tr>
+<td>2011</td>
+<td>2.0</td>
+<td>Erwin Folmer &amp; Matthijs Punter</td>
+<td>Toevoeging: De Best Practices</td>
+</tr>
+<tr>
+<td>05/04/2022</td>
+<td>3.0</td>
+<td>Sander Boer</td>
+<td>Aanvullende modules in eigen document ondergebracht</td>
+</tr>
+</tbody></table>
+</section>
+    <section class="introductory"><h1>Colofon</h1>
+<table class="dkkvs">
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Logius Servicecentrum:</td>
+<td>Postbus 96810 <br>2509 JE Den Haag<br>tel. 0900 555 4555 (10 ct p/m)<br>email <a href="mailto:servicecentrum@logius.nl">servicecentrum@logius.nl</a></td>
+</tr>
+</tbody></table>
+</section>
+
+    <section id="invulling-van-bomos-voor-het-beheer-van-afsprakenstelsels"><div class="header-wrapper"><h2 id="x1-invulling-van-bomos-voor-het-beheer-van-afsprakenstelsels"><bdi class="secno">1. </bdi>Invulling van BOMOS voor het beheer van afsprakenstelsels</h2><a class="self-link" href="#invulling-van-bomos-voor-het-beheer-van-afsprakenstelsels" aria-label="Permalink for Section 1."></a></div>
+<section id="wat-zijn-afsprakenstelsels"><div class="header-wrapper"><h3 id="x1-1-wat-zijn-afsprakenstelsels"><bdi class="secno">1.1 </bdi>Wat zijn afsprakenstelsels?</h3><a class="self-link" href="#wat-zijn-afsprakenstelsels" aria-label="Permalink for Section 1.1"></a></div>
+<p>Afsprakenstelsels, of kortweg ‘stelsels’, zijn nauwe samenwerkingsvormen van verschillende partijen uit het bedrijfsleven, de overheid en de wetenschap, die producten of diensten leveren, op basis van vastgelegde eisen.<br>Door afsprakenstelsels is het voor de deelnemende partijen duidelijk wat de spelregels zijn in de omgang met elkaar en het leveren van een product of dienst. Voor de gebruikers van de diensten biedt het keuzevrijheid met een kwaliteitsgarantie. Voorbeeld: je mag kiezen welke partij je helpt bij het insturen van jaarrapportages naar de Nederlandse Bank via SBR, alle erkende partijen doen wat ze moeten doen.
+In het Engels wordt een afsprakenstelsel Trust Framework genoemd.</p>
+</section><section id="inhoud-van-een-afsprakenstelsel"><div class="header-wrapper"><h3 id="x1-2-inhoud-van-een-afsprakenstelsel"><bdi class="secno">1.2 </bdi>Inhoud van een afsprakenstelsel</h3><a class="self-link" href="#inhoud-van-een-afsprakenstelsel" aria-label="Permalink for Section 1.2"></a></div>
+<p>De kern van een afsprakenstelsel zijn de spelregels, waar je de leveranciers en andere betrokken partijen zich aan moet houden om mee te mogen doen en om een product of dienst te mogen leveren.
+Deze spelregels bieden enerzijds de garantie voor de gebruiker dat je veilig en betrouwbaar het product of die dienst kan af nemen en anderzijds zijn dit onderlinge afspraken die de samenwerking succesvol maken. Elinor Ostrom beschrijft in het boek Governing the Commons de voorwaarden voor succesvolle samenwerking rond schaarse gemeenschappelijke voorzieningen zoals het beheer van waterputten. Deze principes zijn te herkennen in de samenwerking van succesvolle afsprakenstelsels. Deze zijn (vrij vertaald):
+-	Er zijn duidelijke grenzen op gebied van homogene functionaliteit/middelen en een homogene gebruikersgroep.
+-	Overeenstemming en balans in baten en lasten voor alle betrokkenen.
+-	Iedereen kan bijdragen aan verbeteringen.
+-	Controle (door transparantie) op alle betrokkenen.
+-	Graduele sancties op overtreden afspraken zijn aanwezig en worden uitgevoerd.
+-	Verschillen van inzicht kunnen snel en effectief opgelost worden.
+-	Stelsel (deelnemers) heeft mandaat om zichzelf te organiseren.
+-	Gebruik stelsels van stelsels om de individuele stelsels eenvoudig te houden.</p>
+<p>Deze principes staan aan de basis van de afspraken en regels over de onderstaande aspecten die terugkomen als onderdelen binnen een afsprakenstelsel:
+-	Informatie over rechten en plichten van deelnemende partijen: zoals definities, aansprakelijkheid, organen, besturing en taakverdeling.
+-	Financiën: het beheren van een afsprakenstelsel en het organiseren van besturing kost geld: wat zijn de afspraken over wie wat betaalt?
+-	Operatie: wie lost incidenten op? Wordt er gewerkt onder een label of merk? Denk aan communicatie, merkbeheer en afspraken over de operationele processen.
+-	Normenkaders: aan welke eisen moeten de diensten/producten van leveranciers voldoen?
+-	Architectuur en techniek: denk hierbij aan technische standaarden, use-cases en interface beschrijvingen.</p>
+<section id="voorbeeld-van-een-afsprakenstelsel-medmij"><div class="header-wrapper"><h4 id="x1-2-1-voorbeeld-van-een-afsprakenstelsel-medmij"><bdi class="secno">1.2.1 </bdi>Voorbeeld van een afsprakenstelsel: Medmij</h4><a class="self-link" href="#voorbeeld-van-een-afsprakenstelsel-medmij" aria-label="Permalink for Section 1.2.1"></a></div>
+<p><figure id="fig-medmij-afsprakenstelsel-4-corner-model"><img src="images/medmij_afsprakenstelsel.png" alt="medmij afsprakenstelsel 4 cornermodel" title="Medmij afsprakenstelsel 4 corner model"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">Medmij afsprakenstelsel 4 corner model</span></figcaption></figure></p>
+<p>Het afsprakenstelsel Medmij maakt het mogelijk dat de eindgebruiker de gezondheidsinformatie in de persoonlijke gezondsheidsomgeving veilig en betrouwbaar kan delen met zorgaanbieders zoals een apotheek of ziekenhuis. Hierbij kiezen de eindgebruikers een partij die de gezondheidsomgeving levert en ziekenhuizen een partij die ze op het Medmij netwerk aansluit. Het afsprakenstelsel zorgt voor de voorwaarden van veilig en betrouwbare uitwisseling en ook de technische voorzieningen om dit te operationaliseren. De scope van het afsprakenstelsel is het vlak waar de dienstverlener van de eindgebruiker samen gaat werken met de dienstverlener van de zorgaanbieder. Er zijn meerdere dienstverleners aan beide kanten en dankzij het stelsel blijft de complexiteit beperkt en werken de diensten en producten goed met elkaar samen.<br>Deze opzet wordt  ook wel het “four corner” model genoemd; eindgebruikers zijn in dit geval via een eigen broker verbonden met andere deelnemers in het stelsel. Merk op: er zijn ook andere configuraties binnen een afsprakenstelsel mogelijk, zoals met een centrale voorziening (3-corner) of een extra afslag voor bijvoorbeeld transactie gedreven verantwoordingsinformatie (5-corner).</p>
+</section></section><section id="hoe-is-bomos-als-best-practice-inzetbaar-voor-het-beheer-van-afsprakenstelsels"><div class="header-wrapper"><h3 id="x1-3-hoe-is-bomos-als-best-practice-inzetbaar-voor-het-beheer-van-afsprakenstelsels"><bdi class="secno">1.3 </bdi>Hoe is BOMOS als best practice inzetbaar voor het beheer van afsprakenstelsels?</h3><a class="self-link" href="#hoe-is-bomos-als-best-practice-inzetbaar-voor-het-beheer-van-afsprakenstelsels" aria-label="Permalink for Section 1.3"></a></div>
+<p>Afsprakenstelsels zonder standaarden bestaan niet.... Standaarden staan aan de basis van het mogelijk maken van interoperabiliteit en samenwerking. Het lijkt dus op een bundeling van standaarden met daarbij een belangrijke toevoeging: bij een stelsel zijn er ook afspraken gemaakt over het operationaliseren van samenwerking om een product of dienst aan te bieden.
+Voor een groot deel komt het beheer van een afsprakenstelsel en van een standaard goed overeen en maakt BOMOS prima toepasbaar voor deze bredere scope. De BOMOS activiteiten zijn binnen stelsels ook goed herkenbaar en toe te passen met hier en daar een uitzondering of afwijking. Net zoals bij het beheer van een standaard zijn er bij stelsels activiteiten gericht op het organiseren van de besturing, de doorontwikkeling, het beheren van centrale voorzieningen, het helpen bij aansluiten en promotie van gebruik.</p>
+<p>Samen met de ICTU is aan de hand van deze methode ook een instrument gemaakt aan de hand van de BOMOS assessment maar dan toegespitst op afsprakenstelsels. Deze is op te vragen via Logius: [<a href="https://logius.nl/contact%5D">https://logius.nl/contact]</a>.</p>
+<p>Inmiddels is er praktijkervaring opgedaan met het uitvoeren van deze specifieke BOMOS assessment voor stelsels. Na deze analyses is ook duidelijk naar voren gekomen hoe waardevol het om een raamwerk te hebben  die de structuur, definities, activiteiten en tips en trucs aanreiken. BOMOS zorgt hierbij voor een gezamenlijke “taal” en helpt om elkaars rollen en de beleving daarbij beter te begrijpen en dat maakt constructieve discussies mogelijk.</p>
+<p>De uitkomst van een assessment helpt om in een korte termijn te komen tot een doelstelling om het beheer te professionaliseren, en wordt in beeld gebracht welke stappen daarvoor gezet moeten worden. Doe je een assessment samen met de stakeholders dan biedt dit gelijk het draagvlak om die veranderingen in gang te zetten.
+Het BOMOS fundament is goed toepasbaar voor het inrichten van beheer van nieuwe afsprakenstelsels. BOMOS helpt dan om een programma of opdrachtgever een beeld te schetsen welke activiteiten ingeregeld moeten gaan worden en waarom. Dit beeld helpt bij het prioriteren en inplannen van het inregelen van beheeractiviteiten en het maken van de inschatting van de hiervoor benodigde middelen.</p>
+</section><section id="bomos-toegepast-op-afsprakenstelsels"><div class="header-wrapper"><h3 id="x1-4-bomos-toegepast-op-afsprakenstelsels"><bdi class="secno">1.4 </bdi>BOMOS toegepast op afsprakenstelsels</h3><a class="self-link" href="#bomos-toegepast-op-afsprakenstelsels" aria-label="Permalink for Section 1.4"></a></div>
+<p><figure id="fig-bomos-activiteiten"><img src="images/bomos_activiteiten.png" alt="BOMOS model" title="BOMOS activiteiten"><figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title">BOMOS activiteiten</span></figcaption></figure></p>
+</section><section id="strategie"><div class="header-wrapper"><h3 id="x1-5-strategie"><bdi class="secno">1.5 </bdi>Strategie</h3><a class="self-link" href="#strategie" aria-label="Permalink for Section 1.5"></a></div>
+<section id="governance"><div class="header-wrapper"><h4 id="x1-5-1-governance"><bdi class="secno">1.5.1 </bdi>Governance</h4><a class="self-link" href="#governance" aria-label="Permalink for Section 1.5.1"></a></div>
+<p>Het hebben van een gestructureerde afstemming tussen de verschillende betrokken partijen (‘de stakeholders’) binnen een stelsel is essentieel. Deze afstemming verloopt via de governance van een stelsel. Hiervoor is een beschrijving nodig van de organisatiestructuur, gremia voor besluitvorming en rollen.
+De organisatiestructuur maakt duidelijk welke gremia bestaan in het kader van de besluitvorming en welk type beslissingen in welk gremium wordt genomen. Ook maakt de structuur duidelijk hoe taken, relaties en communicatie tussen de groepen geborgd is. Daarbij is een onderscheid tussen een sturend orgaan en uitvoering essentieel.
+Afspraken hoe er besluiten worden genomen, hoe men lid kan worden van besluitvormende gremia en over de scope van sturing kunnen onderdeel maken van het afsprakenstelsel zelf maar kunnen ook daarbuiten liggen in de vorm van een instellingsbesluit of convenant.
+De rol van toezichthouder is een extra rol ten opzichte van de rollen binnen standaarden: wat is er georganiseerd om te toetsen of de afspraken daadwerkelijk worden nagekomen en wat zijn de procedures en middelen om in te grijpen indien dit niet het geval is. Het is van belang deze taak onafhankelijk te beleggen om te voorkomen dat de slager zijn eigen vlees keurt. Daarnaast is deze rol belast met de taak om in geval van niet naleving passende maatregelen te nemen.</p>
+</section><section id="visie"><div class="header-wrapper"><h4 id="x1-5-2-visie"><bdi class="secno">1.5.2 </bdi>Visie</h4><a class="self-link" href="#visie" aria-label="Permalink for Section 1.5.2"></a></div>
+<p>Het doel van wat een afsprakenstelsel beoogt moet helder en duidelijk zijn. In de kern is de missie van een stelsel het “willen oplossen” van een probleem wat te complex en te groot is om zelfstandig te doen en waarbij de hulp van andere organisaties nodig is. Deze organisaties bundelen de krachten om deze oplossing te realiseren en om hierover afspraken over te maken. Dit uit zich in een positieve businesscase. Deze missie en visie komt terug in de communicatie uitingen van een stelsel en verbindt de partijen die actief binnen een stelsel actief zijn.</p>
+</section><section id="financien"><div class="header-wrapper"><h4 id="x1-5-3-financien"><bdi class="secno">1.5.3 </bdi>Financiën</h4><a class="self-link" href="#financien" aria-label="Permalink for Section 1.5.3"></a></div>
+<p>Voor de partijen die een actieve rol willen vervullen binnen een stelsel moet het financieel aantrekkelijk zijn en daar moet een positieve businesscase tegen over staan om een stelsel toekomst te geven. Dat geldt voor private, publiek-private en publieke stelsels. Deze businesscase is ook nodig om te verantwoorden dat een beheerorganisatie moet worden ingericht en voor een langere periode kan worden gefinancierd. De financiering voor de beheerorganisatie kan worden bekostigd door de stakeholders, leden van een stelsel of centraal vanuit de eigenaar.
+Roadmapping (extra activiteit)
+Het maken en hebben van een meerjarige roadmap bevat de strategische keuzes en hoe daar in stappen naar toe wordt gewerkt. Het helpt bij de adoptie omdat de stakeholders weten wanneer bepaalde functionaliteit wordt opgeleverd en daarmee aantrekkelijk wordt om gebruik te gaan maken van de stelselproducten of een rol te vervullen binnen het stelsel. Het maken en hebben van een gezamenlijk doel in de vorm van een roadmap zorgt ook voor draagvlak. Het bevat de concrete stappen om de visie te realiseren.</p>
+</section></section><section id="tactiek"><div class="header-wrapper"><h3 id="x1-6-tactiek"><bdi class="secno">1.6 </bdi>Tactiek</h3><a class="self-link" href="#tactiek" aria-label="Permalink for Section 1.6"></a></div>
+<section id="community"><div class="header-wrapper"><h4 id="x1-6-1-community"><bdi class="secno">1.6.1 </bdi>Community</h4><a class="self-link" href="#community" aria-label="Permalink for Section 1.6.1"></a></div>
+<p>Het begrip community is binnen afsprakenstelsel wat minder ingeburgerd maar er zijn wel organisatievormen die op tactisch niveau acteren maar meer in de vorm van een expertgroep of werkgroep. Deze groepen zijn betrokken bij inhoudelijke veranderingen in een afsprakenstelsel en het opstellen van advies over o.a. innovaties en architectuur. De governance van een stelsel geeft opdracht voor het inrichten van een expert– of werkgroep met een daarbij duidelijke opdracht.
+De samenstelling binnen een werkgroep is afhankelijk van de opdracht. Er zijn werkgroepen die alleen bestaan uit een afvaardiging vanuit de leveranciers maar ook uit een samenstelling met gebruikers en andere stakeholders.</p>
+</section><section id="adoptie-en-erkenning"><div class="header-wrapper"><h4 id="x1-6-2-adoptie-en-erkenning"><bdi class="secno">1.6.2 </bdi>Adoptie en Erkenning</h4><a class="self-link" href="#adoptie-en-erkenning" aria-label="Permalink for Section 1.6.2"></a></div>
+<p>Om in het overheidsdomein actief te zijn helpt het om een formele status te hebben van het stelsel, lees een verplichting of een advies om van de stelselproducten gebruik te maken. En een andere belangrijke factor is het ontwikkelen van een kritische massa rondom het gebruik. Het is vaak een kip – ei probleem waarbij partijen wachten wie de eerste stappen zet zelf mee gaan doen als bijvoorbeeld grote uitvoeringsorganisaties de overstap maken. Om dit goed te organiseren is een strategie noodzakelijk met daarbij de steun vanuit de stakeholders.  Hierdoor groeit ook de kans dat leveranciers een positieve businesscase kunnen maken en nieuwe deelnemers instappen. De governance is verantwoordelijk voor adoptie.</p>
+</section><section id="architectuur"><div class="header-wrapper"><h4 id="x1-6-3-architectuur"><bdi class="secno">1.6.3 </bdi>Architectuur</h4><a class="self-link" href="#architectuur" aria-label="Permalink for Section 1.6.3"></a></div>
+<p>Er zijn verschillende manieren of viewpoints (zie Archimate) om naar de architectuur te kijken: vanuit strategie, business, de applicaties en onderliggende componenten. Deze variatie aan zienswijze heeft vaak te maken met de verschillende rollen die partijen hebben binnen een stelsel. Idealiter zijn die allemaal beschreven, maar de praktijk kan dat per stelsel verschillen hoe dat is uitgewerkt. Het hebben van deze modellen helpt om makkelijker met elkaar te communiceren en de impact en kansen van veranderingen goed in te schatten. Het verlaagt ook de drempel voor nieuwe partijen die deel uit willen maken van een stelsel.
+Binnen een stelsel speelt interoperabiliteit een belangrijke rol en dat zie je terugkomen in de aandacht voor de architectuur van de technische koppelvlakken tussen de verschillende partijen.  Onder architectuur vallen ook de keuzes welke (technische) standaarden binnen een stelsel gebruikt moeten worden door de deelnemers.
+Het hebben en samen bepalen van architectuurprincipes voor een stelsel (zie NORA) is een waardevol kader om wijzigingsvoorstellen te toetsen.</p>
+</section><section id="stelselrisico-analyse-extra-activiteit"><div class="header-wrapper"><h4 id="x1-6-4-stelselrisico-analyse-extra-activiteit"><bdi class="secno">1.6.4 </bdi>Stelselrisico analyse (extra activiteit)</h4><a class="self-link" href="#stelselrisico-analyse-extra-activiteit" aria-label="Permalink for Section 1.6.4"></a></div>
+<p>Het afsprakenstelsel vormt de basis om veilig en betrouwbare gegevensuitwisseling mogelijk te maken tussen verschillende partijen. Daarvoor is het ook van belang om als governance een goed beeld te hebben hoe het gesteld is met dreigingen en risico’s op het stelsel zelf. Wat kan er misgaan, wat kan ik doen om dit te voorkomen en in het geval dat de dreiging realiteit wordt: wat zijn dan de stappen en wie betrek ik hierbij?</p>
+</section></section><section id="operationeel"><div class="header-wrapper"><h3 id="x1-7-operationeel"><bdi class="secno">1.7 </bdi>Operationeel</h3><a class="self-link" href="#operationeel" aria-label="Permalink for Section 1.7"></a></div>
+<section id="wensen-eisen"><div class="header-wrapper"><h4 id="x1-7-1-wensen-eisen"><bdi class="secno">1.7.1 </bdi>Wensen &amp; Eisen</h4><a class="self-link" href="#wensen-eisen" aria-label="Permalink for Section 1.7.1"></a></div>
+<p>Net zoals standaarden ontwikkelt een afsprakenstelsel zich ook door om te voldoen aan de wensen en eisen van gebruikers. Een andere belangrijke kracht voor wijzigingen die structureel bijdragen aan de businesscase, wet- en regelgeving en maatregelen om aan (toekomstige) dreigingen rond veiligheid en betrouwbaarheid te voldoen.  Om dit in goed banen te leiden bevat een afsprakenstelsel regels hoe wijzigingen geïnitieerd worden, beschrijving van de besluitvorming en hoe die wijzigingen in het afsprakenstelsel terecht komen en uiteindelijk geïmplementeerd worden door de betrokken partijen. Een belangrijk aspect bij het doorvoeren en implementeren van wijzigingen in een stelsel is het borgen van continuïteit: idealiter voorkom je scenario’s waarbij wijzigingen via een big bang scenario worden uitgerold maar kan dit in een eigen tempo. Dit is te organiseren door een vorm van backward compatibility te faciliteren.
+Documentatie
+Het afsprakenstelsel is vrij beschikbaar en toegankelijk. Hiermee voorkom je dat de buitenwereld met wantrouwen kijkt naar wat er binnen een afsprakenstelsel gebeurt omdat het dan meer lijkt op een kartel. Idealiter zijn de stukken die gebruikt zijn ook publiek toegankelijk. Transparantie helpt bij het realiseren van draagvlak.  </p>
+</section><section id="operationeel-handboek-extra-activiteit"><div class="header-wrapper"><h4 id="x1-7-2-operationeel-handboek-extra-activiteit"><bdi class="secno">1.7.2 </bdi>Operationeel handboek (extra activiteit)</h4><a class="self-link" href="#operationeel-handboek-extra-activiteit" aria-label="Permalink for Section 1.7.2"></a></div>
+<p>Een afsprakenstelsel bevat voor een belangrijk deel afspraken hoe met elkaar wordt samengewerkt. Dit gaat over onderwerpen hoe je zoals bij wensen &amp; eisen over het wijzigproces maar ook hoe je kan toetreden, hoe verstoringen en incidenten worden gemeld en verholpen, over de service windows van de betrokken partijen en over de rapportage-eisen richting elkaar en de governance.</p>
+</section></section><section id="implementatieondersteuning"><div class="header-wrapper"><h3 id="x1-8-implementatieondersteuning"><bdi class="secno">1.8 </bdi>Implementatieondersteuning</h3><a class="self-link" href="#implementatieondersteuning" aria-label="Permalink for Section 1.8"></a></div>
+<p>De mate hoe een afsprakenstelsel hier invulling aan geeft is afhankelijk van de taakverdeling tussen de deelnemers binnen een stelsel en de stelselbeheerorganisatie. Het is daarbij logisch dat de partij die een contract afsluit met een leverancier daar ook aanklopt voor ondersteuning bij de implementatie (aansluiten) en het gebruik. Binnen het stelsel zelf heeft de beheerorganisatie een taak om een rol te spelen bij vraagstukken rond de interpretatie van de stelsel specificaties en bijvoorbeeld bij het aansluiten op het netwerk.</p>
+<section id="validatie-certificatie"><div class="header-wrapper"><h4 id="x1-8-1-validatie-certificatie"><bdi class="secno">1.8.1 </bdi>Validatie&amp; certificatie</h4><a class="self-link" href="#validatie-certificatie" aria-label="Permalink for Section 1.8.1"></a></div>
+<p>Er zijn stelsels die validatie-tooling beschikbaar stellen waarmee deelnemers hun implementatie mee kunnen testen. Het is van groot belang dat de leveranciers betrokken zijn met de realisatie en toetsing van dergelijke tooling om te voorkomen dat pas in een laat stadium (tijdens de realisatie) onvolkomenheden en onduidelijkheden in specificaties boven tafel komen.
+Rond inspectie en certificatie: dit is normaliter een taak van de partij die de rol van toezichthouder vervult. De toezichthouder kijkt of het afgesproken normenkader goed is geïmplementeerd bij de leverancier. Er zijn afspraken wanneer de leverancier zelf actief de toezichthouder informeert om een toetsing uit te voeren. Denk hierbij aan wijzigingen op processen die raakvlak hebben met het normenkader.</p>
+</section></section><section id="communicatie"><div class="header-wrapper"><h3 id="x1-9-communicatie"><bdi class="secno">1.9 </bdi>Communicatie</h3><a class="self-link" href="#communicatie" aria-label="Permalink for Section 1.9"></a></div>
+<section id="promotie"><div class="header-wrapper"><h4 id="x1-9-1-promotie"><bdi class="secno">1.9.1 </bdi>Promotie</h4><a class="self-link" href="#promotie" aria-label="Permalink for Section 1.9.1"></a></div>
+<p>De voordelen van de product of dienst van een afsprakenstelsel moeten bij zoveel mogelijk publiek bekend worden gemaakt. Het hebben van een gemeenschappelijk merk of label helpt daarbij en zorgt voor de herkenbaarheid van de dienst. Het afsprakenstelsel bevat regels hoe generieke uitingen worden opgesteld, merkbeheer, wat de beheerorganisatie doet en wat de speelruimte van de leveranciers is. De leveranciers zijn verantwoordelijk voor hun eigen marketing en acties om de eigen markt te vergroten maar zijn daarbij gebonden aan het afsprakenstelsel.  De beheerorganisatie heeft een rol om de voordelen van het stelsel uit te dragen maar niet van de individuele diensten of producten van de leveranciers die onder dit stelsel vallen.</p>
+</section><section id="publicatie"><div class="header-wrapper"><h4 id="x1-9-2-publicatie"><bdi class="secno">1.9.2 </bdi>Publicatie</h4><a class="self-link" href="#publicatie" aria-label="Permalink for Section 1.9.2"></a></div>
+<p>Hieronder valt het hebben van een site die informatie bevat over het afsprakenstelsel, inzet van sociale media en het delen van informatie met specifieke gebruikersgroepen.</p>
+</section><section id="klachtenafhandeling"><div class="header-wrapper"><h4 id="x1-9-3-klachtenafhandeling"><bdi class="secno">1.9.3 </bdi>Klachtenafhandeling</h4><a class="self-link" href="#klachtenafhandeling" aria-label="Permalink for Section 1.9.3"></a></div>
+<p>De gebruikers kunnen de behoefte hebben om naast het indienen van de klacht bij de eigen leverancier ook bij een onafhankelijke partij die klacht te melden. Een klachtencommissie kan het geval dat beide partijen er niet uitkomen een bindende uitspraak</p>
+</section></section></section>
+
+    
+    <section id="tof"><div class="header-wrapper"><h2 id="x2-lijst-met-figuren"><bdi class="secno">2. </bdi>Lijst met figuren</h2><a class="self-link" href="#tof" aria-label="Permalink for Section 2."></a></div><ul class="tof">
+        <li class="tofline">
+    <a class="tocxref" href="#fig-medmij-afsprakenstelsel-4-corner-model">Figuur <bdi class="figno">1</bdi> <span class="fig-title">Medmij afsprakenstelsel 4 corner model</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-bomos-activiteiten">Figuur <bdi class="figno">2</bdi> <span class="fig-title">BOMOS activiteiten</span></a>
+  </li>
+      </ul></section>
+  
+
+<p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(setupPanel);
+} else {
+  setupPanel();
+}
+
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
+  /** @type {HTMLElement} */
+  let panel = null;
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    const action = deriveAction(event);
+
+    switch (action) {
+      case "show": {
+        hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = target.closest("dfn, .index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        const coords = deriveCoordinates(event);
+        displayPanel(dfn, panel, coords);
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        panel = null;
+        break;
+      }
+    }
+  };
+}
+
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
+  }
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not([data-cite]), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
+    if (hitALink) {
+      return target.classList.contains("self-link") ? "hide" : "dock";
+    }
+    const panel = target.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : "none";
+  }
+  if (document.querySelector(".dfn-panel:not([hidden])")) {
+    return "hide";
+  }
+  return "none";
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a[href]");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const [record] = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  if (!panel) return;
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
