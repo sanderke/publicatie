@@ -25,6 +25,8 @@ Klik op het pad om naar de pagina op logius.nl te gaan. Klik op :scroll: om de p
 - [bomos/bomos/](https://gitdocumentatie.logius.nl/publicatie/bomos/bomos/) [:scroll:](https://logius-standaarden.github.io/publicatie/bomos/bomos/)
    - [bomos/bomos/3.0.0/](https://gitdocumentatie.logius.nl/publicatie/bomos/bomos/3.0.0/) [:scroll:](https://logius-standaarden.github.io/publicatie/bomos/bomos/3.0.0/)
 - [bomos/fundament/](https://gitdocumentatie.logius.nl/publicatie/bomos/fundament/) [:scroll:](https://logius-standaarden.github.io/publicatie/bomos/fundament/)
+- [bomos/stelsels/](https://gitdocumentatie.logius.nl/publicatie/bomos/stelsels/) [:scroll:](https://logius-standaarden.github.io/publicatie/bomos/stelsels/)
+   - [bomos/stelsels/3.0.0/](https://gitdocumentatie.logius.nl/publicatie/bomos/stelsels/3.0.0/) [:scroll:](https://logius-standaarden.github.io/publicatie/bomos/stelsels/3.0.0/)
 - [bomos/verdieping/](https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping/) [:scroll:](https://logius-standaarden.github.io/publicatie/bomos/verdieping/)
 
 ### digimelding
