@@ -41,6 +41,7 @@ Klik op het pad om naar de pagina op logius.nl te gaan. Klik op :scroll: om de p
    - [dk/actueel/1.7/](https://gitdocumentatie.logius.nl/publicatie/dk/actueel/1.7/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/actueel/1.7/)
    - [dk/actueel/1.8/](https://gitdocumentatie.logius.nl/publicatie/dk/actueel/1.8/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/actueel/1.8/)
    - [dk/actueel/1.9.0/](https://gitdocumentatie.logius.nl/publicatie/dk/actueel/1.9.0/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/actueel/1.9.0/)
+   - [dk/actueel/1.9.1/](https://gitdocumentatie.logius.nl/publicatie/dk/actueel/1.9.1/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/actueel/1.9.1/)
    - [dk/actueel/def-st-actueel-20210111/](https://gitdocumentatie.logius.nl/publicatie/dk/actueel/def-st-actueel-20210111/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/actueel/def-st-actueel-20210111/)
    - [dk/actueel/def-st-actueel-20210312/](https://gitdocumentatie.logius.nl/publicatie/dk/actueel/def-st-actueel-20210312/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/actueel/def-st-actueel-20210312/)
 - [dk/architectuur/](https://gitdocumentatie.logius.nl/publicatie/dk/architectuur/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/architectuur/)
