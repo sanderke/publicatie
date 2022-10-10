@@ -1,0 +1,974 @@
+<!DOCTYPE html><html lang="nl"><head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+<meta name="generator" content="ReSpec 32.1.10 Logius profile 20220628">
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;margin-top:.25em}
+.dfn-panel ul a[href]{color:#333}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a[href]:hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
+  
+  
+  
+<link rel="shortcut icon" type="image/x-icon" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/logius.ico">
+  
+<title>Digikoppeling Handreiking Adressering en Routering 1.0</title>
+  
+  
+  
+  
+<link rel="stylesheet" type="text/css" href="./media/style.css">
+
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+:is(h1,h2,h3,h4,h5,h6,a) abbr{border:none}
+dfn{font-weight:700}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:normal}
+code{color:#c63501}
+th code{color:inherit}
+a[href].orcid{padding-left:4px;padding-right:4px}
+a[href].orcid>svg{margin-bottom:-2px}
+.toc a,.tof a{text-decoration:none}
+a .figno,a .secno{color:#000}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
+.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
+.simple th a{color:#fff;padding:3px 5px;text-align:left}
+.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
+.simple td{padding:3px 10px;border-top:1px solid #ddd}
+.simple tr:nth-child(even){background:#f0f6ff}
+.section dd>p:first-child{margin-top:0}
+.section dd>p:last-child{margin-bottom:0}
+.section dd{margin-bottom:1em}
+.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+.self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+aside.example .marker>a.self-link{color:inherit}
+.header-wrapper{display:flex;align-items:baseline}
+:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2){position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.5}
+:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
+:is(h2,h3)+a.self-link{top:-.2em}
+:is(h4,h5,h6)+a.self-link::before{color:#000}
+@media (max-width:767px){
+dd{margin-left:0}
+}
+@media print{
+.removeOnSave{display:none}
+}
+</style>
+<meta name="description" content="Dit document beschrijft op welke manieren het OIN kan worden gebruikt voor Adressering en Routering.">
+<style>
+var{position:relative;cursor:pointer}
+var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
+var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
+var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
+var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
+</style>
+<script id="initialUserConfig" type="application/json">{
+  "specStatus": "DEF",
+  "specType": "HR",
+  "pubDomain": "dk",
+  "shortName": "bpadres",
+  "publishDate": "2022-10-11",
+  "addSectionLinks": true,
+  "publishVersion": "1.0",
+  "previousPublishVersion": "1.0",
+  "license": "cc-by-nd",
+  "doJsonLd": true,
+  "editors": [
+    {
+      "name": "Logius",
+      "company": "Logius",
+      "companyURL": "http://www.logius.nl/"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Logius",
+      "company": "Logius",
+      "companyURL": "http://www.logius.nl/"
+    }
+  ],
+  "github": "https://github.com/Logius-standaarden/Digikoppeling-Handreiking-Adressering-en-Routering",
+  "alternateFormats": [
+    {
+      "label": "pdf",
+      "uri": "Digikoppeling-Handreiking-Adressering-en-Routering.pdf"
+    }
+  ],
+  "nl_emailComments": "digikoppeling@logius.nl",
+  "nl_addReleaseTagTitle": true,
+  "nl_markdownSplitH1sections": true,
+  "nl_organisationName": "Logius",
+  "nl_organisationPrefix": "LS-",
+  "nl_markdownCodeClass": "code",
+  "nl_markdownEmbedImageInFigure": true,
+  "nl_organisationStylesURL": "https://publicatie.centrumvoorstandaarden.nl/respec/style/",
+  "nl_organisationPublishURL": "https://publicatie.centrumvoorstandaarden.nl/",
+  "nl_logo": {
+    "src": "https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg",
+    "alt": "Logius",
+    "id": "Logius",
+    "height": 77,
+    "width": 44,
+    "url": "https://www.logius.nl/standaarden"
+  },
+  "localBiblio": {
+    "NEN3610": {
+      "href": "http://www.nen.nl/web/Normshop/Norm/NEN-36102011-nl.htm",
+      "title": "Basismodel Geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten",
+      "authors": [
+        ""
+      ],
+      "date": "Maart 2011",
+      "publisher": "Nederlands Normalisatie-instituut"
+    },
+    "Voorwaarden Digikoppeling": {
+      "href": "https://www.logius.nl/diensten/digikoppeling/documentatie/voorwaarden-digikoppeling",
+      "title": "Voorwaarden Digikoppeling",
+      "date": "1 januari 2021",
+      "publisher": "Logius"
+    },
+    "Gebruiksvoorwaarden Digikoppeling": {
+      "href": "https://www.logius.nl/diensten/digikoppeling/documentatie/gebruiksvoorwaarden-digikoppeling",
+      "title": "Gebruiksvoorwaarden Digikoppeling",
+      "date": "1 januari 2021",
+      "publisher": "Logius"
+    },
+    "Algemene Voorwaarden Logius": {
+      "href": "https://www.logius.nl/onze-organisatie/zakendoen-met-logius/voorwaarden/algemene-voorwaarden-logius",
+      "title": "Algemene voorwaarden Logius",
+      "date": "12 juni 2018",
+      "publisher": "Logius"
+    },
+    "Eisen Pkioverheid": {
+      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen",
+      "title": "Programma van Eisen (PKIoverheid)",
+      "publisher": "Logius"
+    },
+    "PKI PvE": {
+      "href": "https://logius.nl/sites/default/files/public/bestanden/diensten/PKIoverheid/Programme%20of%20Requirements%20part%203j_%20Certificate%20Policy%20for%20Server%20certificates%20in%20Server%202020%20%28EV%20G1%29%20Domain-4.9.pdf",
+      "title": "Programma van Eisen Pkioverheid, deel 3j",
+      "publisher": "Logius"
+    }
+  },
+  "publishISODate": "2022-10-11T00:00:00.000Z",
+  "generatedSubtitle": "Vastgestelde versie 11 oktober 2022"
+}</script>
+<link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/LS-VG.css"></head>
+
+<body class="h-entry informative toc-inline"><div class="head">
+    <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg" width="44">
+  </a> <h1 id="title" class="title">Digikoppeling Handreiking Adressering en Routering 1.0</h1>
+    
+    <h2>
+      Logius Handreiking<br>
+      Vastgestelde versie
+      <time class="dt-published" datetime="2022-10-11">11 oktober 2022</time>
+    </h2>
+    <dl>
+      <dt>Deze versie:</dt><dd class="status">
+              <a class="u-url status" href="https://publicatie.centrumvoorstandaarden.nl/dk/bpadres/1.0">https://publicatie.centrumvoorstandaarden.nl/dk/bpadres/1.0</a>
+            </dd><dt>Laatst gepubliceerde versie:</dt><dd>
+              <a href="https://publicatie.centrumvoorstandaarden.nl/dk/bpadres/">https://publicatie.centrumvoorstandaarden.nl/dk/bpadres/</a>
+            </dd>
+      <dt>Laatste werkversie:</dt><dd><a href="https://logius-standaarden.github.io/Digikoppeling-Handreiking-Adressering-en-Routering/">https://logius-standaarden.github.io/Digikoppeling-Handreiking-Adressering-en-Routering/</a></dd>
+      
+      
+      
+      <dt>Vorige versie</dt><dd><a href="https://publicatie.centrumvoorstandaarden.nl/dk/bpadres/1.0/">https://publicatie.centrumvoorstandaarden.nl/dk/bpadres/1.0/</a></dd>
+      
+      <dt>Redacteur:</dt>
+      <dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Logius</span> (<a class="p-org org h-org" href="http://www.logius.nl/">Logius</a>)
+  </dd>
+      
+      <dt>Auteur:</dt><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Logius</span> (<a class="p-org org h-org" href="http://www.logius.nl/">Logius</a>)
+  </dd>
+      <dt>Doe mee:</dt><dd>
+    <a href="https://github.com/Logius-standaarden/Digikoppeling-Handreiking-Adressering-en-Routering/">GitHub Logius-standaarden/Digikoppeling-Handreiking-Adressering-en-Routering</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/Digikoppeling-Handreiking-Adressering-en-Routering/issues/">Dien een melding in</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/Digikoppeling-Handreiking-Adressering-en-Routering/commits/">Revisiehistorie</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/Digikoppeling-Handreiking-Adressering-en-Routering/pulls/">Pull requests</a>
+  </dd>
+    </dl>
+    
+    
+    <p lang="en">
+          This document is also available in this non-normative format:
+          <a rel="alternate" href="Digikoppeling-Handreiking-Adressering-en-Routering.pdf">pdf</a>
+        </p>
+    <p class="copyright" lang="en">
+          This document is licensed under a
+          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" class="subfoot">Creative Commons Attribution 4.0 License</a>.
+        </p>
+    <hr title="Separator for header">
+  </div>
+  <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Dit document beschrijft op welke manieren het OIN kan worden gebruikt voor Adressering en Routering.</p>
+</section> 
+  <section id="sotd" class="introductory"><h2>Status van dit document</h2>Dit is de definitieve versie van de  handreiking. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.<p></p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#handreiking-adressering-en-routering"><bdi class="secno">1. </bdi>Handreiking Adressering en Routering</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#doel-van-de-handreiking"><bdi class="secno">1.1 </bdi>Doel van de Handreiking</a></li><li class="tocline"><a class="tocxref" href="#welke-vragen-worden-beantwoord"><bdi class="secno">1.2 </bdi>Welke vragen worden beantwoord</a></li><li class="tocline"><a class="tocxref" href="#welke-onderdelen-worden-besproken"><bdi class="secno">1.3 </bdi>Welke onderdelen worden besproken</a></li><li class="tocline"><a class="tocxref" href="#omgeving-waar-de-handreiking-voor-geldt"><bdi class="secno">1.4 </bdi>Omgeving waar de handreiking voor geldt</a></li><li class="tocline"><a class="tocxref" href="#beschrijving-van-de-werking"><bdi class="secno">1.5 </bdi>Beschrijving van de werking</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#x1-het-oin-wordt-zowel-gebruikt-voor-authenticatie-als-voor-adressering"><bdi class="secno">1.5.1 </bdi>1. Het OIN wordt zowel gebruikt voor authenticatie als voor adressering.</a></li><li class="tocline"><a class="tocxref" href="#x2-wanneer-is-het-aan-te-raden-om-suboin-s-te-gebruiken-voor-adresseren-en-routeren"><bdi class="secno">1.5.2 </bdi>2. Wanneer is het aan te raden om subOIN's te gebruiken voor adresseren en routeren?</a></li><li class="tocline"><a class="tocxref" href="#x3-wat-zijn-de-regels-die-partijen-met-elkaar-moeten-afspreken-over-het-routeren-en-adresseren-van-berichten"><bdi class="secno">1.5.3 </bdi>3. Wat zijn de regels die partijen met elkaar moeten afspreken over het routeren en adresseren van berichten?</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#x1-direct"><bdi class="secno">1.5.3.1 </bdi><em>1 Direct</em></a></li><li class="tocline"><a class="tocxref" href="#x2-via-knooppunt-a-waarbij-eigen-oin-van-a-gebruikt-wordt-voor-tls-verbindingen-met-verzender-en-ontvanger"><bdi class="secno">1.5.3.2 </bdi><em>2 Via Knooppunt A (waarbij eigen OIN van A gebruikt wordt voor TLS-verbindingen met verzender en ontvanger)</em></a></li><li class="tocline"><a class="tocxref" href="#x3-via-knooppunt-a-waarbij-a-sub-oin-van-verzender-gebruikt-voor-tls-verbindingen-met-ontvanger"><bdi class="secno">1.5.3.3 </bdi><em>3 Via Knooppunt A (waarbij A (Sub)OIN van verzender gebruikt voor TLS-verbindingen met ontvanger)</em></a></li><li class="tocline"><a class="tocxref" href="#x4-via-knooppunt-b-waarbij-b-eigen-oin-van-b-gebruikt-voor-tls-verbindingen-met-verzender"><bdi class="secno">1.5.3.4 </bdi><em>4 Via Knooppunt B (waarbij B eigen OIN van B gebruikt voor TLS-verbindingen met verzender)</em></a></li><li class="tocline"><a class="tocxref" href="#x5-via-knooppunt-b-waarbij-b-sub-oin-van-ontvanger-gebruikt-voor-tls-verbindingen-met-verzender"><bdi class="secno">1.5.3.5 </bdi><em>5 Via Knooppunt B (waarbij B (Sub)OIN van ontvanger gebruikt voor TLS-verbindingen met verzender)</em></a></li><li class="tocline"><a class="tocxref" href="#x6-via-knooppunt-a-en-b-met-gebruik-van-eigen-oin-a-b-voor-tls-verbindingen"><bdi class="secno">1.5.3.6 </bdi><em>6 Via Knooppunt A en B (met gebruik van eigen OIN A,B voor TLS verbindingen)</em></a></li><li class="tocline"><a class="tocxref" href="#x7-via-knooppunt-a-en-b-met-gebruik-van-oin-verzender-ontvanger-voor-tls-verbindingen"><bdi class="secno">1.5.3.7 </bdi><em>7 Via Knooppunt A en B (met gebruik van OIN verzender, ontvanger voor TLS verbindingen)</em></a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-1-voorbeeld-van-routering"><bdi class="secno">1.6 </bdi>Bijlage 1. Voorbeeld van routering</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#voorbeeldsituatie-zowel-zender-als-ontvanger-maken-gebruik-van-suboin-s"><bdi class="secno">1.6.1 </bdi>Voorbeeldsituatie: zowel zender als ontvanger maken gebruik van subOIN's</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-2-digipoort"><bdi class="secno">1.7 </bdi>BIJLAGE 2. Digipoort</a></li></ol></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">2. </bdi>Lijst met figuren</a></li></ol></nav>  
+  <section id="handreiking-adressering-en-routering"><div class="header-wrapper"><h2 id="x1-handreiking-adressering-en-routering"><bdi class="secno">1. </bdi>Handreiking Adressering en Routering</h2><a class="self-link" href="#handreiking-adressering-en-routering" aria-label="Permalink for Section 1."></a></div>
+<section id="doel-van-de-handreiking"><div class="header-wrapper"><h3 id="x1-1-doel-van-de-handreiking"><bdi class="secno">1.1 </bdi>Doel van de Handreiking</h3><a class="self-link" href="#doel-van-de-handreiking" aria-label="Permalink for Section 1.1"></a></div>
+<p>De handreiking heeft tot doel organisaties een hulpmiddel te bieden hoe om te gaan met adresseren en routeren en het gebruik van het OIN hierbij.</p>
+</section><section id="welke-vragen-worden-beantwoord"><div class="header-wrapper"><h3 id="x1-2-welke-vragen-worden-beantwoord"><bdi class="secno">1.2 </bdi>Welke vragen worden beantwoord</h3><a class="self-link" href="#welke-vragen-worden-beantwoord" aria-label="Permalink for Section 1.2"></a></div>
+<p>Deze handreiking beschrijft wat we verstaan onder adresseren en routeren en op welke manier het OIN hierbij een rol speelt. Verder beschrijven we in detail hoe OIN's en subOIN's gebruikt kunnen worden in een berichtenketen.</p>
+<p>Naast de identificatie&nbsp;van organisaties die niet in aangesloten registers staan, bieden subOIN's ook de mogelijkheid van routeren van berichten door gebruik te maken van fijnmazige identificatie.</p>
+<p>De volgende vragen komen aan de orde:</p>
+<ol>
+<li>Het OIN wordt zowel gebruikt voor authenticatie als voor adressering.</li>
+</ol>
+<ul>
+<li><p>Hoe werkt dit precies?</p>
+</li>
+<li><p>Op welke plek wordt het OIN gebruikt?</p>
+</li>
+<li><p>Kunnen er verschillende OIN's gebruikt worden?</p>
+</li>
+</ul>
+<ol start="2">
+<li><p>Wanneer is het aan te raden om subOIN's te gebruiken voor adresseren en routeren?</p>
+</li>
+<li><p>Hoe werkt routeren en adresseren?</p>
+</li>
+</ol>
+<ul>
+<li><p>Wat zijn de regels die partijen met elkaar moeten afspreken over het routeren en adresseren van berichten?</p>
+</li>
+<li><p>Wat is de rol van certificaten bij routeren en adresseren</p>
+</li>
+</ul>
+</section><section id="welke-onderdelen-worden-besproken"><div class="header-wrapper"><h3 id="x1-3-welke-onderdelen-worden-besproken"><bdi class="secno">1.3 </bdi>Welke onderdelen worden besproken</h3><a class="self-link" href="#welke-onderdelen-worden-besproken" aria-label="Permalink for Section 1.3"></a></div>
+<ul>
+<li><p>Berichtenverkeer (bevragingen en meldingen)</p>
+</li>
+<li><p>Cloud / SAAS partijen</p>
+</li>
+</ul>
+</section><section id="omgeving-waar-de-handreiking-voor-geldt"><div class="header-wrapper"><h3 id="x1-4-omgeving-waar-de-handreiking-voor-geldt"><bdi class="secno">1.4 </bdi>Omgeving waar de handreiking voor geldt</h3><a class="self-link" href="#omgeving-waar-de-handreiking-voor-geldt" aria-label="Permalink for Section 1.4"></a></div>
+<p><em>Routeren</em> van berichten is nodig als een ontvanger van een bericht meerdere endpoints of knooppunten kent. De ontvanger bezit één of meerdere knooppunten waarop berichten voor de organisatie -en zijn onderdelen- binnenkomen. Op basis van attributen op de envelop – en eventueel de inhoud – van het bericht routeert het knooppunt het bericht naar het juiste endpoint. Een knooppunt kan ook op basis van de kenmerken van de <em>zender</em> een bericht routeren naar het juiste endpoint. In beide gevallen maakt de ontvanger gebruik van een routeringstabel.</p>
+<p>Organisaties die meerdere berichten-endpoints hebben, kunnen ervoor kiezen om een subOIN aan te maken, om deze endpoints uniek te kunnen identificeren. De zender moet dit subOIN dan gebruiken in het bericht dat wordt verstuurd naar de ontvanger. Een zender kan zelf ook gebruik maken van subOIN's, bijvoorbeeld om een organisatieonderdeel of een door haar beheerde voorziening te identificeren.</p>
+<p>Als ontvanger of zender geen gebruik willen maken van subOIN's moet de <em>afzender</em> en/of het <em>adres</em> van het endpoint uit andere kenmerken van het bericht worden afgeleid.&nbsp;</p>
+</section><section id="beschrijving-van-de-werking"><div class="header-wrapper"><h3 id="x1-5-beschrijving-van-de-werking"><bdi class="secno">1.5 </bdi>Beschrijving van de werking</h3><a class="self-link" href="#beschrijving-van-de-werking" aria-label="Permalink for Section 1.5"></a></div>
+<section id="x1-het-oin-wordt-zowel-gebruikt-voor-authenticatie-als-voor-adressering"><div class="header-wrapper"><h4 id="x1-5-1-1-het-oin-wordt-zowel-gebruikt-voor-authenticatie-als-voor-adressering"><bdi class="secno">1.5.1 </bdi>1. Het OIN wordt zowel gebruikt voor authenticatie als voor adressering.</h4><a class="self-link" href="#x1-het-oin-wordt-zowel-gebruikt-voor-authenticatie-als-voor-adressering" aria-label="Permalink for Section 1.5.1"></a></div>
+<ul>
+<li><em>Hoe werkt dit precies?</em></li>
+</ul>
+<p>Voor de authenticatie van de zender en de ontvanger in het berichtenverkeer tussen overheidspartijen worden PKIo-certificaten gebruikt. Het PKIo-certificaat wordt zowel gebruikt om het transport van de berichten veilig te laten verlopen (gebruikmakend van het TLS-protocol) als voor authenticatie. Bij het gebruik van Digikoppeling wordt tweezijdige authenticatie vereist. Zender en ontvanger moeten elkaars certificaat vertrouwen en elkaars publieke TLS-sleutel kennen.</p>
+<p>Naast het OIN is ook het endpoint van belang. Het endpoint is de URL van de service die benaderd wordt. In Digikoppeling ebMS wordt het endpoint in het CPA vastgelegd. In WUS is dit onderdeel van het WS-addressing deel in de SOAP-header. Voor asynchroon verkeer (ebMS) moet ook de endpoint van de zender bekend zijn. Voor REST API-aanroepen wordt het endpoint in de URL van de HTTP-actie aangegeven.</p>
+<p>Adresseren en Routeren vindt plaats op het niveau van de berichtheader (en eventueel berichtbody).&nbsp;Voor het routeren kan gebruik gemaakt worden van het OIN, het opgegeven endpointadres of beide.&nbsp;</p>
+<ul>
+<li><em>Op welke plek wordt het OIN gebruikt?</em></li>
+</ul>
+<p>Een PKIo-certificaat dat gebruikt wordt voor berichtenuitwisseling met Digikoppeling bevat het OIN van de organisatie of organisatieonderdeel. Dit OIN wordt opgeslagen in het <code class="code">Subject.SerialNumber</code> veld van het certificaat.</p>
+<p>De Digikoppelingstandaard beschrijft per Profiel – ebMS, WUS of REST API – op welke manier het OIN gebruikt moet worden.</p>
+<ol>
+<li><p>ebMS: OIN van zender en ontvanger worden vastgelegd als PartyId in het&nbsp;CPA (berichtencontract). De ebMS-berichtenheader wordt gegenereerd op basis van de CPA.</p>
+</li>
+<li><p>WUS: in de querystring van de endpointuri in de SOAP ws-addressing header</p>
+</li>
+<li><p>REST API: in de querystring van de HTTP-operatie (of in het bericht)</p>
+</li>
+</ol>
+<blockquote>
+<p>Zender en ontvanger kunnen hier worden vastgelegd met een "to" en een "from" parameter, dit maakt het mogelijk om ook bij gebruik van intermediairs aan te geven wat de oorspronkelijke afzender - of eindbestemming is  .  In <a href="#bijlage-1-voorbeeld-van-routering">Bijlage 1</a> vindt u een uitgebreid voorbeeld.</p>
+</blockquote>
+<ul>
+<li><em>Kunnen er in certificaat en header verschillende OIN's gebruikt worden?</em></li>
+</ul>
+<p>In het meest eenvoudige geval wisselen organisaties onderling berichten uit zonder tussenkomst van intermediairs of knooppunten. In dat geval is het OIN in het certificaat identiek aan het OIN gebruikt in de berichtenheader.</p>
+<p>Indien gebruik wordt gemaakt van knooppunten (of SAAS)&nbsp; zijn er meerdere varianten mogelijk. Het berichtenverkeer van een organisatie die een SAAS-oplossing gebruikt kan gebruikmaken van het certificaat van die SAAS-provider of bij de SAAS-provider een eigen certificaat deponeren, zodat de SAAS-provider het juiste certificaat selecteert als een bericht namens de zender wordt gestuurd.</p>
+<p>Een vergelijkbare situatie treedt op als een bericht naar een knooppunt wordt verstuurd, die het ontvangen bericht doorrouteert naar de uiteindelijke bestemming.</p>
+<p>Het OIN dat wordt gebruikt in de berichtenheader kan afwijken van het OIN in het certificaat. In het geval dat een bericht wordt gestuurd naar een knooppunt dat het bericht verder doorstuurt binnen de eigen of een andere organisatie kan dit OIN uit de berichtenheader wordt gebruikt door het knooppunt als middel om het bericht te routeren. Naast routeren op basis van het OIN wordt ook gebruik gemaakt  van endpointadressen.</p>
+<p><strong>Routeringstabel</strong></p>
+<p>In veel gevallen wordt door het knooppunt een routeringstabel (of&nbsp; mappingtabel) gebruikt. In de tabel wordt beschreven naar welk endpointadres een bericht wordt verstuurd op basis van het TO-adres dat in het bericht is vermeld.</p>
+</section><section id="x2-wanneer-is-het-aan-te-raden-om-suboin-s-te-gebruiken-voor-adresseren-en-routeren"><div class="header-wrapper"><h4 id="x1-5-2-2-wanneer-is-het-aan-te-raden-om-suboin-s-te-gebruiken-voor-adresseren-en-routeren"><bdi class="secno">1.5.2 </bdi>2. Wanneer is het aan te raden om subOIN's te gebruiken voor adresseren en routeren?</h4><a class="self-link" href="#x2-wanneer-is-het-aan-te-raden-om-suboin-s-te-gebruiken-voor-adresseren-en-routeren" aria-label="Permalink for Section 1.5.2"></a></div>
+<p>Over het gebruik van subOIN's voor adresseren en routeren bestaan verschillende opvattingen. Sommige organisaties kennen verschillende digitale postbussen van organisatieonderdelen of voorzieningen en gebruiken subOIN's om deze digitale postbussen te identificeren. Andere organisaties willen het gebruik van OIN reserveren om Organisaties te identificeren en gebruiken voor het routeren van berichten binnen de organisatie ander kenmerken van het bericht. Het OIN-stelsel maakt het eenvoudiger om subOIN's aan te maken, maar legt de partijen geen verplicht patroon op hoe subOIN's&nbsp;gebruikt kunnen worden ten behoeve van adresseren en routeren. Partijen die met elkaar berichten uitwisselen zullen over het gebruik van subOIN's onderling afspraken moeten maken.</p>
+</section><section id="x3-wat-zijn-de-regels-die-partijen-met-elkaar-moeten-afspreken-over-het-routeren-en-adresseren-van-berichten"><div class="header-wrapper"><h4 id="x1-5-3-3-wat-zijn-de-regels-die-partijen-met-elkaar-moeten-afspreken-over-het-routeren-en-adresseren-van-berichten"><bdi class="secno">1.5.3 </bdi>3. Wat zijn de regels die partijen met elkaar moeten afspreken over het routeren en adresseren van berichten?</h4><a class="self-link" href="#x3-wat-zijn-de-regels-die-partijen-met-elkaar-moeten-afspreken-over-het-routeren-en-adresseren-van-berichten" aria-label="Permalink for Section 1.5.3"></a></div>
+<p>In deze handreiking zijn hieronder een aantal scenario's uitgewerkt: (zie ook bijlage 1).</p>
+<p><figure id="fig-scenario-s"><img src="media/adressering.png" alt="adressering" title="Scenario's"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">Scenario's</span></figcaption></figure></p>
+<table class="simple">
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>(Sub)OIN</th>
+<th>(Sub)OIN</th>
+<th>(Sub)OIN</th>
+<th>(Sub)OIN</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Nr</td>
+<td>Type</td>
+<td>Verzender</td>
+<td>Knooppunt A</td>
+<td>Knooppunt B</td>
+<td>Ontvanger</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>*1</td>
+<td>*2</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Direct</td>
+<td>123</td>
+<td></td>
+<td></td>
+<td>456</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Via alleen A (eigen OIN A)</td>
+<td>123</td>
+<td>111</td>
+<td>nvt</td>
+<td>456</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Via alleen A (A gebruikt OIN verzender)</td>
+<td>123</td>
+<td>123</td>
+<td>nvt</td>
+<td>456</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Via alleen B (eigen OIN B)</td>
+<td>123</td>
+<td>nvt</td>
+<td>222</td>
+<td>456</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Via alleen B (B gebruikt OIN ontvanger)</td>
+<td>123</td>
+<td>nvt</td>
+<td>456</td>
+<td>456</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Via A-B (eigen OIN A,B)</td>
+<td>123</td>
+<td>111</td>
+<td>222</td>
+<td>456</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Via A-B (gebruikt OIN verzender, ontvanger)</td>
+<td>123</td>
+<td>123</td>
+<td>456</td>
+<td>456</td>
+</tr>
+</tbody></table>
+<p>*1 Knooppunt A verzendt 'namens' verzender</p>
+<p>*2 Knooppunt B ontvangt 'namens' ontvanger</p>
+<section id="x1-direct"><div class="header-wrapper"><h5 id="x1-5-3-1-1-direct"><bdi class="secno">1.5.3.1 </bdi><em>1 Direct</em></h5><a class="self-link" href="#x1-direct" aria-label="Permalink for Section 1.5.3.1"></a></div>
+<p>In deze situatie gebruikt de verzender het eigen (Sub)OIN als afzender en het (Sub)OIN van de ontvanger als bestemming. Identificatie en Authenticatie geschiedt op basis van de beide TLS-certificaten. Signing en encryptie kan gebruikt worden voor end-to-end beveiliging.</p>
+</section><section id="x2-via-knooppunt-a-waarbij-eigen-oin-van-a-gebruikt-wordt-voor-tls-verbindingen-met-verzender-en-ontvanger"><div class="header-wrapper"><h5 id="x1-5-3-2-2-via-knooppunt-a-waarbij-eigen-oin-van-a-gebruikt-wordt-voor-tls-verbindingen-met-verzender-en-ontvanger"><bdi class="secno">1.5.3.2 </bdi><em>2 Via Knooppunt A (waarbij eigen OIN van A gebruikt wordt voor TLS-verbindingen met verzender en ontvanger)</em></h5><a class="self-link" href="#x2-via-knooppunt-a-waarbij-eigen-oin-van-a-gebruikt-wordt-voor-tls-verbindingen-met-verzender-en-ontvanger" aria-label="Permalink for Section 1.5.3.2"></a></div>
+<p>In deze situatie verloopt de communicatie via een knooppunt A.</p>
+<p>Wanneer A een SAAS-partij is, is een aandachtspunt bij de communicatie van verzender naar de SAAS-partij de beveiliging van dit traject (wanneer dit niet via Digikoppeling loopt).</p>
+<p>Bij de communicatie van SAAS-partij naar ontvanger zijn de afspraken rond machtiging relevant. In deze situatie gebruikt de SAAS-partij het eigen OIN in het TLS-certificaat. De ontvanger zal dit moeten accepteren en de oorspronkelijke verzender afleiden uit de afspraken, de bericht header of inhoud of op basis van end-to-end signing met een signingcertificaat van de verzender.</p>
+</section><section id="x3-via-knooppunt-a-waarbij-a-sub-oin-van-verzender-gebruikt-voor-tls-verbindingen-met-ontvanger"><div class="header-wrapper"><h5 id="x1-5-3-3-3-via-knooppunt-a-waarbij-a-sub-oin-van-verzender-gebruikt-voor-tls-verbindingen-met-ontvanger"><bdi class="secno">1.5.3.3 </bdi><em>3 Via Knooppunt A (waarbij A (Sub)OIN van verzender gebruikt voor TLS-verbindingen met ontvanger)</em></h5><a class="self-link" href="#x3-via-knooppunt-a-waarbij-a-sub-oin-van-verzender-gebruikt-voor-tls-verbindingen-met-ontvanger" aria-label="Permalink for Section 1.5.3.3"></a></div>
+<p>In deze situatie wordt een knooppunt (bijv. SAAS-partij) gemachtigd om namens verzender te communiceren door het verstrekken van een certificaat van de verzender aan deze partij. De verzender kan dit certificaat intrekken wanneer het knooppunt niet langer is toegestaan om dit te gebruiken. Aandachtspunt is het certificaat d.m.v. subOIN fijnmazig te definiëren om misbruik uit te sluiten.</p>
+</section><section id="x4-via-knooppunt-b-waarbij-b-eigen-oin-van-b-gebruikt-voor-tls-verbindingen-met-verzender"><div class="header-wrapper"><h5 id="x1-5-3-4-4-via-knooppunt-b-waarbij-b-eigen-oin-van-b-gebruikt-voor-tls-verbindingen-met-verzender"><bdi class="secno">1.5.3.4 </bdi><em>4 Via Knooppunt B (waarbij B eigen OIN van B gebruikt voor TLS-verbindingen met verzender)</em></h5><a class="self-link" href="#x4-via-knooppunt-b-waarbij-b-eigen-oin-van-b-gebruikt-voor-tls-verbindingen-met-verzender" aria-label="Permalink for Section 1.5.3.4"></a></div>
+<p>In deze situatie is B gemachtigd om berichten te ontvangen en door te geven aan ontvanger;</p>
+<p>Hierbij gelden vergelijkbare aandachtspunten als bij punt 2.</p>
+</section><section id="x5-via-knooppunt-b-waarbij-b-sub-oin-van-ontvanger-gebruikt-voor-tls-verbindingen-met-verzender"><div class="header-wrapper"><h5 id="x1-5-3-5-5-via-knooppunt-b-waarbij-b-sub-oin-van-ontvanger-gebruikt-voor-tls-verbindingen-met-verzender"><bdi class="secno">1.5.3.5 </bdi><em>5 Via Knooppunt B (waarbij B (Sub)OIN van ontvanger gebruikt voor TLS-verbindingen met verzender)</em></h5><a class="self-link" href="#x5-via-knooppunt-b-waarbij-b-sub-oin-van-ontvanger-gebruikt-voor-tls-verbindingen-met-verzender" aria-label="Permalink for Section 1.5.3.5"></a></div>
+<p>In deze situatie wordt een knooppunt (bijv. SAAS-partij) gemachtigd om namens ontvanger te communiceren door het verstrekken van een certificaat van de ontvanger aan deze partij.</p>
+<p>Hierbij gelden vergelijkbare aandachtspunten als bij punt 3.</p>
+</section><section id="x6-via-knooppunt-a-en-b-met-gebruik-van-eigen-oin-a-b-voor-tls-verbindingen"><div class="header-wrapper"><h5 id="x1-5-3-6-6-via-knooppunt-a-en-b-met-gebruik-van-eigen-oin-a-b-voor-tls-verbindingen"><bdi class="secno">1.5.3.6 </bdi><em>6 Via Knooppunt A en B (met gebruik van eigen OIN A,B voor TLS verbindingen)</em></h5><a class="self-link" href="#x6-via-knooppunt-a-en-b-met-gebruik-van-eigen-oin-a-b-voor-tls-verbindingen" aria-label="Permalink for Section 1.5.3.6"></a></div>
+<p>A en B maken verbinding via het eigen TLS-certificaat. Aandachtspunt is daarom het machtigen van deze partijen om te acteren in de keten. Routering kan op basis van afspraken, de berichtheader of berichtinhoud of op basis van end-to-end signing met een signing certificaat van de verzender/ontvanger. Specifiek is dat ook Knooppunt A en B elkaar moeten 'vertrouwen' in de communicatie.</p>
+</section><section id="x7-via-knooppunt-a-en-b-met-gebruik-van-oin-verzender-ontvanger-voor-tls-verbindingen"><div class="header-wrapper"><h5 id="x1-5-3-7-7-via-knooppunt-a-en-b-met-gebruik-van-oin-verzender-ontvanger-voor-tls-verbindingen"><bdi class="secno">1.5.3.7 </bdi><em>7 Via Knooppunt A en B (met gebruik van OIN verzender, ontvanger voor TLS verbindingen)</em></h5><a class="self-link" href="#x7-via-knooppunt-a-en-b-met-gebruik-van-oin-verzender-ontvanger-voor-tls-verbindingen" aria-label="Permalink for Section 1.5.3.7"></a></div>
+<p>In deze situatie worden knooppunten (bijv. SAAS-partijen) gemachtigd om namens ontvanger te communiceren door het verstrekken van een certificaat van de ontvanger aan deze partij. Hierbij gelden vergelijkbare aandachtspunten als bij punt 3.</p>
+</section></section></section><section id="bijlage-1-voorbeeld-van-routering"><div class="header-wrapper"><h3 id="x1-6-bijlage-1-voorbeeld-van-routering"><bdi class="secno">1.6 </bdi>Bijlage 1. Voorbeeld van routering</h3><a class="self-link" href="#bijlage-1-voorbeeld-van-routering" aria-label="Permalink for Section 1.6"></a></div>
+<p>In deze handreiking hebben we een aantal scenario's uitgewerkt. De scenario's zijn hier in detail uitgewerkt.</p>
+<section id="voorbeeldsituatie-zowel-zender-als-ontvanger-maken-gebruik-van-suboin-s"><div class="header-wrapper"><h4 id="x1-6-1-voorbeeldsituatie-zowel-zender-als-ontvanger-maken-gebruik-van-suboin-s"><bdi class="secno">1.6.1 </bdi>Voorbeeldsituatie: zowel zender als ontvanger maken gebruik van subOIN's</h4><a class="self-link" href="#voorbeeldsituatie-zowel-zender-als-ontvanger-maken-gebruik-van-suboin-s" aria-label="Permalink for Section 1.6.1"></a></div>
+<p><figure id="fig-adressering"><img src="media/OIN.scenario1.svg" alt="adressering - zowel zender als ontvanger maken gebruik van subOIN's" title="Adressering"><figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title">Adressering</span></figcaption></figure></p>
+<table class="simple">
+<thead>
+<tr>
+<th>1</th>
+<th>Zendende Partij</th>
+<th>Ontvangende  Partij</th>
+<th>Via</th>
+<th>OIN in Certificaat Zender (tbv TLS)</th>
+<th>OIN in Certificaat Ontvanger (tbv TLS)</th>
+<th>OIN in HEADER FROM</th>
+<th>OIN in HEADER TO</th>
+<th>Endpoint Zender</th>
+<th>Endpoint Ontvanger</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Organisatie X</td>
+<td>Organisatie Y</td>
+<td></td>
+<td>123</td>
+<td>567</td>
+<td>123</td>
+<td>567</td>
+<td>x.nl</td>
+<td>y.nl</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Organisatie Onderdeel X.O</td>
+<td>Organisatie Y</td>
+<td></td>
+<td>123 of 789</td>
+<td>567</td>
+<td>789</td>
+<td>567</td>
+<td>o.x.nl</td>
+<td>y.nl</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Organisatie X</td>
+<td>Organisatie Onderdeel Y.O</td>
+<td></td>
+<td>123</td>
+<td>567 of 890</td>
+<td>123</td>
+<td>890</td>
+<td>x.nl</td>
+<td>o.y.nl</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Organisatie X</td>
+<td>Organisatie Y</td>
+<td>Knooppunt Y</td>
+<td>123</td>
+<td>567 of 345</td>
+<td>123</td>
+<td>567 of 345</td>
+<td>x.nl</td>
+<td>y.nl of ky.nl</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Organisatie X</td>
+<td>Organisatie Y</td>
+<td>Knooppunt X</td>
+<td>123 of 234</td>
+<td>567</td>
+<td>123</td>
+<td>567</td>
+<td>kx.nl</td>
+<td>y.nl</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Organisatie X</td>
+<td>Organisatie Y</td>
+<td>Knooppunt X en Knooppunt Y</td>
+<td>12of 2343</td>
+<td>567 of 345</td>
+<td>123</td>
+<td>567</td>
+<td>kx.nl</td>
+<td>ky.nl</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Organisatie Onderdeel X.O</td>
+<td>Organisatie Y</td>
+<td>Knooppunt X en Knooppunt Y</td>
+<td>123 of 789 of 234</td>
+<td>567 of 345</td>
+<td>789</td>
+<td>567</td>
+<td>o.kx.nl</td>
+<td>ky.nl</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Organisatie Onderdeel X.O</td>
+<td>Organisatie Onderdeel Y.O</td>
+<td>Knooppunt X en Knooppunt Y</td>
+<td>123 of 789, of 234</td>
+<td>567, of 345, of 890</td>
+<td>789</td>
+<td>890</td>
+<td>o.kx.nl</td>
+<td>o.y.nl</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Organisatie Onderdeel X.O</td>
+<td>Organisatie Onderdeel Y.O</td>
+<td></td>
+<td>123 of 789</td>
+<td>567, of 890</td>
+<td>789</td>
+<td>890</td>
+<td>o.x.nl</td>
+<td>o.y.nl</td>
+</tr>
+</tbody></table>
+</section></section><section id="bijlage-2-digipoort"><div class="header-wrapper"><h3 id="x1-7-bijlage-2-digipoort"><bdi class="secno">1.7 </bdi>BIJLAGE 2. Digipoort</h3><a class="self-link" href="#bijlage-2-digipoort" aria-label="Permalink for Section 1.7"></a></div>
+<p><strong>Digipoort -- Routeermechanisme (vereenvoudigd)</strong></p>
+<p><figure id="fig-digipoort"><img src="media/Digipoort.png" alt="Digipoort" title="Digipoort"><figcaption>Figuur <bdi class="figno">3</bdi> <span class="fig-title">Digipoort</span></figcaption></figure></p>
+<p><strong>Routeertabel</strong></p>
+<table class="simple">
+<thead>
+<tr>
+<th>naam</th>
+<th>identiteit</th>
+<th>berichtsoort</th>
+<th>intermediair</th>
+<th>endpoint ontvanger</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Overheidspartij A</td>
+<td>OIN:123</td>
+<td>factuur</td>
+<td></td>
+<td>oA.nl</td>
+</tr>
+<tr>
+<td>Overheidspartij B</td>
+<td>OIN:456</td>
+<td>factuur</td>
+<td>OIN: 222</td>
+<td></td>
+</tr>
+<tr>
+<td>Intermediair A</td>
+<td>OIN:222</td>
+<td>factuur</td>
+<td></td>
+<td>ia.nl</td>
+</tr>
+<tr>
+<td>Accountant</td>
+<td>KvK:333</td>
+<td>order</td>
+<td></td>
+<td><a href="mailto:x@ac.nl">x@ac.nl</a></td>
+</tr>
+<tr>
+<td>Bedrijf A</td>
+<td>BTW:123</td>
+<td>order</td>
+<td>KvK:333</td>
+<td></td>
+</tr>
+<tr>
+<td>Bedrijf B</td>
+<td>KvK:444</td>
+<td>order</td>
+<td>KvK:333</td>
+<td></td>
+</tr>
+<tr>
+<td>Bedrijf C</td>
+<td>KvK:777</td>
+<td>order</td>
+<td></td>
+<td>bC.nl</td>
+</tr>
+</tbody></table>
+<p><strong>OIN matrix (al het verkeer loopt over Digipoort)</strong></p>
+<table class="simple">
+<thead>
+<tr>
+<th>#</th>
+<th>Zendende</th>
+<th>Ontvan-gende</th>
+<th>Bericht</th>
+<th>ID in PKIo Zender è Digipoort</th>
+<th>ID&nbsp; in PKIo&nbsp; Ontvanger ç Digipoort</th>
+<th>ID Belang-hebbende (bericht)</th>
+<th>ID&nbsp; Ont-vanger (bericht)</th>
+<th>Endpoint</th>
+<th>Endpoint</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Partij</td>
+<td>Partij</td>
+<td>type</td>
+<td>Zender</td>
+<td>Ontvanger</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>OIN:123</td>
+<td>BTW:123</td>
+<td>order</td>
+<td>OIN:123</td>
+<td>KvK:333</td>
+<td>OIN:123</td>
+<td>BTW:123</td>
+<td>oA.nl</td>
+<td><a href="mailto:x@ac.nl">x@ac.nl</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>BTW:123</td>
+<td>OIN:123</td>
+<td>factuur</td>
+<td>KvK:333</td>
+<td>OIN:123</td>
+<td>BTW:123</td>
+<td>OIN:123</td>
+<td><a href="mailto:x@ac.nl">x@ac.nl</a></td>
+<td>oA.nl</td>
+</tr>
+<tr>
+<td>3</td>
+<td>OIN:456</td>
+<td>KvK:444</td>
+<td>order</td>
+<td>OIN:456</td>
+<td>KVK:333</td>
+<td>OIN:123</td>
+<td>KvK:444</td>
+<td>oB.nl</td>
+<td><a href="mailto:x@ac.nl">x@ac.nl</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>KvK:444</td>
+<td>OIN:456</td>
+<td>factuur</td>
+<td>KvK:333</td>
+<td>OIN:222</td>
+<td>KvK:444</td>
+<td>OIN:456</td>
+<td><a href="mailto:x@ac.nl">x@ac.nl</a></td>
+<td>ia.nl</td>
+</tr>
+<tr>
+<td>5</td>
+<td>OIN:123</td>
+<td>KvK:777</td>
+<td>order</td>
+<td>OIN:123</td>
+<td>KvK:777</td>
+<td>OIN:123</td>
+<td>KvK:777</td>
+<td>oA.nl</td>
+<td>bC.nl</td>
+</tr>
+<tr>
+<td>6</td>
+<td>KvK:777</td>
+<td>OIN:123</td>
+<td>factuur</td>
+<td>KvK:777</td>
+<td>OIN:123</td>
+<td>KvK:777</td>
+<td>OIN:123</td>
+<td>bC.nl</td>
+<td>oA.nl</td>
+</tr>
+</tbody></table>
+<p>Aandachtspunten:</p>
+<ul>
+<li><p>Het OIN in een certificaat is niet relevant voor TLS. Alleen de trustconfiguratie speelt een rol.</p>
+</li>
+<li><p>Een Organisatie Onderdeel is een uniek te identificeren systeem binnen de organisatie.</p>
+</li>
+</ul>
+</section></section>
+  
+  <section id="tof"><div class="header-wrapper"><h2 id="x2-lijst-met-figuren"><bdi class="secno">2. </bdi>Lijst met figuren</h2><a class="self-link" href="#tof" aria-label="Permalink for Section 2."></a></div><ul class="tof">
+        <li class="tofline">
+    <a class="tocxref" href="#fig-scenario-s">Figuur <bdi class="figno">1</bdi> <span class="fig-title">Scenario's</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-adressering">Figuur <bdi class="figno">2</bdi> <span class="fig-title">Adressering</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-digipoort">Figuur <bdi class="figno">3</bdi> <span class="fig-title">Digipoort</span></a>
+  </li>
+      </ul></section>
+  
+
+
+
+<p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(setupPanel);
+} else {
+  setupPanel();
+}
+
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
+  /** @type {HTMLElement} */
+  let panel = null;
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    const action = deriveAction(event);
+
+    switch (action) {
+      case "show": {
+        hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = target.closest("dfn, .index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        const coords = deriveCoordinates(event);
+        displayPanel(dfn, panel, coords);
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        panel = null;
+        break;
+      }
+    }
+  };
+}
+
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
+  }
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not([data-cite]), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
+    if (hitALink) {
+      return target.classList.contains("self-link") ? "hide" : "dock";
+    }
+    const panel = target.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : "none";
+  }
+  if (document.querySelector(".dfn-panel:not([hidden])")) {
+    return "hide";
+  }
+  return "none";
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a[href]");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const [record] = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  if (!panel) return;
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
