@@ -59,6 +59,8 @@ Klik op het pad om naar de pagina op logius.nl te gaan. Klik op :scroll: om de p
    - [dk/beveilig/1.4/](https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/1.4/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/beveilig/1.4/)
    - [dk/beveilig/def-st-beveilig-20200901/](https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/def-st-beveilig-20200901/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/beveilig/def-st-beveilig-20200901/)
    - [dk/beveilig/def-st-beveilig-20210201/](https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/def-st-beveilig-20210201/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/beveilig/def-st-beveilig-20210201/)
+- [dk/bpadres/](https://gitdocumentatie.logius.nl/publicatie/dk/bpadres/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/bpadres/)
+   - [dk/bpadres/1.0/](https://gitdocumentatie.logius.nl/publicatie/dk/bpadres/1.0/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/bpadres/1.0/)
 - [dk/bpebms/](https://gitdocumentatie.logius.nl/publicatie/dk/bpebms/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/bpebms/)
    - [dk/bpebms/3.2/](https://gitdocumentatie.logius.nl/publicatie/dk/bpebms/3.2/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/bpebms/3.2/)
    - [dk/bpebms/3.2.1/](https://gitdocumentatie.logius.nl/publicatie/dk/bpebms/3.2.1/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/bpebms/3.2.1/)
