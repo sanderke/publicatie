@@ -116,6 +116,11 @@ Klik op het pad om naar de pagina op logius.nl te gaan. Klik op :scroll: om de p
    - [dk/wus/3.8.1/](https://gitdocumentatie.logius.nl/publicatie/dk/wus/3.8.1/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/wus/3.8.1/)
    - [dk/wus/def-st-wus-20201006/](https://gitdocumentatie.logius.nl/publicatie/dk/wus/def-st-wus-20201006/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/wus/def-st-wus-20201006/)
 
+### ep
+
+- [ep/ohnl-factuur-akkoord/](https://gitdocumentatie.logius.nl/publicatie/ep/ohnl-factuur-akkoord/) [:scroll:](https://logius-standaarden.github.io/publicatie/ep/ohnl-factuur-akkoord/)
+   - [ep/ohnl-factuur-akkoord/0.0.1/](https://gitdocumentatie.logius.nl/publicatie/ep/ohnl-factuur-akkoord/0.0.1/) [:scroll:](https://logius-standaarden.github.io/publicatie/ep/ohnl-factuur-akkoord/0.0.1/)
+
 ### notificatieservices
 
 - [notificatieservices/CloudEvents-NL/](https://gitdocumentatie.logius.nl/publicatie/notificatieservices/CloudEvents-NL/) [:scroll:](https://logius-standaarden.github.io/publicatie/notificatieservices/CloudEvents-NL/)
