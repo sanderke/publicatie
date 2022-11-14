@@ -39,6 +39,7 @@ Klik op het pad om naar de pagina op logius.nl te gaan. Klik op :scroll: om de p
 ### dk
 
 - [dk/actueel/](https://gitdocumentatie.logius.nl/publicatie/dk/actueel/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/actueel/)
+   - [dk/actueel/1.10/](https://gitdocumentatie.logius.nl/publicatie/dk/actueel/1.10/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/actueel/1.10/)
    - [dk/actueel/1.7/](https://gitdocumentatie.logius.nl/publicatie/dk/actueel/1.7/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/actueel/1.7/)
    - [dk/actueel/1.8/](https://gitdocumentatie.logius.nl/publicatie/dk/actueel/1.8/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/actueel/1.8/)
    - [dk/actueel/1.9.0/](https://gitdocumentatie.logius.nl/publicatie/dk/actueel/1.9.0/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/actueel/1.9.0/)
