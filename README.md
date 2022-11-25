@@ -128,4 +128,3 @@ Klik op het pad om naar de pagina op logius.nl te gaan. Klik op :scroll: om de p
 
 - [notificatieservices/CloudEvents-NL/](https://gitdocumentatie.logius.nl/publicatie/notificatieservices/CloudEvents-NL/) [:scroll:](https://logius-standaarden.github.io/publicatie/notificatieservices/CloudEvents-NL/)
    - [notificatieservices/CloudEvents-NL/0.3/](https://gitdocumentatie.logius.nl/publicatie/notificatieservices/CloudEvents-NL/0.3/) [:scroll:](https://logius-standaarden.github.io/publicatie/notificatieservices/CloudEvents-NL/0.3/)
-   - [notificatieservices/CloudEvents-NL/1.0/](https://gitdocumentatie.logius.nl/publicatie/notificatieservices/CloudEvents-NL/1.0/) [:scroll:](https://logius-standaarden.github.io/publicatie/notificatieservices/CloudEvents-NL/1.0/)
