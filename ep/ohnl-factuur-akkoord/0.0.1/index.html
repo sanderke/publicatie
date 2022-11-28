@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="nl"><head>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
-<meta name="generator" content="ReSpec 32.1.10 Logius profile 20220628">
+<meta name="generator" content="ReSpec 32.1.10">
 <style>
 .issue-label{text-transform:initial}
 .warning>p:first-child{margin-top:0}
@@ -120,7 +120,7 @@ ul.index code{color:inherit}
 #index-defined-here .print-only{display:initial}
 }
 </style>
-<meta name="description" content="Tekst">
+<meta name="description" content="Dit is de samenvattende tekst.">
 <style>
 .hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
 .hljs-comment,.hljs-quote{color:#717277;font-style:italic}
@@ -144,11 +144,11 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 </style>
 <script id="initialUserConfig" type="application/json">{
   "nl_organisationName": "Logius",
-  "nl_organisationStylesURL": "https://publicatie.centrumvoorstandaarden.nl/respec/style/",
+  "nl_organisationStylesURL": "https://gitdocumentatie.logius.nl/publicatie/respec/style/",
   "nl_organisationPrefix": "LS-",
-  "nl_organisationPublishURL": "https://publicatie.centrumvoorstandaarden.nl/",
+  "nl_organisationPublishURL": "https://gitdocumentatie.logius.nl/publicatie/",
   "nl_logo": {
-    "src": "https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg",
+    "src": "https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg",
     "alt": "Logius",
     "id": "Logius",
     "height": 77,
@@ -156,66 +156,72 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     "url": "https://www.logius.nl/standaarden"
   },
   "localBiblio": {
-    "SemVer": {
-      "href": "https://semver.org",
-      "title": "Semantic Versioning 2.0.0",
-      "authors": [
-        "T. Preston-Werner"
-      ],
-      "date": "June 2013",
-      "id": "semver"
+    "Logius website": {
+      "href": "https://www.logius.nl/diensten/e-procurement",
+      "title": "Logius e-procurement",
+      "publisher": "Logius",
+      "id": "logius website"
+    },
+    "UBL-OHNL": {
+      "href": "https://logius.nl/diensten/digiinkoop/hoe-werkt-het/ubl-ohnl",
+      "titel": "UBL-OHNL",
+      "publisher": "Logius"
+    },
+    "SETU (HR-XML) - OHNL": {
+      "href": "https://logius.nl/diensten/digiinkoop/hoe-werkt-het/setu-hr-xml-ohnl",
+      "titel": "SETU (HR-XML) - OHNL",
+      "publisher": "Logius"
     }
   },
   "specStatus": "WV",
   "specType": "HR",
   "pubDomain": "ep",
   "shortName": "ohnl-factuur-akkoord",
-  "publishDate": "2022-11-08",
+  "publishDate": "2022-11-28",
   "publishVersion": "0.0.1",
   "title": "OHNL Factuur Akkoord",
   "editors": [
     {
+      "name": "Victor den Toom",
+      "company": "Logius",
+      "companyURL": "https://www.logius.nl"
+    },
+    {
       "name": "Maarten van Bree",
       "company": "Logius",
-      "companyURL": "https://github.com/Logius-standaarden"
+      "companyURL": "https://www.logius.nl"
     }
   ],
   "authors": [
     {
-      "name": "Victor den Toom",
+      "name": "Logius Standaarden - Team e-procurement",
       "company": "Logius",
-      "companyURL": "https://github.com/Logius-standaarden"
+      "companyURL": "https://logius.nl/diensten/e-procurement"
     }
   ],
   "github": "https://github.com/Logius-standaarden/ep-ohnl-factuur-akkoord",
   "addSectionLinks": true,
-  "nl_addReleaseTagTitle": true,
+  "nl_addReleaseTagTitle": false,
   "nl_markdownEmbedImageInFigure": true,
-  "alternateFormats": [
-    {
-      "label": "pdf",
-      "uri": "E-procurement-ohnl-factuur-akkoord.pdf"
-    }
-  ],
-  "publishISODate": "2022-11-08T00:00:00.000Z",
-  "generatedSubtitle": "Werkversie 08 november 2022"
+  "publishISODate": "2022-11-28T00:00:00.000Z",
+  "generatedSubtitle": "Werkversie 28 november 2022"
 }</script>
-<link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/LS-WV.css"></head>
+<link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/LS-WV.css"></head>
 
 <body class="h-entry toc-inline"><div class="head">
-    <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg" width="44">
+    <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">OHNL Factuur Akkoord</h1>
     
     <h2>
       Logius Handreiking<br>
       Werkversie
-      <time class="dt-published" datetime="2022-11-08">08 november 2022</time>
+      <time class="dt-published" datetime="2022-11-28">28 november 2022</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
               <a class="u-url status" href="https://logius-standaarden.github.io/ep-ohnl-factuur-akkoord/">https://logius-standaarden.github.io/ep-ohnl-factuur-akkoord/</a>
             </dd><dt>Laatst gepubliceerde versie:</dt><dd>
-              <a href="https://publicatie.centrumvoorstandaarden.nl/ep/ohnl-factuur-akkoord/">https://publicatie.centrumvoorstandaarden.nl/ep/ohnl-factuur-akkoord/</a>
+              <a href="https://gitdocumentatie.logius.nl/publicatie/ep/ohnl-factuur-akkoord/">https://gitdocumentatie.logius.nl/publicatie/ep/ohnl-factuur-akkoord/</a>
             </dd>
       <dt>Laatste werkversie:</dt><dd><a href="https://logius-standaarden.github.io/ep-ohnl-factuur-akkoord/">https://logius-standaarden.github.io/ep-ohnl-factuur-akkoord/</a></dd>
       
@@ -223,13 +229,15 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       
       
       
-      <dt>Redacteur:</dt>
+      <dt>Redacteurs:</dt>
       <dd class="editor p-author h-card vcard">
-    <span class="p-name fn">Maarten van Bree</span> (<a class="p-org org h-org" href="https://github.com/Logius-standaarden">Logius</a>)
+    <span class="p-name fn">Victor den Toom</span> (<a class="p-org org h-org" href="https://www.logius.nl">Logius</a>)
+  </dd><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Maarten van Bree</span> (<a class="p-org org h-org" href="https://www.logius.nl">Logius</a>)
   </dd>
       
       <dt>Auteur:</dt><dd class="editor p-author h-card vcard">
-    <span class="p-name fn">Victor den Toom</span> (<a class="p-org org h-org" href="https://github.com/Logius-standaarden">Logius</a>)
+    <span class="p-name fn">Logius Standaarden - Team e-procurement</span> (<a class="p-org org h-org" href="https://logius.nl/diensten/e-procurement">Logius</a>)
   </dd>
       <dt>Doe mee:</dt><dd>
     <a href="https://github.com/Logius-standaarden/ep-ohnl-factuur-akkoord/">GitHub Logius-standaarden/ep-ohnl-factuur-akkoord</a>
@@ -243,19 +251,16 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     </dl>
     
     
-    <p lang="en">
-          This document is also available in this non-normative format:
-          <a rel="alternate" href="E-procurement-ohnl-factuur-akkoord.pdf">pdf</a>
-        </p>
+    
     <p class="copyright" lang="en">
           This document is licensed under a
           <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" class="subfoot">Creative Commons Attribution 4.0 License</a>.
         </p>
     <hr title="Separator for header">
   </div>
-  <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Tekst</p>
+  <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Dit is de samenvattende tekst.</p>
 </section>
-  <section id="sotd" class="introductory"><h2>Status van dit document</h2>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het Technisch Overleg goedgekeurde consultatieversie.<p></p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#niet-normatieve-deel"><bdi class="secno">1. </bdi>Niet-normatieve deel</a></li><li class="tocline"><a class="tocxref" href="#meer-inhoud"><bdi class="secno">2. </bdi>Meer inhoud</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#afbeeldingen"><bdi class="secno">2.1 </bdi>Afbeeldingen</a></li><li class="tocline"><a class="tocxref" href="#referenties"><bdi class="secno">2.2 </bdi>Referenties</a></li><li class="tocline"><a class="tocxref" href="#optioneel"><bdi class="secno">2.3 </bdi>Optioneel</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">3. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">4. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Begrippen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Begrippen gedefinieerd door verwijzing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">B.1 </bdi>Normatieve referenties</a></li></ol></li></ol></nav>
+  <section id="sotd" class="introductory"><h2>Status van dit document</h2>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het Technisch Overleg goedgekeurde consultatieversie.<p></p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#niet-normatieve-deel"><bdi class="secno">1. </bdi>Niet-normatieve deel</a></li><li class="tocline"><a class="tocxref" href="#meer-inhoud"><bdi class="secno">2. </bdi>Meer inhoud</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#afbeeldingen"><bdi class="secno">2.1 </bdi>Afbeeldingen</a></li><li class="tocline"><a class="tocxref" href="#links-en-lijsten"><bdi class="secno">2.2 </bdi>Links en lijsten</a></li><li class="tocline"><a class="tocxref" href="#referenties"><bdi class="secno">2.3 </bdi>Referenties</a></li><li class="tocline"><a class="tocxref" href="#optioneel"><bdi class="secno">2.4 </bdi>Optioneel</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">3. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">4. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Begrippen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Begrippen gedefinieerd door verwijzing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">B.1 </bdi>Normatieve referenties</a></li></ol></li></ol></nav>
   <section class="informative" id="niet-normatieve-deel"><div class="header-wrapper"><h2 id="x1-niet-normatieve-deel"><bdi class="secno">1. </bdi>Niet-normatieve deel</h2><a class="self-link" href="#niet-normatieve-deel" aria-label="Permalink for Section 1."></a></div><p><em>Dit onderdeel is niet normatief.</em></p>
 <p>Bijvoorbeeld een introductie.</p>
 <div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="3"><span>Noot</span><span class="issue-label">: index</span></div><p class="">
@@ -264,10 +269,22 @@ Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>index.
   <section id="meer-inhoud"><div class="header-wrapper"><h2 id="x2-meer-inhoud"><bdi class="secno">2. </bdi>Meer inhoud</h2><a class="self-link" href="#meer-inhoud" aria-label="Permalink for Section 2."></a></div>
 <section id="afbeeldingen"><div class="header-wrapper"><h3 id="x2-1-afbeeldingen"><bdi class="secno">2.1 </bdi>Afbeeldingen</h3><a class="self-link" href="#afbeeldingen" aria-label="Permalink for Section 2.1"></a></div>
 <p>Afbeeldingen krijgen een nummer en vermelding in de figurenlijst <a href="#tof" data-matched-text="[[[#tof]]]" class="sec-ref"><bdi class="secno">4. </bdi>Lijst met figuren</a>.</p>
-<p><figure id="fig-onderschrift"><img src="media/Bomos_levenscyclus.svg" alt="Tekstueel alternatief voor toegankelijkheid" title="Onderschrift"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">Onderschrift</span></figcaption></figure></p>
-</section><section id="referenties"><div class="header-wrapper"><h3 id="x2-2-referenties"><bdi class="secno">2.2 </bdi>Referenties</h3><a class="self-link" href="#referenties" aria-label="Permalink for Section 2.2"></a></div>
-<p>Referentie uit locale lijst [<cite><a class="bibref" data-link-type="biblio" href="#bib-semver" title="Semantic Versioning 2.0.0">SemVer</a></cite>]. Lijst staat in <code>organisation-config.js</code>. Alleen referenties die in de tekst voorkomen worden getoond.</p>
-</section><section id="optioneel"><div class="header-wrapper"><h3 id="x2-3-optioneel"><bdi class="secno">2.3 </bdi>Optioneel</h3><a class="self-link" href="#optioneel" aria-label="Permalink for Section 2.3"></a></div>
+<p><figure id="fig-ohnl-factuur-akkoord-in-de-berichtenstroom"><img src="media/factuur-akkoord-ubl.png" alt="Het bericht 'OHNL Factuur Akkoord' in de berichtenstroom" title="'OHNL Factuur Akkoord' in de berichtenstroom"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">'OHNL Factuur Akkoord' in de berichtenstroom</span></figcaption></figure></p>
+</section><section id="links-en-lijsten"><div class="header-wrapper"><h3 id="x2-2-links-en-lijsten"><bdi class="secno">2.2 </bdi>Links en lijsten</h3><a class="self-link" href="#links-en-lijsten" aria-label="Permalink for Section 2.2"></a></div>
+<ol>
+<li>Markdown informatie<ol>
+<li><a href="https://www.markdownguide.org/basic-syntax/" title="Basic syntax van Markdown">Basic syntax van Markdown</a></li>
+<li><a href="https://www.tablesgenerator.com/markdown_tables" title="Handig!">Markdown tables generator</a></li>
+</ol>
+</li>
+<li>Informatie over Logius<ol>
+<li><a href="https://logius.nl/diensten/e-procurement/wat-is-e-procurement">Logius e-procurement</a> "Wat is e-procurement?")</li>
+</ol>
+</li>
+</ol>
+</section><section id="referenties"><div class="header-wrapper"><h3 id="x2-3-referenties"><bdi class="secno">2.3 </bdi>Referenties</h3><a class="self-link" href="#referenties" aria-label="Permalink for Section 2.3"></a></div>
+<p>Referentie uit locale lijst - bijvoorbeeld [<cite><a class="bibref" data-link-type="biblio" href="#bib-logius website" title="Logius e-procurement">Logius website</a></cite>]. Lijst staat in <code>organisation-config.js</code>. Alleen referenties die in de tekst voorkomen worden getoond.</p>
+</section><section id="optioneel"><div class="header-wrapper"><h3 id="x2-4-optioneel"><bdi class="secno">2.4 </bdi>Optioneel</h3><a class="self-link" href="#optioneel" aria-label="Permalink for Section 2.4"></a></div>
 <p>De onderstaande secties (<em>Conformiteit</em> e.d.) zijn optioneel, zie <code>index.html</code>:</p>
 <pre><code aria-busy="false" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"abstract"</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"abstract.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
@@ -285,7 +302,7 @@ Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>index.
   <section id="conformance"><div class="header-wrapper"><h2 id="x3-conformiteit"><bdi class="secno">3. </bdi>Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 3."></a></div><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p></section>
   <section id="tof"><div class="header-wrapper"><h2 id="x4-lijst-met-figuren"><bdi class="secno">4. </bdi>Lijst met figuren</h2><a class="self-link" href="#tof" aria-label="Permalink for Section 4."></a></div><ul class="tof">
         <li class="tofline">
-    <a class="tocxref" href="#fig-onderschrift">Figuur <bdi class="figno">1</bdi> <span class="fig-title">Onderschrift</span></a>
+    <a class="tocxref" href="#fig-ohnl-factuur-akkoord-in-de-berichtenstroom">Figuur <bdi class="figno">1</bdi> <span class="fig-title">'OHNL Factuur Akkoord' in de berichtenstroom</span></a>
   </li>
       </ul></section>
   <section id="index" class="appendix"><div class="header-wrapper"><h2 id="a-index"><bdi class="secno">A. </bdi>Index</h2><a class="self-link" href="#index" aria-label="Permalink for Appendix A."></a></div><section id="index-defined-here">
@@ -304,8 +321,8 @@ Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>index.
 
 <section id="references" class="appendix"><div class="header-wrapper"><h2 id="b-referenties"><bdi class="secno">B. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix B."></a></div><section id="normatieve-referenties">
     <div class="header-wrapper"><h3 id="b-1-normatieve-referenties"><bdi class="secno">B.1 </bdi>Normatieve referenties</h3><a class="self-link" href="#normatieve-referenties" aria-label="Permalink for Appendix B.1"></a></div>
-    <dl class="bibliography"><dt id="bib-semver">[SemVer]</dt><dd>
-      <a href="https://semver.org"><cite>Semantic Versioning 2.0.0</cite></a>. T. Preston-Werner. June 2013. URL: <a href="https://semver.org">https://semver.org</a>
+    <dl class="bibliography"><dt id="bib-logius website">[Logius website]</dt><dd>
+      <a href="https://www.logius.nl/diensten/e-procurement"><cite>Logius e-procurement</cite></a>.  Logius. URL: <a href="https://www.logius.nl/diensten/e-procurement">https://www.logius.nl/diensten/e-procurement</a>
     </dd></dl>
   </section></section><p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Back to Top">↑</abbr></a>
