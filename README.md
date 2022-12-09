@@ -109,6 +109,7 @@ Klik op het pad om naar de pagina op logius.nl te gaan. Klik op :scroll: om de p
    - [dk/restapi/1.0.0/](https://gitdocumentatie.logius.nl/publicatie/dk/restapi/1.0.0/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/restapi/1.0.0/)
    - [dk/restapi/1.0.1/](https://gitdocumentatie.logius.nl/publicatie/dk/restapi/1.0.1/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/restapi/1.0.1/)
    - [dk/restapi/1.1.0/](https://gitdocumentatie.logius.nl/publicatie/dk/restapi/1.1.0/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/restapi/1.1.0/)
+   - [dk/restapi/1.1.1/](https://gitdocumentatie.logius.nl/publicatie/dk/restapi/1.1.1/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/restapi/1.1.1/)
 - [dk/template/](https://gitdocumentatie.logius.nl/publicatie/dk/template/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/template/)
    - [dk/template/0.0.1/](https://gitdocumentatie.logius.nl/publicatie/dk/template/0.0.1/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/template/0.0.1/)
 - [dk/watisdk/](https://gitdocumentatie.logius.nl/publicatie/dk/watisdk/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/watisdk/)
