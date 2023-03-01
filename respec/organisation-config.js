@@ -13,6 +13,7 @@ var organisationConfig = {
     url: "https://www.logius.nl/standaarden",
   }],
   
+  license: "cc0",
   addSectionLinks: true,
 
   localizationStrings: {
@@ -147,10 +148,23 @@ var organisationConfig = {
 	
   localBiblio: {
 	"SemVer": {
-            href: "https://semver.org",
-            title: "Semantic Versioning 2.0.0",
-            authors: ["T. Preston-Werner"],
-            date: "June 2013"
-        }
+		href: "https://semver.org",
+		title: "Semantic Versioning 2.0.0",
+		authors: ["T. Preston-Werner"],
+		date: "June 2013"
+	},
+	"Digikoppeling Architectuur": {
+		href: "https://logius-standaarden.github.io/Digikoppeling-Architectuur/snapshot.html",
+		title:
+		"Digikoppeling Architectuur",
+		authors: ["Logius Standaarden"],
+		date: "11 april 2022",
+		publisher: "Logius",
+    },	
+		"Logius website": {
+		href: "https://logius.nl/digikoppeling",
+		title: "Logius Digikoppeling",
+		publisher: "Logius",
     },
+	},
 }
