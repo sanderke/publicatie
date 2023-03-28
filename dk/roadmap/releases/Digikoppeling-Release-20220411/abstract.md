@@ -1,0 +1,1 @@
+Dit document bevat de release notes van de Digkoppeling 20220411 release. 
