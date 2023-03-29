@@ -187,13 +187,6 @@ var organisationConfig = {
             publisher: "Logius",
             title: "Digikoppeling Overzicht Actuele Documentatie en Compliance"
         },
-        "Digikoppeling Architectuur": {
-            authors: ["Logius Centrum voor standaarden"],
-            date: "december 2020",
-            href: "https://centrumvoorstandaarden.github.io/Architectuur2.0-metRestfulAPI/snapshot.html",
-            publisher: "Logius",
-            title: "Digikoppeling Architectuur"
-        },
         "Digikoppeling Beheermodel": {
             date: "Oktober 2017",
             href: "https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Standaarden/Digikoppeling-Beheermodel.pdf",
@@ -274,7 +267,6 @@ var organisationConfig = {
             title: "Digikoppeling REST API profiel"
         },
         "Digikoppeling-Architectuur": {
-            authors: ["Logius Centrum voor standaarden"],
             href: "https://publicatie.centrumvoorstandaarden.nl/dk/architectuur/",
             publisher: "Logius",
             title: "Digikoppeling Architectuur"
