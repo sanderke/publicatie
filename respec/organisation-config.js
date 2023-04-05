@@ -12,7 +12,6 @@ var organisationConfig = {
         url: "https://www.logius.nl/standaarden",
     }],
 
-    edDraftURI: ["github"],
     latestVersion: ["nl_organisationPublishURL", "pubDomain", "/", "shortName"],
     thisVersion: ["nl_organisationPublishURL", "pubDomain", "/", "shortName", "/", "publishVersion"],
     prevVersion: ["nl_organisationPublishURL", "pubDomain", "/", "shortName", "/", "previousPublishVersion"],
