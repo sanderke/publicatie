@@ -211,8 +211,8 @@ var organisationConfig = {
             title: "Digikoppeling Best Practices WUS"
         },
         "Digikoppeling Beveiligingsdocument": {
-            date: "2020",
-            href: "https://www.logius.nl/sites/default/files/bestanden/website/Digikoppeling_Beveiligingsstandaarden_en_voorschriften_v1.3.pdf",
+            date: "2021",
+            href: "https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/",
             publisher: "Logius",
             title: "Digikoppeling Beveiligingsstandaarden en voorschriften"
         },
