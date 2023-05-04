@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="nl"><head>
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
-<meta name="generator" content="ReSpec 32.1.10">
+<meta name="generator" content="ReSpec 32.7.1">
 <style>
 dfn{cursor:pointer}
 .dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
@@ -22,16 +22,20 @@ dfn{cursor:pointer}
 .dfn-panel li{margin-left:1em}
 .dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
 </style>
-      
-      
-      
-<link rel="shortcut icon" type="image/x-icon" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/logius.ico">
-      
+  
+  
+  
+<link href="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/logius.ico" rel="shortcut icon" type="image/x-icon">
+  
 <title>Digikoppeling Handreiking Adressering en Routering 1.1.0</title>
-      
-      
-      
-   
+  
+  
+  
+<script>
+   respecConfig = {...organisationConfig, ...respecConfig};
+  </script>
+  
+ 
 <style id="respec-mainstyle">
 @keyframes pop{
 0%{transform:scale(1,1)}
@@ -51,8 +55,6 @@ a.bibref{text-decoration:none}
 }
 #references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
 cite .bibref{font-style:normal}
-code{color:#c63501}
-th code{color:inherit}
 a[href].orcid{padding-left:4px;padding-right:4px}
 a[href].orcid>svg{margin-bottom:-2px}
 .toc a,.tof a{text-decoration:none}
@@ -94,124 +96,727 @@ dd{margin-left:0}
 </style>
 <meta name="description" content="Dit document beschrijft op welke manieren het OIN kan worden gebruikt voor Adressering en Routering.">
 <style>
-var{position:relative;cursor:pointer}
-var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
-var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
-var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
-var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
+.sidelabel{position:fixed;-webkit-transform-origin:top right;right:100%;top:0;-webkit-transform:rotate(-90deg);padding:4px 50px 4px 10px;color:#fff;white-space:nowrap;z-index:1}
 </style>
 <script id="initialUserConfig" type="application/json">{
-  "specStatus": "DEF",
-  "specType": "HR",
-  "pubDomain": "dk",
-  "shortName": "bpadres",
-  "publishDate": "2023-02-13",
+  "nl_organisationName": "Logius",
+  "nl_organisationStylesURL": "https://gitdocumentatie.logius.nl/publicatie/respec/style/",
+  "nl_organisationPublishURL": "https://gitdocumentatie.logius.nl/publicatie/",
+  "logos": [
+    {
+      "src": "https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg",
+      "alt": "Logius",
+      "id": "Logius",
+      "height": 77,
+      "width": 44,
+      "url": "https://www.logius.nl/standaarden"
+    }
+  ],
+  "latestVersion": [
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "shortName"
+  ],
+  "thisVersion": [
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "shortName",
+    "/",
+    "publishVersion"
+  ],
+  "prevVersion": [
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "shortName",
+    "/",
+    "previousPublishVersion"
+  ],
+  "useLogo": true,
+  "useLabel": true,
+  "license": "cc0",
   "addSectionLinks": true,
-  "publishVersion": "1.1.0",
-  "previousPublishVersion": "1.0.1",
-  "license": "cc-by-nd",
-  "doJsonLd": true,
-  "editors": [
-    {
-      "name": "Logius",
-      "company": "Logius",
-      "companyURL": "http://www.logius.nl/"
+  "localizationStrings": {
+    "en": {
+      "wv": "Draft",
+      "cv": "Recommendation",
+      "vv": "Proposed recommendation",
+      "def": "Definitive version",
+      "basis": "Document",
+      "eo": "Outdated version",
+      "tg": "Rescinded version",
+      "no": "Norm",
+      "st": "Standard",
+      "im": "Information model",
+      "pr": "Guideline",
+      "hr": "Guide",
+      "wa": "Proposed recommendation",
+      "al": "General",
+      "bd": "Governance documentation",
+      "bp": "Best practice"
+    },
+    "nl": {
+      "wv": "Werkversie",
+      "cv": "Consultatieversie",
+      "vv": "Versie ter vaststelling",
+      "def": "Vastgestelde versie",
+      "basis": "Document",
+      "eo": "Verouderde versie",
+      "tg": "Teruggetrokken versie",
+      "no": "Norm",
+      "st": "Standaard",
+      "im": "Informatiemodel",
+      "pr": "Praktijkrichtlijn",
+      "hr": "Handreiking",
+      "wa": "Werkafspraak",
+      "al": "Algemeen",
+      "bd": "Beheerdocumentatie",
+      "bp": "Best practice"
     }
-  ],
-  "authors": [
-    {
-      "name": "Logius",
-      "company": "Logius",
-      "companyURL": "http://www.logius.nl/"
+  },
+  "sotdText": {
+    "nl": {
+      "sotd": "Status van dit document",
+      "def": "Dit is de definitieve versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.",
+      "wv": "Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.",
+      "cv": "Dit is een door het TO goedgekeurde consultatieversie. Commentaar over dit document kan gestuurd worden naar ",
+      "vv": "Dit is een definitief concept van de nieuwe versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.",
+      "basis": "Dit is een document zonder officiële status."
+    },
+    "en": {
+      "sotd": "Status of This Document",
+      "def": "This is the definitive version of this document. Edits resulting from consultations have been applied.",
+      "wv": "This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.",
+      "cv": "This is a proposed recommendation approved by TO. Comments regarding this document may be sent to ",
+      "vv": "This is the definitive concept of this document. Edits resulting from consultations have been applied.",
+      "basis": "This document has no official standing."
     }
-  ],
-  "github": "https://github.com/Logius-standaarden/Digikoppeling-Handreiking-Adressering-en-Routering",
+  },
+  "labelColor": {
+    "def": "#154273",
+    "wv": "#32a852"
+  },
+  "licenses": {
+    "cc0": {
+      "name": "Creative Commons 0 Public Domain Dedication",
+      "short": "CC0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "image": "https://tools.geostandaarden.nl/respec/style/logos/CC-Licentie.svg"
+    },
+    "cc-by": {
+      "name": "Creative Commons Attribution 4.0 International Public License",
+      "short": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+      "image": "https://tools.geostandaarden.nl/respec/style/logos/cc-by.svg"
+    },
+    "cc-by-nd": {
+      "name": "Creative Commons Naamsvermelding-GeenAfgeleideWerken 4.0 Internationaal",
+      "short": "CC-BY-ND",
+      "url": "https://creativecommons.org/licenses/by-nd/4.0/legalcode.nl",
+      "image": "https://tools.geostandaarden.nl/respec/style/logos/cc-by-nd.svg"
+    }
+  },
+  "localBiblio": {
+    "ADR": {
+      "authors": [
+        "Jasper Roes",
+        "Joost Farla"
+      ],
+      "date": "Juli 2020",
+      "href": "https://publicatie.centrumvoorstandaarden.nl/api/adr/",
+      "publisher": "Logius",
+      "title": "API Design Rules (Nederlandse API Strategie IIa)"
+    },
+    "ADR-ext": {
+      "authors": [
+        "Jasper Roes",
+        "Linda van den Brink"
+      ],
+      "date": "Januari 2020",
+      "href": "https://docs.geostandaarden.nl/api/API-Strategie-ext",
+      "publisher": "Geonovum/Kennisplatform APi's",
+      "title": "API Designrules Extensions (Nederlandse API Strategie IIb)"
+    },
+    "Algemene Voorwaarden Logius": {
+      "date": "12 juni 2018",
+      "href": "https://www.logius.nl/onze-organisatie/zakendoen-met-logius/voorwaarden/algemene-voorwaarden-logius",
+      "publisher": "Logius",
+      "title": "Algemene voorwaarden Logius"
+    },
+    "API Design Rules": {
+      "authors": [
+        "Jasper Roes",
+        "Joost Farla"
+      ],
+      "date": "Juli 2020",
+      "href": "https://publicatie.centrumvoorstandaarden.nl/api/adr/",
+      "publisher": "Logius",
+      "title": "API Design Rules (Nederlandse API Strategie IIa)"
+    },
+    "API Design Rules-Extensions": {
+      "authors": [
+        "Jasper Roes",
+        "Linda van den Brink"
+      ],
+      "date": "Januari 2020",
+      "href": "https://docs.geostandaarden.nl/api/API-Strategie-ext",
+      "publisher": "Geonovum/Kennisplatform APi's",
+      "title": "API Designrules Extensions (Nederlandse API Strategie IIb)"
+    },
+    "BCP195": {
+      "authors": [
+        "Y. Sheffer, R. Holz, P. Saint-Andre"
+      ],
+      "date": "May 2015",
+      "href": "https://tools.ietf.org/html/bcp195",
+      "publisher": "IETF",
+      "title": "Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)"
+    },
+    "Beheermodel": {
+      "date": "Oktober 2017",
+      "href": "https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Standaarden/Digikoppeling-Beheermodel.pdf",
+      "publisher": "Logius",
+      "title": "Beheermodel en releasebeleid Digikoppeling v1.5"
+    },
+    "Beveiligingsdocument": {
+      "href": "https://publicatie.centrumvoorstandaarden.nl/dk/beveilig/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Beveiligingsstandaarden en voorschriften"
+    },
+    "Certificaten": {
+      "href": "https://cert.pkioverheid.nl/",
+      "publisher": "Logius",
+      "title": "PkIoverheid certificaten"
+    },
+    "CloudEvents": {
+      "authors": [
+        "@@@"
+      ],
+      "date": "May 2011",
+      "href": "https://github.com/cloudevents/spec/blob/v1.0.1/spec.md",
+      "publisher": "@@@",
+      "title": "CloudEvents - Version 1.0.1"
+    },
+    "Compliance": {
+      "href": "https://portaal.digikoppeling.nl",
+      "publisher": "Logius",
+      "title": "Digikoppeling Compliance Voorziening"
+    },
+    "Deployment Guide 1.1": {
+      "authors": [
+        "Pete Wenzel",
+        "Jacques Durand"
+      ],
+      "date": "June 2005",
+      "href": "http://www.oasis-open.org/apps/org/workgroup/ebxml-iic-deployment-profile-template-intro-100406.doc",
+      "publisher": "OASIS",
+      "title": "Deployment Profile Template For OASIS ebXML Message Service 2.0"
+    },
+    "Digikoppeling Actuele Documentatie": {
+      "href": "http://www.logius.nl/digikoppeling",
+      "publisher": "Logius",
+      "title": "Digikoppeling Overzicht Actuele Documentatie en Compliance"
+    },
+    "Digikoppeling Beheermodel": {
+      "date": "Oktober 2017",
+      "href": "https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Standaarden/Digikoppeling-Beheermodel.pdf",
+      "publisher": "Logius",
+      "title": "Beheermodel en releasebeleid Digikoppeling v1.5"
+    },
+    "Digikoppeling Best Practices ebMS2": {
+      "date": "2019",
+      "href": "https://www.logius.nl/diensten/digikoppeling/documentatie",
+      "publisher": "Logius",
+      "title": "Digikoppeling Best Practices ebMS2"
+    },
+    "Digikoppeling Best Practices Grote Berichten": {
+      "date": "2019",
+      "href": "https://www.logius.nl/diensten/digikoppeling/documentatie",
+      "publisher": "Logius",
+      "title": "Digikoppeling Best Practices Grote Berichten"
+    },
+    "Digikoppeling Best Practices WUS": {
+      "date": "2019",
+      "href": "https://www.logius.nl/diensten/digikoppeling/documentatie",
+      "publisher": "Logius",
+      "title": "Digikoppeling Best Practices WUS"
+    },
+    "Digikoppeling Beveiligingsdocument": {
+      "date": "2021",
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Beveiligingsstandaarden en voorschriften"
+    },
+    "Digikoppeling Compliance Voorziening": {
+      "href": "https://portaal.digikoppeling.nl",
+      "publisher": "Logius",
+      "title": "Digikoppeling Compliance Voorziening"
+    },
+    "Digikoppeling Gebruik Certificaten": {
+      "href": "http://www.logius.nl/digikoppeling",
+      "publisher": "Logius",
+      "title": "Digikoppeling Gebruik en achtergrond certificaten"
+    },
+    "Digikoppeling Identificatie-Authenticatie": {
+      "href": "https://www.logius.nl/diensten/digikoppeling/documentatie",
+      "publisher": "Logius",
+      "title": "Digikoppeling Identificatie en Authenticatie"
+    },
+    "Digikoppeling Koppelvlakstandaard ebMS2": {
+      "date": "mei 2019",
+      "href": "https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-ebMS2/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Koppelvlakstandaard ebMS2"
+    },
+    "Digikoppeling Koppelvlakstandaard Grote Berichten": {
+      "date": "september 2020",
+      "href": "https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-GB/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Koppelvlakstandaard Grote Berichten"
+    },
+    "Digikoppeling Koppelvlakstandaard REST API": {
+      "date": "februari 2021",
+      "href": "https://centrumvoorstandaarden.github.io/DigikoppelingRestfulApiProfiel/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Restful API Profiel (Concept)"
+    },
+    "Digikoppeling Koppelvlakstandaard WUS": {
+      "date": "oktober 2020",
+      "href": "https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-WUS/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Koppelvlakstandaard ebMS2"
+    },
+    "Digikoppeling Logius website": {
+      "href": "https://logius.nl/diensten/digikoppeling/documentatie",
+      "publisher": "Logius",
+      "title": "Logius Digikoppeling"
+    },
+    "Digikoppeling REST API profiel": {
+      "href": "https://publicatie.centrumvoorstandaarden.nl/dk/restapi/",
+      "publisher": "Logius",
+      "title": "Digikoppeling REST API profiel"
+    },
+    "Digikoppeling-Architectuur": {
+      "href": "https://publicatie.centrumvoorstandaarden.nl/dk/architectuur/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Architectuur"
+    },
+    "Digikoppeling-Beveiligingsdocument": {
+      "href": "https://publicatie.centrumvoorstandaarden.nl/dk/beveilig",
+      "publisher": "Logius",
+      "title": "Digikoppeling Beveiligingsstandaarden en voorschriften"
+    },
+    "Digikoppeling-Cert": {
+      "href": "http://www.logius.nl/digikoppeling",
+      "publisher": "Logius",
+      "title": "Gebruik en achtergrond van Digikoppeling certificaten"
+    },
+    "Digikoppeling-Compliance-Voorziening": {
+      "href": "https://portaal.digikoppeling.nl",
+      "publisher": "Logius",
+      "title": "Digikoppeling Compliance Voorziening"
+    },
+    "Digikoppeling-Identificatie-Authenticatie": {
+      "href": "https://publicatie.centrumvoorstandaarden.nl/dk/idauth",
+      "publisher": "Logius",
+      "title": "Digikoppeling Identificatie en Authenticatie"
+    },
+    "ebCPP": {
+      "authors": [
+        "Oasis"
+      ],
+      "date": "september 2002",
+      "href": "http://www.ebxml.org/specs/ebcpp-2.0.pdf",
+      "publisher": "Oasis",
+      "title": "Collaboration-Protocol Profile and Agreement Specification Version 2.0"
+    },
+    "ebMS3": {
+      "authors": [
+        "Ian Jones",
+        "Pete Wenzel"
+      ],
+      "date": "October 2007",
+      "href": "https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms_core-3.0-spec-os.html",
+      "publisher": "Oasis",
+      "title": "Collaboration-Protocol Profile and Agreement Specification Version 2.0"
+    },
+    "ebXML CPPA V 2.0": {
+      "authors": [
+        "Oasis"
+      ],
+      "date": "september 2002",
+      "href": "http://www.ebxml.org/specs/ebcpp-2.0.pdf",
+      "publisher": "Oasis",
+      "title": "Collaboration-Protocol Profile and Agreement Specification Version 2.0"
+    },
+    "Eisen Pkioverheid": {
+      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen",
+      "publisher": "Logius",
+      "title": "Programma van Eisen (PKIoverheid)"
+    },
+    "Expert": {
+      "authors": [
+        "@@@"
+      ],
+      "date": "@@@",
+      "href": "https://www.forumstandaardisatie.nl/sites/bfs/files/@@@.pdf",
+      "publisher": "Forum Standaardisatie",
+      "title": "Expertadvies CloudEvents 1.0"
+    },
+    "Gebruiksvoorwaarden Digikoppeling": {
+      "date": "1 januari 2021",
+      "href": "https://www.logius.nl/diensten/digikoppeling/documentatie/gebruiksvoorwaarden-digikoppeling",
+      "publisher": "Logius",
+      "title": "Gebruiksvoorwaarden Digikoppeling"
+    },
+    "HEART.OAuth2": {
+      "authors": [
+        "J. Richer"
+      ],
+      "date": "April 25, 2017",
+      "href": "https://openid.net/specs/openid-heart-oauth2-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "Health Relationship Trust Profile for OAuth 2.0"
+    },
+    "HTTPS-factsheet NCSC": {
+      "date": "Nov 2014",
+      "href": "https://www.ncsc.nl/documenten/factsheets/2019/juni/01/factsheet-https-kan-een-stuk-veiliger",
+      "publisher": "NCSC",
+      "title": "Factsheet HTTPS kan een stuk veiliger"
+    },
+    "I-D.ietf-oauth-pop-architecture": {
+      "authors": [
+        "P. Hunt, J. Richer, W. Mills, P. Mishra, H. Tschofenig"
+      ],
+      "date": "July 8, 2016",
+      "href": "https://tools.ietf.org/html/draft-ietf-oauth-pop-architecture-08",
+      "publisher": "IETF",
+      "title": "OAuth 2.0 Proof-of-Possession (PoP) Security Architecture"
+    },
+    "iGOV.OAuth2": {
+      "authors": [
+        "J. Richer, M. Varley, P. Grassi"
+      ],
+      "date": "October 5 2018",
+      "href": "https://openid.net/specs/openid-igov-oauth2-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "International Government Assurance Profile (iGov) for OAuth 2.0"
+    },
+    "iGOV.OpenID": {
+      "authors": [
+        "M. Varley, P. Grassi"
+      ],
+      "date": "October 5 2018",
+      "href": "https://openid.net/specs/openid-igov-openid-connect-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "International Government Assurance Profile (iGov) for OpenID Connect 1.0 - draft 3"
+    },
+    "Introspection": {
+      "authors": [
+        "J. Richer"
+      ],
+      "date": "October 2015",
+      "href": "https://tools.ietf.org/html/rfc7662",
+      "publisher": "IETF",
+      "title": "OAuth 2.0 Token Introspection"
+    },
+    "JWA": {
+      "authors": [
+        "M. Jones"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7518",
+      "publisher": "IETF",
+      "title": "JSON Web Algorithms (JWA)"
+    },
+    "JWE": {
+      "authors": [
+        "M. Jones, J. Hildebrand"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7516",
+      "publisher": "IETF",
+      "title": "JSON Web Encryption (JWE)"
+    },
+    "JWK": {
+      "authors": [
+        "M. Jones"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7517",
+      "publisher": "IETF",
+      "title": "JSON Web Key (JWK))"
+    },
+    "JWS": {
+      "authors": [
+        "M. Jones, J. Bradley, N. Sakimura"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7515",
+      "publisher": "IETF",
+      "title": "JSON Web Signature (JWS)"
+    },
+    "JWS.JWE.Algs": {
+      "authors": [
+        "Jim Schaad, Jeff Hodges, Joe Hildebrand, Sean Turner"
+      ],
+      "date": "",
+      "href": "https://www.iana.org/assignments/jose/jose.xhtml#web-signature-encryption-algorithms",
+      "publisher": "IANA",
+      "title": "IANA JSON Web Signatures and Encryption Algorithms registry"
+    },
+    "JWT": {
+      "authors": [
+        "M. Jones, J. Bradley, N. Sakimura"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7519",
+      "publisher": "IETF",
+      "title": "JSON Web Token (JWT)"
+    },
+    "Logius": {
+      "href": "https://logius.nl/digikoppeling",
+      "publisher": "Logius",
+      "title": "Logius Digikoppeling"
+    },
+    "Logius website": {
+      "href": "https://logius.nl/digikoppeling",
+      "publisher": "Logius",
+      "title": "Logius Digikoppeling"
+    },
+    "Logius-website": {
+      "href": "https://logius.nl/digikoppeling",
+      "publisher": "Logius",
+      "title": "Logius Digikoppeling"
+    },
+    "NCSC 2019": {
+      "date": "April 2019",
+      "href": "https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls",
+      "publisher": "NCSC",
+      "title": "ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.0"
+    },
+    "NCSC 2021": {
+      "date": "Jan 2021",
+      "href": "https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1",
+      "publisher": "NCSC",
+      "title": "ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.1"
+    },
+    "NEN3610": {
+      "authors": [
+        ""
+      ],
+      "date": "Maart 2011",
+      "href": "https://www.nen.nl/nen-3610-2011-a1-2016-nl-217738",
+      "publisher": "Nederlands Normalisatie-instituut",
+      "title": "Basismodel Geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten"
+    },
+    "no-Reliable-messaging": {
+      "authors": [
+        "Marc de Graauw"
+      ],
+      "date": "June 18, 2010",
+      "href": "https://www.infoq.com/articles/no-reliable-messaging/",
+      "publisher": "infoQ",
+      "title": "Nobody Needs Reliable Messaging"
+    },
+    "OAuth2": {
+      "authors": [
+        "D. Hardt"
+      ],
+      "date": "October 2012",
+      "href": "https://tools.ietf.org/html/rfc6749",
+      "publisher": "The Internet Engineering Task Force",
+      "title": "The OAuth 2.0 Authorization Framework"
+    },
+    "OpenID.Core": {
+      "authors": [
+        "N. Sakimura, J. Bradley, M. Jones, B. de Medeiros, C. Mortimore"
+      ],
+      "date": "November 8 2014",
+      "href": "https://openid.net/specs/openid-connect-core-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "OpenID Connect Core 1.0"
+    },
+    "OpenID.Discovery": {
+      "authors": [
+        "N. Sakimura, J. Bradley, M. Jones, E. Jay"
+      ],
+      "date": "November 8 2014",
+      "href": "https://openid.net/specs/openid-connect-discovery-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "OpenID Connect Discovery 1.0"
+    },
+    "Pas-toe-of-leg-uit": {
+      "href": "https://www.forumstandaardisatie.nl/open-standaarden/verplicht",
+      "publisher": "Forum Standaardisatie",
+      "title": "Lijst Verplichte standaarden"
+    },
+    "PKCE": {
+      "authors": [
+        "N. Sakimura, J. Bradley, N. Agarwal"
+      ],
+      "date": "september 2015",
+      "href": "https://tools.ietf.org/html/rfc7636",
+      "publisher": "IETF",
+      "title": "Proof Key for Code Exchange by OAuth Public Clients"
+    },
+    "PKI CA": {
+      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/toegetreden-vertrouwensdienstverleners",
+      "publisher": "Logius",
+      "title": "Toegetreden vertrouwensdienstverleners"
+    },
+    "PKI Policy": {
+      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen",
+      "publisher": "Logius",
+      "title": "Programma van Eisen (PKIoverheid)"
+    },
+    "PKI PvE": {
+      "href": "https://www.logius.nl/sites/default/files/public/bestanden/diensten/PKIoverheid/PoR-2022/PKIoverheid%20Programme%20of%20Requirements%20v4.10%20-%20Part%203j%20Certificate%20Policy%20for%20Server%20certificates%20in%20Server%202020%20%28EV%20G1%29%20Domain.pdf",
+      "publisher": "Logius",
+      "title": "Programma van Eisen Pkioverheid, deel 3j"
+    },
+    "PKI-CA": {
+      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/toegetreden-vertrouwensdienstverleners",
+      "publisher": "Logius",
+      "title": "Toegetreden vertrouwensdienstverleners"
+    },
+    "PKI-Policy": {
+      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen",
+      "publisher": "Logius",
+      "title": "Programma van Eisen (PKIoverheid)"
+    },
+    "PKIoverheid": {
+      "href": "https://www.logius.nl/diensten/pkioverheid",
+      "publisher": "Logius",
+      "title": "PKIoverheid"
+    },
+    "PKIoverheid Certificaten": {
+      "href": "https://cert.pkioverheid.nl/",
+      "publisher": "Logius",
+      "title": "Pkioverheid certificaten"
+    },
+    "PKIoverheid-Certificaten": {
+      "href": "https://cert.pkioverheid.nl/",
+      "publisher": "Logius",
+      "title": "Pkioverheid certificaten"
+    },
+    "SemVer": {
+      "authors": [
+        "T. Preston-Werner"
+      ],
+      "date": "June 2013",
+      "href": "https://semver.org",
+      "title": "Semantic Versioning 2.0.0"
+    },
+    "UMMR10": {
+      "authors": [
+        ""
+      ],
+      "date": "2001",
+      "href": "https://unece.org/DAM/cefact/umm/UMM_Revision_10_2001.zip",
+      "publisher": "UN/CEFACT",
+      "title": "UMM Revision 10"
+    },
+    "UMMUG": {
+      "authors": [
+        ""
+      ],
+      "date": "2003",
+      "href": "https://www.unece.org/fileadmin/DAM/cefact/umm/UMM_userguide_220606.pdf",
+      "publisher": "UN/CEFACT",
+      "title": "UN/CEFACT Modeling Methodology (UMM) User Guide"
+    },
+    "UUID": {
+      "authors": [
+        "P. Leach",
+        "M. Mealling",
+        "R. Salz"
+      ],
+      "date": "July 2005",
+      "href": "https://tools.ietf.org/html/rfc4122",
+      "publisher": "The Internet Engineering Task Force",
+      "title": "A Universally Unique IDentifier (UUID) URN Namespace"
+    },
+    "Voorbeelden": {
+      "href": "https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Overig/Digikoppeling-Koppelvlakstandaard-WUS-Voorbeeldberichten.zip",
+      "publisher": "Logius",
+      "title": "Digikoppeling WUS voorbeelden (zip)"
+    },
+    "Voorwaarden Digikoppeling": {
+      "date": "1 januari 2021",
+      "href": "https://www.logius.nl/diensten/digikoppeling/documentatie/voorwaarden-digikoppeling",
+      "publisher": "Logius",
+      "title": "Voorwaarden Digikoppeling"
+    },
+    "X520": {
+      "href": "https://www.iso.org/standard/43796.html",
+      "publisher": "ISO",
+      "title": "ITU-T Recommendation X.520 (2001) ISO/IEC 9594-6"
+    },
+    "ADR-Validator": {
+      "href": "https://gitlab.com/commonground/don/adr-validator/-/blob/v0.1.0/pkg/adr/rules.go",
+      "title": "Technical ADR Validation rule testset 0.1.0",
+      "authors": [
+        "H. Stijns"
+      ],
+      "publisher": "Geonovum",
+      "date": "December 2022"
+    }
+  },
   "alternateFormats": [
     {
       "label": "pdf",
       "uri": "Digikoppeling-Handreiking-Adressering-en-Routering.pdf"
     }
   ],
-  "nl_emailComments": "digikoppeling@logius.nl",
-  "nl_addReleaseTagTitle": true,
-  "nl_markdownSplitH1sections": true,
-  "nl_organisationName": "Logius",
-  "nl_organisationPrefix": "LS-",
-  "nl_markdownCodeClass": "code",
-  "nl_markdownEmbedImageInFigure": true,
-  "nl_organisationStylesURL": "https://publicatie.centrumvoorstandaarden.nl/respec/style/",
-  "nl_organisationPublishURL": "https://publicatie.centrumvoorstandaarden.nl/",
-  "nl_logo": {
-    "src": "https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg",
-    "alt": "Logius",
-    "id": "Logius",
-    "height": 77,
-    "width": 44,
-    "url": "https://www.logius.nl/standaarden"
-  },
-  "localBiblio": {
-    "NEN3610": {
-      "href": "http://www.nen.nl/web/Normshop/Norm/NEN-36102011-nl.htm",
-      "title": "Basismodel Geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten",
-      "authors": [
-        ""
-      ],
-      "date": "Maart 2011",
-      "publisher": "Nederlands Normalisatie-instituut"
-    },
-    "Voorwaarden Digikoppeling": {
-      "href": "https://www.logius.nl/diensten/digikoppeling/documentatie/voorwaarden-digikoppeling",
-      "title": "Voorwaarden Digikoppeling",
-      "date": "1 januari 2021",
-      "publisher": "Logius"
-    },
-    "Gebruiksvoorwaarden Digikoppeling": {
-      "href": "https://www.logius.nl/diensten/digikoppeling/documentatie/gebruiksvoorwaarden-digikoppeling",
-      "title": "Gebruiksvoorwaarden Digikoppeling",
-      "date": "1 januari 2021",
-      "publisher": "Logius"
-    },
-    "Algemene Voorwaarden Logius": {
-      "href": "https://www.logius.nl/onze-organisatie/zakendoen-met-logius/voorwaarden/algemene-voorwaarden-logius",
-      "title": "Algemene voorwaarden Logius",
-      "date": "12 juni 2018",
-      "publisher": "Logius"
-    },
-    "Eisen Pkioverheid": {
-      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen",
-      "title": "Programma van Eisen (PKIoverheid)",
-      "publisher": "Logius"
-    },
-    "PKI PvE": {
-      "href": "https://logius.nl/sites/default/files/public/bestanden/diensten/PKIoverheid/Programme%20of%20Requirements%20part%203j_%20Certificate%20Policy%20for%20Server%20certificates%20in%20Server%202020%20%28EV%20G1%29%20Domain-4.9.pdf",
-      "title": "Programma van Eisen Pkioverheid, deel 3j",
-      "publisher": "Logius"
+  "authors": [
+    {
+      "company": "Logius",
+      "companyURL": "http://www.logius.nl/",
+      "name": "Logius"
     }
-  },
-  "publishISODate": "2023-02-13T00:00:00.000Z",
-  "generatedSubtitle": "Vastgestelde versie 13 februari 2023"
+  ],
+  "editors": [
+    {
+      "company": "Logius",
+      "companyURL": "http://www.logius.nl/",
+      "name": "Logius"
+    }
+  ],
+  "github": "https://github.com/Logius-standaarden/Digikoppeling-Handreiking-Adressering-en-Routering",
+  "nl_markdownCodeClass": "code",
+  "previousPublishVersion": "1.0.1",
+  "pubDomain": "dk",
+  "publishDate": "2023-02-13",
+  "publishVersion": "1.1.0",
+  "shortName": "bpadres",
+  "specStatus": "DEF",
+  "specType": "HR"
 }</script>
-<link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/LS-VG.css"></head>
-   <body class="h-entry informative toc-inline"><div class="head">
-    <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg" width="44">
+<link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
+ <body class="h-entry informative toc-inline"><div class="head">
+    <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">Digikoppeling Handreiking Adressering en Routering 1.1.0</h1>
     
     <h2>
       Logius Handreiking<br>
       Vastgestelde versie
-      <time class="dt-published" datetime="02/13/2023">13 februari 2023</time>
+      <time class="dt-published" datetime="2023-02-13">13 februari 2023</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
-              <a class="u-url status" href="https://publicatie.centrumvoorstandaarden.nl/dk/bpadres/1.1.0">https://publicatie.centrumvoorstandaarden.nl/dk/bpadres/1.1.0</a>
-            </dd><dt>Laatst gepubliceerde versie:</dt><dd>
-              <a href="https://publicatie.centrumvoorstandaarden.nl/dk/bpadres/">https://publicatie.centrumvoorstandaarden.nl/dk/bpadres/</a>
+              <a class="u-url status" href="https://gitdocumentatie.logius.nl/publicatie/dk/bpadres/1.1.0">https://gitdocumentatie.logius.nl/publicatie/dk/bpadres/1.1.0</a>
+            </dd>
+      <dt>Laatst gepubliceerde versie:</dt><dd>
+              <a href="https://gitdocumentatie.logius.nl/publicatie/dk/bpadres">https://gitdocumentatie.logius.nl/publicatie/dk/bpadres</a>
             </dd>
       <dt>Laatste werkversie:</dt><dd><a href="https://logius-standaarden.github.io/Digikoppeling-Handreiking-Adressering-en-Routering/">https://logius-standaarden.github.io/Digikoppeling-Handreiking-Adressering-en-Routering/</a></dd>
       
       
       
-      <dt>Vorige versie</dt><dd><a href="https://publicatie.centrumvoorstandaarden.nl/dk/bpadres/1.0.1/">https://publicatie.centrumvoorstandaarden.nl/dk/bpadres/1.0.1/</a></dd>
+      <dt>Vorige versie</dt><dd><a href="https://gitdocumentatie.logius.nl/publicatie/dk/bpadres/1.0.1">https://gitdocumentatie.logius.nl/publicatie/dk/bpadres/1.0.1</a></dd>
       
       <dt>Redacteur:</dt>
       <dd class="editor p-author h-card vcard">
@@ -233,20 +838,20 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     </dl>
     
     
-    <p lang="en">
-          This document is also available in this non-normative format:
+    <p>
+          Dit document is ook beschikbaar in dit niet-normatieve formaat:
           <a rel="alternate" href="Digikoppeling-Handreiking-Adressering-en-Routering.pdf">pdf</a>
         </p>
-    <p class="copyright" lang="en">
-          This document is licensed under a
-          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" class="subfoot">Creative Commons Attribution 4.0 License</a>.
+    <p class="copyright">
+          Dit document valt onder de volgende licentie: 
+          <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/" class="subfoot">Creative Commons 0 Public Domain Dedication</a>.
         </p>
     <hr title="Separator for header">
   </div>
-      <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Dit document beschrijft op welke manieren het OIN kan worden gebruikt voor Adressering en Routering.</p>
+  <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Dit document beschrijft op welke manieren het OIN kan worden gebruikt voor Adressering en Routering.</p>
 </section>
-      <section id="sotd" class="introductory"><h2>Status van dit document</h2>Dit is de definitieve versie van de  handreiking. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.<p></p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#handreiking-adressering-en-routering"><bdi class="secno">1. </bdi>Handreiking Adressering en Routering</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#doel-van-de-handreiking"><bdi class="secno">1.1 </bdi>Doel van de Handreiking</a></li><li class="tocline"><a class="tocxref" href="#welke-vragen-worden-beantwoord"><bdi class="secno">1.2 </bdi>Welke vragen worden beantwoord</a></li><li class="tocline"><a class="tocxref" href="#welke-onderdelen-worden-besproken"><bdi class="secno">1.3 </bdi>Welke onderdelen worden besproken</a></li><li class="tocline"><a class="tocxref" href="#omgeving-waar-de-handreiking-voor-geldt"><bdi class="secno">1.4 </bdi>Omgeving waar de handreiking voor geldt</a></li><li class="tocline"><a class="tocxref" href="#beschrijving-van-de-werking"><bdi class="secno">1.5 </bdi>Beschrijving van de werking</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#het-oin-wordt-zowel-gebruikt-voor-authenticatie-als-voor-adressering"><bdi class="secno">1.5.1 </bdi>Het OIN wordt zowel gebruikt voor authenticatie als voor adressering.</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#routeringstabel"><bdi class="secno">1.5.1.1 </bdi>Routeringstabel</a></li></ol></li><li class="tocline"><a class="tocxref" href="#wanneer-is-het-aan-te-raden-om-suboin-s-te-gebruiken-voor-adresseren-en-routeren"><bdi class="secno">1.5.2 </bdi>Wanneer is het aan te raden om subOIN's te gebruiken voor adresseren en routeren?</a></li><li class="tocline"><a class="tocxref" href="#wat-zijn-de-regels-die-partijen-met-elkaar-moeten-afspreken-over-het-routeren-en-adresseren-van-berichten"><bdi class="secno">1.5.3 </bdi>Wat zijn de regels die partijen met elkaar moeten afspreken over het routeren en adresseren van berichten?</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#nr-1-direct"><bdi class="secno">1.5.3.1 </bdi>(Nr 1) Direct</a></li><li class="tocline"><a class="tocxref" href="#nr-2-via-knooppunt-a-waarbij-eigen-oin-van-a-gebruikt-wordt-voor-tls-verbindingen-met-verzender-en-ontvanger"><bdi class="secno">1.5.3.2 </bdi>(Nr 2) Via Knooppunt A (waarbij eigen OIN van A gebruikt wordt voor TLS-verbindingen met verzender en ontvanger)</a></li><li class="tocline"><a class="tocxref" href="#nr-3-via-knooppunt-a-waarbij-a-sub-oin-van-verzender-gebruikt-voor-tls-verbindingen-met-ontvanger"><bdi class="secno">1.5.3.3 </bdi>(Nr 3) Via Knooppunt A (waarbij A (Sub)OIN van verzender gebruikt voor TLS-verbindingen met ontvanger)</a></li><li class="tocline"><a class="tocxref" href="#nr-4-via-knooppunt-b-waarbij-b-eigen-oin-van-b-gebruikt-voor-tls-verbindingen-met-verzender"><bdi class="secno">1.5.3.4 </bdi>(Nr 4) Via Knooppunt B (waarbij B eigen OIN van B gebruikt voor TLS-verbindingen met verzender)</a></li><li class="tocline"><a class="tocxref" href="#nr-5-via-knooppunt-b-waarbij-b-sub-oin-van-ontvanger-gebruikt-voor-tls-verbindingen-met-verzender"><bdi class="secno">1.5.3.5 </bdi>(Nr 5) Via Knooppunt B (waarbij B (Sub)OIN van ontvanger gebruikt voor TLS-verbindingen met verzender)</a></li><li class="tocline"><a class="tocxref" href="#nr-6-via-knooppunt-a-en-b-met-gebruik-van-eigen-oin-a-b-voor-tls-verbindingen"><bdi class="secno">1.5.3.6 </bdi>(Nr 6) Via Knooppunt A en B (met gebruik van eigen OIN A,B voor TLS verbindingen)</a></li><li class="tocline"><a class="tocxref" href="#nr-7-via-knooppunt-a-en-b-met-gebruik-van-oin-verzender-ontvanger-voor-tls-verbindingen"><bdi class="secno">1.5.3.7 </bdi>(Nr 7) Via Knooppunt A en B (met gebruik van OIN verzender, ontvanger voor TLS verbindingen)</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-1-voorbeeld-van-routering"><bdi class="secno">1.6 </bdi>Bijlage 1. Voorbeeld van routering</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#voorbeeldsituatie-zowel-zender-als-ontvanger-maken-gebruik-van-suboin-s"><bdi class="secno">1.6.1 </bdi>Voorbeeldsituatie: zowel zender als ontvanger maken gebruik van subOIN's</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-2-digipoort"><bdi class="secno">1.7 </bdi>BIJLAGE 2. Digipoort</a></li><li class="tocline"><a class="tocxref" href="#bijlage-3-analyse-knelpunten-routering-en-intermediairs"><bdi class="secno">1.8 </bdi>BIJLAGE 3. Analyse knelpunten Routering en Intermediairs</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#introductie"><bdi class="secno">1.8.1 </bdi>Introductie</a></li><li class="tocline"><a class="tocxref" href="#intermediairs-saas"><bdi class="secno">1.8.2 </bdi>Intermediairs &amp; SAAS</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#definitie-intermediair"><bdi class="secno">1.8.2.1 </bdi>Definitie Intermediair</a></li><li class="tocline"><a class="tocxref" href="#definitie-van-saas"><bdi class="secno">1.8.2.2 </bdi>Definitie van SAAS</a></li></ol></li><li class="tocline"><a class="tocxref" href="#identificatie-van-organisaties-met-oin"><bdi class="secno">1.8.3 </bdi>Identificatie van organisaties met OIN</a></li><li class="tocline"><a class="tocxref" href="#knelpunten"><bdi class="secno">1.8.4 </bdi>Knelpunten</a></li><li class="tocline"><a class="tocxref" href="#oplossingen"><bdi class="secno">1.8.5 </bdi>Oplossingen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#x1-bevoegdheid-intermediair-via-afspraken"><bdi class="secno">1.8.5.1 </bdi>(1) Bevoegdheid intermediair via afspraken</a></li><li class="tocline"><a class="tocxref" href="#x2-bevoegdheid-intermediair-saas-partij-door-verlenen-certificaat"><bdi class="secno">1.8.5.2 </bdi>(2) Bevoegdheid intermediair/SAAS partij door verlenen certificaat</a></li><li class="tocline"><a class="tocxref" href="#x3-bevoegdheid-intermediair-saas-partij-door-machtigen"><bdi class="secno">1.8.5.3 </bdi>(3) Bevoegdheid intermediair/SAAS partij door 'machtigen'</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">2. </bdi>Lijst met figuren</a></li></ol></nav>
-      <section id="handreiking-adressering-en-routering"><div class="header-wrapper"><h2 id="x1-handreiking-adressering-en-routering"><bdi class="secno">1. </bdi>Handreiking Adressering en Routering</h2><a class="self-link" href="#handreiking-adressering-en-routering" aria-label="Permalink for Section 1."></a></div>
+  <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is de definitieve versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#handreiking-adressering-en-routering"><bdi class="secno">1. </bdi>Handreiking Adressering en Routering</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#doel-van-de-handreiking"><bdi class="secno">1.1 </bdi>Doel van de Handreiking</a></li><li class="tocline"><a class="tocxref" href="#welke-vragen-worden-beantwoord"><bdi class="secno">1.2 </bdi>Welke vragen worden beantwoord</a></li><li class="tocline"><a class="tocxref" href="#welke-onderdelen-worden-besproken"><bdi class="secno">1.3 </bdi>Welke onderdelen worden besproken</a></li><li class="tocline"><a class="tocxref" href="#omgeving-waar-de-handreiking-voor-geldt"><bdi class="secno">1.4 </bdi>Omgeving waar de handreiking voor geldt</a></li><li class="tocline"><a class="tocxref" href="#beschrijving-van-de-werking"><bdi class="secno">1.5 </bdi>Beschrijving van de werking</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#het-oin-wordt-zowel-gebruikt-voor-authenticatie-als-voor-adressering"><bdi class="secno">1.5.1 </bdi>Het OIN wordt zowel gebruikt voor authenticatie als voor adressering.</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#routeringstabel"><bdi class="secno">1.5.1.1 </bdi>Routeringstabel</a></li></ol></li><li class="tocline"><a class="tocxref" href="#wanneer-is-het-aan-te-raden-om-suboin-s-te-gebruiken-voor-adresseren-en-routeren"><bdi class="secno">1.5.2 </bdi>Wanneer is het aan te raden om subOIN's te gebruiken voor adresseren en routeren?</a></li><li class="tocline"><a class="tocxref" href="#wat-zijn-de-regels-die-partijen-met-elkaar-moeten-afspreken-over-het-routeren-en-adresseren-van-berichten"><bdi class="secno">1.5.3 </bdi>Wat zijn de regels die partijen met elkaar moeten afspreken over het routeren en adresseren van berichten?</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#nr-1-direct"><bdi class="secno">1.5.3.1 </bdi>(Nr 1) Direct</a></li><li class="tocline"><a class="tocxref" href="#nr-2-via-knooppunt-a-waarbij-eigen-oin-van-a-gebruikt-wordt-voor-tls-verbindingen-met-verzender-en-ontvanger"><bdi class="secno">1.5.3.2 </bdi>(Nr 2) Via Knooppunt A (waarbij eigen OIN van A gebruikt wordt voor TLS-verbindingen met verzender en ontvanger)</a></li><li class="tocline"><a class="tocxref" href="#nr-3-via-knooppunt-a-waarbij-a-sub-oin-van-verzender-gebruikt-voor-tls-verbindingen-met-ontvanger"><bdi class="secno">1.5.3.3 </bdi>(Nr 3) Via Knooppunt A (waarbij A (Sub)OIN van verzender gebruikt voor TLS-verbindingen met ontvanger)</a></li><li class="tocline"><a class="tocxref" href="#nr-4-via-knooppunt-b-waarbij-b-eigen-oin-van-b-gebruikt-voor-tls-verbindingen-met-verzender"><bdi class="secno">1.5.3.4 </bdi>(Nr 4) Via Knooppunt B (waarbij B eigen OIN van B gebruikt voor TLS-verbindingen met verzender)</a></li><li class="tocline"><a class="tocxref" href="#nr-5-via-knooppunt-b-waarbij-b-sub-oin-van-ontvanger-gebruikt-voor-tls-verbindingen-met-verzender"><bdi class="secno">1.5.3.5 </bdi>(Nr 5) Via Knooppunt B (waarbij B (Sub)OIN van ontvanger gebruikt voor TLS-verbindingen met verzender)</a></li><li class="tocline"><a class="tocxref" href="#nr-6-via-knooppunt-a-en-b-met-gebruik-van-eigen-oin-a-b-voor-tls-verbindingen"><bdi class="secno">1.5.3.6 </bdi>(Nr 6) Via Knooppunt A en B (met gebruik van eigen OIN A,B voor TLS verbindingen)</a></li><li class="tocline"><a class="tocxref" href="#nr-7-via-knooppunt-a-en-b-met-gebruik-van-oin-verzender-ontvanger-voor-tls-verbindingen"><bdi class="secno">1.5.3.7 </bdi>(Nr 7) Via Knooppunt A en B (met gebruik van OIN verzender, ontvanger voor TLS verbindingen)</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-1-voorbeeld-van-routering"><bdi class="secno">1.6 </bdi>Bijlage 1. Voorbeeld van routering</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#voorbeeldsituatie-zowel-zender-als-ontvanger-maken-gebruik-van-suboin-s"><bdi class="secno">1.6.1 </bdi>Voorbeeldsituatie: zowel zender als ontvanger maken gebruik van subOIN's</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-2-digipoort"><bdi class="secno">1.7 </bdi>BIJLAGE 2. Digipoort</a></li><li class="tocline"><a class="tocxref" href="#bijlage-3-analyse-knelpunten-routering-en-intermediairs"><bdi class="secno">1.8 </bdi>BIJLAGE 3. Analyse knelpunten Routering en Intermediairs</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#introductie"><bdi class="secno">1.8.1 </bdi>Introductie</a></li><li class="tocline"><a class="tocxref" href="#intermediairs-saas"><bdi class="secno">1.8.2 </bdi>Intermediairs &amp; SAAS</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#definitie-intermediair"><bdi class="secno">1.8.2.1 </bdi>Definitie Intermediair</a></li><li class="tocline"><a class="tocxref" href="#definitie-van-saas"><bdi class="secno">1.8.2.2 </bdi>Definitie van SAAS</a></li></ol></li><li class="tocline"><a class="tocxref" href="#identificatie-van-organisaties-met-oin"><bdi class="secno">1.8.3 </bdi>Identificatie van organisaties met OIN</a></li><li class="tocline"><a class="tocxref" href="#knelpunten"><bdi class="secno">1.8.4 </bdi>Knelpunten</a></li><li class="tocline"><a class="tocxref" href="#oplossingen"><bdi class="secno">1.8.5 </bdi>Oplossingen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#x1-bevoegdheid-intermediair-via-afspraken"><bdi class="secno">1.8.5.1 </bdi>(1) Bevoegdheid intermediair via afspraken</a></li><li class="tocline"><a class="tocxref" href="#x2-bevoegdheid-intermediair-saas-partij-door-verlenen-certificaat"><bdi class="secno">1.8.5.2 </bdi>(2) Bevoegdheid intermediair/SAAS partij door verlenen certificaat</a></li><li class="tocline"><a class="tocxref" href="#x3-bevoegdheid-intermediair-saas-partij-door-machtigen"><bdi class="secno">1.8.5.3 </bdi>(3) Bevoegdheid intermediair/SAAS partij door 'machtigen'</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">2. </bdi>Lijst met figuren</a></li></ol></nav>
+  <section id="handreiking-adressering-en-routering"><div class="header-wrapper"><h2 id="x1-handreiking-adressering-en-routering"><bdi class="secno">1. </bdi>Handreiking Adressering en Routering</h2><a class="self-link" href="#handreiking-adressering-en-routering" aria-label="Permalink for Section 1."></a></div>
 <section id="doel-van-de-handreiking"><div class="header-wrapper"><h3 id="x1-1-doel-van-de-handreiking"><bdi class="secno">1.1 </bdi>Doel van de Handreiking</h3><a class="self-link" href="#doel-van-de-handreiking" aria-label="Permalink for Section 1.1"></a></div>
 <p>De handreiking heeft tot doel organisaties een hulpmiddel te bieden hoe om te gaan met adresseren en routeren en het gebruik van het OIN hierbij.</p>
 </section><section id="welke-vragen-worden-beantwoord"><div class="header-wrapper"><h3 id="x1-2-welke-vragen-worden-beantwoord"><bdi class="secno">1.2 </bdi>Welke vragen worden beantwoord</h3><a class="self-link" href="#welke-vragen-worden-beantwoord" aria-label="Permalink for Section 1.2"></a></div>
@@ -332,7 +937,12 @@ Een optie is om te werken met een certificaat met een beperkte specifieke scope 
 <p>Over het gebruik van subOIN's voor adresseren en routeren bestaan verschillende opvattingen. Sommige organisaties kennen verschillende digitale postbussen van organisatieonderdelen of voorzieningen en gebruiken subOIN's om deze digitale postbussen te identificeren. Andere organisaties willen het gebruik van OIN reserveren om Organisaties te identificeren en gebruiken voor het routeren van berichten binnen de organisatie ander kenmerken van het bericht. Het OIN-stelsel maakt het eenvoudiger om subOIN's aan te maken, maar legt de partijen geen verplicht patroon op hoe subOIN's&nbsp;gebruikt kunnen worden ten behoeve van adresseren en routeren. Partijen die met elkaar berichten uitwisselen zullen over het gebruik van subOIN's onderling afspraken moeten maken.</p>
 </section><section id="wat-zijn-de-regels-die-partijen-met-elkaar-moeten-afspreken-over-het-routeren-en-adresseren-van-berichten"><div class="header-wrapper"><h4 id="x1-5-3-wat-zijn-de-regels-die-partijen-met-elkaar-moeten-afspreken-over-het-routeren-en-adresseren-van-berichten"><bdi class="secno">1.5.3 </bdi>Wat zijn de regels die partijen met elkaar moeten afspreken over het routeren en adresseren van berichten?</h4><a class="self-link" href="#wat-zijn-de-regels-die-partijen-met-elkaar-moeten-afspreken-over-het-routeren-en-adresseren-van-berichten" aria-label="Permalink for Section 1.5.3"></a></div>
 <p>In deze handreiking zijn hieronder een aantal scenario's uitgewerkt: (zie ook bijlage 1).</p>
-<p><figure id="fig-scenario-s"><img src="media/adressering.png" alt="adressering" title="Scenario's"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">Scenario's</span></figcaption></figure></p>
+<p>
+      </p><figure id="fig-scenario-s">
+        <img src="media/adressering.png" alt="adressering">
+        <figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">Scenario's</span></figcaption>
+      </figure>
+    <p></p>
 <table class="simple">
 <thead>
 <tr>
@@ -440,7 +1050,12 @@ Een optie is om te werken met een certificaat met een beperkte specifieke scope 
 </section></section></section><section id="bijlage-1-voorbeeld-van-routering"><div class="header-wrapper"><h3 id="x1-6-bijlage-1-voorbeeld-van-routering"><bdi class="secno">1.6 </bdi>Bijlage 1. Voorbeeld van routering</h3><a class="self-link" href="#bijlage-1-voorbeeld-van-routering" aria-label="Permalink for Section 1.6"></a></div>
 <p>In deze handreiking hebben we een aantal scenario's uitgewerkt. De scenario's zijn hier in detail uitgewerkt.</p>
 <section id="voorbeeldsituatie-zowel-zender-als-ontvanger-maken-gebruik-van-suboin-s"><div class="header-wrapper"><h4 id="x1-6-1-voorbeeldsituatie-zowel-zender-als-ontvanger-maken-gebruik-van-suboin-s"><bdi class="secno">1.6.1 </bdi>Voorbeeldsituatie: zowel zender als ontvanger maken gebruik van subOIN's</h4><a class="self-link" href="#voorbeeldsituatie-zowel-zender-als-ontvanger-maken-gebruik-van-suboin-s" aria-label="Permalink for Section 1.6.1"></a></div>
-<p><figure id="fig-adressering"><img src="media/OIN.scenario1.svg" alt="adressering - zowel zender als ontvanger maken gebruik van subOIN's" title="Adressering"><figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title">Adressering</span></figcaption></figure></p>
+<p>
+      </p><figure id="fig-adressering">
+        <img src="media/OIN.scenario1.svg" alt="adressering - zowel zender als ontvanger maken gebruik van subOIN's">
+        <figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title">Adressering</span></figcaption>
+      </figure>
+    <p></p>
 <table class="simple">
 <thead>
 <tr>
@@ -567,7 +1182,12 @@ Een optie is om te werken met een certificaat met een beperkte specifieke scope 
 </tbody></table>
 </section></section><section id="bijlage-2-digipoort"><div class="header-wrapper"><h3 id="x1-7-bijlage-2-digipoort"><bdi class="secno">1.7 </bdi>BIJLAGE 2. Digipoort</h3><a class="self-link" href="#bijlage-2-digipoort" aria-label="Permalink for Section 1.7"></a></div>
 <p><strong>Digipoort -- Routeermechanisme (vereenvoudigd)</strong></p>
-<p><figure id="fig-digipoort"><img src="media/Digipoort.png" alt="Digipoort" title="Digipoort"><figcaption>Figuur <bdi class="figno">3</bdi> <span class="fig-title">Digipoort</span></figcaption></figure></p>
+<p>
+      </p><figure id="fig-digipoort">
+        <img src="media/Digipoort.png" alt="Digipoort">
+        <figcaption>Figuur <bdi class="figno">3</bdi> <span class="fig-title">Digipoort</span></figcaption>
+      </figure>
+    <p></p>
 <p><strong>Routeertabel</strong></p>
 <table class="simple">
 <thead>
@@ -752,7 +1372,7 @@ Een optie is om te werken met een certificaat met een beperkte specifieke scope 
 </li>
 </ul>
 <p><em>(1): We beschouwen transparantie hier op de logistieke laag. Op technisch niveau is de intermediair een eindpunt omdat de TLS verbinding tussen twee servers moet worden opgezet.</em></p>
-<p><em>Bron:</em> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/architectuur/#intermediairs">Digikoppeling Architectuur 2.0 </a></p>
+<p><em>Bron:</em> <a href="https://gitdocumentatie.logius.nl/publicatie/dk/architectuur/#intermediairs">Digikoppeling Architectuur 2.0 </a></p>
 </section><section id="definitie-van-saas"><div class="header-wrapper"><h5 id="x1-8-2-2-definitie-van-saas"><bdi class="secno">1.8.2.2 </bdi>Definitie van SAAS</h5><a class="self-link" href="#definitie-van-saas" aria-label="Permalink for Section 1.8.2.2"></a></div>
 <p><em><strong>Software as a service</strong>, vaak afgekort als <strong>SaaS</strong>, ook weleens <strong>software on demand</strong> genoemd, is software die als een online dienst wordt aangeboden. De klant hoeft de software niet aan te schaffen, maar sluit bijvoorbeeld een contract per maand per gebruiker af, eventueel in combinatie met andere parameters. De SaaS-aanbieder zorgt voor installatie, onderhoud en beheer, de gebruiker benadert de software over het internet bij de SaaS-aanbieder.</em></p>
 <p>Kenmerken:</p>
@@ -763,7 +1383,7 @@ Een optie is om te werken met een certificaat met een beperkte specifieke scope 
 </li>
 </ul>
 </section></section><section id="identificatie-van-organisaties-met-oin"><div class="header-wrapper"><h4 id="x1-8-3-identificatie-van-organisaties-met-oin"><bdi class="secno">1.8.3 </bdi>Identificatie van organisaties met OIN</h4><a class="self-link" href="#identificatie-van-organisaties-met-oin" aria-label="Permalink for Section 1.8.3"></a></div>
-<p>Het OIN (Organisatie Identificatie Nummer) wordt gebruikt om organisaties te identificeren (zie ook <a href="https://publicatie.centrumvoorstandaarden.nl/dk/oin/">OIN Stelsel</a>
+<p>Het OIN (Organisatie Identificatie Nummer) wordt gebruikt om organisaties te identificeren (zie ook <a href="https://gitdocumentatie.logius.nl/publicatie/dk/oin/">OIN Stelsel</a>
 Het SubOIN is een afgeleide van het OIN en is opgesteld volgens de OIN-nummersystematiek en wordt gebruikt voor een organisatieonderdeel, samenwerkingsverband of voorziening. SubOIN's kunnen worden gebruikt om fijnmazig te identificeren. (Aan een OIN kunnen meerdere SubOIN's gekoppeld worden).</p>
 </section><section id="knelpunten"><div class="header-wrapper"><h4 id="x1-8-4-knelpunten"><bdi class="secno">1.8.4 </bdi>Knelpunten</h4><a class="self-link" href="#knelpunten" aria-label="Permalink for Section 1.8.4"></a></div>
 <p>Knelpunten bij gebruik van intermediairs / SAAS oplossingen zijn:</p>
@@ -774,9 +1394,14 @@ Het SubOIN is een afgeleide van het OIN en is opgesteld volgens de OIN-nummersys
 </ul>
 </section><section id="oplossingen"><div class="header-wrapper"><h4 id="x1-8-5-oplossingen"><bdi class="secno">1.8.5 </bdi>Oplossingen</h4><a class="self-link" href="#oplossingen" aria-label="Permalink for Section 1.8.5"></a></div>
 <section id="x1-bevoegdheid-intermediair-via-afspraken"><div class="header-wrapper"><h5 id="x1-8-5-1-1-bevoegdheid-intermediair-via-afspraken"><bdi class="secno">1.8.5.1 </bdi>(1) Bevoegdheid intermediair via afspraken</h5><a class="self-link" href="#x1-bevoegdheid-intermediair-via-afspraken" aria-label="Permalink for Section 1.8.5.1"></a></div>
-<p><figure id="fig-intermediair"><img src="media/intermediair.jpg" alt="intermediair" title="Intermediair"><figcaption>Figuur <bdi class="figno">4</bdi> <span class="fig-title">Intermediair</span></figcaption></figure> </p>
+<p>
+      </p><figure id="fig-intermediair">
+        <img src="media/intermediair.jpg" alt="intermediair">
+        <figcaption>Figuur <bdi class="figno">4</bdi> <span class="fig-title">Intermediair</span></figcaption>
+      </figure>
+     <p></p>
 <p>Een intermediair in de rol van 'knooppunt' krijgt de bevoegdheid om dienst van B af te nemen (op basis van of passend in toepasselijke regelgeving). Voor B blijft achterliggende partij A buiten beeld. Of A bevoegd is om de dienst via de Intermediair af te nemen bepaalt de Intermediair op basis van de regelgeving en verantwoordelijkheid;<br>(een voorbeeld is een sector loket)</p>
-<p>(Bron: <a href="https://publicatie.centrumvoorstandaarden.nl/dk/idauth/">Digikoppeling Identificatie en Authenticatie 1.4.2 </a> )</p>
+<p>(Bron: <a href="https://gitdocumentatie.logius.nl/publicatie/dk/idauth/">Digikoppeling Identificatie en Authenticatie 1.4.2 </a> )</p>
 </section><section id="x2-bevoegdheid-intermediair-saas-partij-door-verlenen-certificaat"><div class="header-wrapper"><h5 id="x1-8-5-2-2-bevoegdheid-intermediair-saas-partij-door-verlenen-certificaat"><bdi class="secno">1.8.5.2 </bdi>(2) Bevoegdheid intermediair/SAAS partij door verlenen certificaat</h5><a class="self-link" href="#x2-bevoegdheid-intermediair-saas-partij-door-verlenen-certificaat" aria-label="Permalink for Section 1.8.5.2"></a></div>
 <p>Organisatie A geeft een certificaat aan de SAAS partij waarmee de SAAS partij zich naar buiten toe identificeert als A. Voor partij B is het dan alsof deze direct met A communiceert</p>
 <p>Aandachtspunt:</p>
@@ -787,10 +1412,15 @@ Het SubOIN is een afgeleide van het OIN en is opgesteld volgens de OIN-nummersys
 <p>3a. In dit geval acteert de SAAS partij onder het eigen OIN / SubOIN, Voor partij B is het duidelijk dat zij communiceren met de SAAS partij. Onderlinge afspraken bepalen of de SAAS partij gemachtigd is om namens A bepaalde diensten te gebruiken;</p>
 <p>3b. Gebruik van een machtigingen register</p>
 <p>De SAAS partij identificeert zich met het eigen OIN / SubOIN. In het machtigingen register kan worden nagegaan of de SAAS partij geautoriseerd is om bepaalde diensten namens een organisatie te verrichten.</p>
-<p><figure id="fig-machtigen"><img src="media/machtigen.jpg" alt="machtigen" title="Machtigen"><figcaption>Figuur <bdi class="figno">5</bdi> <span class="fig-title">Machtigen</span></figcaption></figure></p>
+<p>
+      </p><figure id="fig-machtigen">
+        <img src="media/machtigen.jpg" alt="machtigen">
+        <figcaption>Figuur <bdi class="figno">5</bdi> <span class="fig-title">Machtigen</span></figcaption>
+      </figure>
+    <p></p>
 </section></section></section></section>
-      
-      <section id="tof"><div class="header-wrapper"><h2 id="x2-lijst-met-figuren"><bdi class="secno">2. </bdi>Lijst met figuren</h2><a class="self-link" href="#tof" aria-label="Permalink for Section 2."></a></div><ul class="tof">
+  <section id="tof">
+  <div class="header-wrapper"><h2 id="x2-lijst-met-figuren"><bdi class="secno">2. </bdi>Lijst met figuren</h2><a class="self-link" href="#tof" aria-label="Permalink for Section 2."></a></div><ul class="tof">
         <li class="tofline">
     <a class="tocxref" href="#fig-scenario-s">Figuur <bdi class="figno">1</bdi> <span class="fig-title">Scenario's</span></a>
   </li><li class="tofline">
@@ -803,8 +1433,7 @@ Het SubOIN is een afgeleide van het OIN en is opgesteld volgens de OIN-nummersys
     <a class="tocxref" href="#fig-machtigen">Figuur <bdi class="figno">5</bdi> <span class="fig-title">Machtigen</span></a>
   </li>
       </ul></section>
-      
-   
+ 
 
 <p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Back to Top">↑</abbr></a>
@@ -1030,4 +1659,4 @@ function hidePanel(panel) {
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
+})()</script><div class="sidelabel" style="background-color: #154273;">Logius Handreiking - Vastgestelde versie</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
