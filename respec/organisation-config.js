@@ -18,7 +18,7 @@ var organisationConfig = {
     useLogo: true,
     useLabel: true,
 
-    license: "cc0",
+    license: "cc-by",
     addSectionLinks: true,
 
     localizationStrings: {
@@ -88,19 +88,19 @@ var organisationConfig = {
             name: "Creative Commons 0 Public Domain Dedication",
             short: "CC0",
             url: "https://creativecommons.org/publicdomain/zero/1.0/",
-            image: "https://tools.geostandaarden.nl/respec/style/logos/CC-Licentie.svg",
+            image: "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-zero.svg",
         },
         "cc-by": {
             name: "Creative Commons Attribution 4.0 International Public License",
             short: "CC-BY",
             url: "https://creativecommons.org/licenses/by/4.0/legalcode",
-            image: "https://tools.geostandaarden.nl/respec/style/logos/cc-by.svg",
+            image: "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg",
         },
         "cc-by-nd": {
             name: "Creative Commons Naamsvermelding-GeenAfgeleideWerken 4.0 Internationaal",
             short: "CC-BY-ND",
             url: "https://creativecommons.org/licenses/by-nd/4.0/legalcode.nl",
-            image: "https://tools.geostandaarden.nl/respec/style/logos/cc-by-nd.svg",
+            image: "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by-nd.svg",
         },
     },
 
