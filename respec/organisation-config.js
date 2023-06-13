@@ -336,6 +336,13 @@ var organisationConfig = {
             publisher: "Logius",
             title: "Gebruiksvoorwaarden Digikoppeling"
         },
+        "Geospatial Module": {
+            authors: ["L. van den Brink, P. Bresters, P. van Genuchten, G. Mathijssen, M. Strijker"],
+            date: "23 mei 2021",
+            href: "https://docs.geostandaarden.nl/api/API-Strategie-mod-geo/",
+            publisher: "Geonovum",
+            title: "API Design rules Module: Geospatial"
+        },
         "HEART.OAuth2": {
             authors: ["J. Richer"],
             date: "April 25, 2017",
