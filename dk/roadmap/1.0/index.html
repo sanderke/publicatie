@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="nl"><head>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
-<meta name="generator" content="ReSpec 32.7.1">
+<meta name="generator" content="ReSpec 34.1.1">
 <style>
 dfn{cursor:pointer}
 .dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
@@ -81,9 +81,8 @@ details.respec-tests-details>ul{width:100%;margin-top:-.3em}
 details.respec-tests-details>li{padding-left:1em}
 .self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
 aside.example .marker>a.self-link{color:inherit}
-.header-wrapper{display:flex;align-items:baseline}
-:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2){position:relative;left:-.5em}
-:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.5}
+.header-wrapper{display:flex;align-items:baseline;position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-.7em;font-size:1rem;opacity:.5}
 :is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
 :is(h2,h3)+a.self-link{top:-.2em}
 :is(h4,h5,h6)+a.self-link::before{color:#000}
@@ -111,9 +110,6 @@ dd{margin-left:0}
       "width": 44,
       "url": "https://www.logius.nl/standaarden"
     }
-  ],
-  "edDraftURI": [
-    "github"
   ],
   "latestVersion": [
     "nl_organisationPublishURL",
@@ -199,26 +195,26 @@ dd{margin-left:0}
   },
   "labelColor": {
     "def": "#154273",
-    "wv": "#32a852"
+    "wv": "#39870c"
   },
   "licenses": {
     "cc0": {
       "name": "Creative Commons 0 Public Domain Dedication",
       "short": "CC0",
       "url": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "image": "https://tools.geostandaarden.nl/respec/style/logos/CC-Licentie.svg"
+      "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-zero.svg"
     },
     "cc-by": {
       "name": "Creative Commons Attribution 4.0 International Public License",
       "short": "CC-BY",
       "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
-      "image": "https://tools.geostandaarden.nl/respec/style/logos/cc-by.svg"
+      "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg"
     },
     "cc-by-nd": {
       "name": "Creative Commons Naamsvermelding-GeenAfgeleideWerken 4.0 Internationaal",
       "short": "CC-BY-ND",
       "url": "https://creativecommons.org/licenses/by-nd/4.0/legalcode.nl",
-      "image": "https://tools.geostandaarden.nl/respec/style/logos/cc-by-nd.svg"
+      "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by-nd.svg"
     }
   },
   "localBiblio": {
@@ -322,15 +318,6 @@ dd{margin-left:0}
       "publisher": "Logius",
       "title": "Digikoppeling Overzicht Actuele Documentatie en Compliance"
     },
-    "Digikoppeling Architectuur": {
-      "authors": [
-        "Logius Centrum voor standaarden"
-      ],
-      "date": "december 2020",
-      "href": "https://centrumvoorstandaarden.github.io/Architectuur2.0-metRestfulAPI/snapshot.html",
-      "publisher": "Logius",
-      "title": "Digikoppeling Architectuur"
-    },
     "Digikoppeling Beheermodel": {
       "date": "Oktober 2017",
       "href": "https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Standaarden/Digikoppeling-Beheermodel.pdf",
@@ -356,8 +343,8 @@ dd{margin-left:0}
       "title": "Digikoppeling Best Practices WUS"
     },
     "Digikoppeling Beveiligingsdocument": {
-      "date": "2020",
-      "href": "https://www.logius.nl/sites/default/files/bestanden/website/Digikoppeling_Beveiligingsstandaarden_en_voorschriften_v1.3.pdf",
+      "date": "2021",
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/",
       "publisher": "Logius",
       "title": "Digikoppeling Beveiligingsstandaarden en voorschriften"
     },
@@ -411,9 +398,6 @@ dd{margin-left:0}
       "title": "Digikoppeling REST API profiel"
     },
     "Digikoppeling-Architectuur": {
-      "authors": [
-        "Logius Centrum voor standaarden"
-      ],
       "href": "https://publicatie.centrumvoorstandaarden.nl/dk/architectuur/",
       "publisher": "Logius",
       "title": "Digikoppeling Architectuur"
@@ -466,6 +450,15 @@ dd{margin-left:0}
       "publisher": "Oasis",
       "title": "Collaboration-Protocol Profile and Agreement Specification Version 2.0"
     },
+    "eDelivery API4IPS": {
+      "authors": [
+        "J. Dimitriou, V. Veduta, B. Dumitriu"
+      ],
+      "date": "sept 8 2022",
+      "href": "https://ec.europa.eu/digital-building-blocks/wikis/display/EDELCOMMUNITY/Project+deliverables",
+      "publisher": "OpenID foundation",
+      "title": "(ISA2).(eDelivery).(Piloting a REST API extension of CEF eDelivery).(ISA² IPS REST API Profile).(v1.0).pdf"
+    },
     "Eisen Pkioverheid": {
       "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen",
       "publisher": "Logius",
@@ -485,6 +478,15 @@ dd{margin-left:0}
       "href": "https://www.logius.nl/diensten/digikoppeling/documentatie/gebruiksvoorwaarden-digikoppeling",
       "publisher": "Logius",
       "title": "Gebruiksvoorwaarden Digikoppeling"
+    },
+    "Geospatial Module": {
+      "authors": [
+        "L. van den Brink, P. Bresters, P. van Genuchten, G. Mathijssen, M. Strijker"
+      ],
+      "date": "23 mei 2021",
+      "href": "https://docs.geostandaarden.nl/api/API-Strategie-mod-geo/",
+      "publisher": "Geonovum",
+      "title": "API Design rules Module: Geospatial"
     },
     "HEART.OAuth2": {
       "authors": [
@@ -769,6 +771,15 @@ dd{margin-left:0}
       "href": "https://www.iso.org/standard/43796.html",
       "publisher": "ISO",
       "title": "ITU-T Recommendation X.520 (2001) ISO/IEC 9594-6"
+    },
+    "ADR-Validator": {
+      "href": "https://gitlab.com/commonground/don/adr-validator/-/blob/v0.1.0/pkg/adr/rules.go",
+      "title": "Technical ADR Validation rule testset 0.1.0",
+      "authors": [
+        "H. Stijns"
+      ],
+      "publisher": "Geonovum",
+      "date": "December 2022"
     }
   },
   "specStatus": "DEF",
@@ -815,10 +826,11 @@ dd{margin-left:0}
     <dl>
       <dt>Deze versie:</dt><dd class="status">
               <a class="u-url status" href="https://gitdocumentatie.logius.nl/publicatie/dk/roadmap/1.0">https://gitdocumentatie.logius.nl/publicatie/dk/roadmap/1.0</a>
-            </dd><dt>Laatst gepubliceerde versie:</dt><dd>
+            </dd>
+      <dt>Laatst gepubliceerde versie:</dt><dd>
               <a href="https://gitdocumentatie.logius.nl/publicatie/dk/roadmap">https://gitdocumentatie.logius.nl/publicatie/dk/roadmap</a>
             </dd>
-      <dt>Laatste werkversie:</dt><dd><a href="https://github.com/logius-standaarden/digikoppeling-algemeen/">https://github.com/logius-standaarden/digikoppeling-algemeen/</a></dd>
+      <dt>Laatste werkversie:</dt><dd><a href="https://logius-standaarden.github.io/Digikoppeling-Algemeen/">https://logius-standaarden.github.io/Digikoppeling-Algemeen/</a></dd>
       
       
       
@@ -850,7 +862,7 @@ dd{margin-left:0}
         </p>
     <p class="copyright">
           Dit document valt onder de volgende licentie: 
-          <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/" class="subfoot">Creative Commons 0 Public Domain Dedication</a>.
+          <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/" class="subfoot"><img style="float: left; padding-right: 5px;" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-zero.svg" alt="Logo Creative Commons 0 Public Domain Dedication"><br> Creative Commons 0 Public Domain Dedication</a>
         </p>
     <hr title="Separator for header">
   </div>
@@ -915,7 +927,7 @@ dd{margin-left:0}
 <p><em>Wat is het resultaat?</em></p>
 <p>Een Digikoppeling standaard waarin voor het Digikoppeling REST API profiel ondersteuning is voor signing &amp; encryptie.</p>
 <p><em>Wanneer gaat dit gebeuren?</em></p>
-<p>Q2 2022-Q4 2022</p>
+<p>Q2 2022-Q3 2023</p>
 </section><section id="onderzoek-verwijzing-naar-de-adr-api-security-extensie-vanuit-de-digikoppeling-beveiligingsvoorschriften"><div class="header-wrapper"><h4 id="x1-5-3-onderzoek-verwijzing-naar-de-adr-api-security-extensie-vanuit-de-digikoppeling-beveiligingsvoorschriften"><bdi class="secno">1.5.3 </bdi>Onderzoek verwijzing naar de 'ADR API Security Extensie' vanuit de Digikoppeling Beveiligingsvoorschriften</h4><a class="self-link" href="#onderzoek-verwijzing-naar-de-adr-api-security-extensie-vanuit-de-digikoppeling-beveiligingsvoorschriften" aria-label="Permalink for Section 1.5.3"></a></div>
 <p><em>Wat is het issue of de wens?</em></p>
 <p>De 'ADR API Security Extensie' bevat voor API's specifieke security aandachtspunten</p>
@@ -933,7 +945,7 @@ dd{margin-left:0}
 <p><em>Wat is het resultaat?</em></p>
 <p>Een optimale governancestructuur die weer bestaat uit drie lagen.</p>
 <p><em>Wanneer gaat dit gebeuren?</em></p>
-<p>Q1 2022 – Q4 2022</p>
+<p>Q1 2022 – Q2 2023</p>
 </section><section id="verbeteren-informatievoorziening-nieuwe-wijze-van-publiceren"><div class="header-wrapper"><h4 id="x1-5-5-verbeteren-informatievoorziening-nieuwe-wijze-van-publiceren"><bdi class="secno">1.5.5 </bdi>Verbeteren Informatievoorziening / Nieuwe wijze van Publiceren</h4><a class="self-link" href="#verbeteren-informatievoorziening-nieuwe-wijze-van-publiceren" aria-label="Permalink for Section 1.5.5"></a></div>
 <p><em>Wat is het issue of de wens?</em></p>
 <p>De digikoppeling documentatie moet eenvoudig toegankelijk zijn. Gebruikers moeten gemakkelijk de voor hen relevante onderdelen kunnen vinden en benaderen. Informatie staat nu verspreid over een aantal verschillende websites waarbij onderliggende relaties niet altijd gelegd worden;</p>
@@ -942,7 +954,7 @@ dd{margin-left:0}
 <p><em>Wat is het resultaat?</em></p>
 <p>Een omgeving waar alle documentatie m.b.t. de Digikoppeling standaard online (in HTML) beschikbaar is. Ook diensten en aanvullende informatie worden waar mogelijk via één website gepubliceerd. Wanneer verschillende sites gebruikt worden wordt de onderlinge samenhang duidelijk gemaakt zodat gebruikers alle informatie rondom de Digikoppeling standaard kunnen vinden.</p>
 <p><em>Wanneer gaat dit gebeuren?</em></p>
-<p>Q1 2022 – Q2 2022</p>
+<p>Q1 2022 – Q2 2023</p>
 </section><section id="best-practice-identificatie-van-organisaties-organisatieonderdelen-en-voorzieningen"><div class="header-wrapper"><h4 id="x1-5-6-best-practice-identificatie-van-organisaties-organisatieonderdelen-en-voorzieningen"><bdi class="secno">1.5.6 </bdi>Best Practice Identificatie van Organisaties, Organisatieonderdelen en voorzieningen</h4><a class="self-link" href="#best-practice-identificatie-van-organisaties-organisatieonderdelen-en-voorzieningen" aria-label="Permalink for Section 1.5.6"></a></div>
 <p><em>Wat is het issue of de wens?</em></p>
 <p>Het OIN-beleid is sinds 2016 op het punt van het gebruik van SubOIns voor organisatieonderdelen en –voorzieningen verduidelijkt en uitgebreid. Het lijkt erop dat het steeds belangrijker wordt om entiteiten in een uitwisselketen te kunnen identificeren. Er bestaat tussen organisaties verschil in inzicht in de toepassing van identificatie.</p>
@@ -973,7 +985,7 @@ dd{margin-left:0}
 <p><em>Wat is het resultaat?</em></p>
 <p>Met bovengenoemde acties heeft Digikoppeling in de 2e helft van 2022 een goed beeld van moeilijkheden en mogelijkheden van het gebruik van de ebMS3 standaard zodat eind 2022 met het TO opnieuw besproken kan worden of en op welke termijn het zinnig is om over te gaan op de nieuwe versie.</p>
 <p><em>Wanneer gaat dit gebeuren?</em></p>
-<p>Q2-Q4 2022</p>
+<p>Q2 2022 -  Q2 2023</p>
 </section><section id="interoperabiliteit-platformen-wus-bij-gebruik-mtom-in-combinatie-met-ws-security-signing"><div class="header-wrapper"><h4 id="x1-5-9-interoperabiliteit-platformen-wus-bij-gebruik-mtom-in-combinatie-met-ws-security-signing"><bdi class="secno">1.5.9 </bdi>Interoperabiliteit platformen WUS bij gebruik MTOM in combinatie met WS-Security (signing)</h4><a class="self-link" href="#interoperabiliteit-platformen-wus-bij-gebruik-mtom-in-combinatie-met-ws-security-signing" aria-label="Permalink for Section 1.5.9"></a></div>
 <p><em>Wat is het issue of de wens?</em></p>
 <p>Bij gebruik van MTOM in combinatie met signing en encryptie zijn er verschillen in hoe de verschillende platformen hiermee omgaan in de default instellingen en in de mogelijkheden om certificaat informatie wel of niet als reference te kunnen specificeren/verwerken;</p>
@@ -982,7 +994,7 @@ dd{margin-left:0}
 <p><em>Wat is het resultaat?</em></p>
 <p><em>Resultaat is een analyse met indien mogelijk een voorstel voor aanvullende afspraken</em></p>
 <p><em>Wanneer gaat dit gebeuren?</em></p>
-<p><em>Q1-Q2 2022</em></p>
+<p>Q1-Q2 2022</p>
 </section><section id="doorontwikkeling-respec-digikoppeling-template-voor-publicatie-van-specificaties"><div class="header-wrapper"><h4 id="x1-5-10-doorontwikkeling-respec-digikoppeling-template-voor-publicatie-van-specificaties"><bdi class="secno">1.5.10 </bdi>Doorontwikkeling RESPEC/Digikoppeling template voor publicatie van specificaties</h4><a class="self-link" href="#doorontwikkeling-respec-digikoppeling-template-voor-publicatie-van-specificaties" aria-label="Permalink for Section 1.5.10"></a></div>
 <p><em>Wat is het issue of de wens?</em></p>
 <p>Digikoppeling documentatie wordt d.m.v. RESPEC gepubliceerd. RESPEC is een hulpmiddel ontwikkeld door W3C voor technische specificaties (respec.org).<br>RESPEC wordt doorontwikkeld en de Digikoppeling documentatie tooling zal meelopen in deze ontwikkeling om ook nieuwe functionaiteiten te ondersteunen;</p>
@@ -992,7 +1004,7 @@ dd{margin-left:0}
 <p>Het resultaat is een Digikoppeling RESPEC template dat up to date is met de algemene/centrale RESPEC ontwikkeling en dat voldoet aan de Digitoegankelijkheidseisen.</p>
 <p>(Voordeel hiervan is ook dat technisch onderhoud uiteindelijk bij de W3C Respec community komt te liggen)</p>
 <p><em>Wanneer gaat dit gebeuren?</em></p>
-<p><em>Q1-Q2 2022</em></p>
+<p>Q1 2022 - Q4 2023</p>
 </section><section id="update-beheermodel-aansluiting-op-logius-standaarden-bomos-generiek-beheer-model-governance"><div class="header-wrapper"><h4 id="x1-5-11-update-beheermodel-aansluiting-op-logius-standaarden-bomos-generiek-beheer-model-governance"><bdi class="secno">1.5.11 </bdi>Update Beheermodel / aansluiting op Logius Standaarden BOMOS generiek beheer model &amp; governance</h4><a class="self-link" href="#update-beheermodel-aansluiting-op-logius-standaarden-bomos-generiek-beheer-model-governance" aria-label="Permalink for Section 1.5.11"></a></div>
 <p><em>Wat is het issue of de wens?</em></p>
 <p>Momenteel wordt een nieuw generiek beheermodel gebaseerd op BOMOS ontwikkeld binnen de afdeling Standaarden;<br>Het Digikoppeling beheermodel zal in lijn moeten blijven met het generieke model.</p>
@@ -1001,7 +1013,7 @@ dd{margin-left:0}
 <p><em>Wat is het resultaat?</em></p>
 <p>Een Digikoppeling beheermodel in lijn met het generieke beheermodel volgens BOMOS van de afdeling Standaarden.</p>
 <p><em>Wanneer gaat dit gebeuren?</em></p>
-<p><em>Q1-Q2 2022</em></p>
+<p>Q1-Q2 2022</p>
 </section><section id="lange-termijn-visie-hoe-om-te-gaan-met-uitfasering-vervanging-van-profielen"><div class="header-wrapper"><h4 id="x1-5-12-lange-termijn-visie-hoe-om-te-gaan-met-uitfasering-vervanging-van-profielen"><bdi class="secno">1.5.12 </bdi>Lange termijn visie : Hoe om te gaan met uitfasering/vervanging van profielen</h4><a class="self-link" href="#lange-termijn-visie-hoe-om-te-gaan-met-uitfasering-vervanging-van-profielen" aria-label="Permalink for Section 1.5.12"></a></div>
 <p><em>Wat is het issue of de wens?</em></p>
 <p>Als nieuwe profielen worden geïntroduceerd , is de vraag hoe moet worden omgegaan met het al dan niet toestaan van meerdere vergelijkbare profielen binnen Digikoppeling;</p>
@@ -1010,7 +1022,7 @@ dd{margin-left:0}
 <p><em>Wat is het resultaat?</em></p>
 <p>Een visie op uitfasering/vervanging van profielen</p>
 <p><em>Wanneer gaat dit gebeuren?</em></p>
-<p><em>Q1-Q2 2022</em></p>
+<p>Q1-Q2 2022</p>
 </section><section id="periodiek-actualiseren-architectuur"><div class="header-wrapper"><h4 id="x1-5-13-periodiek-actualiseren-architectuur"><bdi class="secno">1.5.13 </bdi>Periodiek actualiseren architectuur</h4><a class="self-link" href="#periodiek-actualiseren-architectuur" aria-label="Permalink for Section 1.5.13"></a></div>
 <p><em>Wat is het issue of de wens?</em></p>
 <p>De Digikoppeling architectuur dient periodiek te worden bijgewerkt om goed aan te blijven aansluiten bij ontwikkelingen in de NORA, Gemma, KP-API's en andere overheidsbrede architectuur ontwikkelingen;</p>
@@ -1019,7 +1031,7 @@ dd{margin-left:0}
 <p><em>Wat is het resultaat?</em></p>
 <p>Een nieuwe versie van het architectuur document</p>
 <p><em>Wanneer gaat dit gebeuren?</em></p>
-<p><em>Q3 2022 &amp; Q3 2023</em></p>
+<p>Q3 2022 &amp; Q3 2023</p>
 </section><section id="tijdlijn-roadmap-digikoppeling-standaarden"><div class="header-wrapper"><h4 id="x1-5-14-tijdlijn-roadmap-digikoppeling-standaarden"><bdi class="secno">1.5.14 </bdi>Tijdlijn Roadmap Digikoppeling Standaarden</h4><a class="self-link" href="#tijdlijn-roadmap-digikoppeling-standaarden" aria-label="Permalink for Section 1.5.14"></a></div>
 <p>De roadmap Digikoppeling is 09-03-2023 geactualiseerd, <strong>'vet gedrukt'</strong> zijn de onderwerpen die doorlopen
 ('niet vetgedrukt' zijn onderwerpen die afgerond zijn).</p>
