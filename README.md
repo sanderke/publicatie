@@ -120,6 +120,7 @@ Klik op het pad om naar de pagina op logius.nl te gaan. Klik op :scroll: om de p
 - [dk/template/](https://gitdocumentatie.logius.nl/publicatie/dk/template/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/template/)
    - [dk/template/0.0.1/](https://gitdocumentatie.logius.nl/publicatie/dk/template/0.0.1/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/template/0.0.1/)
    - [dk/template/0.0.2/](https://gitdocumentatie.logius.nl/publicatie/dk/template/0.0.2/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/template/0.0.2/)
+   - [dk/template/0.0.3/](https://gitdocumentatie.logius.nl/publicatie/dk/template/0.0.3/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/template/0.0.3/)
 - [dk/watisdk/](https://gitdocumentatie.logius.nl/publicatie/dk/watisdk/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/watisdk/)
    - [dk/watisdk/1.1.1/](https://gitdocumentatie.logius.nl/publicatie/dk/watisdk/1.1.1/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/watisdk/1.1.1/)
    - [dk/watisdk/1.1.2/](https://gitdocumentatie.logius.nl/publicatie/dk/watisdk/1.1.2/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/watisdk/1.1.2/)
