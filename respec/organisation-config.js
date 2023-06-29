@@ -330,6 +330,21 @@ var organisationConfig = {
             publisher: "Forum Standaardisatie",
             title: "Expertadvies CloudEvents 1.0"
         },
+        folmer2011: {
+            title: "Management and Development Model for Open Standards (BOMOS) version 2",
+            keywords: "IR-76837",
+            authors: ["ErwinFolmer", "Matthijs Punter"],
+            date: "2011",
+            language: "English",
+            publisher: "Programmabureau NOiV",
+        },
+        folmer2012: {
+            href: "https://ris.utwente.nl/ws/portalfiles/portal/6064223/thesis_E_Folmer.pdf",
+            title: "Quality of Semantic Standards",
+            authors: ["Erwin Folmer"],
+            date: "2012",
+            publisher: "Universiteit Twente",
+        },
         "Gebruiksvoorwaarden Digikoppeling": {
             date: "1 januari 2021",
             href: "https://www.logius.nl/diensten/digikoppeling/documentatie/gebruiksvoorwaarden-digikoppeling",
