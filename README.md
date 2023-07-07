@@ -96,6 +96,7 @@ Klik op het pad om naar de pagina op logius.nl te gaan. Klik op :scroll: om de p
    - [dk/gbachtcert/1.6/](https://gitdocumentatie.logius.nl/publicatie/dk/gbachtcert/1.6/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/gbachtcert/1.6/)
    - [dk/gbachtcert/1.6.1/](https://gitdocumentatie.logius.nl/publicatie/dk/gbachtcert/1.6.1/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/gbachtcert/1.6.1/)
    - [dk/gbachtcert/1.6.2/](https://gitdocumentatie.logius.nl/publicatie/dk/gbachtcert/1.6.2/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/gbachtcert/1.6.2/)
+   - [dk/gbachtcert/1.6.3/](https://gitdocumentatie.logius.nl/publicatie/dk/gbachtcert/1.6.3/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/gbachtcert/1.6.3/)
    - [dk/gbachtcert/def-bp-gbachtcert-20200920/](https://gitdocumentatie.logius.nl/publicatie/dk/gbachtcert/def-bp-gbachtcert-20200920/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/gbachtcert/def-bp-gbachtcert-20200920/)
    - [dk/gbachtcert/def-bp-gbachtcert-20210201/](https://gitdocumentatie.logius.nl/publicatie/dk/gbachtcert/def-bp-gbachtcert-20210201/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/gbachtcert/def-bp-gbachtcert-20210201/)
 - [dk/idauth/](https://gitdocumentatie.logius.nl/publicatie/dk/idauth/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/idauth/)
