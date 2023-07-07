@@ -81,6 +81,7 @@ Klik op het pad om naar de pagina op logius.nl te gaan. Klik op :scroll: om de p
 - [dk/bpwus/](https://gitdocumentatie.logius.nl/publicatie/dk/bpwus/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/bpwus/)
    - [dk/bpwus/1.10/](https://gitdocumentatie.logius.nl/publicatie/dk/bpwus/1.10/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/bpwus/1.10/)
    - [dk/bpwus/1.10.1/](https://gitdocumentatie.logius.nl/publicatie/dk/bpwus/1.10.1/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/bpwus/1.10.1/)
+   - [dk/bpwus/1.10.2/](https://gitdocumentatie.logius.nl/publicatie/dk/bpwus/1.10.2/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/bpwus/1.10.2/)
    - [dk/bpwus/def-bp-bpwus-20171001/](https://gitdocumentatie.logius.nl/publicatie/dk/bpwus/def-bp-bpwus-20171001/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/bpwus/def-bp-bpwus-20171001/)
 - [dk/ebms/](https://gitdocumentatie.logius.nl/publicatie/dk/ebms/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/ebms/)
    - [dk/ebms/3.3/](https://gitdocumentatie.logius.nl/publicatie/dk/ebms/3.3/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/ebms/3.3/)
