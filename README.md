@@ -76,6 +76,7 @@ Klik op het pad om naar de pagina op logius.nl te gaan. Klik op :scroll: om de p
 - [dk/bpgb/](https://gitdocumentatie.logius.nl/publicatie/dk/bpgb/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/bpgb/)
    - [dk/bpgb/3.1/](https://gitdocumentatie.logius.nl/publicatie/dk/bpgb/3.1/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/bpgb/3.1/)
    - [dk/bpgb/3.1.1/](https://gitdocumentatie.logius.nl/publicatie/dk/bpgb/3.1.1/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/bpgb/3.1.1/)
+   - [dk/bpgb/3.2.0/](https://gitdocumentatie.logius.nl/publicatie/dk/bpgb/3.2.0/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/bpgb/3.2.0/)
    - [dk/bpgb/def-bp-bpgb-20171001/](https://gitdocumentatie.logius.nl/publicatie/dk/bpgb/def-bp-bpgb-20171001/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/bpgb/def-bp-bpgb-20171001/)
 - [dk/bpwus/](https://gitdocumentatie.logius.nl/publicatie/dk/bpwus/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/bpwus/)
    - [dk/bpwus/1.10/](https://gitdocumentatie.logius.nl/publicatie/dk/bpwus/1.10/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/bpwus/1.10/)
