@@ -70,6 +70,7 @@ Klik op het pad om naar de pagina op logius.nl te gaan. Klik op :scroll: om de p
 - [dk/bpebms/](https://gitdocumentatie.logius.nl/publicatie/dk/bpebms/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/bpebms/)
    - [dk/bpebms/3.2/](https://gitdocumentatie.logius.nl/publicatie/dk/bpebms/3.2/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/bpebms/3.2/)
    - [dk/bpebms/3.2.1/](https://gitdocumentatie.logius.nl/publicatie/dk/bpebms/3.2.1/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/bpebms/3.2.1/)
+   - [dk/bpebms/3.2.2/](https://gitdocumentatie.logius.nl/publicatie/dk/bpebms/3.2.2/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/bpebms/3.2.2/)
    - [dk/bpebms/3.3/](https://gitdocumentatie.logius.nl/publicatie/dk/bpebms/3.3/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/bpebms/3.3/)
    - [dk/bpebms/def-bp-bpebms-20190516/](https://gitdocumentatie.logius.nl/publicatie/dk/bpebms/def-bp-bpebms-20190516/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/bpebms/def-bp-bpebms-20190516/)
 - [dk/bpgb/](https://gitdocumentatie.logius.nl/publicatie/dk/bpgb/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/bpgb/)
