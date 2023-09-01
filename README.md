@@ -140,6 +140,7 @@ Klik op het pad om naar de pagina op logius.nl te gaan. Klik op :scroll: om de p
 
 - [ep/basisorder-rijk/](https://gitdocumentatie.logius.nl/publicatie/ep/basisorder-rijk/) [:scroll:](https://logius-standaarden.github.io/publicatie/ep/basisorder-rijk/)
    - [ep/basisorder-rijk/0.7/](https://gitdocumentatie.logius.nl/publicatie/ep/basisorder-rijk/0.7/) [:scroll:](https://logius-standaarden.github.io/publicatie/ep/basisorder-rijk/0.7/)
+   - [ep/basisorder-rijk/0.9.5/](https://gitdocumentatie.logius.nl/publicatie/ep/basisorder-rijk/0.9.5/) [:scroll:](https://logius-standaarden.github.io/publicatie/ep/basisorder-rijk/0.9.5/)
 - [ep/ohnl-factuur-akkoord/](https://gitdocumentatie.logius.nl/publicatie/ep/ohnl-factuur-akkoord/) [:scroll:](https://logius-standaarden.github.io/publicatie/ep/ohnl-factuur-akkoord/)
    - [ep/ohnl-factuur-akkoord/0.0.1/](https://gitdocumentatie.logius.nl/publicatie/ep/ohnl-factuur-akkoord/0.0.1/) [:scroll:](https://logius-standaarden.github.io/publicatie/ep/ohnl-factuur-akkoord/0.0.1/)
 - [ep/roap-conversies/](https://gitdocumentatie.logius.nl/publicatie/ep/roap-conversies/) [:scroll:](https://logius-standaarden.github.io/publicatie/ep/roap-conversies/)
