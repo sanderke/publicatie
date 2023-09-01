@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML>
+	<!--
+    =========================================================================================	
+    Gebruikte testdata generiek
+    =========================================================================================	
+    Ordernaam:			Peppol / UBL OHNL basisorder Rijk - voorbeeldbericht - scenario's x + x [+x]
+    Orderdatum:			1 november 2022
+    Ordernummer:		45856478
+        
+    AccountingSupplierParty
+    Leverancier naam: 	Leverancier B.V.
+    KvK nummer:			12349876
+    IBAN:				NL02BANK0123456789
+    Adres:              Ophaalsteeg 3
+    Postcode:           0123 AA
+    Plaatsnaam:         Leveranciersveen
+    Land (code):        NL
+
+    AccountingCustomerParty
+    Klant naam:			Logius
+    OIN:				00000004003214345001
+    
+    Adres:       		Wilhelmina van Pruisenweg 52
+    Postcode:    		2595 AN
+    Plaatsnaam:    		Den Haag
+    Land (code):    	NL
+    
+    Postadres:          Postbus 96810
+    Postadres PC:       2509 JE
+    Postadres P:       	Den Haag
+    Postadres LC:       NL
+	
+	Afleveradres:		Turfmarkt 147
+	Afleveradres PC:	2511 DP
+	Afleveradres P:		Den Haag
+	Afleveradres LC:	NL
+    
+    -->
+	<!--
+	=========================================================================================	
+	Orderscenario 1 - Regels met verschillende BTW
+	=========================================================================================	
+	- 2 Orderregels, met 9% en 21% BTW
+	-->
+	
+	<!--
+	=========================================================================================	
+	Orderscenario 2 - Meerdere bijlagen
+	=========================================================================================	
+	- 2 verschillende soorten embedded bijlagen 
+	- Zie ook https://docs.peppol.eu/poacc/upgrade-3/codelist/MimeCode/ welke typen mogelijk zijn.
+	-->
+	
+	<!--
+	=========================================================================================	
+	Orderscenario 3 - Afwijkende te factureren klant (accounting Customer)
+	=========================================================================================	
+	- AccountingCustomerParty opnemen, bijv FDC
+	-->
+	
+	<!--
+	=========================================================================================	
+	Orderscenario 4 - Gebruik van korting, allowanceCharge
+	=========================================================================================	
+	- AllowanceCharge opnemen
+	-->
+	
+	<!--
+	=========================================================================================	
+	Orderscenario 5 - Buitenlandse leverancier	
+	=========================================================================================	
+	- Buitenlandse leverancier, identificatie mbv EAS lijst
+	-->
+	
+	<!--
+	=========================================================================================	
+	Orderscenario 6 - Afwijkend afleveradres
+	=========================================================================================	
+	- 
+	-->
+
+</XML>

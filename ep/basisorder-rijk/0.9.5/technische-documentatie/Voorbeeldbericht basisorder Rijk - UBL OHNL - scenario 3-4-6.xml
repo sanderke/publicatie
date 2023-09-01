@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc:Order xmlns:doc="urn:oasis:names:specification:ubl:schema:xsd:Order-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <cbc:UBLVersionID>2.0</cbc:UBLVersionID>
+    <cbc:CustomizationID>1.9</cbc:CustomizationID>
+    <cbc:ProfileID>NL</cbc:ProfileID>
+
+    <!--
+    =========================================================================================	
+    Gegevens op hoofdniveau
+    =========================================================================================	
+    -->
+
+    <!-- 1.1 Inkoopordernummer - verplicht -->
+    <cbc:ID>45856478</cbc:ID>
+    <!-- 1.2 Orderdatum - verplicht -->
+    <cbc:IssueDate>2022-11-01</cbc:IssueDate>
+    <!-- 1.3 Orderomschrijving - optioneel -->
+    <cbc:Note>UBL OHNL basisorder Rijk - voorbeeldbericht - scenario's 3 + 4 + 6</cbc:Note>
+    <!-- 1.4 Valuta - verplicht -->
+    <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Currency" listVersionID="2001" listURI="http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/cefact/CurrencyCode-2.0.gc" listSchemeURI="urn:un:unece:uncefact:codelist:specification:54217">EUR</cbc:DocumentCurrencyCode>
+    <!-- 1.6 Offertereferentie - optioneel -->
+    <cac:QuotationDocumentReference>
+        <cbc:ID>310001201</cbc:ID>
+    </cac:QuotationDocumentReference>
+    <!-- 1.5 Contractnummer / referentie - optioneel -->
+    <cac:Contract>
+        <cbc:ID>410023124</cbc:ID>
+    </cac:Contract>
+
+    <!--
+    =========================================================================================	
+    Klantpartij - deel 1
+    =========================================================================================	
+    -->
+
+    <cac:BuyerCustomerParty>
+        <cac:Party>
+            <!-- 2.2 OIN - verplicht -->
+            <cac:PartyIdentification>
+                <cbc:ID schemeAgencyID="NL" schemeAgencyName="OIN">00000004003214345001</cbc:ID>
+            </cac:PartyIdentification>
+            <!-- 2.1 Naam - Verplicht -->
+            <cac:PartyName>
+                <cbc:Name>Logius</cbc:Name>
+            </cac:PartyName>
+            <cac:PhysicalLocation>
+                <cac:Address>
+                    <!-- 2.3 Adres - optioneel -->
+                    <cbc:StreetName>Wilhelmina van Pruisenweg 52</cbc:StreetName>
+                    <!-- 2.5 Plaats - optioneel -->
+                    <cbc:CityName>Den Haag</cbc:CityName>
+                    <!-- 2.4 Postcode - optioneel -->
+                    <cbc:PostalZone>2595 AN</cbc:PostalZone>
+                    <!-- 2.6 Land - verplicht -->
+                    <cac:Country>
+                        <cbc:IdentificationCode listID="ISO3166-1" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Country" listVersionID="0.3" listURI="http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/default/CountryIdentificationCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode">NL</cbc:IdentificationCode>
+                    </cac:Country>
+                </cac:Address>
+            </cac:PhysicalLocation>
+            <cac:Contact>
+                <!-- 2.7 Contactpersoon - verplicht -->
+                <cbc:Name>jan@klantcontactpersoon.nl</cbc:Name>
+                <cbc:ElectronicMail>jan@klantcontactpersoon.nl</cbc:ElectronicMail>
+            </cac:Contact>
+        </cac:Party>
+    </cac:BuyerCustomerParty>
+
+    <!--
+    =========================================================================================	
+    Leverancierpartij
+    =========================================================================================	
+    -->
+
+    <cac:SellerSupplierParty>
+        <cac:Party>
+            <!-- 3.2 Leverancier identificatie - verplicht -->
+            <cac:PartyIdentification>
+                <cbc:ID schemeAgencyID="NL" schemeAgencyName="KvK">12349876</cbc:ID>
+            </cac:PartyIdentification>
+            <!-- 3.1 Leverancier naam - verplicht -->
+            <cac:PartyName>
+                <cbc:Name>Leverancier B.V.</cbc:Name>
+            </cac:PartyName>
+            <cac:PostalAddress>
+                <!-- 3.3 Adres - optioneel -->
+                <cbc:StreetName>Ophaalsteeg 3</cbc:StreetName>
+                <!-- 3.5 Plaats - optioneel -->
+                <cbc:CityName>Leveranciersveen</cbc:CityName>
+                <!-- 3.4 Postcode - optioneel -->
+                <cbc:PostalZone>0123 AA</cbc:PostalZone>
+                <!-- 3.6 Land - verplicht -->
+                <cac:Country>
+                    <cbc:IdentificationCode listID="ISO3166-1" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Country" listVersionID="0.3" listURI="http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/default/CountryIdentificationCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode">NL</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:PostalAddress>
+            <cac:Contact>
+                <!-- 3.7 Leverancier contactpersoon - optioneel -->
+                <cbc:Name>henk@leverancierbv.nl</cbc:Name>
+                <cbc:ElectronicMail>henk@leverancierbv.nl</cbc:ElectronicMail>
+            </cac:Contact>
+        </cac:Party>
+    </cac:SellerSupplierParty>
+
+    <!--
+    =========================================================================================	
+    Aflevergegevens
+    =========================================================================================	
+    -->
+
+    <cac:Delivery>
+        <cac:DeliveryAddress>
+            <!-- 4.2 Afleveradres - optioneel -->
+            <cbc:StreetName>Turfmarkt 147</cbc:StreetName>
+            <!-- 4.4 Plaats - optioneel -->
+            <cbc:CityName>Den Haag</cbc:CityName>
+            <!-- 4.3 Postcode - optioneel -->
+            <cbc:PostalZone>2511 DP</cbc:PostalZone>
+            <!-- 4.5 Landcode - verplicht (als cac:Delivery wordt gebruikt) -->
+            <cac:Country>
+                <cbc:IdentificationCode listID="ISO3166-1" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Country" listVersionID="0.3" listURI="http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/default/CountryIdentificationCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode">NL</cbc:IdentificationCode>
+            </cac:Country>
+        </cac:DeliveryAddress>
+        <!-- 4.6 Gewenste leverdatum -->
+        <cac:RequestedDeliveryPeriod>
+            <cbc:EndDate>2022-11-15</cbc:EndDate>
+        </cac:RequestedDeliveryPeriod>
+    </cac:Delivery>
+
+    <!--
+	=========================================================================================	
+    Korting
+    =========================================================================================	
+    -->
+
+    <cac:AllowanceCharge>
+        <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReason>Korting na overleg</cbc:AllowanceChargeReason>
+        <cbc:Amount currencyID="EUR">10.00</cbc:Amount>
+    </cac:AllowanceCharge>
+
+    <!--
+    =========================================================================================	
+    Totalen
+    =========================================================================================	
+    -->
+
+    <cac:TaxTotal>
+        <!-- 5.3 Totaal BTW - optioneel -->
+        <cbc:TaxAmount currencyID="EUR">8.10</cbc:TaxAmount>
+        <cac:TaxSubtotal>
+            <!-- 5.2 Orderbedrag exclusief BTW - optioneel -->
+            <cbc:TaxableAmount currencyID="EUR">100.00</cbc:TaxableAmount>
+            <!-- 5.3 Totaal BTW - optioneel -->
+            <cbc:TaxAmount currencyID="EUR">42.00</cbc:TaxAmount>
+            <cac:TaxCategory>
+                <cbc:Name>BTW</cbc:Name>
+                <cac:TaxScheme>
+                    <cbc:Name>BTW</cbc:Name>
+                </cac:TaxScheme>
+            </cac:TaxCategory>
+        </cac:TaxSubtotal>
+    </cac:TaxTotal>
+    <cac:AnticipatedMonetaryTotal>
+        <!-- 5.2 Orderbedrag exclusief BTW - optioneel -->
+        <cbc:TaxExclusiveAmount currencyID="EUR">100.00</cbc:TaxExclusiveAmount>
+        <!-- 5.1 Orderbedrag inclusief BTW - optioneel -->
+        <cbc:TaxInclusiveAmount currencyID="EUR">109.00</cbc:TaxInclusiveAmount>
+        <cbc:PayableAmount currencyID="EUR">98.10</cbc:PayableAmount>
+    </cac:AnticipatedMonetaryTotal>
+
+    <!--
+    =========================================================================================	
+    Orderregels
+    =========================================================================================	
+    -->
+
+    <cac:OrderLine>
+        <cac:LineItem>
+            <!-- 6.1 Orderregelnummer - verplicht -->
+            <cbc:ID>1</cbc:ID>
+            <!-- 6.2 Orderregelomschrijving - optioneel -->
+            <cbc:Note>Water voor waterkoeler</cbc:Note>
+            <!-- 6.3 Aantal - verplicht -->
+            <cbc:Quantity unitCode="EA">10</cbc:Quantity>
+            <!-- 6.7 Factuurregelbedrag exclusief BTW - verplicht -->
+            <cbc:LineExtensionAmount currencyID="EUR">100.00</cbc:LineExtensionAmount>
+            <!-- BTW-zaken zijn nog onderwerp van discussie
+            <cbc:TotalTaxAmount currencyID="EUR">21.00</cbc:TotalTaxAmount> -->
+            <cbc:AccountingCostCode/>
+            <cac:Price>
+                <!-- 6.5 Stuksprijs - verplicht -->
+                <cbc:PriceAmount currencyID="EUR">10.00</cbc:PriceAmount>
+            </cac:Price>
+            <cac:Item>
+                <cbc:CatalogueIndicator>false</cbc:CatalogueIndicator>
+                <!-- 6.4 Artikelnaam - verplicht -->
+                <cbc:Name>Waterfles</cbc:Name>
+                <!-- SellersItemIdentification is nog onderwerp van discussie -->
+                <cac:SellersItemIdentification>
+                    <cbc:ID/>
+                </cac:SellersItemIdentification>
+                <cac:ClassifiedTaxCategory>
+                    <!-- BTW-zaken zijn nog onderwerp van discussie
+                    <cbc:Name>BTW HOOG</cbc:Name> -->
+                    <!-- 6.6 BTW percentage - optioneel -->
+                    <cbc:Percent>9</cbc:Percent>
+                    <cac:TaxScheme>
+                        <cbc:Name>BTW</cbc:Name>
+                    </cac:TaxScheme>
+                </cac:ClassifiedTaxCategory>
+            </cac:Item>
+        </cac:LineItem>
+    </cac:OrderLine>
+</doc:Order>
