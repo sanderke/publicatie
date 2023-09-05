@@ -8,8 +8,6 @@ Klik op het pad om naar de pagina op logius.nl te gaan. Klik op :scroll: om de p
 
 ### api
 
-- [api/OAuth Inleiding/](https://gitdocumentatie.logius.nl/publicatie/api/OAuth Inleiding/) [:scroll:](https://logius-standaarden.github.io/publicatie/api/OAuth Inleiding/)
-   - [api/OAuth Inleiding/1.0.0/](https://gitdocumentatie.logius.nl/publicatie/api/OAuth Inleiding/1.0.0/) [:scroll:](https://logius-standaarden.github.io/publicatie/api/OAuth Inleiding/1.0.0/)
 - [api/adr/](https://gitdocumentatie.logius.nl/publicatie/api/adr/) [:scroll:](https://logius-standaarden.github.io/publicatie/api/adr/)
 - [api/adr-beheer/](https://gitdocumentatie.logius.nl/publicatie/api/adr-beheer/) [:scroll:](https://logius-standaarden.github.io/publicatie/api/adr-beheer/)
    - [api/adr-beheer/1.0/](https://gitdocumentatie.logius.nl/publicatie/api/adr-beheer/1.0/) [:scroll:](https://logius-standaarden.github.io/publicatie/api/adr-beheer/1.0/)
