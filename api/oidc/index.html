@@ -37,11 +37,10 @@ dfn{cursor:pointer}
   
   
   
-  
 <script>document.title = respecConfig.title</script>
-<title>NL GOV profile for OpenID Connect 1.0.1</title>
+<title>OpenID NLGov 1.0.1</title>
   
-<title>Default</title>
+<title>OpenID NLGov</title>
   
 <link rel="shortcut icon" type="image/x-icon" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/logius.ico">
   
@@ -290,7 +289,7 @@ about an End-User.">
       "publisher": "OASIS"
     },
     "eIDAS.SAML": {
-      "href": "https://ec.europa.eu/cefdigital/wiki/download/attachments/82773108/eIDAS%20SAML%20Message%20Format%20v.1.2%20Final.pdf",
+      "href": "https://ec.europa.eu/digital-building-blocks/wikis/download/attachments/467109280/eIDAS%20SAML%20Message%20Format%20v.1.2%20Final.pdf",
       "title": "eIDAS SAML Message Format",
       "publisher": "eIDAS Coorperation Network",
       "id": "eidas.saml"
@@ -449,6 +448,19 @@ about an End-User.">
       "publisher": "The OpenID Foundation",
       "id": "openid.igov"
     },
+    "OpenID.NLGov": {
+      "href": "https://logius.gitlab.io/oidc/",
+      "title": "NL GOV Assurance profile for OpenID Connect 1.0",
+      "authors": [
+        "R. Schaar",
+        "F. van Es",
+        "J. Joosten",
+        "J. G. Koops"
+      ],
+      "date": "2021",
+      "publisher": "Logius",
+      "id": "openid.nlgov"
+    },
     "OpenID.Federation": {
       "href": "https://openid.net/specs/openid-connect-federation-1_0-12.html",
       "title": "OpenID Connect Federation 1.0 - draft 12",
@@ -482,12 +494,12 @@ about an End-User.">
       "publisher": "Logius"
     },
     "SG.TLS": {
-      "href": "https://english.ncsc.nl/publications?keyword=IT+Security+Guidelines+for+Transport+Layer+Security&start-date=&end-date=&topic=All+topics&type=All+publications",
-      "title": " IT Security Guidelines for Transport Layer Security (TLS)",
+      "href": "https://english.ncsc.nl/publications/publications/2021/january/19/it-security-guidelines-for-transport-layer-security-2.1",
+      "title": " IT Security Guidelines for Transport Layer Security (TLS) v2.1",
       "authors": [
         ""
       ],
-      "date": "23-05-2019",
+      "date": "19-01-2021",
       "publisher": "NCSC",
       "id": "sg.tls"
     },
@@ -520,7 +532,7 @@ about an End-User.">
   "previousVersion": "1.0",
   "previousPublishDate": "2021-02-18",
   "previousMaturity": "WV",
-  "title": "NL GOV profile for OpenID Connect",
+  "title": "OpenID NLGov",
   "content": {
     "Introduction": "",
     "UseCase": "",
@@ -584,7 +596,7 @@ about an End-User.">
   "alternateFormats": [
     {
       "label": "pdf",
-      "uri": "NLGov-OpenIDConnect-profile.pdf"
+      "uri": "OpenID-NLGov.pdf"
     }
   ]
 }</script>
@@ -592,7 +604,7 @@ about an End-User.">
 
 <body class="h-entry"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
-  </a> <h1 id="title" class="title">NL GOV profile for OpenID Connect 1.0.1</h1>
+  </a> <h1 id="title" class="title">OpenID NLGov 1.0.1</h1>
     
     <h2>
       Logius Standard<br>
@@ -648,7 +660,7 @@ about an End-User.">
     
     <p>
           This document is also available in these non-normative format:
-          <a rel="alternate" href="NLGov-OpenIDConnect-profile.pdf">pdf</a>
+          <a rel="alternate" href="OpenID-NLGov.pdf">pdf</a>
         </p>
     <p class="copyright">
           This document is licensed under 
@@ -705,6 +717,9 @@ Assurance profile for OAuth 2.0 [<cite><a class="bibref" data-link-type="biblio"
 <p>An NL GOV-compliant OpenID Connect Identity Provider <em class="rfc2119">MUST</em> support all features as described in this specification. A general-purpose Identity Provider <em class="rfc2119">MAY</em> support additional features for use with non-NL GOV Clients.</p>
 <p>An NL GOV-compliant OpenID Connect Identity Provider <em class="rfc2119">MAY</em> also provide NL GOV-compliant OAuth 2.0 Authorization Server functionality. In such cases, the Authorization Server <em class="rfc2119">MUST</em> fully implement the NL GOV Assurance profile for OAuth 2.0 [<cite><a class="bibref" data-link-type="biblio" href="#bib-oauth2.nlgov" title="NL GOV Assurance profile for OAuth 2.0">OAuth2.NLGov</a></cite>]. If an NL GOV-compliant OpenID Connect Identity Provider does not provide NL GOV-compliant OAuth 2.0 Authorization Server services, all features related to interaction between the Authorization Server and protected resource are <em class="rfc2119">OPTIONAL</em>.</p>
 <p>An NL GOV-compliant OpenID Connect Client <em class="rfc2119">MUST</em> support all required functionality described in this specification. A general-purpose Client library <em class="rfc2119">MAY</em> support additional features for use with non-NL GOV OpenID Connect Identity Providers.</p>
+<blockquote>
+<p>Note that the original concept of the [<cite><a class="bibref" data-link-type="biblio" href="#bib-openid.nlgov" title="NL GOV Assurance profile for OpenID Connect 1.0">OpenID.NLGov</a></cite>] profile was published on logius.gitlab.io as version 1.0 in February 2021 with the title "NL GOV Assurance profile for OpenID Connect 1.0".</p>
+</blockquote>
 </section></section><section id="use-case-context"><div class="header-wrapper"><h2 id="x2-use-case-context"><bdi class="secno">2. </bdi>Use Case &amp; context</h2><a class="self-link" href="#use-case-context" aria-label="Permalink for Section 2."></a></div>
 <p>This profile supports several Use Cases or partial aspects thereof. Design choices within this profile have been made with these Use Cases under consideration.</p>
 <p>The generic Use Case is an End-User with the intention to consume an online service of a Service Provider. As the service requires authentication, this triggers the authentication process.</p>
@@ -1493,7 +1508,9 @@ An example of a Client registration request:
   <span class="hljs-attr">"contacts"</span>: [<span class="hljs-string">"mary@example.org"</span>],
 }</code></pre>
 </aside>
-Please refer to [Algorithms](#algorithms) for more information on eligible cryptographic methods and keys that can be used when registering a Client.</section></section><section id="user-info"><div class="header-wrapper"><h2 id="x6-user-info"><bdi class="secno">6. </bdi>User Info</h2><a class="self-link" href="#user-info" aria-label="Permalink for Section 6."></a></div>
+
+<p>Please refer to <a href="#algorithms">Algorithms</a> for more information on eligible cryptographic methods and keys that can be used when registering a Client.</p>
+</section></section><section id="user-info"><div class="header-wrapper"><h2 id="x6-user-info"><bdi class="secno">6. </bdi>User Info</h2><a class="self-link" href="#user-info" aria-label="Permalink for Section 6."></a></div>
 <p>The availability, quality and reliability of an individual's identity attributes will vary greatly across jurisdictions and Provider systems. The following recommendations ensure maximum cross-jurisdictional interoperability, while setting Client expectations on the type of data they may acquire.</p>
 <section id="claim-interoperability"><div class="header-wrapper"><h3 id="x6-1-claim-interoperability"><bdi class="secno">6.1 </bdi>Claim Interoperability</h3><a class="self-link" href="#claim-interoperability" aria-label="Permalink for Section 6.1"></a></div>
 <p>As per Section 5.1.2 of [<cite><a class="bibref" data-link-type="biblio" href="#bib-openid.core" title="OpenID Connect Core 1.0">OpenID.Core</a></cite>], Claim names <em class="rfc2119">SHOULD</em> be collision-resistant. It is <em class="rfc2119">RECOMMENDED</em> to use domain name based URIs as attribute names.</p>
@@ -1557,7 +1574,7 @@ Distinct registrations <em class="rfc2119">MAY</em> be applied to different vers
 <p>Refresh Tokens <em class="rfc2119">SHOULD</em> only be applied and enabled when a functional need exists. Support for Refresh Tokens <em class="rfc2119">SHOULD</em> therefore be disabled by default.
 Refresh Tokens for confidential Clients <em class="rfc2119">MUST</em> be sender-constrained by the issuing OpenID Provider. How the <abbr title="OpenID Provider">OP</abbr> accomplishes this is implementation specific, suggestions can be found in [<cite><a class="bibref" data-link-type="biblio" href="#bib-oauth2.1" title="OAuth 2.1 Working draft">OAuth2.1</a></cite>], Section 6.1.
 Using Refresh Tokens in combination with public Clients <em class="rfc2119">SHOULD</em> be avoided when possible. If a specific scenario does call for usage of Refresh Tokens with public Clients, Refresh Tokens <em class="rfc2119">MUST</em> rotate on each use with a limited valid lifetime.</p>
-<p>All transactions <em class="rfc2119">MUST</em> be protected in transit by TLS as described in BCP195 [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7525" title="Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)">RFC7525</a></cite>]. In addition, all compliant implementations <em class="rfc2119">MUST</em> apply the IT Security Guidelines for TLS by the Dutch NCSC [<cite><a class="bibref" data-link-type="biblio" href="#bib-sg.tls" title=" IT Security Guidelines for Transport Layer Security (TLS)">SG.TLS</a></cite>]. Implementations <em class="rfc2119">SHOULD</em> only implement settings and options indicated as "good", <em class="rfc2119">SHOULD NOT</em> use any settings with a status "phase out" and <em class="rfc2119">MUST NOT</em> use any setting with a status "insufficient" in these security guidelines or future updates thereof.</p>
+<p>All transactions <em class="rfc2119">MUST</em> be protected in transit by TLS as described in BCP195 [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7525" title="Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)">RFC7525</a></cite>]. In addition, all compliant implementations <em class="rfc2119">MUST</em> apply the IT Security Guidelines for TLS by the Dutch NCSC [<cite><a class="bibref" data-link-type="biblio" href="#bib-sg.tls" title=" IT Security Guidelines for Transport Layer Security (TLS) v2.1">SG.TLS</a></cite>]. Implementations <em class="rfc2119">SHOULD</em> only implement settings and options indicated as "good", <em class="rfc2119">SHOULD NOT</em> use any settings with a status "phase out" and <em class="rfc2119">MUST NOT</em> use any setting with a status "insufficient" in these security guidelines or future updates thereof.</p>
 <p>Implementations <em class="rfc2119">MUST</em> implement 'HTTP Strict Transport Security', as specified in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6797" title="HTTP Strict Transport Security (HSTS)">RFC6797</a></cite>].</p>
 <p>All Clients <em class="rfc2119">MUST</em> conform to applicable recommendations found in the 'Security Considerations' sections of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6749" title="The OAuth 2.0 Authorization Framework">RFC6749</a></cite>] and those found in 'OAuth 2.0 Threat Model and Security Considerations' [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6819" title="OAuth 2.0 Threat Model and Security Considerations">RFC6819</a></cite>]. For all Tokens, the '<abbr title="JavaScript Object Notation, a lightweight data-exchange format often used with REST APIs">JSON</abbr> Web Token Best Current Practices' [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8725" title="JSON Web Token Best Current Practices">RFC8725</a></cite>] <em class="rfc2119">SHOULD</em> be applied.</p>
 <p>All Clients <em class="rfc2119">MUST</em> apply cross-site request forgery (<abbr title="Cross Site Request Forgery">CSRF</abbr>) counter measures. Clients can leverage the OpenID Connect <code>nonce</code> and OAuth2 <code>state</code> parameters to do so. A Client <em class="rfc2119">MUST</em> utilize one or more of these parameters to verify an Authentication Response matches with the Authentication Request sent. After first use, the Client <em class="rfc2119">SHOULD</em> invalidate the parameter so it can be used only once (see [<cite><a class="bibref" data-link-type="biblio" href="#bib-oauth2.security" title="OAuth 2.0 Security Best Current Practice">OAuth2.Security</a></cite>], Section 4.2.4).</p>
@@ -1798,14 +1815,14 @@ The OpenID Foundation is currently drafting a specification for explicit support
     </dd><dt id="bib-sg.loa">[SG.LoA]</dt><dd>
       <a href="https://www.forumstandaardisatie.nl/sites/default/files/BFS/4-basisinformatie/publicaties/Assurance-levels-for-digital-service-provision.pdf"><cite>Assurance level for digital service provision</cite></a>. .  The Standardisation Forum (NL). September 2017. URL: <a href="https://www.forumstandaardisatie.nl/sites/default/files/BFS/4-basisinformatie/publicaties/Assurance-levels-for-digital-service-provision.pdf">https://www.forumstandaardisatie.nl/sites/default/files/BFS/4-basisinformatie/publicaties/Assurance-levels-for-digital-service-provision.pdf</a>
     </dd><dt id="bib-sg.tls">[SG.TLS]</dt><dd>
-      <a href="https://english.ncsc.nl/publications?keyword=IT+Security+Guidelines+for+Transport+Layer+Security&amp;start-date=&amp;end-date=&amp;topic=All+topics&amp;type=All+publications"><cite> IT Security Guidelines for Transport Layer Security (TLS)</cite></a>. .  NCSC. 23-05-2019. URL: <a href="https://english.ncsc.nl/publications?keyword=IT+Security+Guidelines+for+Transport+Layer+Security&amp;start-date=&amp;end-date=&amp;topic=All+topics&amp;type=All+publications">https://english.ncsc.nl/publications?keyword=IT+Security+Guidelines+for+Transport+Layer+Security&amp;start-date=&amp;end-date=&amp;topic=All+topics&amp;type=All+publications</a>
+      <a href="https://english.ncsc.nl/publications/publications/2021/january/19/it-security-guidelines-for-transport-layer-security-2.1"><cite> IT Security Guidelines for Transport Layer Security (TLS) v2.1</cite></a>. .  NCSC. 19-01-2021. URL: <a href="https://english.ncsc.nl/publications/publications/2021/january/19/it-security-guidelines-for-transport-layer-security-2.1">https://english.ncsc.nl/publications/publications/2021/january/19/it-security-guidelines-for-transport-layer-security-2.1</a>
     </dd><dt id="bib-sri">[SRI]</dt><dd>
       <a href="https://www.w3.org/TR/SRI/"><cite>Subresource Integrity</cite></a>. Devdatta Akhawe; Frederik Braun; Francois Marier; Joel Weinberger.  W3C. 23 June 2016. W3C Recommendation. URL: <a href="https://www.w3.org/TR/SRI/">https://www.w3.org/TR/SRI/</a>
     </dd></dl>
   </section><section id="informative-references">
     <div class="header-wrapper"><h3 id="b-2-informative-references"><bdi class="secno">B.2 </bdi>Informative references</h3><a class="self-link" href="#informative-references" aria-label="Permalink for Appendix B.2"></a></div>
     <dl class="bibliography"><dt id="bib-eidas.saml">[eIDAS.SAML]</dt><dd>
-      <a href="https://ec.europa.eu/cefdigital/wiki/download/attachments/82773108/eIDAS%20SAML%20Message%20Format%20v.1.2%20Final.pdf"><cite>eIDAS SAML Message Format</cite></a>.  eIDAS Coorperation Network. URL: <a href="https://ec.europa.eu/cefdigital/wiki/download/attachments/82773108/eIDAS%20SAML%20Message%20Format%20v.1.2%20Final.pdf">https://ec.europa.eu/cefdigital/wiki/download/attachments/82773108/eIDAS%20SAML%20Message%20Format%20v.1.2%20Final.pdf</a>
+      <a href="https://ec.europa.eu/digital-building-blocks/wikis/download/attachments/467109280/eIDAS%20SAML%20Message%20Format%20v.1.2%20Final.pdf"><cite>eIDAS SAML Message Format</cite></a>.  eIDAS Coorperation Network. URL: <a href="https://ec.europa.eu/digital-building-blocks/wikis/download/attachments/467109280/eIDAS%20SAML%20Message%20Format%20v.1.2%20Final.pdf">https://ec.europa.eu/digital-building-blocks/wikis/download/attachments/467109280/eIDAS%20SAML%20Message%20Format%20v.1.2%20Final.pdf</a>
     </dd><dt id="bib-lo.gba">[LO.GBA]</dt><dd>
       <a href="https://www.rvig.nl/logisch-ontwerp-brp "><cite> Logisch ontwerp BRP</cite></a>. .  RvIG. July 2023. URL: <a href="https://www.rvig.nl/logisch-ontwerp-brp ">https://www.rvig.nl/logisch-ontwerp-brp </a>
     </dd><dt id="bib-oauth2.1">[OAuth2.1]</dt><dd>
@@ -1824,6 +1841,8 @@ The OpenID Foundation is currently drafting a specification for explicit support
       <a href="https://tools.ietf.org/html/draft-ietf-oauth-security-topics"><cite>OAuth 2.0 Security Best Current Practice</cite></a>. T. Lodderstedt; J. Bradley; A. Labunets; D. Fett.  IETF OAuth Working Group. Internet-Draft. URL: <a href="https://tools.ietf.org/html/draft-ietf-oauth-security-topics">https://tools.ietf.org/html/draft-ietf-oauth-security-topics</a>
     </dd><dt id="bib-openid.federation">[OpenID.Federation]</dt><dd>
       <a href="https://openid.net/specs/openid-connect-federation-1_0-12.html"><cite>OpenID Connect Federation 1.0 - draft 12</cite></a>. R. Hedberg; M. Jones; A. Solberg; S. Gulliksson; J. Bradley. June 30, 2020. URL: <a href="https://openid.net/specs/openid-connect-federation-1_0-12.html">https://openid.net/specs/openid-connect-federation-1_0-12.html</a>
+    </dd><dt id="bib-openid.nlgov">[OpenID.NLGov]</dt><dd>
+      <a href="https://logius.gitlab.io/oidc/"><cite>NL GOV Assurance profile for OpenID Connect 1.0</cite></a>. R. Schaar; F. van Es; J. Joosten; J. G. Koops.  Logius. 2021. URL: <a href="https://logius.gitlab.io/oidc/">https://logius.gitlab.io/oidc/</a>
     </dd></dl>
   </section></section><p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Back to Top">↑</abbr></a>
