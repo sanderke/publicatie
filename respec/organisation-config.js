@@ -561,6 +561,13 @@ var organisationConfig = {
             href: "https://semver.org",
             title: "Semantic Versioning 2.0.0"
         },
+        "Transport Security Module": {
+            authors: [""],
+            date: "27 september 2023",
+            href: "https://geonovum.github.io/KP-APIs/API-strategie-modules/transport-security/",
+            publisher: "Kennisplatform API's",
+            title: "Transport Security Module"
+        },
         "UMMR10": {
             authors: [""],
             date: "2001",
