@@ -24,8 +24,8 @@ var organisationConfig = {
     localizationStrings: {
         en: {
             wv: "Draft",
-            cv: "Recommendation",
-            vv: "Proposed recommendation",
+            cv: "Consultation version",
+            vv: "Proposed version",
             def: "Definitive version",
             basis: "Document",
             eo: "Outdated version",
@@ -82,6 +82,8 @@ var organisationConfig = {
     labelColor: {
         def: "#154273",
         wv: "#39870c",
+        cv: "#000000",
+        vv: "#000000",
     },
     licenses: {
         cc0: {
