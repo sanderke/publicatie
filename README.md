@@ -150,6 +150,11 @@ Klik op het pad om naar de pagina op logius.nl te gaan. Klik op :scroll: om de p
 - [ep/roap-conversies/](https://gitdocumentatie.logius.nl/publicatie/ep/roap-conversies/) [:scroll:](https://logius-standaarden.github.io/publicatie/ep/roap-conversies/)
    - [ep/roap-conversies/0.0.1/](https://gitdocumentatie.logius.nl/publicatie/ep/roap-conversies/0.0.1/) [:scroll:](https://logius-standaarden.github.io/publicatie/ep/roap-conversies/0.0.1/)
 
+### logius
+
+- [logius/beheermodel/](https://gitdocumentatie.logius.nl/publicatie/logius/beheermodel/) [:scroll:](https://logius-standaarden.github.io/publicatie/logius/beheermodel/)
+   - [logius/beheermodel/1.0/](https://gitdocumentatie.logius.nl/publicatie/logius/beheermodel/1.0/) [:scroll:](https://logius-standaarden.github.io/publicatie/logius/beheermodel/1.0/)
+
 ### notificatieservices
 
 - [notificatieservices/CloudEvents-NL/](https://gitdocumentatie.logius.nl/publicatie/notificatieservices/CloudEvents-NL/) [:scroll:](https://logius-standaarden.github.io/publicatie/notificatieservices/CloudEvents-NL/)
