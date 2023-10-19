@@ -65,6 +65,7 @@ Klik op het pad om naar de pagina op logius.nl te gaan. Klik op :scroll: om de p
    - [dk/architectuur/archief_1.5.1/](https://gitdocumentatie.logius.nl/publicatie/dk/architectuur/archief_1.5.1/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/architectuur/archief_1.5.1/)
 - [dk/beheer/](https://gitdocumentatie.logius.nl/publicatie/dk/beheer/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/beheer/)
    - [dk/beheer/1.6/](https://gitdocumentatie.logius.nl/publicatie/dk/beheer/1.6/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/beheer/1.6/)
+   - [dk/beheer/1.7/](https://gitdocumentatie.logius.nl/publicatie/dk/beheer/1.7/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/beheer/1.7/)
 - [dk/beveilig/](https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/beveilig/)
    - [dk/beveilig/1.3/](https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/1.3/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/beveilig/1.3/)
    - [dk/beveilig/1.4/](https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/1.4/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/beveilig/1.4/)
