@@ -1,0 +1,1892 @@
+<!DOCTYPE html><html lang="nl"><head>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<meta charset="utf-8">
+<meta name="generator" content="ReSpec 34.1.4">
+<style>
+span.example-title{text-transform:none}
+:is(aside,div).example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
+div.illegal-example{color:red}
+div.illegal-example p{color:#000}
+:is(aside,div).example{border-left-width:.5em;border-left-style:solid;border-color:#e0cb52;background:#fcfaee}
+aside.example div.example{border-left-width:.1em;border-color:#999;background:#fff}
+.example pre{background-color:rgba(0,0,0,.03)}
+</style>
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;margin-top:.25em}
+.dfn-panel ul a[href]{color:#333}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a[href]:hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
+  
+  
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+  
+  
+<title>BOMOS Beheermodel</title>
+  
+  
+  
+<script>
+   respecConfig = {...organisationConfig, ...respecConfig};
+  </script>
+  
+<link href="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/logius.ico" rel="shortcut icon" type="image/x-icon">
+  
+ 
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+:is(h1,h2,h3,h4,h5,h6,a) abbr{border:none}
+dfn{font-weight:700}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:normal}
+a[href].orcid{padding-left:4px;padding-right:4px}
+a[href].orcid>svg{margin-bottom:-2px}
+.toc a,.tof a{text-decoration:none}
+a .figno,a .secno{color:#000}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
+.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
+.simple th a{color:#fff;padding:3px 5px;text-align:left}
+.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
+.simple td{padding:3px 10px;border-top:1px solid #ddd}
+.simple tr:nth-child(even){background:#f0f6ff}
+.section dd>p:first-child{margin-top:0}
+.section dd>p:last-child{margin-bottom:0}
+.section dd{margin-bottom:1em}
+.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+.self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+aside.example .marker>a.self-link{color:inherit}
+.header-wrapper{display:flex;align-items:baseline;position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-.7em;font-size:1rem;opacity:.5}
+:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
+:is(h2,h3)+a.self-link{top:-.2em}
+:is(h4,h5,h6)+a.self-link::before{color:#000}
+@media (max-width:767px){
+dd{margin-left:0}
+}
+@media print{
+.removeOnSave{display:none}
+}
+</style>
+<style id="respec-nlgov">
+img.license{float:left;padding-right:5px}
+</style>
+<meta name="description" content="Dit document beschrijft het Beheermodel van BOMOS.">
+<style>
+
+  .sidelabel {
+    position: fixed;
+    -webkit-transform-origin: top right;
+    right: 100%;
+    top: 0;
+    -webkit-transform: rotate(-90deg);
+    padding: 4px 50px 4px 10px;
+    color: white;
+    white-space: nowrap;
+    z-index: 1;
+    background-color: #39870c;
+  }
+</style>
+<script id="initialUserConfig" type="application/json">{
+  "nl_organisationName": "Logius",
+  "nl_organisationStylesURL": "https://gitdocumentatie.logius.nl/publicatie/respec/style/",
+  "nl_organisationPublishURL": "https://gitdocumentatie.logius.nl/publicatie/",
+  "logos": [
+    {
+      "src": "https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg",
+      "alt": "Logius",
+      "id": "Logius",
+      "height": 77,
+      "width": 44,
+      "url": "https://www.logius.nl/standaarden"
+    }
+  ],
+  "latestVersion": [
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "shortName"
+  ],
+  "thisVersion": [
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "shortName",
+    "/",
+    "publishVersion"
+  ],
+  "prevVersion": [
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "shortName",
+    "/",
+    "previousPublishVersion"
+  ],
+  "useLogo": true,
+  "useLabel": true,
+  "license": "cc-by",
+  "addSectionLinks": true,
+  "localizationStrings": {
+    "en": {
+      "wv": "Draft",
+      "cv": "Consultation version",
+      "vv": "Proposed version",
+      "def": "Definitive version",
+      "basis": "Document",
+      "eo": "Outdated version",
+      "tg": "Rescinded version",
+      "no": "Norm",
+      "st": "Standard",
+      "im": "Information model",
+      "pr": "Guideline",
+      "hr": "Guide",
+      "wa": "Proposed recommendation",
+      "al": "General",
+      "bd": "Governance documentation",
+      "bp": "Best practice"
+    },
+    "nl": {
+      "wv": "Werkversie",
+      "cv": "Consultatieversie",
+      "vv": "Versie ter vaststelling",
+      "def": "Vastgestelde versie",
+      "basis": "Document",
+      "eo": "Verouderde versie",
+      "tg": "Teruggetrokken versie",
+      "no": "Norm",
+      "st": "Standaard",
+      "im": "Informatiemodel",
+      "pr": "Praktijkrichtlijn",
+      "hr": "Handreiking",
+      "wa": "Werkafspraak",
+      "al": "Algemeen",
+      "bd": "Beheerdocumentatie",
+      "bp": "Best practice"
+    }
+  },
+  "sotdText": {
+    "nl": {
+      "sotd": "Status van dit document",
+      "def": "Dit is de definitieve versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.",
+      "wv": "Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.",
+      "cv": "Dit is een door het TO goedgekeurde consultatieversie. Commentaar over dit document kan gestuurd worden naar digikoppeling@logius.nl",
+      "vv": "Dit is een definitief concept van de nieuwe versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.",
+      "basis": "Dit is een document zonder officiële status."
+    },
+    "en": {
+      "sotd": "Status of This Document",
+      "def": "This is the definitive version of this document. Edits resulting from consultations have been applied.",
+      "wv": "This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.",
+      "cv": "This is a proposed recommendation approved by TO. Comments regarding this document may be sent to api@logius.nl",
+      "vv": "This is the definitive concept of this document. Edits resulting from consultations have been applied.",
+      "basis": "This document has no official standing."
+    }
+  },
+  "labelColor": {
+    "def": "#154273",
+    "wv": "#39870c",
+    "cv": "#000000",
+    "vv": "#000000"
+  },
+  "licenses": {
+    "cc0": {
+      "name": "Creative Commons 0 Public Domain Dedication",
+      "short": "CC0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-zero.svg"
+    },
+    "cc-by": {
+      "name": "Creative Commons Attribution 4.0 International Public License",
+      "short": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+      "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg"
+    },
+    "cc-by-nd": {
+      "name": "Creative Commons Naamsvermelding-GeenAfgeleideWerken 4.0 Internationaal",
+      "short": "CC-BY-ND",
+      "url": "https://creativecommons.org/licenses/by-nd/4.0/legalcode.nl",
+      "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by-nd.svg"
+    }
+  },
+  "localBiblio": {
+    "ADR": {
+      "authors": [
+        "Jasper Roes",
+        "Joost Farla"
+      ],
+      "date": "Juli 2020",
+      "href": "https://publicatie.centrumvoorstandaarden.nl/api/adr/",
+      "publisher": "Logius",
+      "title": "API Design Rules (Nederlandse API Strategie IIa)"
+    },
+    "ADR-ext": {
+      "authors": [
+        "Jasper Roes",
+        "Linda van den Brink"
+      ],
+      "date": "Januari 2020",
+      "href": "https://docs.geostandaarden.nl/api/API-Strategie-ext",
+      "publisher": "Geonovum/Kennisplatform APi's",
+      "title": "API Designrules Extensions (Nederlandse API Strategie IIb)"
+    },
+    "Algemene Voorwaarden Logius": {
+      "date": "12 juni 2018",
+      "href": "https://www.logius.nl/onze-organisatie/zakendoen-met-logius/voorwaarden/algemene-voorwaarden-logius",
+      "publisher": "Logius",
+      "title": "Algemene voorwaarden Logius"
+    },
+    "API Design Rules": {
+      "authors": [
+        "Jasper Roes",
+        "Joost Farla"
+      ],
+      "date": "Juli 2020",
+      "href": "https://publicatie.centrumvoorstandaarden.nl/api/adr/",
+      "publisher": "Logius",
+      "title": "API Design Rules (Nederlandse API Strategie IIa)"
+    },
+    "API Design Rules-Extensions": {
+      "authors": [
+        "Jasper Roes",
+        "Linda van den Brink"
+      ],
+      "date": "Januari 2020",
+      "href": "https://docs.geostandaarden.nl/api/API-Strategie-ext",
+      "publisher": "Geonovum/Kennisplatform APi's",
+      "title": "API Designrules Extensions (Nederlandse API Strategie IIb)"
+    },
+    "BCP195": {
+      "authors": [
+        "Y. Sheffer, R. Holz, P. Saint-Andre"
+      ],
+      "date": "May 2015",
+      "href": "https://tools.ietf.org/html/bcp195",
+      "publisher": "IETF",
+      "title": "Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)"
+    },
+    "Beheermodel": {
+      "date": "Oktober 2017",
+      "href": "https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Standaarden/Digikoppeling-Beheermodel.pdf",
+      "publisher": "Logius",
+      "title": "Beheermodel en releasebeleid Digikoppeling v1.5"
+    },
+    "Beveiligingsdocument": {
+      "href": "https://publicatie.centrumvoorstandaarden.nl/dk/beveilig/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Beveiligingsstandaarden en voorschriften"
+    },
+    "Certificaten": {
+      "href": "https://cert.pkioverheid.nl/",
+      "publisher": "Logius",
+      "title": "PkIoverheid certificaten"
+    },
+    "CloudEvents": {
+      "authors": [
+        "@@@"
+      ],
+      "date": "May 2011",
+      "href": "https://github.com/cloudevents/spec/blob/v1.0.1/spec.md",
+      "publisher": "@@@",
+      "title": "CloudEvents - Version 1.0.1"
+    },
+    "Compliance": {
+      "href": "https://portaal.digikoppeling.nl",
+      "publisher": "Logius",
+      "title": "Digikoppeling Compliance Voorziening"
+    },
+    "Deployment Guide 1.1": {
+      "authors": [
+        "Pete Wenzel",
+        "Jacques Durand"
+      ],
+      "date": "June 2005",
+      "href": "http://www.oasis-open.org/apps/org/workgroup/ebxml-iic-deployment-profile-template-intro-100406.doc",
+      "publisher": "OASIS",
+      "title": "Deployment Profile Template For OASIS ebXML Message Service 2.0"
+    },
+    "Digikoppeling Actuele Documentatie": {
+      "href": "http://www.logius.nl/digikoppeling",
+      "publisher": "Logius",
+      "title": "Digikoppeling Overzicht Actuele Documentatie en Compliance"
+    },
+    "Digikoppeling Beheermodel": {
+      "date": "Oktober 2017",
+      "href": "https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Standaarden/Digikoppeling-Beheermodel.pdf",
+      "publisher": "Logius",
+      "title": "Beheermodel en releasebeleid Digikoppeling v1.5"
+    },
+    "Digikoppeling Best Practices ebMS2": {
+      "date": "2019",
+      "href": "https://www.logius.nl/diensten/digikoppeling/documentatie",
+      "publisher": "Logius",
+      "title": "Digikoppeling Best Practices ebMS2"
+    },
+    "Digikoppeling Best Practices Grote Berichten": {
+      "date": "2019",
+      "href": "https://www.logius.nl/diensten/digikoppeling/documentatie",
+      "publisher": "Logius",
+      "title": "Digikoppeling Best Practices Grote Berichten"
+    },
+    "Digikoppeling Best Practices WUS": {
+      "date": "2019",
+      "href": "https://www.logius.nl/diensten/digikoppeling/documentatie",
+      "publisher": "Logius",
+      "title": "Digikoppeling Best Practices WUS"
+    },
+    "Digikoppeling Beveiligingsdocument": {
+      "date": "2021",
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Beveiligingsstandaarden en voorschriften"
+    },
+    "Digikoppeling Compliance Voorziening": {
+      "href": "https://portaal.digikoppeling.nl",
+      "publisher": "Logius",
+      "title": "Digikoppeling Compliance Voorziening"
+    },
+    "Digikoppeling Gebruik Certificaten": {
+      "href": "http://www.logius.nl/digikoppeling",
+      "publisher": "Logius",
+      "title": "Digikoppeling Gebruik en achtergrond certificaten"
+    },
+    "Digikoppeling Identificatie-Authenticatie": {
+      "href": "https://www.logius.nl/diensten/digikoppeling/documentatie",
+      "publisher": "Logius",
+      "title": "Digikoppeling Identificatie en Authenticatie"
+    },
+    "Digikoppeling Koppelvlakstandaard ebMS2": {
+      "date": "mei 2019",
+      "href": "https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-ebMS2/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Koppelvlakstandaard ebMS2"
+    },
+    "Digikoppeling Koppelvlakstandaard Grote Berichten": {
+      "date": "september 2020",
+      "href": "https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-GB/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Koppelvlakstandaard Grote Berichten"
+    },
+    "Digikoppeling Koppelvlakstandaard REST API": {
+      "date": "februari 2021",
+      "href": "https://centrumvoorstandaarden.github.io/DigikoppelingRestfulApiProfiel/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Restful API Profiel (Concept)"
+    },
+    "Digikoppeling Koppelvlakstandaard WUS": {
+      "date": "oktober 2020",
+      "href": "https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-WUS/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Koppelvlakstandaard ebMS2"
+    },
+    "Digikoppeling Logius website": {
+      "href": "https://logius.nl/diensten/digikoppeling/documentatie",
+      "publisher": "Logius",
+      "title": "Logius Digikoppeling"
+    },
+    "Digikoppeling REST API profiel": {
+      "href": "https://publicatie.centrumvoorstandaarden.nl/dk/restapi/",
+      "publisher": "Logius",
+      "title": "Digikoppeling REST API profiel"
+    },
+    "Digikoppeling-Architectuur": {
+      "href": "https://publicatie.centrumvoorstandaarden.nl/dk/architectuur/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Architectuur"
+    },
+    "Digikoppeling-Beveiligingsdocument": {
+      "href": "https://publicatie.centrumvoorstandaarden.nl/dk/beveilig",
+      "publisher": "Logius",
+      "title": "Digikoppeling Beveiligingsstandaarden en voorschriften"
+    },
+    "Digikoppeling-Cert": {
+      "href": "http://www.logius.nl/digikoppeling",
+      "publisher": "Logius",
+      "title": "Gebruik en achtergrond van Digikoppeling certificaten"
+    },
+    "Digikoppeling-Compliance-Voorziening": {
+      "href": "https://portaal.digikoppeling.nl",
+      "publisher": "Logius",
+      "title": "Digikoppeling Compliance Voorziening"
+    },
+    "Digikoppeling-Identificatie-Authenticatie": {
+      "href": "https://publicatie.centrumvoorstandaarden.nl/dk/idauth",
+      "publisher": "Logius",
+      "title": "Digikoppeling Identificatie en Authenticatie"
+    },
+    "ebCPP": {
+      "authors": [
+        "Oasis"
+      ],
+      "date": "september 2002",
+      "href": "http://www.ebxml.org/specs/ebcpp-2.0.pdf",
+      "publisher": "Oasis",
+      "title": "Collaboration-Protocol Profile and Agreement Specification Version 2.0"
+    },
+    "ebMS3": {
+      "authors": [
+        "Ian Jones",
+        "Pete Wenzel"
+      ],
+      "date": "October 2007",
+      "href": "https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms_core-3.0-spec-os.html",
+      "publisher": "Oasis",
+      "title": "Collaboration-Protocol Profile and Agreement Specification Version 2.0"
+    },
+    "ebXML CPPA V 2.0": {
+      "authors": [
+        "Oasis"
+      ],
+      "date": "september 2002",
+      "href": "http://www.ebxml.org/specs/ebcpp-2.0.pdf",
+      "publisher": "Oasis",
+      "title": "Collaboration-Protocol Profile and Agreement Specification Version 2.0"
+    },
+    "eDelivery API4IPS": {
+      "authors": [
+        "J. Dimitriou, V. Veduta, B. Dumitriu"
+      ],
+      "date": "sept 8 2022",
+      "href": "https://ec.europa.eu/digital-building-blocks/wikis/display/EDELCOMMUNITY/Project+deliverables",
+      "publisher": "OpenID foundation",
+      "title": "(ISA2).(eDelivery).(Piloting a REST API extension of CEF eDelivery).(ISA² IPS REST API Profile).(v1.0).pdf"
+    },
+    "Eisen Pkioverheid": {
+      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen",
+      "publisher": "Logius",
+      "title": "Programma van Eisen (PKIoverheid)"
+    },
+    "Expert": {
+      "authors": [
+        "@@@"
+      ],
+      "date": "@@@",
+      "href": "https://www.forumstandaardisatie.nl/sites/bfs/files/@@@.pdf",
+      "publisher": "Forum Standaardisatie",
+      "title": "Expertadvies CloudEvents 1.0"
+    },
+    "folmer2011": {
+      "title": "Management and Development Model for Open Standards (BOMOS) version 2",
+      "keywords": "IR-76837",
+      "authors": [
+        "ErwinFolmer",
+        "Matthijs Punter"
+      ],
+      "date": "2011",
+      "language": "English",
+      "publisher": "Programmabureau NOiV"
+    },
+    "folmer2012": {
+      "href": "https://ris.utwente.nl/ws/portalfiles/portal/6064223/thesis_E_Folmer.pdf",
+      "title": "Quality of Semantic Standards",
+      "authors": [
+        "Erwin Folmer"
+      ],
+      "date": "2012",
+      "publisher": "Universiteit Twente"
+    },
+    "Gebruiksvoorwaarden Digikoppeling": {
+      "date": "1 januari 2021",
+      "href": "https://www.logius.nl/diensten/digikoppeling/documentatie/gebruiksvoorwaarden-digikoppeling",
+      "publisher": "Logius",
+      "title": "Gebruiksvoorwaarden Digikoppeling"
+    },
+    "Geospatial Module": {
+      "authors": [
+        "L. van den Brink, P. Bresters, P. van Genuchten, G. Mathijssen, M. Strijker"
+      ],
+      "date": "23 mei 2021",
+      "href": "https://docs.geostandaarden.nl/api/API-Strategie-mod-geo/",
+      "publisher": "Geonovum",
+      "title": "API Design rules Module: Geospatial"
+    },
+    "HEART.OAuth2": {
+      "authors": [
+        "J. Richer"
+      ],
+      "date": "April 25, 2017",
+      "href": "https://openid.net/specs/openid-heart-oauth2-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "Health Relationship Trust Profile for OAuth 2.0"
+    },
+    "HTTPS-factsheet NCSC": {
+      "date": "Nov 2014",
+      "href": "https://www.ncsc.nl/documenten/factsheets/2019/juni/01/factsheet-https-kan-een-stuk-veiliger",
+      "publisher": "NCSC",
+      "title": "Factsheet HTTPS kan een stuk veiliger"
+    },
+    "I-D.ietf-oauth-pop-architecture": {
+      "authors": [
+        "P. Hunt, J. Richer, W. Mills, P. Mishra, H. Tschofenig"
+      ],
+      "date": "July 8, 2016",
+      "href": "https://tools.ietf.org/html/draft-ietf-oauth-pop-architecture-08",
+      "publisher": "IETF",
+      "title": "OAuth 2.0 Proof-of-Possession (PoP) Security Architecture"
+    },
+    "iGOV.OAuth2": {
+      "authors": [
+        "J. Richer, M. Varley, P. Grassi"
+      ],
+      "date": "October 5 2018",
+      "href": "https://openid.net/specs/openid-igov-oauth2-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "International Government Assurance Profile (iGov) for OAuth 2.0"
+    },
+    "iGOV.OpenID": {
+      "authors": [
+        "M. Varley, P. Grassi"
+      ],
+      "date": "October 5 2018",
+      "href": "https://openid.net/specs/openid-igov-openid-connect-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "International Government Assurance Profile (iGov) for OpenID Connect 1.0 - draft 3"
+    },
+    "Introspection": {
+      "authors": [
+        "J. Richer"
+      ],
+      "date": "October 2015",
+      "href": "https://tools.ietf.org/html/rfc7662",
+      "publisher": "IETF",
+      "title": "OAuth 2.0 Token Introspection"
+    },
+    "JWA": {
+      "authors": [
+        "M. Jones"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7518",
+      "publisher": "IETF",
+      "title": "JSON Web Algorithms (JWA)"
+    },
+    "JWE": {
+      "authors": [
+        "M. Jones, J. Hildebrand"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7516",
+      "publisher": "IETF",
+      "title": "JSON Web Encryption (JWE)"
+    },
+    "JWK": {
+      "authors": [
+        "M. Jones"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7517",
+      "publisher": "IETF",
+      "title": "JSON Web Key (JWK))"
+    },
+    "JWS": {
+      "authors": [
+        "M. Jones, J. Bradley, N. Sakimura"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7515",
+      "publisher": "IETF",
+      "title": "JSON Web Signature (JWS)"
+    },
+    "JWS.JWE.Algs": {
+      "authors": [
+        "Jim Schaad, Jeff Hodges, Joe Hildebrand, Sean Turner"
+      ],
+      "date": "",
+      "href": "https://www.iana.org/assignments/jose/jose.xhtml#web-signature-encryption-algorithms",
+      "publisher": "IANA",
+      "title": "IANA JSON Web Signatures and Encryption Algorithms registry"
+    },
+    "JWT": {
+      "authors": [
+        "M. Jones, J. Bradley, N. Sakimura"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7519",
+      "publisher": "IETF",
+      "title": "JSON Web Token (JWT)"
+    },
+    "Logius": {
+      "href": "https://logius.nl/digikoppeling",
+      "publisher": "Logius",
+      "title": "Logius Digikoppeling"
+    },
+    "Logius website": {
+      "href": "https://logius.nl/digikoppeling",
+      "publisher": "Logius",
+      "title": "Logius Digikoppeling"
+    },
+    "Logius-website": {
+      "href": "https://logius.nl/digikoppeling",
+      "publisher": "Logius",
+      "title": "Logius Digikoppeling"
+    },
+    "NCSC 2019": {
+      "date": "April 2019",
+      "href": "https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls",
+      "publisher": "NCSC",
+      "title": "ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.0"
+    },
+    "NCSC 2021": {
+      "date": "Jan 2021",
+      "href": "https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1",
+      "publisher": "NCSC",
+      "title": "ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.1"
+    },
+    "NEN3610": {
+      "authors": [
+        ""
+      ],
+      "date": "Maart 2011",
+      "href": "https://www.nen.nl/nen-3610-2011-a1-2016-nl-217738",
+      "publisher": "Nederlands Normalisatie-instituut",
+      "title": "Basismodel Geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten"
+    },
+    "no-Reliable-messaging": {
+      "authors": [
+        "Marc de Graauw"
+      ],
+      "date": "June 18, 2010",
+      "href": "https://www.infoq.com/articles/no-reliable-messaging/",
+      "publisher": "infoQ",
+      "title": "Nobody Needs Reliable Messaging"
+    },
+    "OAuth2": {
+      "authors": [
+        "D. Hardt"
+      ],
+      "date": "October 2012",
+      "href": "https://tools.ietf.org/html/rfc6749",
+      "publisher": "The Internet Engineering Task Force",
+      "title": "The OAuth 2.0 Authorization Framework"
+    },
+    "OpenID.Core": {
+      "authors": [
+        "N. Sakimura, J. Bradley, M. Jones, B. de Medeiros, C. Mortimore"
+      ],
+      "date": "November 8 2014",
+      "href": "https://openid.net/specs/openid-connect-core-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "OpenID Connect Core 1.0"
+    },
+    "OpenID.Discovery": {
+      "authors": [
+        "N. Sakimura, J. Bradley, M. Jones, E. Jay"
+      ],
+      "date": "November 8 2014",
+      "href": "https://openid.net/specs/openid-connect-discovery-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "OpenID Connect Discovery 1.0"
+    },
+    "Pas-toe-of-leg-uit": {
+      "href": "https://www.forumstandaardisatie.nl/open-standaarden/verplicht",
+      "publisher": "Forum Standaardisatie",
+      "title": "Lijst Verplichte standaarden"
+    },
+    "PKCE": {
+      "authors": [
+        "N. Sakimura, J. Bradley, N. Agarwal"
+      ],
+      "date": "september 2015",
+      "href": "https://tools.ietf.org/html/rfc7636",
+      "publisher": "IETF",
+      "title": "Proof Key for Code Exchange by OAuth Public Clients"
+    },
+    "PKI CA": {
+      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/toegetreden-vertrouwensdienstverleners",
+      "publisher": "Logius",
+      "title": "Toegetreden vertrouwensdienstverleners"
+    },
+    "PKI Policy": {
+      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen",
+      "publisher": "Logius",
+      "title": "Programma van Eisen (PKIoverheid)"
+    },
+    "PKI PvE": {
+      "href": "https://www.logius.nl/sites/default/files/public/bestanden/diensten/PKIoverheid/PoR-2022/PKIoverheid%20Programme%20of%20Requirements%20v4.10%20-%20Part%203j%20Certificate%20Policy%20for%20Server%20certificates%20in%20Server%202020%20%28EV%20G1%29%20Domain.pdf",
+      "publisher": "Logius",
+      "title": "Programma van Eisen Pkioverheid, deel 3j"
+    },
+    "PKI-CA": {
+      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/toegetreden-vertrouwensdienstverleners",
+      "publisher": "Logius",
+      "title": "Toegetreden vertrouwensdienstverleners"
+    },
+    "PKI-Policy": {
+      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen",
+      "publisher": "Logius",
+      "title": "Programma van Eisen (PKIoverheid)"
+    },
+    "PKIoverheid": {
+      "href": "https://www.logius.nl/diensten/pkioverheid",
+      "publisher": "Logius",
+      "title": "PKIoverheid"
+    },
+    "PKIoverheid Certificaten": {
+      "href": "https://cert.pkioverheid.nl/",
+      "publisher": "Logius",
+      "title": "Pkioverheid certificaten"
+    },
+    "PKIoverheid-Certificaten": {
+      "href": "https://cert.pkioverheid.nl/",
+      "publisher": "Logius",
+      "title": "Pkioverheid certificaten"
+    },
+    "SemVer": {
+      "authors": [
+        "T. Preston-Werner"
+      ],
+      "date": "June 2013",
+      "href": "https://semver.org",
+      "title": "Semantic Versioning 2.0.0"
+    },
+    "Transport Security Module": {
+      "authors": [
+        ""
+      ],
+      "date": "27 september 2023",
+      "href": "https://geonovum.github.io/KP-APIs/API-strategie-modules/transport-security/",
+      "publisher": "Kennisplatform API's",
+      "title": "Transport Security Module"
+    },
+    "UMMR10": {
+      "authors": [
+        ""
+      ],
+      "date": "2001",
+      "href": "https://unece.org/DAM/cefact/umm/UMM_Revision_10_2001.zip",
+      "publisher": "UN/CEFACT",
+      "title": "UMM Revision 10"
+    },
+    "UMMUG": {
+      "authors": [
+        ""
+      ],
+      "date": "2003",
+      "href": "https://www.unece.org/fileadmin/DAM/cefact/umm/UMM_userguide_220606.pdf",
+      "publisher": "UN/CEFACT",
+      "title": "UN/CEFACT Modeling Methodology (UMM) User Guide"
+    },
+    "UUID": {
+      "authors": [
+        "P. Leach",
+        "M. Mealling",
+        "R. Salz"
+      ],
+      "date": "July 2005",
+      "href": "https://tools.ietf.org/html/rfc4122",
+      "publisher": "The Internet Engineering Task Force",
+      "title": "A Universally Unique IDentifier (UUID) URN Namespace"
+    },
+    "Voorbeelden": {
+      "href": "https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Overig/Digikoppeling-Koppelvlakstandaard-WUS-Voorbeeldberichten.zip",
+      "publisher": "Logius",
+      "title": "Digikoppeling WUS voorbeelden (zip)"
+    },
+    "Voorwaarden Digikoppeling": {
+      "date": "1 januari 2021",
+      "href": "https://www.logius.nl/diensten/digikoppeling/documentatie/voorwaarden-digikoppeling",
+      "publisher": "Logius",
+      "title": "Voorwaarden Digikoppeling"
+    },
+    "X520": {
+      "href": "https://www.iso.org/standard/43796.html",
+      "publisher": "ISO",
+      "title": "ITU-T Recommendation X.520 (2001) ISO/IEC 9594-6"
+    },
+    "ADR-Validator": {
+      "href": "https://gitlab.com/commonground/don/adr-validator/-/blob/v0.1.0/pkg/adr/rules.go",
+      "title": "Technical ADR Validation rule testset 0.1.0",
+      "authors": [
+        "H. Stijns"
+      ],
+      "publisher": "Geonovum",
+      "date": "December 2022"
+    }
+  },
+  "alternateFormats": [
+    {
+      "label": "pdf",
+      "uri": "BOMOS-Beheermodel.pdf"
+    }
+  ],
+  "authors": [
+    {
+      "mailto": "bomos@logius.nl",
+      "name": "Logius",
+      "url": "mailto:bomos@logius.nl"
+    }
+  ],
+  "editors": [
+    {
+      "company": "Logius",
+      "name": "GÃ¼l IÅŸik",
+      "url": "https://logius.nl/standaarden"
+    },
+    {
+      "company": "Logius",
+      "name": "Edwin Wisse",
+      "url": "https://logius.nl/standaarden"
+    }
+  ],
+  "github": "https://github.com/Logius-standaarden/BOMOS-Beheermodel",
+  "nl_markdownCodeClass": "code",
+  "previousPublishDate": "2020-12-31",
+  "previousPublishVersion": "0.1",
+  "pubDomain": "bomos",
+  "publishDate": "2022-06-01",
+  "publishVersion": "0.5",
+  "shortName": "beheer",
+  "specStatus": "WV",
+  "specType": "HR"
+}</script>
+<link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
+ <body class="h-entry informative toc-inline"><div class="head">
+    <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
+  </a> <h1 id="title" class="title">BOMOS Beheermodel</h1>
+    
+    <h2>
+      Logius Handreiking<br>
+      Werkversie
+      <time class="dt-published" datetime="2022-06-01">19 oktober 2023</time>
+    </h2>
+    <dl>
+      <dt>Deze versie:</dt><dd class="status">
+              <a class="u-url status" href="https://logius-standaarden.github.io/BOMOS-Beheermodel/">https://logius-standaarden.github.io/BOMOS-Beheermodel/</a>
+            </dd>
+      <dt>Laatst gepubliceerde versie:</dt><dd>
+              <a href="https://gitdocumentatie.logius.nl/publicatie/bomos/beheer">https://gitdocumentatie.logius.nl/publicatie/bomos/beheer</a>
+            </dd>
+      <dt>Laatste werkversie:</dt><dd><a href="https://logius-standaarden.github.io/BOMOS-Beheermodel/">https://logius-standaarden.github.io/BOMOS-Beheermodel/</a></dd>
+      
+      
+      
+      <dt>Vorige versie:</dt><dd><a href="https://gitdocumentatie.logius.nl/publicatie/bomos/beheer/0.1">https://gitdocumentatie.logius.nl/publicatie/bomos/beheer/0.1</a></dd>
+      
+      <dt>Redacteurs:</dt>
+      <dd class="editor p-author h-card vcard">
+    <a class="u-url url p-name fn" href="https://logius.nl/standaarden">GÃ¼l IÅŸik</a> (<span class="p-org org h-org">Logius</span>)
+  </dd><dd class="editor p-author h-card vcard">
+    <a class="u-url url p-name fn" href="https://logius.nl/standaarden">Edwin Wisse</a> (<span class="p-org org h-org">Logius</span>)
+  </dd>
+      
+      <dt>Auteur:</dt><dd class="editor p-author h-card vcard">
+    <a class="ed_mailto u-email email p-name" href="mailto:bomos@logius.nl">Logius</a>
+  </dd>
+      <dt>Doe mee:</dt><dd>
+    <a href="https://github.com/Logius-standaarden/BOMOS-Beheermodel/">GitHub Logius-standaarden/BOMOS-Beheermodel</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/BOMOS-Beheermodel/issues/">Dien een melding in</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/BOMOS-Beheermodel/commits/">Revisiehistorie</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/BOMOS-Beheermodel/pulls/">Pull requests</a>
+  </dd>
+    </dl>
+    
+    
+    <p>
+          Dit document is ook beschikbaar in dit niet-normatieve formaat:
+          <a rel="alternate" href="BOMOS-Beheermodel.pdf">pdf</a>
+        </p>
+    <p class="copyright">
+          Dit document valt onder de volgende licentie: 
+          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
+        </p>
+    <hr title="Separator for header">
+  </div>
+  <section id="abstract" class="introductory"><h2>Samenvatting</h2>
+   <p>
+    Dit document beschrijft het Beheermodel van BOMOS.
+   </p>
+  </section>
+  <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#leeswijzer"><bdi class="secno">1.1 </bdi>Leeswijzer</a></li><li class="tocline"><a class="tocxref" href="#bomos-versie-2-naar-versie-3"><bdi class="secno">1.2 </bdi>BOMOS versie 2 naar versie 3</a></li><li class="tocline"><a class="tocxref" href="#nut"><bdi class="secno">1.3 </bdi>Nut</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#werking"><bdi class="secno">1.3.1 </bdi>Werking</a></li><li class="tocline"><a class="tocxref" href="#status"><bdi class="secno">1.3.2 </bdi>Status</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bomos"><bdi class="secno">1.4 </bdi>Bomos</a></li></ol></li><li class="tocline"><a class="tocxref" href="#strategie"><bdi class="secno">2. </bdi>Strategie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#visie"><bdi class="secno">2.1 </bdi>Visie</a></li><li class="tocline"><a class="tocxref" href="#governance"><bdi class="secno">2.2 </bdi>Governance</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#governancestructuur-en-organisatiestructuur"><bdi class="secno">2.2.1 </bdi>Governancestructuur en organisatiestructuur</a></li><li class="tocline"><a class="tocxref" href="#besluitvorming"><bdi class="secno">2.2.2 </bdi>Besluitvorming</a></li><li class="tocline"><a class="tocxref" href="#sturing-strategisch"><bdi class="secno">2.2.3 </bdi>Sturing strategisch</a></li><li class="tocline"><a class="tocxref" href="#stakeholders-betrokkenheid"><bdi class="secno">2.2.4 </bdi>Stakeholders-betrokkenheid</a></li><li class="tocline"><a class="tocxref" href="#belangenorganisaties-betrokkenheid"><bdi class="secno">2.2.5 </bdi>Belangenorganisaties-betrokkenheid</a></li><li class="tocline"><a class="tocxref" href="#opdracht-werkgroepen"><bdi class="secno">2.2.6 </bdi>Opdracht werkgroepen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#structureel-financieel-model"><bdi class="secno">2.3 </bdi>Structureel financieel model</a></li></ol></li><li class="tocline"><a class="tocxref" href="#tactiek"><bdi class="secno">3. </bdi>Tactiek</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#community"><bdi class="secno">3.1 </bdi>Community</a></li><li class="tocline"><a class="tocxref" href="#architectuur"><bdi class="secno">3.2 </bdi>Architectuur</a></li><li class="tocline"><a class="tocxref" href="#jaarplan-ontwikkelagenda"><bdi class="secno">3.3 </bdi>Jaarplan/Ontwikkelagenda</a></li><li class="tocline"><a class="tocxref" href="#pilots"><bdi class="secno">3.4 </bdi>Pilots</a></li><li class="tocline"><a class="tocxref" href="#adoptiestrategie"><bdi class="secno">3.5 </bdi>Adoptiestrategie</a></li><li class="tocline"><a class="tocxref" href="#rechtenbeleid"><bdi class="secno">3.6 </bdi>Rechtenbeleid</a></li><li class="tocline"><a class="tocxref" href="#kwaliteitsbeleid-en-benchmarking"><bdi class="secno">3.7 </bdi>Kwaliteitsbeleid en benchmarking</a></li></ol></li><li class="tocline"><a class="tocxref" href="#operationeel"><bdi class="secno">4. </bdi>Operationeel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#initiatie"><bdi class="secno">4.1 </bdi>Initiatie</a></li><li class="tocline"><a class="tocxref" href="#wensen-en-eisen"><bdi class="secno">4.2 </bdi>Wensen en Eisen</a></li><li class="tocline"><a class="tocxref" href="#uitvoering-en-ontwikkeling-wijzigingsproces"><bdi class="secno">4.3 </bdi>Uitvoering en ontwikkeling (Wijzigingsproces)</a></li><li class="tocline"><a class="tocxref" href="#status-van-de-standaard"><bdi class="secno">4.4 </bdi>Status van de standaard</a></li><li class="tocline"><a class="tocxref" href="#documentatie"><bdi class="secno">4.5 </bdi>Documentatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#implementatieondersteuning"><bdi class="secno">5. </bdi>Implementatieondersteuning</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#opleiding-en-advies"><bdi class="secno">5.1 </bdi>Opleiding en advies</a></li><li class="tocline"><a class="tocxref" href="#helpdesk"><bdi class="secno">5.2 </bdi>Helpdesk</a></li><li class="tocline"><a class="tocxref" href="#validatie-certificatie"><bdi class="secno">5.3 </bdi>Validatie &amp; Certificatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#communicatie"><bdi class="secno">6. </bdi>Communicatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#promotie"><bdi class="secno">6.1 </bdi>Promotie</a></li><li class="tocline"><a class="tocxref" href="#publicatie"><bdi class="secno">6.2 </bdi>Publicatie</a></li><li class="tocline"><a class="tocxref" href="#klachtenafhandeling"><bdi class="secno">6.3 </bdi>Klachtenafhandeling</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-gebruik-respec"><bdi class="secno">7. </bdi>Bijlage: Gebruik ReSpec</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#logius-profiel"><bdi class="secno">7.1 </bdi>Logius profiel</a></li><li class="tocline"><a class="tocxref" href="#literatuurverwijzingen"><bdi class="secno">7.2 </bdi>Literatuurverwijzingen</a></li><li class="tocline"><a class="tocxref" href="#links"><bdi class="secno">7.3 </bdi>Links</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-gebruik-github-in-het-beheerproces"><bdi class="secno">8. </bdi>Bijlage: Gebruik GitHub in het beheerproces</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#publicatie-0"><bdi class="secno">8.1 </bdi>Publicatie</a></li><li class="tocline"><a class="tocxref" href="#wijzigingsvoorstellen"><bdi class="secno">8.2 </bdi>Wijzigingsvoorstellen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#branches"><bdi class="secno">8.2.1 </bdi>Branches</a></li><li class="tocline"><a class="tocxref" href="#labels"><bdi class="secno">8.2.2 </bdi>Labels</a></li></ol></li><li class="tocline"><a class="tocxref" href="#patches"><bdi class="secno">8.3 </bdi>Patches</a></li><li class="tocline"><a class="tocxref" href="#automatisering-en-scripts"><bdi class="secno">8.4 </bdi>Automatisering en scripts</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-versie-nummering-logius-standaarden"><bdi class="secno">9. </bdi>Bijlage: versie-nummering Logius standaarden</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#versioneringsmethodiek"><bdi class="secno">9.1 </bdi>Versioneringsmethodiek</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#patch-releases"><bdi class="secno">9.1.1 </bdi>Patch Releases</a></li><li class="tocline"><a class="tocxref" href="#minor-releases"><bdi class="secno">9.1.2 </bdi>Minor releases</a></li><li class="tocline"><a class="tocxref" href="#major-releases"><bdi class="secno">9.1.3 </bdi>Major Releases</a></li></ol></li><li class="tocline"><a class="tocxref" href="#toelichting-en-voorbeeld-regels"><bdi class="secno">9.2 </bdi>Toelichting en voorbeeld regels</a></li><li class="tocline"><a class="tocxref" href="#versie-overgangen"><bdi class="secno">9.3 </bdi>Versie overgangen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">A.1 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
+  <section id="inleiding"><div class="header-wrapper"><h2 id="x1-inleiding"><bdi class="secno">1. </bdi>Inleiding</h2><a class="self-link" href="#inleiding" aria-label="Permalink for Section 1."></a></div>
+<section id="leeswijzer"><div class="header-wrapper"><h3 id="x1-1-leeswijzer"><bdi class="secno">1.1 </bdi>Leeswijzer</h3><a class="self-link" href="#leeswijzer" aria-label="Permalink for Section 1.1"></a></div>
+<p>Dit document beschrijft hoe Logius, afdeling Standaarden
+(Uitvoeringsorganisatie), BOMOS beheert en hoe de bijbehorende
+governance is ingericht.</p>
+</section><section id="bomos-versie-2-naar-versie-3"><div class="header-wrapper"><h3 id="x1-2-bomos-versie-2-naar-versie-3"><bdi class="secno">1.2 </bdi>BOMOS versie 2 naar versie 3</h3><a class="self-link" href="#bomos-versie-2-naar-versie-3" aria-label="Permalink for Section 1.2"></a></div>
+<p>BOMOS staat voor 'Beheer en Ontwikkelmodel Open Standaarden. De
+methodiek is ontstaan uit een samenwerking met verschillende partijen
+met expertise m.b.t. het open beheren van standaarden. In 2006 heeft de
+Werkgroep CMO (Community Model Open Standaarden), een werkgroep
+bestaande uit TNO, Bureau Forum Standaardisatie en Logius aan dit
+onderwerp gewerkt, dit vormde het startpunt voor de ontwikkeling van
+BOMOS versie 1 en 2. De methodiek is sindsdien ondergebracht bij Logius
+en is toe aan een nieuwe versie. Daarnaast is er behoefte aan tooling
+(op basis van BOMOS) ter ondersteuning van het beheren van stelsels en
+standaarden. Logius beheerd stelsels en <strong>standaarden</strong> met behulp van</p>
+<p>BOMOS maar de methodiek zelf wordt momenteel niet actief beheerd. Om de
+methodiek conform BOMOS actief te beheren en door te ontwikkelen zijn we
+recent gestart met een werkgroep en het schrijven van dit
+beheerdocument.</p>
+</section><section id="nut"><div class="header-wrapper"><h3 id="x1-3-nut"><bdi class="secno">1.3 </bdi>Nut</h3><a class="self-link" href="#nut" aria-label="Permalink for Section 1.3"></a></div>
+<p>Het nut en de werking van de standaard zijn reeds goed beschreven in
+BOMOS versie 2.</p>
+<p>Met BOMOS worden standaardisatiecommunities ondersteund en geïnspireerd
+bij het structureel vormgeven van het beheer en verdere ontwikkelingen
+van standaarden.</p>
+<section id="werking"><div class="header-wrapper"><h4 id="x1-3-1-werking"><bdi class="secno">1.3.1 </bdi>Werking</h4><a class="self-link" href="#werking" aria-label="Permalink for Section 1.3.1"></a></div>
+<p>Het doel is en blijft een duurzame standaard die een bijdrage levert in
+interoperabiliteit. Duurzaam kan alleen als het ontwikkel- en
+beheerproces op een kwalitatief hoogstaand niveau is ingericht. Dit
+document levert een bijdrage om de ontwikkeling en beheer van de
+standaard op een hoger plan te krijgen en daarmee duurzame standaarden
+en Stelsels te realiseren. Uiteraard is een duurzame standaard een open
+standaard die duurzaam beheerd wordt.</p>
+</section><section id="status"><div class="header-wrapper"><h4 id="x1-3-2-status"><bdi class="secno">1.3.2 </bdi>Status</h4><a class="self-link" href="#status" aria-label="Permalink for Section 1.3.2"></a></div>
+<p>De actuele versie van BOMOS 2.0 is op te vinden op xxx door xxx
+vastgesteld.</p>
+<p>Concept versie BOMOS 3.0 moet nog worden vastgesteld.</p>
+<p>De laatste concept versie 3.0 BOMOS is gepubliceerd in twee delen: <a href="https://gitdocumentatie.logius.nl/publicatie/bomos/fundament/">BOMOS Fundament</a> en <a href="https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping/">BOMOS Verdieping</a></p>
+</section></section><section id="bomos"><div class="header-wrapper"><h3 id="x1-4-bomos"><bdi class="secno">1.4 </bdi>Bomos</h3><a class="self-link" href="#bomos" aria-label="Permalink for Section 1.4"></a></div>
+<p>Logius richt de beheerorganisatie in conform het Beheer en
+OntwikkelModel voor Open Standaarden (BOMOS). Ook dit beheer document is
+op basis van BOMOS ingericht.</p>
+<p>
+      </p><figure id="fig-bomos-model">
+        <img src="images/image3.png" alt="Bomos model">
+        <figcaption><a class="self-link" href="#fig-bomos-model">Figuur <bdi class="figno">1</bdi></a> <span class="fig-title">BOMOS model</span></figcaption>
+      </figure>
+    <p></p>
+</section></section>
+  <section id="strategie"><div class="header-wrapper"><h2 id="x2-strategie"><bdi class="secno">2. </bdi>Strategie</h2><a class="self-link" href="#strategie" aria-label="Permalink for Section 2."></a></div>
+<p>
+      </p><figure id="fig-strategie">
+        <img src="images/image4.png" alt="Strategie">
+        <figcaption><a class="self-link" href="#fig-strategie">Figuur <bdi class="figno">2</bdi></a> <span class="fig-title">Strategie</span></figcaption>
+      </figure>
+    <p></p>
+<section id="visie"><div class="header-wrapper"><h3 id="x2-1-visie"><bdi class="secno">2.1 </bdi>Visie</h3><a class="self-link" href="#visie" aria-label="Permalink for Section 2.1"></a></div>
+<ol>
+<li><p>De rol van beheerder en adviseur wordt steeds belangrijker in de
+digitale samenleving. Aan de hand van de ervaring van verschillende
+beheerpartijen, willen we het beheer van de afdeling stelsels en
+standaarden nog effectiever kunnen inrichten en daarmee het
+draagvlak en de adoptie van de standaarden verhogen. Nog een
+belangrijke redenen is om interoperabiliteit na te streven om zo
+effectiviteit en efficiency in het samenwerken te realiseren met
+bijvoorbeeld beheerorganisatie, toeleveranciers en klanten in de
+keten. Drie concrete zaken voor de doorontwikkeling van BOMOS: Een
+nieuwe versie uitbrengen van BOMOS met nieuwe inzichten en een
+bredere scope dan de huidige versie (de methode wordt in de nieuwe
+versie bijvoorbeeld ook toegepast op stelsels)</p>
+</li>
+<li><p>We willen BOMOS de basis maken van ons standaardenbeheer.
+Bijvoorbeeld de beheerplannen en governance van standaarden
+beschrijven volgens BOMOS, alsmede offertes voor eventuele nieuwe
+standaarden om zo meer uniformiteit aan te brengen in het beheer van
+de standaarden van onze afdeling. Dit verhoogd de kwaliteit van onze
+processen en documenten en maakt dat we als team sneller en
+flexibeler kunnen reageren op verzoeken om nieuwe standaarden in
+beheer te nemen.</p>
+</li>
+<li><p>We willen onze kennis delen met andere organisaties, die ook
+standaarden of stelsels beheren, en met hen kennis uitwisselen. Dit
+is gunstig bij het blijven actualiseren van de BOMOS.</p>
+</li>
+</ol>
+</section><section id="governance"><div class="header-wrapper"><h3 id="x2-2-governance"><bdi class="secno">2.2 </bdi>Governance</h3><a class="self-link" href="#governance" aria-label="Permalink for Section 2.2"></a></div>
+<p>BOMOS is het Beheer- en OntwikkelModel voor Open Standaarden. Het is een
+instrument dat helpt bij de inrichting van het beheer van open
+standaarden. Dit maakt BOMOS als het ware een standaard voor het beheren
+van standaarden. BOMOS bestaat uit een bundeling van best practices en
+voorbeelden van goed standaardenbeheer. Het is ontwikkeld door de
+BOMOS-community en voor iedereen vrij te gebruiken.</p>
+<p>Bij het beheer van een open standaard hoort een open governance en een
+open procedure voor belanghebbenden om te kunnen participeren in het
+beheer. Logius, afdeling Standaarden neemt hierin de rol van
+onafhankelijke, duurzame beheerpartij en facilitator. </p>
+<p>Logius gaat uit van de governance van de Generieke Digitale Infrastructuur (GDI).
+De GDI geeft richting aan het Meerjarenprogramma Infrastructuur Digitale Overheid (MIDO).
+Voor MIDO is een governance opgesteld waarin de stakeholders van Logius richting geven aan de ontwikkelingen bij Logius. 
+Standaardenbeheer sluit aan op deze governance. Bij het beheer van BOMOS worden verschillende gremia onderscheiden die 
+gezamenlijkinvulling geven aan de governance op de standaard:</p>
+<ol>
+<li><em><strong>Uitvoeringsorganisatie (Uitvoering Groep - UG) Operationeel</strong></em></li>
+</ol>
+<p>Het is een Operationeel Overleg met periodieke bijeenkomsten <em>(2 x per
+maand)</em> waarbij de vragen en doorontwikkel wensen m.b.t. BOMOS worden
+doorgenomen, geprioriteerd en worden uitgewerkt. Daarnaast wordt door de
+leden de releaseplanning en de roadmap opgesteld en voorgelegd aan het
+AG.</p>
+<ol start="2">
+<li><em><strong>Adviesorgaan en Klankbordgroep BOMOS (Advies Groep - AG) Tactisch</strong></em></li>
+</ol>
+<p>Het is een Technisch Overleg met periodieke bijeenkomsten <em>(1 x per
+kwartaal)</em> waarbij de vragen en doorontwikkel wensen m.b.t. BOMOS worden
+doorgenomen, geprioriteerd, uitgewerkt en vastgelegd. Dit gremium is
+verantwoordelijk voor het vaststellen van het van beheermodel van de standaard, de externe publicaties, de doorontwikkel-roadmap en het
+vaststellen van releases van de standaard, en dient als het voorportaal van het strategisch/besluitvormende gremium.</p>
+<ol start="3">
+<li><em><strong>Directie Digitale Samenleving (Bestuur groep - BG) Strategisch</strong></em></li>
+</ol>
+<p>Dit is het hoogst ambtelijke gremium dat besluit over major releases van
+de standaard. Major releases die grotere financiele impact hebben gaan via de BG.
+Het BG is momenteel nog niet actief m.b.t. BOMOS waardoor de UG bij wijzigingen aan de
+standaard, de nieuwe versie eerst voorlegt aan het AG voor het borgen van een
+zo breed mogelijke afstemming met verschillende belanghebbenden.</p>
+<p>N.B. De definitieve invulling van de strategische laag
+wordt in 2023 duidelijk.</p>
+<p>
+      </p><figure id="fig-mido-governance">
+        <img src="images/MIDOgovernance.png" alt="MIDO governance">
+        <figcaption><a class="self-link" href="#fig-mido-governance">Figuur <bdi class="figno">3</bdi></a> <span class="fig-title">MIDO governance</span></figcaption>
+      </figure>
+    <p></p>
+<ol start="4">
+<li><em><strong>BOMOS Community (Advies Groep - AG) operationeel</strong></em></li>
+</ol>
+<p>Dit is het meest operationele gremium waarin iedere
+belangstellende/belanghebbende vragen kan stellen, advies kan geven en
+suggesties kan doen voor de doorontwikkeling van BOMOS. Deelname
+aan de Community is vrij voor eenieder die een belang heeft bij de
+standaard (overheid, wetenschap en markt ). Dergelijke vragen en
+suggesties worden door Logius verzameld en voorgelegd aan het UG en AO.</p>
+<section id="governancestructuur-en-organisatiestructuur"><div class="header-wrapper"><h4 id="x2-2-1-governancestructuur-en-organisatiestructuur"><bdi class="secno">2.2.1 </bdi>Governancestructuur en organisatiestructuur</h4><a class="self-link" href="#governancestructuur-en-organisatiestructuur" aria-label="Permalink for Section 2.2.1"></a></div>
+<p>BOMOS sluit aan op de MIDO governance op strategisch niveau. Voor de governance van BOMOS zelf zijn meer governance lagen nodig, met name voor tactisch en operationeel niveau. BOMOS beheer omvat de volgende gremia:</p>
+<p><figure id="fig-generatedID"><img src="https://user-images.githubusercontent.com/94606563/210580080-cefe348a-c451-49bb-94cc-739addf69332.png" alt="image"><figcaption><a class="self-link" href="#fig-generatedID">Figuur <bdi class="figno">4</bdi></a> <span class="fig-title"></span></figcaption></figure>
+images/image5.png "BOMOS Organisatiestructuur")</p>
+<p>Bestuur groep:</p>
+<ul>
+<li>OBDO/MIDO (programmeringstafel Infrastructuur)</li>
+<li>Logius afdeling Standaarden</li>
+<li>Logius afdeling Portfolio</li>
+<li>Bureau Forum Standaardisatie</li>
+</ul>
+<p>Deelnemers Adviesorgaan/klankboordgroep:</p>
+<ul>
+<li>Kadaster</li>
+<li>Geonovum</li>
+<li>Directie Digitale Samenleving</li>
+<li>KOOP</li>
+<li>TNO</li>
+<li>Bureau Forum Standaardisatie</li>
+<li>Informatie Huis Water</li>
+<li>RIONED</li>
+<li>Logius afdeling Stelsels</li>
+<li>Logius afdeling Standaarden</li>
+</ul>
+<p>Uitvoeringsgroep:</p>
+<ul>
+<li>Logius afdeling Standaarden</li>
+<li>Logius afdeling Stelsels</li>
+</ul>
+<p>De BOMOS Community:</p>
+<p>Is geen vast gremium, dit kunnen verschillende
+beheersorganisaties zijn die deel willen nemen aan de BOMOS Community.
+Alle beheer organisaties mogen hierin mee participeren.</p>
+</section><section id="besluitvorming"><div class="header-wrapper"><h4 id="x2-2-2-besluitvorming"><bdi class="secno">2.2.2 </bdi>Besluitvorming</h4><a class="self-link" href="#besluitvorming" aria-label="Permalink for Section 2.2.2"></a></div>
+<p>Het huishoudelijk regelement en de besluitvormingsprocessen van de governance
+zijn beschreven. In deze beschrijving is duidelijk welk gremium over
+welke onderwerpen gaat. Voor iedereen moet helder zijn op welke manier,
+binnen welk tijdskader en door wie beslissingen worden genomen. Dit
+geldt zowel voor de meer strategische besluiten als voor de operationele
+afstemming. Voor elk onderdeel van de governance moet worden beschreven
+hoe de besluitvorming is ingericht. Daarbij is alleen meerderheid of
+consensus besluitvorming toegestaan. Waarbij aangegeven kan worden of er
+meerdere stemmingsronden mogelijk zijn.</p>
+<p>Het Logius adviesorgaan bestaat uit vertegenwoordigers van publieke
+organisaties, bestaande uit twee standaardisatie specialisten en een
+aantal adviseurs. De leden werken in verschillende beheerorganisaties
+zoals hierboven omschreven. Het adviesorgaan adviseert het bestuur over de inhoud en prioriteiten voor
+het basisprogramma en het beheer van BOMOS. Voor het basisprogramma en het beheer van BOMOS, treedt het adviesorgaan BOMOS AG op
+als stuurgroep. Het Adviesorgaan AG beoordeelt en beslist over wijzigingsvoorstellen en stelt een nieuwe (versie) van
+BOMOS vast die bij Logius is in beheer is. Het adviesorgaan is ook
+aanspreekpunt voor klachten over het beheer van BOMOS door Logius. In de werkgroepen wordt inhoudelijk en praktijkgerichte kennis uitgewisseld,
+de samenwerking met andere standaardisatieorganisaties is een belangrijk onderdeel voor de doorontwikkeling en beheer van BOMOS.</p>
+</section><section id="sturing-strategisch"><div class="header-wrapper"><h4 id="x2-2-3-sturing-strategisch"><bdi class="secno">2.2.3 </bdi>Sturing strategisch</h4><a class="self-link" href="#sturing-strategisch" aria-label="Permalink for Section 2.2.3"></a></div>
+<p>Er is transparante besturing op strategisch niveau aanwezig die past bij
+de ambities van de standaard.</p>
+<p>Het operationeel beheer van BOMOS wordt uitgevoerd door de
+beheerorganisatie Logius. Er is een BOMOS community verdeeld in drie
+lagen met bijbehorende beraden waarin afvaardigingen van deelnemers en
+dienstverleners van de beheerorganisaties zitting hebben:</p>
+<ul>
+<li><p><strong>Strategisch niveau</strong> - OBDO/MIDO (programmeringstafel Infrastructuur),  Het bureau Forum Standaardisatie en het Adviesorgaan BOMOS. </p>
+</li>
+<li><p>Het Adviesorgaan BOMOS heeft ook een formele rol op strategisch niveau
+en is aanwezig om het bestuur kennis inhoudelijk te ondersteunen.</p>
+</li>
+<li><p><strong>Tactisch niveau</strong> - Porfoliomanager Logius (programmeringstafel Infrastructuur), Het Bureau
+Forum Standaardisatie en het Adviesorgaan. Het Adviesorgaan BOMOS
+heeft ook een formele rol op strategisch niveau en is aanwezig om
+het bestuur kennis inhoudelijk te ondersteunen.</p>
+</li>
+<li><p><strong>Operationeel niveau</strong>- Adviesorgaan BOMOS, Uitvoeringsorganisatie
+Afdeling Standaarden, Adviesorgaan/klankbord BOMOS en BOMOS
+Community welke bestaan uit deelnemers van de beheersorganisaties.</p>
+</li>
+</ul>
+</section><section id="stakeholders-betrokkenheid"><div class="header-wrapper"><h4 id="x2-2-4-stakeholders-betrokkenheid"><bdi class="secno">2.2.4 </bdi>Stakeholders-betrokkenheid</h4><a class="self-link" href="#stakeholders-betrokkenheid" aria-label="Permalink for Section 2.2.4"></a></div>
+<p>Het is duidelijk hoe stakeholders betrokken worden en hoe ze mee kunnen
+participeren en wat hun rol daarbij is. Relevante typen stakeholders
+moeten een plek kunnen krijgen ergens in de gekozen structuur van het
+stelsel, en niet principieel worden buitengesloten. Dat wil niet zeggen
+dat elk type stakeholder per definitie dezelfde rechten en plichten
+heeft. Zorg daarnaast ervoor dat binnen die groepen vooral organisaties
+aangesloten zijn die zich committeren aan de doelstellingen van de
+standaard.</p>
+<p>Betrokkenheid van de Community bij de verdere ontwikkeling van de
+standaard is voor het gebruik en de draagvlak ervan van groot belang.
+Voor de standaard geldt dat geen onderscheid wordt gemaakt tussen
+publieke en private organisaties en bijvoorbeeld kennisinstellingen. Zij
+vormen samen de community. Aan de inspraak in het wijzigingsproces zijn
+voor hen geen kosten verbonden. Logius informeert en betrekt de
+community via de website en de verschillende nieuwsbrieven. Uit de
+community worden de werkgroepen gevormd op het moment dat dit benodigd
+is. De vergaderdata en verslagen van deze werkgroepen zijn beschikbaar
+voor een ieder via
+<a href="https://github.com/Logius-standaarden/BOMOS-Fundament">BOMOS Fundament</a>
+en <a href="https://github.com/Logius-standaarden/BOMOS-Verdieping">BOMOS Verdieping</a>.
+Inschrijven voor bijeenkomsten is mogelijk via xxxxx (via toekomstige
+weblink)</p>
+</section><section id="belangenorganisaties-betrokkenheid"><div class="header-wrapper"><h4 id="x2-2-5-belangenorganisaties-betrokkenheid"><bdi class="secno">2.2.5 </bdi>Belangenorganisaties-betrokkenheid</h4><a class="self-link" href="#belangenorganisaties-betrokkenheid" aria-label="Permalink for Section 2.2.5"></a></div>
+<p>Betrokkenheid van belangenorganisaties is van cruciaal belang vanwege het feit dat ze vaak
+optimaal hun achterban kunnen bereiken en vertegenwoordigen. Alle relevante belangenorganisaties 
+moeten dan ook betrokken zijn, en waar mogelijk moeten partnerschappen worden gesloten op het gebied van communicatie</p>
+<p>De afdeling Standaarden van Logius werkt samen met andere
+beheerorganisaties, dit kunnen verschillende type beheerorganisaties
+zijn, hierin wordt geen onderscheid gemaakt. Een brede samenwerking en
+kennisgebied is in het belang van de standaard maar ook in het belang
+van de beheerorganisatie zelf. Daarom zorgt de Uitvoeringsorganisatie
+(afdeling Standaarden) en het Adviesorgaan BOMOS ervoor dat
+belanghebbende beheerorganisaties worden betrokken bij verschillende
+activiteiten en overlegvormen. De activiteiten of overleggen kunnen
+workshops zijn, werkgroep overleggen voor wijzigingen of
+klankboardgroepen voor het uitwisselen van kennis.</p>
+</section><section id="opdracht-werkgroepen"><div class="header-wrapper"><h4 id="x2-2-6-opdracht-werkgroepen"><bdi class="secno">2.2.6 </bdi>Opdracht werkgroepen</h4><a class="self-link" href="#opdracht-werkgroepen" aria-label="Permalink for Section 2.2.6"></a></div>
+<p>Zowel de opdracht van de werkgroep als de wijze waarop over de
+resultaten en uitdagingen gerapporteerd wordt zijn beschreven.</p>
+<p>Nieuwe ideeën of wijzigingsverzoeken komen binnen bij de
+Uitvoeringsorganisatie (afdeling Standaarden) van Logius via
+<a href="https://github.com/Logius-standaarden/BOMOS-Fundament">BOMOS Fundament</a>
+en <a href="https://github.com/Logius-standaarden/BOMOS-Verdieping">BOMOS Verdieping</a>,
+of via contacten in het netwerk van de medewerkers van de afdeling
+Standaarden of Stelsels. Zodra een nieuw initiatief zich aandient, in de
+vorm van een opdracht, zorgt de afdeling Standaarden ervoor dat het
+adviesorgaan hiervan op de hoogte wordt gesteld en er een werkgroep
+wordt opgezet.</p>
+</section></section><section id="structureel-financieel-model"><div class="header-wrapper"><h3 id="x2-3-structureel-financieel-model"><bdi class="secno">2.3 </bdi>Structureel financieel model</h3><a class="self-link" href="#structureel-financieel-model" aria-label="Permalink for Section 2.3"></a></div>
+<p>Jaarlijks wordt bepaald welk deel van de basisfinanciering besteed wordt
+aan het standaardisatiewerk en daarmee het beheer van de standaarden.</p>
+<p>Het beheer van BOMOS standaard wordt gefinancieerd door het ministerie van BZK 
+in het kader van de financiering van Logius dienstverlening.</p>
+</section></section>
+  <section id="tactiek"><div class="header-wrapper"><h2 id="x3-tactiek"><bdi class="secno">3. </bdi>Tactiek</h2><a class="self-link" href="#tactiek" aria-label="Permalink for Section 3."></a></div>
+<p>
+      </p><figure id="fig-tactiek">
+        <img src="images/image7.png" alt="Tactiek">
+        <figcaption><a class="self-link" href="#fig-tactiek">Figuur <bdi class="figno">5</bdi></a> <span class="fig-title">Tactiek</span></figcaption>
+      </figure>
+     <p></p>
+<section id="community"><div class="header-wrapper"><h3 id="x3-1-community"><bdi class="secno">3.1 </bdi>Community</h3><a class="self-link" href="#community" aria-label="Permalink for Section 3.1"></a></div>
+<p>Deelname aan de community kent geen drempels of restricties. De leden
+van de community werken in verschillende beheerorganisaties en kunnen
+alle informatie m.b.t. de standaard en het beheer daarvan inzien via de
+website en issues of RFC's melden. Het Logius adviesorgaan behandeld
+deze issues of RFC's. In de community en werkgroepen wordt inhoudelijk
+en praktijkgerichte kennis uitgewisseld, de samenwerking met andere
+standaardisatieorganisaties is een belangrijk onderdeel voor de
+doorontwikkeling en beheer van BOMOS.</p>
+</section><section id="architectuur"><div class="header-wrapper"><h3 id="x3-2-architectuur"><bdi class="secno">3.2 </bdi>Architectuur</h3><a class="self-link" href="#architectuur" aria-label="Permalink for Section 3.2"></a></div>
+<p>De belangrijkste toepassing van BOMOS is als hulpmiddel voor de verdere
+ontwikkeling van beheerorganisaties. De standaard is een op zichzelf
+staande open standaard en geen onderdeel van een bovenliggende standaard
+of stelsel. Er is dus geen afhankelijkheid met andere beheerorganisaties
+van stelsels of standaarden. De samenwerking met andere
+standaardisatieorganisaties is wel een belangrijk onderdeel voor de
+doorontwikkeling en beheer van BOMOS.</p>
+</section><section id="jaarplan-ontwikkelagenda"><div class="header-wrapper"><h3 id="x3-3-jaarplan-ontwikkelagenda"><bdi class="secno">3.3 </bdi>Jaarplan/Ontwikkelagenda</h3><a class="self-link" href="#jaarplan-ontwikkelagenda" aria-label="Permalink for Section 3.3"></a></div>
+<p>Afgeleid van de doelstellingen is voor de standaard een ontwikkelagenda
+opgesteld waarmee invulling wordt gegeven aan de geformuleerde visie.
+Uit het overzicht hieronder kun je opmaken welke ontwikkeling op welk
+moment in de tijd gerealiseerd gaat worden.</p>
+<table class="simple">
+<thead>
+<tr>
+<th>Gremium</th>
+<th>Accent</th>
+<th>Rol participant</th>
+<th>Ondersteuning door beheerder (Logius)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>BOMOS Community</strong><br>(omvang onbeperkt<br>Operationeel 2x Per jaar)</td>
+<td>Inhoud – delen</td>
+<td>Samen met alle leden van de community:<br>1. Volgen van ontwikkelingen.<br>2. Leveren van input voor de doorontwikkeling van de standaard.</td>
+<td>1. Informatie m.b.t. specificaties en beheer open delen met community.<br>2. Deelnemen aan BOMOS klankbordgroep<br>3. Organiseren bijeenkomsten.</td>
+</tr>
+<tr>
+<td><strong>BOMOS Klankbordgroep</strong><br>(Tactisch 4x per jaar)</td>
+<td>Inhoud – afstemmen –adviseren en  beluit</td>
+<td>Samen met andere experts van de beheer organisatie:<br>1. Inhoudelijk ontwikkelen van standaard onderdelen en bijbehorende documentatie.<br>2. Voorbereiden van de release-planning.<br>3. Prioriteiten stellen voor de ontwikkeling, roadmap van nieuwe releases van de standaarden.<br>4. Goedkeuring van aanpassingen op de standaard.<br>5. Vaststellen externe publicaties over het standaardenbeleid en releases.<br>6. Vaststellen beheermodel van de standaard.</td>
+<td>1. Informatie m.b.t. specificaties en beheer open delen met community.<br>2. Analyseren, ontwerpen en uitwerken van specificaties.<br>3. Volgen en beïnvloeden van standaarden of modules<br>4. Organiseren bijeenkomsten.<br>5. Beschikbaar stellen specificaties en publicaties</td>
+</tr>
+<tr>
+<td><strong>Directie Digitale Samenleving</strong><br>(Strategisch besluitvormend, 2x per jaar)</td>
+<td>Bestuurlijk besluit</td>
+<td>Samen met andere bestuurders:<br>1. Vaststellen budget van BOMOS.<br>2. Vaststellen beheermodel van de standaard.</td>
+<td>1.Begeleiding van de Adviesraad</td>
+</tr>
+</tbody></table>
+</section><section id="pilots"><div class="header-wrapper"><h3 id="x3-4-pilots"><bdi class="secno">3.4 </bdi>Pilots</h3><a class="self-link" href="#pilots" aria-label="Permalink for Section 3.4"></a></div>
+<p>Een pilot is onderdeel van de adoptiestrategie om de verschillende
+stakeholders te overtuigen van de meerwaarde van de standaard. Dit doen
+we doormiddel van het aanbieden van een assessment. Hiervoor is tooling
+ingericht en beschikbaar gesteld op de Logius website. Met deze tool kun
+je d.m.v. het invullen van een vragenlijst inzicht krijgen in de mate
+van volwassenheid van het beheer van een standard of stelsel. De
+resultaten kunnen positief bijdragen aan het draagvlak van een standaard
+of stelsel en tevens bijdragen aan verbetering van de kwaliteit.</p>
+</section><section id="adoptiestrategie"><div class="header-wrapper"><h3 id="x3-5-adoptiestrategie"><bdi class="secno">3.5 </bdi>Adoptiestrategie</h3><a class="self-link" href="#adoptiestrategie" aria-label="Permalink for Section 3.5"></a></div>
+<p>Het gebruik van BOMOS is niet vanzelfsprekend. De toepassing en het
+beheer ervan in praktijk brengen is ons uiteindelijke doel. De community
+en werkgroepen zijn hierbij van wezenlijk belang. Voor de adoptie en
+erkenning van de standaard door het werkveld, heeft Logius, de standaard
+ook aangeboden ter publicatie aan de beheersorganisatie en aan het Forum
+Standaardisatie. Zij adviseren ook in het gebruik van de standaarden. In
+samenwerking met de beheerorganisaties welke deelnemen aan de
+werkgroepen en aan de community streven wij naar adoptie en erkenning.</p>
+</section><section id="rechtenbeleid"><div class="header-wrapper"><h3 id="x3-6-rechtenbeleid"><bdi class="secno">3.6 </bdi>Rechtenbeleid</h3><a class="self-link" href="#rechtenbeleid" aria-label="Permalink for Section 3.6"></a></div>
+<p>De Standaard zelf en dit beheermodel vallen onder de Creative Commons
+licentie (Creative Commons Attribution 4.0 License) Dit houdt in dat het
+is toegestaan om deze documenten te gebruiken, verder te verspreiden en
+aan te passen. Dit werk en de specificaties van de standaard worden
+royaltee-free ter beschikking gesteld. Organisaties en personen die
+bijdragen aan de standaard dienen dit onder dezelfde voorwaarden te doen
+als bij het originele werk. Door bij te dragen aan de standaard
+verklaren zij hiermee in te stemmen.</p>
+</section><section id="kwaliteitsbeleid-en-benchmarking"><div class="header-wrapper"><h3 id="x3-7-kwaliteitsbeleid-en-benchmarking"><bdi class="secno">3.7 </bdi>Kwaliteitsbeleid en benchmarking</h3><a class="self-link" href="#kwaliteitsbeleid-en-benchmarking" aria-label="Permalink for Section 3.7"></a></div>
+<p>Het beheer van de standaard wordt volledig open ingevuld. Dit borgt dat
+zoveel mogelijk belangstellenden en belanghebbenden betrokken zijn bij
+wijzigingen en besluitvorming.</p>
+</section></section>
+  <section id="operationeel"><div class="header-wrapper"><h2 id="x4-operationeel"><bdi class="secno">4. </bdi>Operationeel</h2><a class="self-link" href="#operationeel" aria-label="Permalink for Section 4."></a></div>
+<p>
+      </p><figure id="fig-operationeel">
+        <img src="images/image8.png" alt="Operationeel">
+        <figcaption><a class="self-link" href="#fig-operationeel">Figuur <bdi class="figno">6</bdi></a> <span class="fig-title">Operationeel</span></figcaption>
+      </figure>
+    <p></p>
+<section id="initiatie"><div class="header-wrapper"><h3 id="x4-1-initiatie"><bdi class="secno">4.1 </bdi>Initiatie</h3><a class="self-link" href="#initiatie" aria-label="Permalink for Section 4.1"></a></div>
+<p>Uitbreidingen en aanpassingen in de standaard komen tot stand door
+participatie van de verschillende belanghebbenden. Belanghebbenden
+kunnen op vier manieren participeren: als lid van de BOMOS Community
+en/of de Advies Groep en/of als lid van de Bestuur groep.</p>
+</section><section id="wensen-en-eisen"><div class="header-wrapper"><h3 id="x4-2-wensen-en-eisen"><bdi class="secno">4.2 </bdi>Wensen en Eisen</h3><a class="self-link" href="#wensen-en-eisen" aria-label="Permalink for Section 4.2"></a></div>
+<p>RFC's kunnen binnen komen via verschillende kanalen rechtstreeks bij
+Logius, tijdens overleggen, via de website of mail.</p>
+<p>Vanuit verschillende overleggen:</p>
+<ul>
+<li><p>BOMOS Community - Operationeel</p>
+</li>
+<li><p>Uitvoeringsorganisatie (Uitvoering Groep - UG) Operationeel</p>
+</li>
+<li><p>Adviesorgaan BOMOS (Advies Groep - AG) Tactisch</p>
+</li>
+<li><p>Directie Digitale Samenleving (Bestuur groep - BG) Strategisch</p>
+</li>
+</ul>
+<p>RFC's worden als issue's in de repository van het kennisplatform BOMOS
+op Github:<a href="https://github.com/Logius-standaarden/BOMOS-Fundament">BOMOS Fundament</a>
+of <a href="https://github.com/Logius-standaarden/BOMOS-Verdieping">BOMOS Verdieping</a>
+geregistreerd als deze vanuit de BOMOS Community of Adviesorgaan
+binnenkomen. Komt het rechtstreeks vanuit Logius zelf binnen dan worden
+deze in Confluence of Jira geregistreerd. Om te voorkomen dat er
+verschillende lijsten met issues en verzoeken ontstaan, is afgesproken
+dat ieder issue en verzoek als eerste wordt beoordeeld door een lid van
+de Uitvoeringsorganisatie en BOMOS adviesorgaan zorgt voor het overzicht
+van de stromen met RFC's.</p>
+<p>Dit houdt concreet in dat RFC's die rechtstreeks bij Logius afdeling
+standaarden worden neergelegd, door een lid van de
+Uitvoeringsorganisatie en het BOMOS adviesorgaan wordt opgepakt en
+doorgespeeld aan de BOMOS werkgroep zodat daar de eerste
+beoordeling kan plaatsvinden.</p>
+</section><section id="uitvoering-en-ontwikkeling-wijzigingsproces"><div class="header-wrapper"><h3 id="x4-3-uitvoering-en-ontwikkeling-wijzigingsproces"><bdi class="secno">4.3 </bdi>Uitvoering en ontwikkeling (Wijzigingsproces)</h3><a class="self-link" href="#uitvoering-en-ontwikkeling-wijzigingsproces" aria-label="Permalink for Section 4.3"></a></div>
+<p>De procedure van RCF naar daadwerkelijke wijziging ziet er als volgt
+uit:</p>
+<p>Issues die in behandeling worden genomen worden als RFC gelabeld</p>
+<ol>
+<li><p>RFC's worden besproken en uitgewerkt door de Uitvoeringsorganisatie
+Logius afdeling Standaarden (Uitvoering Groep - UG)</p>
+</li>
+<li><p>RFC's worden vastgesteld in het Adviesorgaan BOMOS (Advies Groep -
+AG) Tactisch</p>
+</li>
+<li><p>RFC worden na vaststelling door de Directie Digitale Samenleving
+(Bestuur groep - BG) Strategisch geconsulteerd en na vaststelling
+volgt publicatie van de nieuwe versie van standaard</p>
+</li>
+</ol>
+</section><section id="status-van-de-standaard"><div class="header-wrapper"><h3 id="x4-4-status-van-de-standaard"><bdi class="secno">4.4 </bdi>Status van de standaard</h3><a class="self-link" href="#status-van-de-standaard" aria-label="Permalink for Section 4.4"></a></div>
+<p>Logius, afdeling standaarden onderscheidt twee statussen die BOMOS kan
+hebben:</p>
+<table class="simple">
+<thead>
+<tr>
+<th>Afkorting</th>
+<th>Status van de standaard</th>
+<th>Beschrijving van de status</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IO</td>
+<td>In Ontwikkeling</td>
+<td>Een nieuwe release van de standaard is "In Ontwikkeling" wanneer er met medeweten en medewerking van participanten (BOMOS Community en klankbordgroep) aan gewerkt wordt en wanneer dit onderdeel of deze release nog niet voor de buitenwereld is gepubliceerd.</td>
+</tr>
+<tr>
+<td>IG</td>
+<td>In Gebruik</td>
+<td>Als een nieuwe release van de standaard gereed is, en is bestendigd door de Directie Digitale Samenleving, stelt de BOMOS klankbordgroep de status 'In Gebruik' vast. Hierna wordt de nieuwe release gepubliceerd zodat alle gebruikers hiervan kunnen profiteren.</td>
+</tr>
+</tbody></table>
+</section><section id="documentatie"><div class="header-wrapper"><h3 id="x4-5-documentatie"><bdi class="secno">4.5 </bdi>Documentatie</h3><a class="self-link" href="#documentatie" aria-label="Permalink for Section 4.5"></a></div>
+<p>Alle documenten m.b.t. de standaard en het beheer van de standaard
+worden openbaar en zonder drempels voor gebruik, gepubliceerd op
+logius.nl, Github en Confluence pagina's. Logius publiceert tenminste
+de volgende documenten:</p>
+<ul>
+<li>Dit Beheer-beheermodel</li>
+<li>De vergaderstukken van het Technisch overleg en overige besluitvormende gremia.</li>
+<li>De specificaties van de standaard</li>
+<li>De voorlopige specificaties van de nieuwe versie van de standaard.</li>
+<li>Versie 3.0 van BOMOS</li>
+</ul>
+<p>Versie 3.0 van BOMOS is gepubliceerd op:
+<a href="https://github.com/Logius-standaarden/BOMOS-Fundament">BOMOS Fundament</a>
+en <a href="https://github.com/Logius-standaarden/BOMOS-Verdieping">BOMOS Verdieping</a>.
+En vindbaar via de <a href="https://www.logius.nl/diensten/bomos">Logius website</a></p>
+</section></section>
+  <section id="implementatieondersteuning"><div class="header-wrapper"><h2 id="x5-implementatieondersteuning"><bdi class="secno">5. </bdi>Implementatieondersteuning</h2><a class="self-link" href="#implementatieondersteuning" aria-label="Permalink for Section 5."></a></div>
+<p>
+      </p><figure id="fig-implementatieondersteuning">
+        <img src="images/image9.png" alt="Implementatieondersteuning">
+        <figcaption><a class="self-link" href="#fig-implementatieondersteuning">Figuur <bdi class="figno">7</bdi></a> <span class="fig-title">Implementatieondersteuning</span></figcaption>
+      </figure>
+    <p></p>
+<section id="opleiding-en-advies"><div class="header-wrapper"><h3 id="x5-1-opleiding-en-advies"><bdi class="secno">5.1 </bdi>Opleiding en advies</h3><a class="self-link" href="#opleiding-en-advies" aria-label="Permalink for Section 5.1"></a></div>
+<p>Logius biedt momenteel geen opleiding aan, maar borgt dat de informatie
+m.b.t. de standaard altijd, zonder drempels, toegankelijk is via de
+Logius website of via Github, zie hiervoor 4.5 Documentatie. Bovendien
+kunnen geïnteresseerden via verschillende kanalen contact opnemen met
+Logius in geval van vragen of opmerkingen. Zie hiervoor 5.2 Helpdesk.</p>
+<p>Aanvullend organiseert Logius afdeling Stelsels een e-learning waarin
+handreikingen worden gegeven over het verschil tussen standaarden en
+stelsels en hoe het beheer op basis van BOMOS ingericht kan worden.</p>
+<p>Verder worden er regelmatig overleggen gepland en streven naar een
+jaarlijkse seminar m.b.t. BOMOS.</p>
+</section><section id="helpdesk"><div class="header-wrapper"><h3 id="x5-2-helpdesk"><bdi class="secno">5.2 </bdi>Helpdesk</h3><a class="self-link" href="#helpdesk" aria-label="Permalink for Section 5.2"></a></div>
+<p>Logius biedt ondersteuning en advies via verschillende kanalen:</p>
+<p>Online: als reactie op issue's in de <a href="https://github.com/Logius-standaarden/BOMOS-Fundament/issues">Github repository van het Kennisplatform</a></p>
+<p>Algemeen Contactformulier: <a href="https://www.logius.nl/contact/formulieren/algemeen-contactformulier">Algemeen contactformulier Logius</a></p>
+<p>Telefonisch: 0900 - 555 45 55</p>
+<p>Per post: Logius, Postbus 96810; 2509 JE Den Haag, (t.a.v. Standaarden).</p>
+</section><section id="validatie-certificatie"><div class="header-wrapper"><h3 id="x5-3-validatie-certificatie"><bdi class="secno">5.3 </bdi>Validatie &amp; Certificatie</h3><a class="self-link" href="#validatie-certificatie" aria-label="Permalink for Section 5.3"></a></div>
+<p>Met BOMOS worden standaardisatiecommunities ondersteund en geïnspireerd
+bij het structureel vormgeven van het beheer en verdere ontwikkelingen
+van standaarden. BOMOS is niet verplicht en is ook geen
+conformiteitsbeoordeling.</p>
+</section></section>
+  <section id="communicatie"><div class="header-wrapper"><h2 id="x6-communicatie"><bdi class="secno">6. </bdi>Communicatie</h2><a class="self-link" href="#communicatie" aria-label="Permalink for Section 6."></a></div>
+<p>
+      </p><figure id="fig-communicatie">
+        <img src="images/image10.png" alt="Communicatie">
+        <figcaption><a class="self-link" href="#fig-communicatie">Figuur <bdi class="figno">8</bdi></a> <span class="fig-title">Communicatie</span></figcaption>
+      </figure>
+    <p></p>
+<section id="promotie"><div class="header-wrapper"><h3 id="x6-1-promotie"><bdi class="secno">6.1 </bdi>Promotie</h3><a class="self-link" href="#promotie" aria-label="Permalink for Section 6.1"></a></div>
+<p>Logius is promotor van de standaard. Zowel intern voor de toepassing van
+de standaard in Logius voorzieningen als extern, door andere partijen te
+informeren en adviseren over de mogelijkheden van de standaard. BOMOS
+wordt via verschillende kanalen gepromoot. Ten eerste via de Logius
+website en het Kennisplatform BOMOS. Naast communicatie op de website en
+op het kennisplatform, organiseert Logius als uitvoeringsorganisatie
+vrij toegankelijke bijeenkomsten voor de community, werkgroep en
+adviesorgaan. Daarnaast promoot ook Forum Standaardisatie actief het
+gebruik van BOMOS.</p>
+</section><section id="publicatie"><div class="header-wrapper"><h3 id="x6-2-publicatie"><bdi class="secno">6.2 </bdi>Publicatie</h3><a class="self-link" href="#publicatie" aria-label="Permalink for Section 6.2"></a></div>
+<p>Als een nieuwe versie van BOMOS de status "In Gebruik" heeft, worden
+verschillende zaken gepubliceerd. Logius publiceert altijd de volledige
+specificatie van de standaard op een deel van de Logius website.
+Aanvullend publiceert Logius alle <a href="#documentatie">genoemde documentatie</a>.</p>
+</section><section id="klachtenafhandeling"><div class="header-wrapper"><h3 id="x6-3-klachtenafhandeling"><bdi class="secno">6.3 </bdi>Klachtenafhandeling</h3><a class="self-link" href="#klachtenafhandeling" aria-label="Permalink for Section 6.3"></a></div>
+<p>Klachten over de opzet of de uitvoering van het beheerproces kunnen
+ingediend worden bij Logius. Dit kan in principe via alle beschikbare
+kanalen, zie kanalen bij <a href="#helpdesk">Helpdesk</a>. De indiener van de klacht krijgt
+zo spoedig mogelijk en altijd terugkoppeling over de voortgang van en
+beslissing over zijn klacht. Het adviesorgaan BOMOS is aanspreekpunt
+voor klachten over het beheer van BOMOS door Logius.</p>
+</section></section>
+  <section id="bijlage-gebruik-respec"><div class="header-wrapper"><h2 id="x7-bijlage-gebruik-respec"><bdi class="secno">7. </bdi>Bijlage: Gebruik ReSpec</h2><a class="self-link" href="#bijlage-gebruik-respec" aria-label="Permalink for Section 7."></a></div>
+<p>Voor publicatie van de standaarden die bij Logius en beheer zijn wordt
+gebruik gemaakt van ReSpec. ReSpec is een applicatie om technische
+documentatie te maken die publiceerbaar is op het internet en gemakkelijk
+kan worden geïndexeerd door zoekmachines om de documentatie vindbaar
+te maken. Het is ontwikkeld ten behoeve van de documentatie van W3C
+standaarden. Door gebruik te maken van ReSpec publiceren we documentatie
+overeenkomstig een (de facto) W3C standaard.</p>
+<p>ReSpec is een Javascript applicatie. Input voor ReSpec bestaat uit
+teksten in HTML of <a href="https://www.markdownguide.org/">Markdown</a>, zie [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7763" title="The text/markdown Media Type">RFC7763</a></cite>].
+ReSpec combineert een serie input files tot één documentatiedocument
+in HTML met een duidelijke inhoudsopgave en kruisverwijzingen naar de
+verschillende secties en figuren.</p>
+<p>ReSpec is ontwikkeld door een werkgroep van W3C en wordt actief
+doorontwikkeld.</p>
+<section id="logius-profiel"><div class="header-wrapper"><h3 id="x7-1-logius-profiel"><bdi class="secno">7.1 </bdi>Logius profiel</h3><a class="self-link" href="#logius-profiel" aria-label="Permalink for Section 7.1"></a></div>
+<p><a href="https://github.com/Logius-standaarden/respec">Logius heeft een eigen profiel gemaakt op ReSpec</a> om Logius
+organisatiespecifieke zaken, zoals layout, te ondersteunen.
+Wijzigingen in de W3C versie worden regelmatig doorgevoerd
+in de Logius versie.</p>
+<p>De Logius ReSpec versie is zo algemeen mogelijk gemaakt zodat
+deze door andere overheden in Nederland eenvoudig toegepast kan
+worden. In de Logius versie gebruiken we zoveel mogelijk input
+in Markdown formaat.</p>
+</section><section id="literatuurverwijzingen"><div class="header-wrapper"><h3 id="x7-2-literatuurverwijzingen"><bdi class="secno">7.2 </bdi>Literatuurverwijzingen</h3><a class="self-link" href="#literatuurverwijzingen" aria-label="Permalink for Section 7.2"></a></div>
+<p>ReSpec maakt gebruik van de online <a href="https://www.specref.org/">Specref</a>
+database van Literatuurverwijzingen. Deze database bevat referenties
+naar, onder andere, referenties voor de W3C documentatie.</p>
+<p>Voor Nederlandse documenten die niet in Specref staan maken we gebruik
+van een standaard literatuurlijst die voor alle documenten gebruikt
+kan worden en die apart beheerd wordt. Het beheer is onder meer nodig
+om links naar online documentatie bij te houden.</p>
+</section><section id="links"><div class="header-wrapper"><h3 id="x7-3-links"><bdi class="secno">7.3 </bdi>Links</h3><a class="self-link" href="#links" aria-label="Permalink for Section 7.3"></a></div>
+<ul>
+<li><a href="https://www.markdownguide.org/">Markdown documentatie</a></li>
+<li><a href="https://respec.org/docs/">ReSpec documentatie</a></li>
+<li><a href="https://github.com/w3c/respec/wiki">Respec wiki op de repository van W3C</a></li>
+<li><a href="https://github.com/Logius-standaarden/respec">Logius fork van Respec, gebruikt voor deze documentatie</a></li>
+</ul>
+</section></section>
+  <section id="bijlage-gebruik-github-in-het-beheerproces"><div class="header-wrapper"><h2 id="x8-bijlage-gebruik-github-in-het-beheerproces"><bdi class="secno">8. </bdi>Bijlage: Gebruik GitHub in het beheerproces</h2><a class="self-link" href="#bijlage-gebruik-github-in-het-beheerproces" aria-label="Permalink for Section 8."></a></div>
+<section id="publicatie-0"><div class="header-wrapper"><h3 id="x8-1-publicatie"><bdi class="secno">8.1 </bdi>Publicatie</h3><a class="self-link" href="#publicatie-0" aria-label="Permalink for Section 8.1"></a></div>
+<p>GitHub biedt functionaliteit om documenten te publiceren vanuit een
+repository. Logius gebruikt deze functionaliteit om het met
+<a href="#bijlage-gebruik-respec">ReSpec</a> gegenereerde document te publiceren
+als HTML-document en een PDF-document. Deze documenten worden automatisch
+gekopieerd naar een publicatiewebsite onder beheer van Logius.</p>
+</section><section id="wijzigingsvoorstellen"><div class="header-wrapper"><h3 id="x8-2-wijzigingsvoorstellen"><bdi class="secno">8.2 </bdi>Wijzigingsvoorstellen</h3><a class="self-link" href="#wijzigingsvoorstellen" aria-label="Permalink for Section 8.2"></a></div>
+<p>Het proces zoals beschreven onder
+<a href="#wensen-en-eisen">operationeel beheer, wensen en eisen</a>
+wordt voor de Logius standaarden geïmplementeerd door gebruik te maken
+van <em>GitHub issues</em>. Een <em>issue</em> kan binnen GitHub ingediend worden
+door iedere (GitHub)gebruiker en wordt bij ontwikkeling van code
+gebruikt om functionele wensen of gevonden bugs in te dienen zodat
+deze door ontwikkelaars opgepakt kunnen worden. Een <em>issue</em> kan
+online besproken worden en uiteindelijk gesloten worden wanneer
+deze verwerkt is.</p>
+<section id="branches"><div class="header-wrapper"><h4 id="x8-2-1-branches"><bdi class="secno">8.2.1 </bdi>Branches</h4><a class="self-link" href="#branches" aria-label="Permalink for Section 8.2.1"></a></div>
+<p>Binnen het standaardenbeheer bij Logius maken we gebruik van verschillende
+branches. De <em>main</em> branch bevat de laatste formeel geaccepteerde versie
+van een document. De <em>develop</em> branch bevat een werkversie met daarin alle
+wijzigingen die in een volgende geaccepteerde versie opgenomen moeten
+worden.</p>
+<p>Aanpassingen in de documentatie die voor een specifiek wijzigingsvoorstel
+gemaakt worden worden in een eigen branch verwerkt. Deze branch wordt gesplitst vanaf de <em>develop</em> branch en wordt nadat het wijzigingsverzoek aangenomen
+is teruggebracht naar de <em>develop</em> branch. Voorbeeld: een wijzigingsverzoek
+voor het aanpassen van de architectuurbeschrijving zal in een branche <em>nieuwe architectuur</em> worden verwerkt. Deze wordt gesplitst vanaf, en
+teruggebracht naar, de <em>develop</em> branch. Door wijzigingen in een eigenaarbranch op te nemen zijn alle wijzigingen op de documentatie inzichtelijk per wijzigingsvoorstel.</p>
+<p>De <em>develop</em> branch wordt dus niet gebruikt om wijzigingen op het document
+te maken maar dient als verzamelbranch voor de verschillende wijzigingen
+die in een volgende release moeten komen.</p>
+</section><section id="labels"><div class="header-wrapper"><h4 id="x8-2-2-labels"><bdi class="secno">8.2.2 </bdi>Labels</h4><a class="self-link" href="#labels" aria-label="Permalink for Section 8.2.2"></a></div>
+<p>Om GitHub issues te classificeren en te agenderen voor het juiste overleg
+maken we gebruik van een aantal standaard labels. We labelen binnenkomende
+issues als</p>
+<ol>
+<li><strong>Type</strong> Alle soorten issues kunnen binnenkomen. Met Type sorteren we
+de issues in vragen, correcties en wijzigingen.<ol>
+<li>Correctie</li>
+<li>Documentatie</li>
+<li>Vraag</li>
+<li>Wijziging</li>
+</ol>
+</li>
+<li><strong>Scope</strong> Vooral relevant voor wijzigingsvoorstellen. Hiermee wordt
+aangegeven of het een kleine of grote wijziging betreft. Dit heeft
+betrekking op de impact van een wijziging en daarmee op de
+<a href="#bijlage-versie-nummering-logius-standaarden">versienummering</a>.<ol>
+<li>Klein</li>
+<li>Groot</li>
+</ol>
+</li>
+<li><strong>Overleg</strong> Het label Overleg heeft alleen betrekking op wijzigingsvoorstellen.
+Wanneer deze labels gebruikt worden wordt het voorstel geagendeerd voor het betreffende overleg.<ol>
+<li>TO-DK</li>
+<li>TO-Auth</li>
+<li>Gegevensuitwisseling</li>
+<li>Toegang</li>
+<li>Interactie</li>
+<li>Infrastructuur</li>
+</ol>
+</li>
+<li><strong>Status</strong><ol>
+<li>In onderzoek</li>
+<li>In bewerking</li>
+<li>Uitwerking door derden</li>
+<li>In review</li>
+<li>Klaar voor review</li>
+<li>Gereed   </li>
+<li>Afgewezen</li>
+</ol>
+</li>
+</ol>
+</section></section><section id="patches"><div class="header-wrapper"><h3 id="x8-3-patches"><bdi class="secno">8.3 </bdi>Patches</h3><a class="self-link" href="#patches" aria-label="Permalink for Section 8.3"></a></div>
+<p><em>TODO: beschrijving patching operationeel</em></p>
+</section><section id="automatisering-en-scripts"><div class="header-wrapper"><h3 id="x8-4-automatisering-en-scripts"><bdi class="secno">8.4 </bdi>Automatisering en scripts</h3><a class="self-link" href="#automatisering-en-scripts" aria-label="Permalink for Section 8.4"></a></div>
+<p>GitHub ondersteunt automatisering van taken door scripts. Standaard
+is de publicatie via <em>github pages</em>. Binnen de Logius standaarden maken
+we gebruik van scripts om documenten te publiceren, links te checken en om een paar eenvoudige
+tests op digitoegankelijkheidseisen uit te voeren.</p>
+</section></section>
+  <section id="bijlage-versie-nummering-logius-standaarden"><div class="header-wrapper"><h2 id="x9-bijlage-versie-nummering-logius-standaarden"><bdi class="secno">9. </bdi>Bijlage: versie-nummering Logius standaarden</h2><a class="self-link" href="#bijlage-versie-nummering-logius-standaarden" aria-label="Permalink for Section 9."></a></div>
+<p>Deze bijlage beschrijft de versioneringsmethodiek ofwel de standaard manier om om te gaan met versienummers van de standaard. De versioneringsmethodiek is gelijk voor alle 'gepubliceerde standaarden' die onder beheer zijn van Logius (afdeling standaarden) en is gebaseerd op Semver. Semver staat voor Semantisch Versioneren en we gebruiken versie 2.0.0  van de standaard zoals gepubliceerd op <a href="https://semver.org/lang/nl/#semantisch-versioneren-200">specificatie van Semantisch Versioneren (SEMVER)</a>.</p>
+<p>Dat wil zeggen we kennen een bepaalde betekenis toe aan Major,Minor en Patch wijzigingen voor de standaarden zodanig dat de versienummers informatief zijn voor het type wijziging. Aandachtpunt hierbij is dat semantische versionering voor standaarden anders werkt dan semantische versionering voor software. De versienummers voor standaarden drukken uit of een (implementatie) van een oude versie van de standaard voldoet aan de regels van de nieuwe standaard (en dus compliant is aan de nieuwe versie) of niet. 
+Het voordeel van deze manier van versioneren is dat het versienummer signaleert of een implementatie van een bepaalde versie van de standaard voldoet aan een andere (nieuwe) versie van de standaard of dat er sprake is van nieuwe / gewijzigde regels waar aktie op moet worden ondernomen om compliant te zijn aan deze versie.</p>
+<p>De beschreven methodiek is van toepassing op de standaarden die Logius in beheer heeft. In de tekst worden Digikoppeling standaarden als voorbeeld aangehaald maar semantische versienummering is ook op de andere standaarden van toepassing.</p>
+<section id="versioneringsmethodiek"><div class="header-wrapper"><h3 id="x9-1-versioneringsmethodiek"><bdi class="secno">9.1 </bdi>Versioneringsmethodiek</h3><a class="self-link" href="#versioneringsmethodiek" aria-label="Permalink for Section 9.1"></a></div>
+<p>Per document wordt met <code class="code">[documentnaam] X.Y.Z</code> de versie aangegeven.
+Met <code class="code">X.Y.Z</code> wordt gerefereerd aan major (X) en minor (Y) releases en (Z) patches,
+dit wordt hieronder toegelicht.</p>
+<ul>
+<li>MAJOR wordt verhoogd als de nieuwe versie van de standaard zodanig wijzigt dat uitwerkingen (implementaties) volgens de vorige versie van de standaard niet meer voldoen aan de normen/eisen van de nieuwe versie van de standaard.</li>
+<li>MINOR wordt verhoogd bij wijzigingen waarbij uitwerkingen (implementaties) volgens de vorige versie van de standaard ook voldoen aan de normen/eisen van de nieuwe versie van de standaard.</li>
+<li>PATCH wordt verhoogd bij correcties.</li>
+</ul>
+<section id="patch-releases"><div class="header-wrapper"><h4 id="x9-1-1-patch-releases"><bdi class="secno">9.1.1 </bdi>Patch Releases</h4><a class="self-link" href="#patch-releases" aria-label="Permalink for Section 9.1.1"></a></div>
+<p>In een patchrelease worden wijzigingen doorgevoerd die de technische
+specificatie niet raken. Dit kunnen tekstuele wijzigingen zijn of
+inhoudelijke indelingen van de documenten. De wijzigingen worden
+vastgelegd in release notes. Een patch releases wordt door de beheerder
+op eigen initiatief of op aanwijzingen van gebruikers doorgevoerd en gepubliceerd.
+Een patchrelease wordt aan het Technisch Overleg ter kennisgeving medegedeeld.
+Een nieuwe patchrelease vervangt een eerdere versie in zijn geheel.</p>
+</section><section id="minor-releases"><div class="header-wrapper"><h4 id="x9-1-2-minor-releases"><bdi class="secno">9.1.2 </bdi>Minor releases</h4><a class="self-link" href="#minor-releases" aria-label="Permalink for Section 9.1.2"></a></div>
+<p>Een minor release geeft aan dat de nieuwe versie van de standaard zodanig is gewijzigd dat een implementatie van de voorgaande versie van de standaard voldoet aan de regels van de nieuwe versie. In een minor release kunnen wijzigingen doorgevoerd worden die de technische
+specificatie van een koppelvlak raken. Dat kunnen fouten zijn in de specificatie
+zijn of bv het verlichten van een restrictie. In de SEMVER aanpak voor software zijn
+minor releases technisch backwards compatible. Voor de uitwisselingsstandaarden zoals
+Digikoppeling is backwards compatibility lastiger te bepalen omdat uiteindelijk
+twee partijen met elkaar moeten meebewegen.
+<strong>Minor Releases kunnen dus mogelijk technisch backwards incompatible zijn</strong>.
+Voor Minor Releases wordt een uitgebreid vaststellingsprocedure gevolgd
+(conform het beheermodel van de standaard) en er kan in overleg met de deelnemers
+van het Technisch Overleg tot een migratiepad worden besloten. Dit migratiepad
+wordt in de release meegenomen.</p>
+</section><section id="major-releases"><div class="header-wrapper"><h4 id="x9-1-3-major-releases"><bdi class="secno">9.1.3 </bdi>Major Releases</h4><a class="self-link" href="#major-releases" aria-label="Permalink for Section 9.1.3"></a></div>
+<p>Een major release geeft aan dat de nieuwe versie van de standaard zodanig is gewijzigd dat een implementatie van de voorgaande versie van de standaard <strong>niet</strong> voldoet aan de regels van de nieuwe versie.
+Bijvoorbeeld de overgang naar nieuwe externe
+(meestal internationale) standaarden binnen een bestaand profiel. Als hierbij het
+functionele toepassingsgebied van de standaard, waarvoor het pas-toe-of-leg-uit
+regime geldt, verandert, dan wordt eerst de uitgebreide vaststellingsprocedure
+gevolgd en vervolgens de procedure van het Forum Standaardisatie.</p>
+<aside class="example" id="example-grote-wijzigingen-voor-digikoppeling"><div class="marker">
+    <a class="self-link" href="#example-grote-wijzigingen-voor-digikoppeling">Voorbeeld<bdi> 1</bdi></a><span class="example-title">: Grote wijzigingen voor Digikoppeling</span>
+  </div>
+Bij de overgang naar een andere externe standaard binnen een bestaand
+profiel kan men denken aan een overgang naar HTTP 2.0 of SOAP 1.2 binnen
+Digikoppeling WUS koppelvlakspecificatie.
+Het toevoegen van een geheel nieuw profiel kan voor Digikoppeling kan bestaan
+uit het toevoegen van een Grote Berichten Push variant of ebMS3/AS4
+koppelvlakspecificaties. Deze kunnen natuurlijk bestaande koppelvlakspecificaties
+vervangen.
+</aside>
+
+</section></section><section id="toelichting-en-voorbeeld-regels"><div class="header-wrapper"><h3 id="x9-2-toelichting-en-voorbeeld-regels"><bdi class="secno">9.2 </bdi>Toelichting en voorbeeld regels</h3><a class="self-link" href="#toelichting-en-voorbeeld-regels" aria-label="Permalink for Section 9.2"></a></div>
+<p>Een  versie van een standaard (versie 1.2.0) is compatible met een eerdere versie van een standaard (versie 1.1.0) als uitwerkingen/ implementaties volgens de eerdere versie 1.1.0 ook volledig voldoen aan de normen en eisen van versie 1.2.0 .
+Wijzigingen in de standaard kunnen impact hebben op de technische werking van implementaties en/of op afspraken die de technische werking van implementaties niet raken bijvoorbeeld organisatorische of proces afspraken;</p>
+<p>Voor standaarden is relevant of een realisatie volgens de oude versie van een standaard wel of niet voldoet aan de nieuwe versie van de standaard;
+Globale regels voor het bepalen van de impact op de versionering:</p>
+<ul>
+<li>Toevoegen = Major</li>
+<li>Wijzigingen = Major of Minor (afhankelijk van de verwachte impact van de wijziging)</li>
+<li>Verwijderen = Minor</li>
+<li>Correctie = Patch</li>
+</ul>
+<p>Voor standaarden waarbij wijzigingen op onderdelen kan verschillen tussen 
+major en minor kan een impactmatrix opgesteld worden waarmee impact op de 
+onderdelen gespecificeerd kan worden.</p>
+</section><section id="versie-overgangen"><div class="header-wrapper"><h3 id="x9-3-versie-overgangen"><bdi class="secno">9.3 </bdi>Versie overgangen</h3><a class="self-link" href="#versie-overgangen" aria-label="Permalink for Section 9.3"></a></div>
+<p>Wanneer een nieuwe major versie uitkomt zal de oude versie conform de afgestemde migratiepad een einddatum van geldigheid krijgen. In de overgangsperiode kunnen dus meerdere versies gepubliceerd zijn en de status geldig hebben.</p>
+<p>Om te kunnen werken aan publicatie-, werk- en voorstelversies van documenten worden Git branches gebruikt.</p>
+<aside class="example" id="example-2"><div class="marker">
+    <a class="self-link" href="#example-2">Voorbeeld<bdi> 2</bdi></a>
+  </div>
+In het onderstaande voorbeeld zien wij een standaard van 1.0.0 naar 1.1.0 ontwikkelen.
+
+<figure id="Gitflow">
+  <img src="images/Semver_gitflow_branches.svg" alt="Weergave van splitsende braches">
+  <figcaption><a class="self-link" href="#Gitflow">Figuur <bdi class="figno">9</bdi></a> <span class="fig-title">Gitflow</span></figcaption>
+</figure>
+
+<p>De branch main is de huidig gepubliceerde versie en de branch develop is de werkversie. Het uitwerken van een RFC gebeurt in een afsplitsing van de develop branch waarna het terug de develop branch invloeit. In het voorbeeld schema leidde RFC1 tot de eerste release candidate (rc) van versie 1.1.0 van de standaard. Wanneer de werkversie gereed en akkoord is als release stromen de wijzigingen naar de branch main.</p>
+<p>Het kan voorkomen dat gewenst wordt vlug een kleine (niet inhoudelijke) aanpassing aan de gepubliceerde versie te maken. Om bijvoorbeeld een spelfout vlug te corrigeren kan deze aanpassing op main i.p.v. develop worden uitgevoerd. In het voorbeeld leidde een hotfix tot een release van versie 1.0.1 waarna de aanpassing naar de werkversie geduwd wordt.</p>
+</aside></section></section>
+ 
+
+<section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-referenties"><bdi class="secno">A. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div><section id="informatieve-referenties">
+    <div class="header-wrapper"><h3 id="a-1-informatieve-referenties"><bdi class="secno">A.1 </bdi>Informatieve referenties</h3><a class="self-link" href="#informatieve-referenties" aria-label="Permalink for Appendix A.1"></a></div>
+    <dl class="bibliography"><dt id="bib-rfc7763">[RFC7763]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc7763"><cite>The text/markdown Media Type</cite></a>. S. Leonard.  IETF. March 2016. Informational. URL: <a href="https://www.rfc-editor.org/rfc/rfc7763">https://www.rfc-editor.org/rfc/rfc7763</a>
+    </dd></dl>
+  </section></section><p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(setupPanel);
+} else {
+  setupPanel();
+}
+
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
+  /** @type {HTMLElement} */
+  let panel = null;
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    const action = deriveAction(event);
+
+    switch (action) {
+      case "show": {
+        hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = target.closest("dfn, .index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        const coords = deriveCoordinates(event);
+        displayPanel(dfn, panel, coords);
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        panel = null;
+        break;
+      }
+    }
+  };
+}
+
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
+  }
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not([data-cite]), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
+    if (hitALink) {
+      return target.classList.contains("self-link") ? "hide" : "dock";
+    }
+    const panel = target.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : "none";
+  }
+  if (document.querySelector(".dfn-panel:not([hidden])")) {
+    return "hide";
+  }
+  return "none";
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a[href]");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const [record] = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  if (!panel) return;
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><div class="sidelabel">Logius Handreiking - Werkversie</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
