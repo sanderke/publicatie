@@ -26,6 +26,8 @@ Klik op het pad om naar de pagina op logius.nl te gaan. Klik op :scroll: om de p
 
 ### bomos
 
+- [bomos/beheer/](https://gitdocumentatie.logius.nl/publicatie/bomos/beheer/) [:scroll:](https://logius-standaarden.github.io/publicatie/bomos/beheer/)
+   - [bomos/beheer/0.5/](https://gitdocumentatie.logius.nl/publicatie/bomos/beheer/0.5/) [:scroll:](https://logius-standaarden.github.io/publicatie/bomos/beheer/0.5/)
 - [bomos/fundament/](https://gitdocumentatie.logius.nl/publicatie/bomos/fundament/) [:scroll:](https://logius-standaarden.github.io/publicatie/bomos/fundament/)
    - [bomos/fundament/2i/](https://gitdocumentatie.logius.nl/publicatie/bomos/fundament/2i/) [:scroll:](https://logius-standaarden.github.io/publicatie/bomos/fundament/2i/)
    - [bomos/fundament/3.0.0/](https://gitdocumentatie.logius.nl/publicatie/bomos/fundament/3.0.0/) [:scroll:](https://logius-standaarden.github.io/publicatie/bomos/fundament/3.0.0/)
