@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="nl"><head>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
-<meta name="generator" content="ReSpec 34.1.1">
+<meta name="generator" content="ReSpec 34.1.4">
 <style>
 dfn{cursor:pointer}
 .dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
@@ -29,9 +29,9 @@ dfn{cursor:pointer}
   
   
 <script>document.title = respecConfig.title</script>
-<title>Digikoppeling Roadmap 2022-2023 1.0</title>
+<title>undefined 1.0</title>
   
-<title>Default</title>
+<title>Digikoppeling Roadmap 2022-2023</title>
   
 <link rel="shortcut icon" type="image/x-icon" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/logius.ico">
   
@@ -93,9 +93,24 @@ dd{margin-left:0}
 .removeOnSave{display:none}
 }
 </style>
+<style id="respec-nlgov">
+img.license{float:left;padding-right:5px}
+</style>
 <meta name="description" content="Dit document beschrijft de roadmap Digikoppeling 2022-2023.">
 <style>
-.sidelabel{position:fixed;-webkit-transform-origin:top right;right:100%;top:0;-webkit-transform:rotate(-90deg);padding:4px 50px 4px 10px;color:#fff;white-space:nowrap;z-index:1}
+
+  .sidelabel {
+    position: fixed;
+    -webkit-transform-origin: top right;
+    right: 100%;
+    top: 0;
+    -webkit-transform: rotate(-90deg);
+    padding: 4px 50px 4px 10px;
+    color: white;
+    white-space: nowrap;
+    z-index: 1;
+    background-color: #154273;
+  }
 </style>
 <script id="initialUserConfig" type="application/json">{
   "nl_organisationName": "Logius",
@@ -140,8 +155,8 @@ dd{margin-left:0}
   "localizationStrings": {
     "en": {
       "wv": "Draft",
-      "cv": "Recommendation",
-      "vv": "Proposed recommendation",
+      "cv": "Consultation version",
+      "vv": "Proposed version",
       "def": "Definitive version",
       "basis": "Document",
       "eo": "Outdated version",
@@ -180,7 +195,7 @@ dd{margin-left:0}
       "sotd": "Status van dit document",
       "def": "Dit is de definitieve versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.",
       "wv": "Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.",
-      "cv": "Dit is een door het TO goedgekeurde consultatieversie. Commentaar over dit document kan gestuurd worden naar ",
+      "cv": "Dit is een door het TO goedgekeurde consultatieversie. Commentaar over dit document kan gestuurd worden naar digikoppeling@logius.nl",
       "vv": "Dit is een definitief concept van de nieuwe versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.",
       "basis": "Dit is een document zonder officiële status."
     },
@@ -188,14 +203,16 @@ dd{margin-left:0}
       "sotd": "Status of This Document",
       "def": "This is the definitive version of this document. Edits resulting from consultations have been applied.",
       "wv": "This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.",
-      "cv": "This is a proposed recommendation approved by TO. Comments regarding this document may be sent to ",
+      "cv": "This is a proposed recommendation approved by TO. Comments regarding this document may be sent to api@logius.nl",
       "vv": "This is the definitive concept of this document. Edits resulting from consultations have been applied.",
       "basis": "This document has no official standing."
     }
   },
   "labelColor": {
     "def": "#154273",
-    "wv": "#39870c"
+    "wv": "#39870c",
+    "cv": "#000000",
+    "vv": "#000000"
   },
   "licenses": {
     "cc0": {
@@ -473,6 +490,26 @@ dd{margin-left:0}
       "publisher": "Forum Standaardisatie",
       "title": "Expertadvies CloudEvents 1.0"
     },
+    "folmer2011": {
+      "title": "Management and Development Model for Open Standards (BOMOS) version 2",
+      "keywords": "IR-76837",
+      "authors": [
+        "ErwinFolmer",
+        "Matthijs Punter"
+      ],
+      "date": "2011",
+      "language": "English",
+      "publisher": "Programmabureau NOiV"
+    },
+    "folmer2012": {
+      "href": "https://ris.utwente.nl/ws/portalfiles/portal/6064223/thesis_E_Folmer.pdf",
+      "title": "Quality of Semantic Standards",
+      "authors": [
+        "Erwin Folmer"
+      ],
+      "date": "2012",
+      "publisher": "Universiteit Twente"
+    },
     "Gebruiksvoorwaarden Digikoppeling": {
       "date": "1 januari 2021",
       "href": "https://www.logius.nl/diensten/digikoppeling/documentatie/gebruiksvoorwaarden-digikoppeling",
@@ -727,6 +764,15 @@ dd{margin-left:0}
       "href": "https://semver.org",
       "title": "Semantic Versioning 2.0.0"
     },
+    "Transport Security Module": {
+      "authors": [
+        ""
+      ],
+      "date": "27 september 2023",
+      "href": "https://geonovum.github.io/KP-APIs/API-strategie-modules/transport-security/",
+      "publisher": "Kennisplatform API's",
+      "title": "Transport Security Module"
+    },
     "UMMR10": {
       "authors": [
         ""
@@ -789,7 +835,6 @@ dd{margin-left:0}
   "publishDate": "2022-03-24",
   "publishVersion": "1.0",
   "isSubmission": true,
-  "title": "Digikoppeling Roadmap 2022-2023",
   "editors": [
     {
       "name": "Logius Standaarden",
@@ -816,7 +861,7 @@ dd{margin-left:0}
 
 <body class="h-entry informative toc-inline"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
-  </a> <h1 id="title" class="title">Digikoppeling Roadmap 2022-2023 1.0</h1>
+  </a> <h1 id="title" class="title">undefined 1.0</h1>
     
     <h2>
       Logius Beheerdocumentatie<br>
@@ -862,7 +907,7 @@ dd{margin-left:0}
         </p>
     <p class="copyright">
           Dit document valt onder de volgende licentie: 
-          <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/" class="subfoot"><img style="float: left; padding-right: 5px;" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-zero.svg" alt="Logo Creative Commons 0 Public Domain Dedication"><br> Creative Commons 0 Public Domain Dedication</a>
+          <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-zero.svg" alt="Logo Creative Commons 0 Public Domain Dedication"><br> Creative Commons 0 Public Domain Dedication</a>
         </p>
     <hr title="Separator for header">
   </div>
@@ -1423,4 +1468,4 @@ function hidePanel(panel) {
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script><div class="sidelabel" style="background-color: #154273;">Logius Beheerdocumentatie - Vastgestelde versie</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
+})()</script><div class="sidelabel">Logius Beheerdocumentatie - Vastgestelde versie</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
