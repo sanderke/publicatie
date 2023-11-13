@@ -32,6 +32,7 @@ Klik op het pad om naar de pagina op logius.nl te gaan. Klik op :scroll: om de p
 - [bomos/fundament/](https://gitdocumentatie.logius.nl/publicatie/bomos/fundament/) [:scroll:](https://logius-standaarden.github.io/publicatie/bomos/fundament/)
    - [bomos/fundament/2i/](https://gitdocumentatie.logius.nl/publicatie/bomos/fundament/2i/) [:scroll:](https://logius-standaarden.github.io/publicatie/bomos/fundament/2i/)
    - [bomos/fundament/3.0.0/](https://gitdocumentatie.logius.nl/publicatie/bomos/fundament/3.0.0/) [:scroll:](https://logius-standaarden.github.io/publicatie/bomos/fundament/3.0.0/)
+   - [bomos/fundament/3.0.1/](https://gitdocumentatie.logius.nl/publicatie/bomos/fundament/3.0.1/) [:scroll:](https://logius-standaarden.github.io/publicatie/bomos/fundament/3.0.1/)
 - [bomos/linkeddata/](https://gitdocumentatie.logius.nl/publicatie/bomos/linkeddata/) [:scroll:](https://logius-standaarden.github.io/publicatie/bomos/linkeddata/)
    - [bomos/linkeddata/3.0.0/](https://gitdocumentatie.logius.nl/publicatie/bomos/linkeddata/3.0.0/) [:scroll:](https://logius-standaarden.github.io/publicatie/bomos/linkeddata/3.0.0/)
 - [bomos/stelsels/](https://gitdocumentatie.logius.nl/publicatie/bomos/stelsels/) [:scroll:](https://logius-standaarden.github.io/publicatie/bomos/stelsels/)
