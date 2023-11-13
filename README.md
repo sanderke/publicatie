@@ -40,6 +40,7 @@ Klik op het pad om naar de pagina op logius.nl te gaan. Klik op :scroll: om de p
 - [bomos/verdieping/](https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping/) [:scroll:](https://logius-standaarden.github.io/publicatie/bomos/verdieping/)
    - [bomos/verdieping/2i/](https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping/2i/) [:scroll:](https://logius-standaarden.github.io/publicatie/bomos/verdieping/2i/)
    - [bomos/verdieping/3.0.0/](https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping/3.0.0/) [:scroll:](https://logius-standaarden.github.io/publicatie/bomos/verdieping/3.0.0/)
+   - [bomos/verdieping/3.0.1/](https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping/3.0.1/) [:scroll:](https://logius-standaarden.github.io/publicatie/bomos/verdieping/3.0.1/)
 
 ### digimelding
 
