@@ -2,9 +2,6 @@
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
 <meta name="generator" content="ReSpec 34.1.4">
-<style id="__________cytoscape_stylesheet">
-.__________cytoscape_container { position: relative; }
-</style>
 <style>
 span.example-title{text-transform:none}
 :is(aside,div).example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
@@ -913,7 +910,7 @@ img.license{float:left;padding-right:5px}
   "specType": "WA"
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
- <body class="h-entry toc-inline"><div class="head">
+ <body class="h-entry"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">Digikoppeling Beheermodel 1.8</h1>
     
@@ -972,7 +969,7 @@ img.license{float:left;padding-right:5px}
         mermaid.initialize({ startOnLoad: false });
         setTimeout(function () {
             mermaid.run();
-        }, 1000);
+        }, 2000);
     </script>
   <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Dit document beschrijft het beheermodel voor de
   Digikoppeling-standaarden. Het geeft alle belanghebbenden
@@ -1428,37 +1425,39 @@ de ontwikkeling, de implementatie en het gebruik van de
 Digikoppeling-standaard. Dit geldt dus ook voor het beheer en
 onderhoud ervan. In onderstaand schema zijn de belanghebbenden
 aangegeven.</p>
-<pre><code class="mermaid hljs" data-processed="true" aria-busy="false">Belang bijDigikoppeling
-Vraag
-Sectorregiseurs
-VNG
-DUO
-BKWI
-Gebruikers
-Indivduele overheden
-Sectoren
-Bronhouders vanbasisregistraties
-eOverheids projecten
-MijnOverheid
-eHerkenning
-eID
-Ondersteuning
-Expertise
-Adviesbureaus
-ICT–experts
-Beheer en onderhoud
-Domeinexpert
-Logius
-Aanbod
-Standaardisatieorganisaties
-OASIS
-W3C
-NIST
-Forum Standaardisatie
-Europese Commissie
-Leveranciers
-Diensten
-Producten</code></pre>
+<pre><code class="mermaid hljs" aria-busy="false">mindmap
+  root)Belang bij&lt;br&gt;Digikoppeling(
+    {{Vraag}}
+      (Sectorregiseurs)
+        VNG
+        DUO
+        BKWI
+      (Gebruikers)
+        Indivduele overheden
+        Sectoren
+        Bronhouders van basisregistraties
+      (eOverheids projecten)
+        MijnOverheid
+        eHerkenning
+        eID
+    {{Ondersteuning}}
+      (Expertise)
+        Adviesbureaus
+        ICT–experts
+      (Beheer en onderhoud)
+        Domeinexpert
+        Logius
+    {{Aanbod}}
+      (Standaardisatie organisaties)
+        OASIS
+        W3C
+        NIST
+        Forum Standaardisatie
+        Europese Commissie
+      (Leveranciers)
+        Diensten
+        Producten
+</code></pre>
 <figure id="fig-belang-bij-digikoppeling">
 <figcaption><a class="self-link" href="#fig-belang-bij-digikoppeling">Figuur <bdi class="figno">4</bdi></a> <span class="fig-title">Belang bij Digikoppeling</span></figcaption>
 </figure>
