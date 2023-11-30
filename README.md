@@ -124,7 +124,6 @@ Klik op het pad om naar de pagina op logius.nl te gaan. Klik op :scroll: om de p
    - [dk/oin/2.0.1/](https://gitdocumentatie.logius.nl/publicatie/dk/oin/2.0.1/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/oin/2.0.1/)
    - [dk/oin/2.0.2/](https://gitdocumentatie.logius.nl/publicatie/dk/oin/2.0.2/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/oin/2.0.2/)
    - [dk/oin/2.0.3/](https://gitdocumentatie.logius.nl/publicatie/dk/oin/2.0.3/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/oin/2.0.3/)
-   - [dk/oin/2.0.4/](https://gitdocumentatie.logius.nl/publicatie/dk/oin/2.0.4/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/oin/2.0.4/)
    - [dk/oin/2.1.0/](https://gitdocumentatie.logius.nl/publicatie/dk/oin/2.1.0/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/oin/2.1.0/)
 - [dk/restapi/](https://gitdocumentatie.logius.nl/publicatie/dk/restapi/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/restapi/)
    - [dk/restapi/1.0/](https://gitdocumentatie.logius.nl/publicatie/dk/restapi/1.0/) [:scroll:](https://logius-standaarden.github.io/publicatie/dk/restapi/1.0/)
