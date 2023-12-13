@@ -13,6 +13,7 @@ Klik op het pad om naar de pagina op logius.nl te gaan. Klik op :scroll: om de p
    - [api/adr-beheer/1.0/](https://gitdocumentatie.logius.nl/publicatie/api/adr-beheer/1.0/) [:scroll:](https://logius-standaarden.github.io/publicatie/api/adr-beheer/1.0/)
 - [api/adr/1.0/](https://gitdocumentatie.logius.nl/publicatie/api/adr/1.0/) [:scroll:](https://logius-standaarden.github.io/publicatie/api/adr/1.0/)
    - [api/adr/2.0.0-rc.1/](https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0.0-rc.1/) [:scroll:](https://logius-standaarden.github.io/publicatie/api/adr/2.0.0-rc.1/)
+   - [api/adr/2.0.0-rc.2/](https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0.0-rc.2/) [:scroll:](https://logius-standaarden.github.io/publicatie/api/adr/2.0.0-rc.2/)
 - [api/oauth/](https://gitdocumentatie.logius.nl/publicatie/api/oauth/) [:scroll:](https://logius-standaarden.github.io/publicatie/api/oauth/)
 - [api/oauth-beheer/](https://gitdocumentatie.logius.nl/publicatie/api/oauth-beheer/) [:scroll:](https://logius-standaarden.github.io/publicatie/api/oauth-beheer/)
    - [api/oauth-beheer/1.0/](https://gitdocumentatie.logius.nl/publicatie/api/oauth-beheer/1.0/) [:scroll:](https://logius-standaarden.github.io/publicatie/api/oauth-beheer/1.0/)
