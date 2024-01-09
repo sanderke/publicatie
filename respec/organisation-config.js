@@ -110,7 +110,7 @@ var organisationConfig = {
         "ADR": {
             authors: ["Jasper Roes", "Joost Farla"],
             date: "Juli 2020",
-            href: "https://publicatie.centrumvoorstandaarden.nl/api/adr/",
+            href: "https://gitdocumentatie.logius.nl/publicatie/api/adr/",
             publisher: "Logius",
             title: "API Design Rules (Nederlandse API Strategie IIa)"
         },
@@ -130,7 +130,7 @@ var organisationConfig = {
         "API Design Rules": {
             authors: ["Jasper Roes", "Joost Farla"],
             date: "Juli 2020",
-            href: "https://publicatie.centrumvoorstandaarden.nl/api/adr/",
+            href: "https://gitdocumentatie.logius.nl/publicatie/api/adr/",
             publisher: "Logius",
             title: "API Design Rules (Nederlandse API Strategie IIa)"
         },
@@ -155,7 +155,7 @@ var organisationConfig = {
             title: "Beheermodel en releasebeleid Digikoppeling v1.5"
         },
         "Beveiligingsdocument": {
-            href: "https://publicatie.centrumvoorstandaarden.nl/dk/beveilig/",
+            href: "https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/",
             publisher: "Logius",
             title: "Digikoppeling Beveiligingsstandaarden en voorschriften"
         },
@@ -245,12 +245,6 @@ var organisationConfig = {
             publisher: "Logius",
             title: "Digikoppeling Koppelvlakstandaard Grote Berichten"
         },
-        "Digikoppeling Koppelvlakstandaard REST API": {
-            date: "februari 2021",
-            href: "https://centrumvoorstandaarden.github.io/DigikoppelingRestfulApiProfiel/",
-            publisher: "Logius",
-            title: "Digikoppeling Restful API Profiel (Concept)"
-        },
         "Digikoppeling Koppelvlakstandaard WUS": {
             date: "oktober 2020",
             href: "https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-WUS/",
@@ -263,17 +257,17 @@ var organisationConfig = {
             title: "Logius Digikoppeling"
         },
         "Digikoppeling REST API profiel": {
-            href: "https://publicatie.centrumvoorstandaarden.nl/dk/restapi/",
+            href: "https://gitdocumentatie.logius.nl/publicatie/dk/restapi/",
             publisher: "Logius",
             title: "Digikoppeling REST API profiel"
         },
         "Digikoppeling-Architectuur": {
-            href: "https://publicatie.centrumvoorstandaarden.nl/dk/architectuur/",
+            href: "https://gitdocumentatie.logius.nl/publicatie/dk/architectuur/",
             publisher: "Logius",
             title: "Digikoppeling Architectuur"
         },
         "Digikoppeling-Beveiligingsdocument": {
-            href: "https://publicatie.centrumvoorstandaarden.nl/dk/beveilig",
+            href: "https://gitdocumentatie.logius.nl/publicatie/dk/beveilig",
             publisher: "Logius",
             title: "Digikoppeling Beveiligingsstandaarden en voorschriften"
         },
@@ -288,7 +282,7 @@ var organisationConfig = {
             title: "Digikoppeling Compliance Voorziening"
         },
         "Digikoppeling-Identificatie-Authenticatie": {
-            href: "https://publicatie.centrumvoorstandaarden.nl/dk/idauth",
+            href: "https://gitdocumentatie.logius.nl/publicatie/dk/idauth",
             publisher: "Logius",
             title: "Digikoppeling Identificatie en Authenticatie"
         },
