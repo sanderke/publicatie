@@ -246,6 +246,11 @@ var organisationConfig = {
             publisher: "Logius",
             title: "Digikoppeling Koppelvlakstandaard ebMS2"
         },
+        "Digikoppeling Koppelvlakstandaard REST API": {
+            href: "https://gitdocumentatie.logius.nl/publicatie/dk/restapi/",
+            publisher: "Logius",
+            title: "Digikoppeling Koppelvlakstandaard REST-API"
+        },
         "Digikoppeling Logius website": {
             href: "https://logius.nl/diensten/digikoppeling/documentatie",
             publisher: "Logius",
