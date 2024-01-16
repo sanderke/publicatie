@@ -171,8 +171,8 @@ var organisationConfig = {
             publisher: "@@@",
             title: "CloudEvents - Version 1.0.1"
         },
-        "Compliance": {
-            href: "https://portaal.digikoppeling.nl",
+        "DK-CV": {
+            href: "https://gitlab.com/logius/digikoppeling-compliance",
             publisher: "Logius",
             title: "Digikoppeling Compliance Voorziening"
         },
@@ -217,11 +217,6 @@ var organisationConfig = {
             href: "https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/",
             publisher: "Logius",
             title: "Digikoppeling Beveiligingsstandaarden en voorschriften"
-        },
-        "Digikoppeling Compliance Voorziening": {
-            href: "https://portaal.digikoppeling.nl",
-            publisher: "Logius",
-            title: "Digikoppeling Compliance Voorziening"
         },
         "Digikoppeling Gebruik Certificaten": {
             href: "http://www.logius.nl/digikoppeling",
@@ -275,11 +270,6 @@ var organisationConfig = {
             href: "http://www.logius.nl/digikoppeling",
             publisher: "Logius",
             title: "Gebruik en achtergrond van Digikoppeling certificaten"
-        },
-        "Digikoppeling-Compliance-Voorziening": {
-            href: "https://portaal.digikoppeling.nl",
-            publisher: "Logius",
-            title: "Digikoppeling Compliance Voorziening"
         },
         "Digikoppeling-Identificatie-Authenticatie": {
             href: "https://gitdocumentatie.logius.nl/publicatie/dk/idauth",
