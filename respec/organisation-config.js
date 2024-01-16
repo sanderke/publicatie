@@ -149,10 +149,10 @@ var organisationConfig = {
             title: "Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)"
         },
         "Beheermodel": {
-            date: "Oktober 2017",
-            href: "https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Standaarden/Digikoppeling-Beheermodel.pdf",
+            date: "September 2023",
+            href: "https://logius-standaarden.github.io/publicatie/dk/beheer/",
             publisher: "Logius",
-            title: "Beheermodel en releasebeleid Digikoppeling v1.5"
+            title: "Beheermodel en releasebeleid Digikoppeling"
         },
         "Beveiligingsdocument": {
             href: "https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/",
