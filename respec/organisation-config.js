@@ -139,11 +139,6 @@ var organisationConfig = {
             publisher: "Logius",
             title: "Digikoppeling Beveiligingsstandaarden en voorschriften"
         },
-        "Certificaten": {
-            href: "https://cert.pkioverheid.nl/",
-            publisher: "Logius",
-            title: "PkIoverheid certificaten"
-        },
         "CloudEvents": {
             authors: ["@@@"],
             date: "May 2011",
@@ -197,6 +192,11 @@ var organisationConfig = {
             href: "https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/",
             publisher: "Logius",
             title: "Digikoppeling Beveiligingsstandaarden en voorschriften"
+        },
+        "DK-gbachtcert": {
+            href: "https://gitdocumentatie.logius.nl/publicatie/dk/ebms/",
+            publisher: "Logius",
+            title: "Digikoppeling Koppelvlakstandaard ebMS2"
         },
         "DK-ebMS": {
             href: "https://gitdocumentatie.logius.nl/publicatie/dk/ebms/",
