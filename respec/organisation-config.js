@@ -127,20 +127,6 @@ var organisationConfig = {
             publisher: "Logius",
             title: "Algemene voorwaarden Logius"
         },
-        "API Design Rules": {
-            authors: ["Jasper Roes", "Joost Farla"],
-            date: "Juli 2020",
-            href: "https://gitdocumentatie.logius.nl/publicatie/api/adr/",
-            publisher: "Logius",
-            title: "API Design Rules (Nederlandse API Strategie IIa)"
-        },
-        "API Design Rules-Extensions": {
-            authors: ["Jasper Roes", "Linda van den Brink"],
-            date: "Januari 2020",
-            href: "https://docs.geostandaarden.nl/api/API-Strategie-ext",
-            publisher: "Geonovum/Kennisplatform APi's",
-            title: "API Designrules Extensions (Nederlandse API Strategie IIb)"
-        },
         "BCP195": {
             authors: ["Y. Sheffer, R. Holz, P. Saint-Andre"],
             date: "May 2015",
@@ -148,13 +134,7 @@ var organisationConfig = {
             publisher: "IETF",
             title: "Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)"
         },
-        "Beheermodel": {
-            date: "September 2023",
-            href: "https://logius-standaarden.github.io/publicatie/dk/beheer/",
-            publisher: "Logius",
-            title: "Beheermodel en releasebeleid Digikoppeling"
-        },
-        "Beveiligingsdocument": {
+        "DK-beveiliging": {
             href: "https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/",
             publisher: "Logius",
             title: "Digikoppeling Beveiligingsstandaarden en voorschriften"
@@ -183,100 +163,67 @@ var organisationConfig = {
             publisher: "OASIS",
             title: "Deployment Profile Template For OASIS ebXML Message Service 2.0"
         },
-        "Digikoppeling Actuele Documentatie": {
-            href: "http://www.logius.nl/digikoppeling",
+        "DK": {
+            href: "https://www.logius.nl/domeinen/gegevensuitwisseling/digikoppeling",
             publisher: "Logius",
-            title: "Digikoppeling Overzicht Actuele Documentatie en Compliance"
+            title: "Digikoppeling"
         },
-        "Digikoppeling Beheermodel": {
-            date: "Oktober 2017",
-            href: "https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Standaarden/Digikoppeling-Beheermodel.pdf",
+        "DK-Doc": {
+            href: "https://www.logius.nl/domeinen/gegevensuitwisseling/digikoppeling/documentatie",
             publisher: "Logius",
-            title: "Beheermodel en releasebeleid Digikoppeling v1.5"
+            title: "Digikoppeling documentatie"
         },
-        "Digikoppeling Best Practices ebMS2": {
-            date: "2019",
-            href: "https://www.logius.nl/diensten/digikoppeling/documentatie",
+        "DK-Beheermodel": {
+            href: "https://gitdocumentatie.logius.nl/publicatie/dk/beheer/",
+            publisher: "Logius",
+            title: "Digikoppeling Beheermodel"
+        },
+        "DK-BPebMS": {
+            href: "https://gitdocumentatie.logius.nl/publicatie/dk/bpebms/",
             publisher: "Logius",
             title: "Digikoppeling Best Practices ebMS2"
         },
-        "Digikoppeling Best Practices Grote Berichten": {
-            date: "2019",
-            href: "https://www.logius.nl/diensten/digikoppeling/documentatie",
+        "DK-BPGB": {
+            href: "https://gitdocumentatie.logius.nl/publicatie/dk/bpgb/",
             publisher: "Logius",
             title: "Digikoppeling Best Practices Grote Berichten"
         },
-        "Digikoppeling Best Practices WUS": {
-            date: "2019",
-            href: "https://www.logius.nl/diensten/digikoppeling/documentatie",
+        "DK-BPWUS": {
+            href: "https://gitdocumentatie.logius.nl/publicatie/dk/bpwus/",
             publisher: "Logius",
             title: "Digikoppeling Best Practices WUS"
         },
-        "Digikoppeling Beveiligingsdocument": {
-            date: "2021",
+        "DK-Beveiliging": {
             href: "https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/",
             publisher: "Logius",
             title: "Digikoppeling Beveiligingsstandaarden en voorschriften"
         },
-        "Digikoppeling Gebruik Certificaten": {
-            href: "http://www.logius.nl/digikoppeling",
-            publisher: "Logius",
-            title: "Digikoppeling Gebruik en achtergrond certificaten"
-        },
-        "Digikoppeling Identificatie-Authenticatie": {
-            href: "https://www.logius.nl/diensten/digikoppeling/documentatie",
-            publisher: "Logius",
-            title: "Digikoppeling Identificatie en Authenticatie"
-        },
-        "Digikoppeling Koppelvlakstandaard ebMS2": {
-            date: "mei 2019",
-            href: "https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-ebMS2/",
+        "DK-ebMS": {
+            href: "https://gitdocumentatie.logius.nl/publicatie/dk/ebms/",
             publisher: "Logius",
             title: "Digikoppeling Koppelvlakstandaard ebMS2"
         },
-        "Digikoppeling Koppelvlakstandaard Grote Berichten": {
-            date: "september 2020",
-            href: "https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-GB/",
+        "DK-GB": {
+            href: "https://gitdocumentatie.logius.nl/publicatie/dk/gb/",
             publisher: "Logius",
             title: "Digikoppeling Koppelvlakstandaard Grote Berichten"
         },
-        "Digikoppeling Koppelvlakstandaard WUS": {
-            date: "oktober 2020",
-            href: "https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-WUS/",
+        "DK-WUS": {
+            href: "https://gitdocumentatie.logius.nl/publicatie/dk/wus/",
             publisher: "Logius",
-            title: "Digikoppeling Koppelvlakstandaard ebMS2"
+            title: "Digikoppeling Koppelvlakstandaard WUS"
         },
-        "Digikoppeling Koppelvlakstandaard REST API": {
+        "DK-RESTAPI": {
             href: "https://gitdocumentatie.logius.nl/publicatie/dk/restapi/",
             publisher: "Logius",
             title: "Digikoppeling Koppelvlakstandaard REST-API"
         },
-        "Digikoppeling Logius website": {
-            href: "https://logius.nl/diensten/digikoppeling/documentatie",
-            publisher: "Logius",
-            title: "Logius Digikoppeling"
-        },
-        "Digikoppeling REST API profiel": {
-            href: "https://gitdocumentatie.logius.nl/publicatie/dk/restapi/",
-            publisher: "Logius",
-            title: "Digikoppeling REST API profiel"
-        },
-        "Digikoppeling-Architectuur": {
+        "DK-Architectuur": {
             href: "https://gitdocumentatie.logius.nl/publicatie/dk/architectuur/",
             publisher: "Logius",
             title: "Digikoppeling Architectuur"
         },
-        "Digikoppeling-Beveiligingsdocument": {
-            href: "https://gitdocumentatie.logius.nl/publicatie/dk/beveilig",
-            publisher: "Logius",
-            title: "Digikoppeling Beveiligingsstandaarden en voorschriften"
-        },
-        "Digikoppeling-Cert": {
-            href: "http://www.logius.nl/digikoppeling",
-            publisher: "Logius",
-            title: "Gebruik en achtergrond van Digikoppeling certificaten"
-        },
-        "Digikoppeling-Identificatie-Authenticatie": {
+        "DK-IDAuth": {
             href: "https://gitdocumentatie.logius.nl/publicatie/dk/idauth",
             publisher: "Logius",
             title: "Digikoppeling Identificatie en Authenticatie"
@@ -292,13 +239,6 @@ var organisationConfig = {
             authors: ["Ian Jones", "Pete Wenzel"],
             date: "October 2007",
             href: "https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms_core-3.0-spec-os.html",
-            publisher: "Oasis",
-            title: "Collaboration-Protocol Profile and Agreement Specification Version 2.0"
-        },
-        "ebXML CPPA V 2.0": {
-            authors: ["Oasis"],
-            date: "september 2002",
-            href: "http://www.ebxml.org/specs/ebcpp-2.0.pdf",
             publisher: "Oasis",
             title: "Collaboration-Protocol Profile and Agreement Specification Version 2.0"
         },
@@ -511,40 +451,25 @@ var organisationConfig = {
             publisher: "Logius",
             title: "Toegetreden vertrouwensdienstverleners"
         },
-        "PKI Policy": {
-            href: "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen",
+        "PKIO-PvE": {
+            href: "https://www.logius.nl/domeinen/toegang/pkioverheid/aansluiten-als-tsp/programma-van-eisen",
             publisher: "Logius",
             title: "Programma van Eisen (PKIoverheid)"
         },
-        "PKI PvE": {
-            href: "https://www.logius.nl/sites/default/files/public/bestanden/diensten/PKIoverheid/PoR-2022/PKIoverheid%20Programme%20of%20Requirements%20v4.10%20-%20Part%203j%20Certificate%20Policy%20for%20Server%20certificates%20in%20Server%202020%20%28EV%20G1%29%20Domain.pdf",
-            publisher: "Logius",
-            title: "Programma van Eisen Pkioverheid, deel 3j"
-        },
         "PKI-CA": {
-            href: "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/toegetreden-vertrouwensdienstverleners",
+            href: "https://www.logius.nl/domeinen/toegang/pkioverheid/aansluiten-als-tsp/toegetreden-vertrouwensdienstverleners",
             publisher: "Logius",
             title: "Toegetreden vertrouwensdienstverleners"
         },
-        "PKI-Policy": {
-            href: "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen",
-            publisher: "Logius",
-            title: "Programma van Eisen (PKIoverheid)"
-        },
         "PKIoverheid": {
-            href: "https://www.logius.nl/diensten/pkioverheid",
+            href: "https://www.logius.nl/domeinen/toegang/pkioverheid",
             publisher: "Logius",
             title: "PKIoverheid"
         },
-        "PKIoverheid Certificaten": {
+        "PKIO-Cert": {
             href: "https://cert.pkioverheid.nl/",
             publisher: "Logius",
-            title: "Pkioverheid certificaten"
-        },
-        "PKIoverheid-Certificaten": {
-            href: "https://cert.pkioverheid.nl/",
-            publisher: "Logius",
-            title: "Pkioverheid certificaten"
+            title: "Overzicht PKIoverheid certificaten"
         },
         "SemVer": {
             authors: ["T. Preston-Werner"],
@@ -580,14 +505,9 @@ var organisationConfig = {
             publisher: "The Internet Engineering Task Force",
             title: "A Universally Unique IDentifier (UUID) URN Namespace"
         },
-        "Voorbeelden": {
-            href: "https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Overig/Digikoppeling-Koppelvlakstandaard-WUS-Voorbeeldberichten.zip",
-            publisher: "Logius",
-            title: "Digikoppeling WUS voorbeelden (zip)"
-        },
-        "Voorwaarden Digikoppeling": {
+        "DK-Voorwaarden": {
             date: "1 januari 2021",
-            href: "https://www.logius.nl/diensten/digikoppeling/documentatie/voorwaarden-digikoppeling",
+            href: "https://www.logius.nl/domeinen/gegevensuitwisseling/digikoppeling/documentatie/voorwaarden-digikoppeling",
             publisher: "Logius",
             title: "Voorwaarden Digikoppeling"
         },
