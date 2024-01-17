@@ -128,7 +128,7 @@ var organisationConfig = {
             title: "Algemene voorwaarden Logius"
         },
         "BCP195": {
-            authors: ["Y. Sheffer, R. Holz, P. Saint-Andre"],
+            authors: ["Y. Sheffer", "R. Holz", "P. Saint-Andre"],
             date: "May 2015",
             href: "https://tools.ietf.org/html/bcp195",
             publisher: "IETF",
@@ -145,6 +145,12 @@ var organisationConfig = {
             href: "https://github.com/cloudevents/spec/blob/v1.0.1/spec.md",
             publisher: "@@@",
             title: "CloudEvents - Version 1.0.1"
+        },
+        "NLGOV-CloudEvents": {
+            authors: ["Werkgroep Berichtenstandaard (Project Notificatieservices)"],
+            href: "https://logius-standaarden.github.io/NL-GOV-profile-for-CloudEvents/",
+            publisher: "Logius",
+            title: "NL GOV profile for CloudEvents"
         },
         "DK-CV": {
             href: "https://gitlab.com/logius/digikoppeling-compliance",
@@ -224,9 +230,14 @@ var organisationConfig = {
             title: "Digikoppeling Architectuur"
         },
         "DK-IDAuth": {
-            href: "https://gitdocumentatie.logius.nl/publicatie/dk/idauth",
+            href: "https://gitdocumentatie.logius.nl/publicatie/dk/idauth/",
             publisher: "Logius",
             title: "Digikoppeling Identificatie en Authenticatie"
+        },
+        "DK-WI": {
+            href: "https://gitdocumentatie.logius.nl/publicatie/dk/watisdk/",
+            publisher: "Logius",
+            title: "Wat is Digikoppeling?"
         },
         "ebCPP": {
             authors: ["Oasis"],
