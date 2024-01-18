@@ -260,11 +260,6 @@ var organisationConfig = {
             publisher: "OpenID foundation",
             title: "(ISA2).(eDelivery).(Piloting a REST API extension of CEF eDelivery).(ISA² IPS REST API Profile).(v1.0).pdf"
         },
-        "Eisen Pkioverheid": {
-            href: "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen",
-            publisher: "Logius",
-            title: "Programma van Eisen (PKIoverheid)"
-        },
         "Expert": {
             authors: ["@@@"],
             date: "@@@",
@@ -287,9 +282,9 @@ var organisationConfig = {
             date: "2012",
             publisher: "Universiteit Twente",
         },
-        "Gebruiksvoorwaarden Digikoppeling": {
+        "DK-Gebruiksvoorwaarden": {
             date: "1 januari 2021",
-            href: "https://www.logius.nl/diensten/digikoppeling/documentatie/gebruiksvoorwaarden-digikoppeling",
+            href: "https://www.logius.nl/domeinen/gegevensuitwisseling/digikoppeling/documentatie/gebruiksvoorwaarden-digikoppeling",
             publisher: "Logius",
             title: "Gebruiksvoorwaarden Digikoppeling"
         },
@@ -383,21 +378,6 @@ var organisationConfig = {
             publisher: "IETF",
             title: "JSON Web Token (JWT)"
         },
-        "Logius": {
-            href: "https://logius.nl/digikoppeling",
-            publisher: "Logius",
-            title: "Logius Digikoppeling"
-        },
-        "Logius website": {
-            href: "https://logius.nl/digikoppeling",
-            publisher: "Logius",
-            title: "Logius Digikoppeling"
-        },
-        "Logius-website": {
-            href: "https://logius.nl/digikoppeling",
-            publisher: "Logius",
-            title: "Logius Digikoppeling"
-        },
         "NCSC 2019": {
             date: "April 2019",
             href: "https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls",
@@ -449,18 +429,6 @@ var organisationConfig = {
             href: "https://www.forumstandaardisatie.nl/open-standaarden/verplicht",
             publisher: "Forum Standaardisatie",
             title: "Lijst Verplichte standaarden"
-        },
-        "PKCE": {
-            authors: ["N. Sakimura, J. Bradley, N. Agarwal"],
-            date: "september 2015",
-            href: "https://tools.ietf.org/html/rfc7636",
-            publisher: "IETF",
-            title: "Proof Key for Code Exchange by OAuth Public Clients"
-        },
-        "PKI CA": {
-            href: "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/toegetreden-vertrouwensdienstverleners",
-            publisher: "Logius",
-            title: "Toegetreden vertrouwensdienstverleners"
         },
         "PKIO-PvE": {
             href: "https://www.logius.nl/domeinen/toegang/pkioverheid/aansluiten-als-tsp/programma-van-eisen",
