@@ -496,11 +496,11 @@ var organisationConfig = {
             title: "ITU-T Recommendation X.520 (2001) ISO/IEC 9594-6"
         },
         "ADR-Validator": {
-            href: "https://gitlab.com/commonground/don/adr-validator/-/blob/v0.1.0/pkg/adr/rules.go",
-            title: "Technical ADR Validation rule testset 0.1.0",
+            href: "https://gitlab.com/commonground/don/adr-validator/-/tree/v0.5.0/pkg/rulesets",
+            title: "Technical ADR Validation rule testset 0.5.0",
             authors: ["H. Stijns"],
             publisher: "Geonovum",
-            date: "December 2022"
+            date: "November 2023"
         },
     }
 }
