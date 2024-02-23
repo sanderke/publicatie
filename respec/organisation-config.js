@@ -295,32 +295,11 @@ var organisationConfig = {
             publisher: "Geonovum",
             title: "API Design rules Module: Geospatial"
         },
-        "HEART.OAuth2": {
-            authors: ["J. Richer"],
-            date: "April 25, 2017",
-            href: "https://openid.net/specs/openid-heart-oauth2-1_0.html",
-            publisher: "OpenID foundation",
-            title: "Health Relationship Trust Profile for OAuth 2.0"
-        },
         "HTTPS-factsheet NCSC": {
             date: "Nov 2014",
             href: "https://www.ncsc.nl/documenten/factsheets/2019/juni/01/factsheet-https-kan-een-stuk-veiliger",
             publisher: "NCSC",
             title: "Factsheet HTTPS kan een stuk veiliger"
-        },
-        "I-D.ietf-oauth-pop-architecture": {
-            authors: ["P. Hunt, J. Richer, W. Mills, P. Mishra, H. Tschofenig"],
-            date: "July 8, 2016",
-            href: "https://tools.ietf.org/html/draft-ietf-oauth-pop-architecture-08",
-            publisher: "IETF",
-            title: "OAuth 2.0 Proof-of-Possession (PoP) Security Architecture"
-        },
-        "iGOV.OAuth2": {
-            authors: ["J. Richer, M. Varley, P. Grassi"],
-            date: "October 5 2018",
-            href: "https://openid.net/specs/openid-igov-oauth2-1_0.html",
-            publisher: "OpenID foundation",
-            title: "International Government Assurance Profile (iGov) for OAuth 2.0"
         },
         "iGOV.OpenID": {
             authors: ["M. Varley, P. Grassi"],
@@ -363,13 +342,6 @@ var organisationConfig = {
             href: "https://tools.ietf.org/html/rfc7515",
             publisher: "IETF",
             title: "JSON Web Signature (JWS)"
-        },
-        "JWS.JWE.Algs": {
-            authors: ["Jim Schaad, Jeff Hodges, Joe Hildebrand, Sean Turner"],
-            date: "",
-            href: "https://www.iana.org/assignments/jose/jose.xhtml#web-signature-encryption-algorithms",
-            publisher: "IANA",
-            title: "IANA JSON Web Signatures and Encryption Algorithms registry"
         },
         "JWT": {
             authors: ["M. Jones, J. Bradley, N. Sakimura"],
