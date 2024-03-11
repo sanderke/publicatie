@@ -17,6 +17,8 @@ Klik op het pad om naar de pagina op logius.nl te gaan. Klik op :scroll: om de p
 - [api/beheermodel/](https://gitdocumentatie.logius.nl/publicatie/api/beheermodel/) [:scroll:](https://logius-standaarden.github.io/publicatie/api/beheermodel/)
    - [api/beheermodel/1.0/](https://gitdocumentatie.logius.nl/publicatie/api/beheermodel/1.0/) [:scroll:](https://logius-standaarden.github.io/publicatie/api/beheermodel/1.0/)
 - [api/mod-geo/](https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/) [:scroll:](https://logius-standaarden.github.io/publicatie/api/mod-geo/)
+   - [api/mod-geo/1.0.0/](https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/1.0.0/) [:scroll:](https://logius-standaarden.github.io/publicatie/api/mod-geo/1.0.0/)
+   - [api/mod-geo/1.0.1/](https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/1.0.1/) [:scroll:](https://logius-standaarden.github.io/publicatie/api/mod-geo/1.0.1/)
    - [api/mod-geo/1.0.2/](https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/1.0.2/) [:scroll:](https://logius-standaarden.github.io/publicatie/api/mod-geo/1.0.2/)
 - [api/mod-ts/](https://gitdocumentatie.logius.nl/publicatie/api/mod-ts/) [:scroll:](https://logius-standaarden.github.io/publicatie/api/mod-ts/)
    - [api/mod-ts/1.0.0/](https://gitdocumentatie.logius.nl/publicatie/api/mod-ts/1.0.0/) [:scroll:](https://logius-standaarden.github.io/publicatie/api/mod-ts/1.0.0/)
