@@ -1,20 +1,7 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html><html lang="nl"><head>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
 <meta name="generator" content="ReSpec 34.1.4">
-<style>
-.issue-label{text-transform:initial}
-.warning>p:first-child{margin-top:0}
-.warning{padding:.5em;border-left-width:.5em;border-left-style:solid}
-span.warning{padding:.1em .5em .15em}
-.issue.closed span.issue-number{text-decoration:line-through}
-.issue.closed span.issue-number::after{content:" (Closed)";font-size:smaller}
-.warning{border-color:#f11;border-width:.2em;border-style:solid;background:#fbe9e9}
-.warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}
-li.task-list-item{list-style:none}
-input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}
-.issue a.respec-gh-label{padding:5px;margin:0 2px 0 2px;font-size:10px;text-transform:none;text-decoration:none;font-weight:700;border-radius:4px;position:relative;bottom:2px;border:none;display:inline-block}
-</style>
 <style>
 dfn{cursor:pointer}
 .dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
@@ -41,11 +28,16 @@ dfn{cursor:pointer}
   
   
   
-<title>API Design Rules Module: Transport Security Module 1.0.0</title>
   
+<script>document.title = respecConfig.title</script>
+<title>Transport Security Module</title>
+  
+  
+<title>Transport Security Module</title>
+
 <link href="./media/style.css" rel="stylesheet" type="text/css">
   
-<link rel="shortcut icon" type="image/x-icon" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/logius.ico">
+<link rel="shortcut icon" type="image/x-icon" href="https://tools.geostandaarden.nl/respec/style/logos/Geonovum.ico">
   
 
 <style id="respec-mainstyle">
@@ -121,44 +113,63 @@ img.license{float:left;padding-right:5px}
     color: white;
     white-space: nowrap;
     z-index: 1;
-    background-color: #154273;
+    background-color: #045D9F;
+  }
+</style>
+<script type="text/javascript">
+   /* Any custom mermaid.js scripts will go here. */
+  </script>
+<style>
+
+  /* Any custom mermaid.js scripts will go here. */
   }
 </style>
 <script id="initialUserConfig" type="application/json">{
-  "nl_organisationName": "Logius",
-  "nl_organisationStylesURL": "https://gitdocumentatie.logius.nl/publicatie/respec/style/",
-  "nl_organisationPublishURL": "https://gitdocumentatie.logius.nl/publicatie/",
+  "nl_organisationName": "Geonovum",
+  "nl_organisationPublishURL": "https://docs.geostandaarden.nl/",
   "logos": [
     {
-      "src": "https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg",
-      "alt": "Logius",
-      "id": "Logius",
-      "height": 77,
-      "width": 44,
-      "url": "https://www.logius.nl/standaarden"
+      "src": "https://tools.geostandaarden.nl/respec/style/logos/Geonovum.svg",
+      "alt": "Geonovum",
+      "id": "Geonovum",
+      "height": 67,
+      "width": 132,
+      "url": "https://www.geonovum.nl/geo-standaarden"
     }
+  ],
+  "postProcess": [
+    null
   ],
   "latestVersion": [
     "nl_organisationPublishURL",
     "pubDomain",
     "/",
-    "shortName"
+    "shortName",
+    "/"
   ],
   "thisVersion": [
     "nl_organisationPublishURL",
     "pubDomain",
     "/",
+    "specStatus",
+    "-",
+    "specType",
+    "-",
     "shortName",
-    "/",
-    "publishVersion"
+    "-",
+    "publishDate"
   ],
   "prevVersion": [
     "nl_organisationPublishURL",
     "pubDomain",
     "/",
+    "previousMaturity",
+    "-",
+    "specType",
+    "-",
     "shortName",
-    "/",
-    "previousPublishVersion"
+    "-",
+    "previousPublishDate"
   ],
   "useLogo": true,
   "useLabel": true,
@@ -166,19 +177,17 @@ img.license{float:left;padding-right:5px}
   "addSectionLinks": true,
   "localizationStrings": {
     "en": {
-      "wv": "Draft",
-      "cv": "Consultation version",
-      "vv": "Proposed version",
-      "def": "Definitive version",
+      "wv": "Editor's draft",
+      "cv": "Candidate recommendation",
+      "vv": "Proposed recommendation",
+      "def": "Recommendation",
       "basis": "Document",
-      "eo": "Outdated version",
-      "tg": "Rescinded version",
       "no": "Norm",
       "st": "Standard",
       "im": "Information model",
-      "pr": "Guideline",
+      "pr": "Practical guideline",
       "hr": "Guide",
-      "wa": "Proposed recommendation",
+      "wa": "Work process agreement",
       "al": "General",
       "bd": "Governance documentation",
       "bp": "Best practice"
@@ -189,8 +198,6 @@ img.license{float:left;padding-right:5px}
       "vv": "Versie ter vaststelling",
       "def": "Vastgestelde versie",
       "basis": "Document",
-      "eo": "Verouderde versie",
-      "tg": "Teruggetrokken versie",
       "no": "Norm",
       "st": "Standaard",
       "im": "Informatiemodel",
@@ -206,44 +213,45 @@ img.license{float:left;padding-right:5px}
     "nl": {
       "sotd": "Status van dit document",
       "def": "Dit is de definitieve versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.",
-      "wv": "Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.",
-      "cv": "Dit is een door het TO goedgekeurde consultatieversie. Commentaar over dit document kan gestuurd worden naar digikoppeling@logius.nl",
-      "vv": "Dit is een definitief concept van de nieuwe versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.",
+      "wv": "Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen stabiel document.",
+      "cv": "Dit is een consultatieversie. Commentaar over dit document kan gestuurd worden naar ",
+      "vv": "Dit is de definitieve conceptversie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.",
       "basis": "Dit is een document zonder officiële status."
     },
     "en": {
-      "sotd": "Status of This Document",
+      "sotd": "Status of this document",
       "def": "This is the definitive version of this document. Edits resulting from consultations have been applied.",
-      "wv": "This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.",
-      "cv": "This is a proposed recommendation approved by TO. Comments regarding this document may be sent to api@logius.nl",
-      "vv": "This is the definitive concept of this document. Edits resulting from consultations have been applied.",
+      "wv": "This is a working draft that can be changed, removed or replaced by other documents at any time. It is not a stable document.",
+      "cv": "This is a stable draft, published for public comment. Comments regarding this document may be sent to ",
+      "vv": "This is the final draft of this document. Edits resulting from consultations have been applied.",
       "basis": "This document has no official standing."
     }
   },
   "labelColor": {
-    "def": "#154273",
-    "wv": "#39870c",
-    "cv": "#000000",
-    "vv": "#000000"
+    "def": "#045D9F",
+    "wv": "#FF0000",
+    "cv": "#045D9F",
+    "vv": "#045D9F",
+    "basis": "#80CC28"
   },
   "licenses": {
     "cc0": {
       "name": "Creative Commons 0 Public Domain Dedication",
       "short": "CC0",
       "url": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-zero.svg"
+      "image": "https://tools.geostandaarden.nl/respec/style/logos/CC-Licentie.svg"
     },
     "cc-by": {
       "name": "Creative Commons Attribution 4.0 International Public License",
       "short": "CC-BY",
       "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
-      "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg"
+      "image": "https://tools.geostandaarden.nl/respec/style/logos/cc-by.svg"
     },
     "cc-by-nd": {
       "name": "Creative Commons Naamsvermelding-GeenAfgeleideWerken 4.0 Internationaal",
       "short": "CC-BY-ND",
       "url": "https://creativecommons.org/licenses/by-nd/4.0/legalcode.nl",
-      "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by-nd.svg"
+      "image": "https://tools.geostandaarden.nl/respec/style/logos/cc-by-nd.svg"
     }
   },
   "localBiblio": {
@@ -257,12 +265,17 @@ img.license{float:left;padding-right:5px}
       "id": "ncsc.tls"
     }
   },
-  "pubDomain": "api",
-  "shortName": "mod-ts",
+  "title": "Transport Security Module",
+  "specStatus": "vv",
   "specType": "HR",
-  "specStatus": "DEF",
+  "pubDomain": "api",
+  "licence": "cc-by",
+  "shortName": "API-Strategie-mod-transport-security",
+  "edDraftURI": "https://geonovum.github.io/KP-APIs/API-strategie-modules/transport-security/",
   "publishDate": "2023-12-21",
   "publishVersion": "1.0.0",
+  "previousPublishDate": "2023-05-24",
+  "previousMaturity": "def",
   "editors": [
     {
       "name": "Kennisplatform API's",
@@ -277,134 +290,86 @@ img.license{float:left;padding-right:5px}
       "companyURL": "https://github.com/Geonovum/KP-APIs"
     }
   ],
-  "github": "https://github.com/Logius-standaarden/API-mod-transport-security"
+  "github": "https://github.com/Geonovum/KP-APIs"
 }</script>
-<link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/base.css"></head>
 
-<body class="h-entry toc-inline"><div class="head">
-    <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
-  </a> <h1 id="title" class="title">API Design Rules Module: Transport Security Module 1.0.0</h1>
+<body class="h-entry informative"><div class="head">
+    <a class="logo" href="https://www.geonovum.nl/geo-standaarden"><img alt="Geonovum" height="67" id="Geonovum" src="https://tools.geostandaarden.nl/respec/style/logos/Geonovum.svg" width="132">
+  </a> <h1 id="title" class="title">Transport Security Module</h1>
     
     <h2>
-      Logius Guide<br>
-      Definitive version
-      <time class="dt-published" datetime="2023-12-21">December 21, 2023</time>
+      Geonovum Handreiking<br>
+      Versie ter vaststelling
+      <time class="dt-published" datetime="2023-12-21">21 december 2023</time>
     </h2>
     <dl>
-      <dt>This version:</dt><dd class="status">
+      <dt>Deze versie:</dt><dd class="status">
               <a class="u-url status" href="https://gitdocumentatie.logius.nl/publicatie/api/mod-ts/1.0.0">https://gitdocumentatie.logius.nl/publicatie/api/mod-ts/1.0.0</a>
             </dd>
-      <dt>Latest published version:</dt><dd>
+      <dt>Laatst gepubliceerde versie:</dt><dd>
               <a href="https://gitdocumentatie.logius.nl/publicatie/api/mod-ts">https://gitdocumentatie.logius.nl/publicatie/api/mod-ts</a>
             </dd>
-      <dt>Latest editor's draft:</dt><dd><a href="https://logius-standaarden.github.io/API-mod-transport-security/">https://logius-standaarden.github.io/API-mod-transport-security/</a></dd>
+      <dt>Laatste werkversie:</dt><dd><a href="https://logius-standaarden.github.io/API-mod-transport-security/">https://logius-standaarden.github.io/API-mod-transport-security/</a></dd>
       
-      
-      
-      
-      
-      <dt>Editor:</dt>
+      <dt>Redacteur:</dt>
       <dd class="editor p-author h-card vcard">
     <span class="p-name fn">Kennisplatform API's</span> (<a class="p-org org h-org" href="https://github.com/Geonovum/KP-APIs">Kennisplatform API's</a>)
   </dd>
       
-      <dt>Author:</dt><dd class="editor p-author h-card vcard">
+      <dt>Auteur:</dt><dd class="editor p-author h-card vcard">
     <span class="p-name fn">Kennisplatform API's</span> (<a class="p-org org h-org" href="https://github.com/Geonovum/KP-APIs">Kennisplatform API's</a>)
   </dd>
-      <dt>Participate:</dt><dd>
-    <a href="https://github.com/Logius-standaarden/API-mod-transport-security/">GitHub Logius-standaarden/API-mod-transport-security</a>
+      <dt>Doe mee:</dt><dd>
+    <a href="https://github.com/Geonovum/KP-APIs/">GitHub Geonovum/KP-APIs</a>
   </dd><dd>
-    <a href="https://github.com/Logius-standaarden/API-mod-transport-security/issues/">File an issue</a>
+    <a href="https://github.com/Geonovum/KP-APIs/issues/">Dien een melding in</a>
   </dd><dd>
-    <a href="https://github.com/Logius-standaarden/API-mod-transport-security/commits/">Commit history</a>
+    <a href="https://github.com/Geonovum/KP-APIs/commits/">Revisiehistorie</a>
   </dd><dd>
-    <a href="https://github.com/Logius-standaarden/API-mod-transport-security/pulls/">Pull requests</a>
+    <a href="https://github.com/Geonovum/KP-APIs/pulls/">Pull requests</a>
   </dd>
     </dl>
     
     
     
     <p class="copyright">
-          This document is licensed under 
-          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
+          Dit document valt onder de volgende licentie: 
+          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://tools.geostandaarden.nl/respec/style/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
         </p>
     <hr title="Separator for header">
   </div>
-  <section id="abstract" class="introductory"><h2>Abstract</h2><p>Dit betreft een technische module is die een aantal eisen invult op het gebied van transport security &amp; http security.</p>
+  <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Dit betreft een technische module is die een aantal eisen invult op het gebied van transport security &amp; http security.</p>
 </section>
-  <section id="sotd" class="introductory"><h2>Status of This Document</h2><p>This is the definitive version of this document. Edits resulting from consultations have been applied.</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#goal"><bdi class="secno">1.1 </bdi>Goal</a></li><li class="tocline"><a class="tocxref" href="#status"><bdi class="secno">1.2 </bdi>Status</a></li><li class="tocline"><a class="tocxref" href="#authors"><bdi class="secno">1.3 </bdi>Authors</a></li><li class="tocline"><a class="tocxref" href="#reading-guide"><bdi class="secno">1.4 </bdi>Reading Guide</a></li><li class="tocline"><a class="tocxref" href="#extensions"><bdi class="secno">1.5 </bdi>Extensions</a></li></ol></li><li class="tocline"><a class="tocxref" href="#transport-security"><bdi class="secno">2. </bdi>Transport Security</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#introduction-0"><bdi class="secno">2.1 </bdi>Introduction</a></li><li class="tocline"><a class="tocxref" href="#transport-security-0"><bdi class="secno">2.2 </bdi>Transport security</a></li><li class="tocline"><a class="tocxref" href="#http-level-security"><bdi class="secno">2.3 </bdi>HTTP-level Security</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#security-headers-0"><bdi class="secno">2.3.1 </bdi>Security Headers</a></li><li class="tocline"><a class="tocxref" href="#cors-policy"><bdi class="secno">2.3.2 </bdi>CORS-policy</a></li><li class="tocline"><a class="tocxref" href="#browser-based-applications"><bdi class="secno">2.3.3 </bdi>Browser-based applications</a></li><li class="tocline"><a class="tocxref" href="#restrict-http-methods"><bdi class="secno">2.3.4 </bdi>Restrict HTTP methods</a></li><li class="tocline"><a class="tocxref" href="#validate-content-types"><bdi class="secno">2.3.5 </bdi>Validate content types</a></li><li class="tocline"><a class="tocxref" href="#http-return-code"><bdi class="secno">2.3.6 </bdi>HTTP Return Code</a></li><li class="tocline"><a class="tocxref" href="#http-header-filtering"><bdi class="secno">2.3.7 </bdi>HTTP header filtering</a></li><li class="tocline"><a class="tocxref" href="#error-handling"><bdi class="secno">2.3.8 </bdi>Error handling</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">A.1 </bdi>Normative references</a></li></ol></li></ol></nav>
-  <section id="conformance" class="notoc"><div class="header-wrapper"><h2 id="conformance-0">Conformance</h2><a class="self-link" href="#conformance" aria-label="Permalink for this Section"></a></div><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
-        The key words <em class="rfc2119">MUST</em>, <em class="rfc2119">MUST NOT</em>, <em class="rfc2119">NOT RECOMMENDED</em>, <em class="rfc2119">RECOMMENDED</em>, and <em class="rfc2119">SHOULD</em> in this document
-        are to be interpreted as described in
-        <a href="https://datatracker.ietf.org/doc/html/bcp14">BCP 14</a>
-        [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8174" title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words">RFC8174</a></cite>]
-        when, and only when, they appear in all capitals, as shown here.
-      </p></section>
-  <section class="informative" id="introduction"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction</h2><a class="self-link" href="#introduction" aria-label="Permalink for Section 1."></a></div><p><em>This section is non-normative.</em></p>
-<section id="goal"><div class="header-wrapper"><h3 id="x1-1-goal"><bdi class="secno">1.1 </bdi>Goal</h3><a class="self-link" href="#goal" aria-label="Permalink for Section 1.1"></a></div>
-<p>More and more governmental organizations offer REST APIs (henceforth abbreviated as APIs), in addition to existing interfaces like SOAP and WFS. These APIs aim to be developer-friendly and easy to implement. While this is a commendable aim, it does not shield a developer from a steep learning curve getting to know every new API, in particular when every individual API is designed using different patterns and conventions.</p>
-<p>This document aims to describe a widely applicable set of design rules for the unambiguous provisioning of REST APIs. The primary goal is to offer guidance for organizations designing new APIs, with the purpose of increasing developer experience (DX) and interoperability between APIs. Hopefully, many organizations will adopt these design rules in their corporate API strategies and provide feedback about exceptions and additions to subsequently improve these design rules.</p>
-</section><section id="status"><div class="header-wrapper"><h3 id="x1-2-status"><bdi class="secno">1.2 </bdi>Status</h3><a class="self-link" href="#status" aria-label="Permalink for Section 1.2"></a></div>
-<p>This version of the design rules has been submitted to Forum Standaardisatie for inclusion on the Comply or Explain list of mandatory standards in the Dutch Public Sector. This document originates from the document <a href="https://docs.geostandaarden.nl/api/vv-hr-API-Strategie-20190715/">API Strategie voor de Nederlandse Overheid</a>, which was recently split into separate sub-documents.</p>
-</section><section id="authors"><div class="header-wrapper"><h3 id="x1-3-authors"><bdi class="secno">1.3 </bdi>Authors</h3><a class="self-link" href="#authors" aria-label="Permalink for Section 1.3"></a></div>
-<p>Despite the fact that two authors are mentioned in the list of authors, this document is the result of a collaborative effort by the members of the <em>API Design Rules Working Group</em>.</p>
-</section><section id="reading-guide"><div class="header-wrapper"><h3 id="x1-4-reading-guide"><bdi class="secno">1.4 </bdi>Reading Guide</h3><a class="self-link" href="#reading-guide" aria-label="Permalink for Section 1.4"></a></div>
-<p>This document is part of the <em>Nederlandse API Strategie</em>.</p>
-<p>The Nederlandse API Strategie consists of <a href="https://www.geonovum.nl/themas/kennisplatform-apis#APIStrategie">three layers of distinct documents</a>.</p>
-<table class="simple">
-<thead>
-<tr>
-<th>Part</th>
-<th>Description</th>
-<th>Status</th>
-<th>Link</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>I</td>
-<td>General description of the API Strategy</td>
-<td>Informative</td>
-<td><a href="https://docs.geostandaarden.nl/api/API-Strategie/">https://docs.geostandaarden.nl/api/API-Strategie/</a></td>
-</tr>
-<tr>
-<td>IIa</td>
-<td>Standard for designing APIs</td>
-<td>Normative</td>
-<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/">https://gitdocumentatie.logius.nl/publicatie/api/adr/</a></td>
-</tr>
-<tr>
-<td>IIb</td>
-<td>Extension on the Standard for designing APIs</td>
-<td>Informative</td>
-<td><a href="https://docs.geostandaarden.nl/api/API-Strategie-ext/">https://docs.geostandaarden.nl/api/API-Strategie-ext/</a></td>
-</tr>
-</tbody></table>
-<p>Before reading this document it is advised to gain knowledge of the three documents, in particular <a href="https://docs.geostandaarden.nl/api/API-Strategie/#architectuur">the architecture section of part I</a>.</p>
-<p>An overview of all current documents is available in this Dutch infographic:</p>
-<figure id="fig-nl-api-strategie-infographic">
-  <object data="https://geonovum.github.io/KP-APIs/media/API_infographic.svg" type="image/svg+xml" id="infographic">NL API Strategie Infographic</object>
-  <figcaption><a class="self-link" href="#fig-nl-api-strategie-infographic">Figure <bdi class="figno">1</bdi></a> <span class="fig-title">NL API Strategie Infographic</span></figcaption>
-</figure>
+  <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is de definitieve conceptversie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#transport-security"><bdi class="secno">1. </bdi>Transport Security</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1.1 </bdi>Introduction</a></li><li class="tocline"><a class="tocxref" href="#transport-security-0"><bdi class="secno">1.2 </bdi>Transport security</a></li><li class="tocline"><a class="tocxref" href="#http-level-security"><bdi class="secno">1.3 </bdi>HTTP-level Security</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#security-headers-0"><bdi class="secno">1.3.1 </bdi>Security Headers</a></li><li class="tocline"><a class="tocxref" href="#cors-policy"><bdi class="secno">1.3.2 </bdi>CORS-policy</a></li><li class="tocline"><a class="tocxref" href="#browser-based-applications"><bdi class="secno">1.3.3 </bdi>Browser-based applications</a></li><li class="tocline"><a class="tocxref" href="#restrict-http-methods"><bdi class="secno">1.3.4 </bdi>Restrict HTTP methods</a></li><li class="tocline"><a class="tocxref" href="#validate-content-types"><bdi class="secno">1.3.5 </bdi>Validate content types</a></li><li class="tocline"><a class="tocxref" href="#http-return-code"><bdi class="secno">1.3.6 </bdi>HTTP Return Code</a></li><li class="tocline"><a class="tocxref" href="#http-header-filtering"><bdi class="secno">1.3.7 </bdi>HTTP header filtering</a></li><li class="tocline"><a class="tocxref" href="#error-handling"><bdi class="secno">1.3.8 </bdi>Error handling</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">A.1 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
+  <section class="informative">
 
-</section><section id="extensions"><div class="header-wrapper"><h3 id="x1-5-extensions"><bdi class="secno">1.5 </bdi>Extensions</h3><a class="self-link" href="#extensions" aria-label="Permalink for Section 1.5"></a></div>
-<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="4"><span>Note</span></div><aside class="">
-In addition to this (normative) document, separate modules are being written to provide a set of extensions. These modules are all separate documents and exists in a <a href="https://geonovum.github.io/KP-APIs/">latest editor's draft</a> (<i>Werkversie</i> in Dutch). The latest editor's draft is actively being worked on and can be found on <a href="https://github.com/Geonovum/KP-APIs">GitHub</a>. It contains the most recent changes.
-</aside></div></section></section>
-  <section id="transport-security"><div class="header-wrapper"><h2 id="x2-transport-security"><bdi class="secno">2. </bdi>Transport Security</h2><a class="self-link" href="#transport-security" aria-label="Permalink for Section 2."></a></div>
-<section id="introduction-0"><div class="header-wrapper"><h3 id="x2-1-introduction"><bdi class="secno">2.1 </bdi>Introduction</h3><a class="self-link" href="#introduction-0" aria-label="Permalink for Section 2.1"></a></div>
+    
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <title>Error response</title>
+    
+    
+        <section><div class="header-wrapper"><h3 id="error-response">Error response</h3><a class="self-link" href="#error-response" aria-label="Permalink for this Section"></a></div><p><em>Dit onderdeel is niet normatief.</em></p>
+        <p>Error code: 404</p>
+        <p>Message: File not found.</p>
+        <p>Error code explanation: HTTPStatus.NOT_FOUND - Nothing matches the given URI.</p>
+    
+</section></section>
+  <section id="transport-security"><div class="header-wrapper"><h2 id="x1-transport-security"><bdi class="secno">1. </bdi>Transport Security</h2><a class="self-link" href="#transport-security" aria-label="Permalink for Section 1."></a></div>
+<section id="introduction"><div class="header-wrapper"><h3 id="x1-1-introduction"><bdi class="secno">1.1 </bdi>Introduction</h3><a class="self-link" href="#introduction" aria-label="Permalink for Section 1.1"></a></div>
 <p>This section describes security principles, concepts and technologies to apply when working with APIs. Controls need to be applied for the security objectives of integrity, confidentiality and availability of the API and services and data provided thereby. The (new draft of the) <a href="https://docs.geostandaarden.nl/api/cv-hr-API-Strategie-20210628/#architectuur">architecture section of the API strategy</a> contains architecture patterns for implementing Transport security.</p>
 <p>The scope of this section is limited to generic security controls that directly influence the visible parts of an API. Effectively, only security standards directly applicable to interactions are discussed here.
-In order to meet the complete security objectives, every implementer <em class="rfc2119">MUST</em> also apply a range of controls not mentioned in this section.</p>
-<p>Note: security controls for signing and encrypting of application level messages will be part of a separate extension, <a href="https://geonovum.github.io/KP-APIs/API-strategie-modules/encryption/">Signing and Encryption</a>.</p>
-</section><section id="transport-security-0"><div class="header-wrapper"><h3 id="x2-2-transport-security"><bdi class="secno">2.2 </bdi>Transport security</h3><a class="self-link" href="#transport-security-0" aria-label="Permalink for Section 2.2"></a></div>
-<p>One should secure all APIs assuming they can be accessed from any location on the internet. Information <em class="rfc2119">MUST</em> be exchanged over TLS-based secured connections. No exceptions, so everywhere and always. This is <a href="https://wetten.overheid.nl/BWBR0048156/2023-07-01">required by law</a>. One <em class="rfc2119">SHOULD</em> follow <a href="https://english.ncsc.nl/publications/publications/2021/january/19/it-security-guidelines-for-transport-layer-security-2.1">the latest NCSC guidelines for TLS</a></p>
+In order to meet the complete security objectives, every implementer MUST also apply a range of controls not mentioned in this section.</p>
+<p>Note: security controls for signing and encrypting of application level messages will be part of a separate extension, <a href="#signing-and-encryption">Signing and Encryption</a>.</p>
+</section><section id="transport-security-0"><div class="header-wrapper"><h3 id="x1-2-transport-security"><bdi class="secno">1.2 </bdi>Transport security</h3><a class="self-link" href="#transport-security-0" aria-label="Permalink for Section 1.2"></a></div>
+<p>One should secure all APIs assuming they can be accessed from any location on the internet. Information MUST be exchanged over TLS-based secured connections. No exceptions, so everywhere and always. This is <a href="https://wetten.overheid.nl/BWBR0048156/2023-07-01">required by law</a>. One SHOULD follow <a href="https://english.ncsc.nl/publications/publications/2021/january/19/it-security-guidelines-for-transport-layer-security-2.1">the latest NCSC guidelines for TLS</a></p>
 <div class="rule" id="api-11">
   <p class="rulelab"><strong>API-11</strong>: Secure connections using TLS</p>
   <p>Secure connections using TLS following the latest NCSC guidelines [<cite><a class="bibref" data-link-type="biblio" href="#bib-ncsc.tls" title="ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS)">NCSC.TLS</a></cite>].</p>
   <p>Since the connection is always secured, the access method can be straightforward. This allows the application of basic access tokens instead of encrypted access tokens.</p>
 </div>
 
-<p>Even when using TLS-based secured connections information in URIs is not secured. URIs can be cached and logged outside of the servers controlled by clients and servers. Any information contained in them should therfor be considered readable by anyone with access to the netwerk being used (in case of the internet the whole world) and <em class="rfc2119">MUST NOT</em> contain any sensitive information. Neither client secrets used for authentication, privacy sensitive informations suchs as BSNs nor any other information which should not be shared. Be aware that queries (anything after the '?' in a URI) are also part of an URI.</p>
+<p>Even when using TLS-based secured connections information in URIs is not secured. URIs can be cached and logged outside of the servers controlled by clients and servers. Any information contained in them should therfor be considered readable by anyone with access to the netwerk being used (in case of the internet the whole world) and MUST NOT contain any sensitive information. Neither client secrets used for authentication, privacy sensitive informations suchs as BSNs nor any other information which should not be shared. Be aware that queries (anything after the '?' in a URI) are also part of an URI.</p>
 <div class="rule" id="api-58">
   <p class="rulelab"><strong>API-58</strong>: No sensitive information in URIs</p>
   <p>Do not put any sensitive information in URIs</p>
@@ -414,8 +379,8 @@ In order to meet the complete security objectives, every implementer <em class="
 <p><strong>How to test</strong>
 Sensitive information URIS is not machine testable and therfor not part of automated tests. It should be part of any security audit performed by human experts. </p>
 <p>The usage of TLS is machine testable. The test is designed for maximum automation. To test, adherence to NCSC reccomendations should be tested. The serverside is what will be tested, only control over the server is assumed for testing. A testing client will be employed to test adherence of the server. Supporting any protocols, algorithms, key sizes, options or ciphers dat are deemed insufficient or phase out by NCSC will lead to failure on the automated test. Both positive and negative scenario's are part of the test. Testing that a subset of good and sufficient reccomendations are supported and testing that phase out and insufficient reccomendations are not. A manual exception to the automated test results can be made when phase out reccomendations are supported. The API provider will have to provide clear documentation for the phase out schedule.  </p>
-</section><section id="http-level-security"><div class="header-wrapper"><h3 id="x2-3-http-level-security"><bdi class="secno">2.3 </bdi>HTTP-level Security</h3><a class="self-link" href="#http-level-security" aria-label="Permalink for Section 2.3"></a></div>
-<p>The guidelines and principles defined in this extension are client agnostic. When implementing a client agnostic API, one <em class="rfc2119">SHOULD</em> at least facilitate that multi-purpose generic HTTP-clients like browsers are able to securely interact with the API. When implementing an API for a specific client it may be possible to limit measures as long as it ensures secure access for this specific client. Nevertheless it is advised to review the following security measures, which are mostly inspired by the <a href="https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html">OWASP REST Security Cheat Sheet</a></p>
+</section><section id="http-level-security"><div class="header-wrapper"><h3 id="x1-3-http-level-security"><bdi class="secno">1.3 </bdi>HTTP-level Security</h3><a class="self-link" href="#http-level-security" aria-label="Permalink for Section 1.3"></a></div>
+<p>The guidelines and principles defined in this extension are client agnostic. When implementing a client agnostic API, one SHOULD at least facilitate that multi-purpose generic HTTP-clients like browsers are able to securely interact with the API. When implementing an API for a specific client it may be possible to limit measures as long as it ensures secure access for this specific client. Nevertheless it is advised to review the following security measures, which are mostly inspired by the <a href="https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html">OWASP REST Security Cheat Sheet</a></p>
 <p>Even while remaining client agnostic, clients can be classified in four major groups. This is much in line with common practice in OAuth2. The groups are:</p>
 <ol>
 <li>Web applications.</li>
@@ -423,18 +388,18 @@ Sensitive information URIS is not machine testable and therfor not part of autom
 <li>Browser-based applications.</li>
 <li>System-to-system applications.</li>
 </ol>
-<p>This section contains elements that apply to the generic classes of clients listed above. Although not every client implementation has a need for all the specifications referenced below, a client agnostic API <em class="rfc2119">SHOULD</em> provide these to facilitate any client to implement relevant security controls.</p>
+<p>This section contains elements that apply to the generic classes of clients listed above. Although not every client implementation has a need for all the specifications referenced below, a client agnostic API SHOULD provide these to facilitate any client to implement relevant security controls.</p>
 <p>Most specifications referenced in this section are applicable to the first three classes of clients listed above.
 Security considerations for native applications are provided in [OAUth2 for Native Apps]](<a href="https://tools.ietf.org/html/rfc8252">https://tools.ietf.org/html/rfc8252</a>), much of which can help non-OAuth2 based implementations as well.
 For browser-based applications a subsection is included with additional details and information.
 System-to-system (sometimes called machine-to-machine) may have a need for the listed specifications as well. Note that different usage patterns may be applicable in contexts with system-to-system clients, see above under Client Authentication.</p>
-<section id="security-headers-0"><div class="header-wrapper"><h4 id="x2-3-1-security-headers"><bdi class="secno">2.3.1 </bdi>Security Headers</h4><a class="self-link" href="#security-headers-0" aria-label="Permalink for Section 2.3.1"></a></div>
+<section id="security-headers-0"><div class="header-wrapper"><h4 id="x1-3-1-security-headers"><bdi class="secno">1.3.1 </bdi>Security Headers</h4><a class="self-link" href="#security-headers-0" aria-label="Permalink for Section 1.3.1"></a></div>
 <div class="rule" id="security-headers">
   <p class="rulelab"><strong>security-headers</strong>: Use mandatory security headers in API all responses</p>
   <p>Return API security headers in all server responses to instruct the client to act in a secure manner</p>
 </div>
 
-<p>There are a number of security related headers that can be returned in the HTTP responses to instruct browsers to act in specific ways. However, some of these headers are intended to be used with HTML responses, and as such may provide little or no security benefits on an API that does not return HTML. The following headers <em class="rfc2119">SHOULD</em> be included in all API responses:</p>
+<p>There are a number of security related headers that can be returned in the HTTP responses to instruct browsers to act in specific ways. However, some of these headers are intended to be used with HTML responses, and as such may provide little or no security benefits on an API that does not return HTML. The following headers SHOULD be included in all API responses:</p>
 <table class="simple">
 <thead>
 <tr>
@@ -452,7 +417,7 @@ System-to-system (sometimes called machine-to-machine) may have a need for the l
 </tr>
 <tr>
 <td><code>Content-Type</code></td>
-<td>To specify the content type of the response. This <em class="rfc2119">SHOULD</em> be <code>application/json</code> for JSON responses.</td>
+<td>To specify the content type of the response. This SHOULD be <code>application/json</code> for JSON responses.</td>
 </tr>
 <tr>
 <td><code>Strict-Transport-Security</code></td>
@@ -472,7 +437,7 @@ System-to-system (sometimes called machine-to-machine) may have a need for the l
 </tr>
 </tbody></table>
 <p>Note that strict transport security is not only mandated by this module <a href="https://wetten.overheid.nl/BWBR0048156/2023-07-01">but also by law</a>. </p>
-<p>The headers below are only intended to provide additional security when responses are rendered as HTML. As such, if the API will never return HTML in responses, then these headers may not be necessary. However, if there is any uncertainty about the function of the headers, or the types of information that the API returns (or may return in future), then it is <em class="rfc2119">RECOMMENDED</em> to include them as part of a defense-in-depth approach.</p>
+<p>The headers below are only intended to provide additional security when responses are rendered as HTML. As such, if the API will never return HTML in responses, then these headers may not be necessary. However, if there is any uncertainty about the function of the headers, or the types of information that the API returns (or may return in future), then it is RECOMMENDED to include them as part of a defense-in-depth approach.</p>
 <table class="simple">
 <thead>
 <tr>
@@ -490,35 +455,35 @@ System-to-system (sometimes called machine-to-machine) may have a need for the l
 </tr>
 <tr>
 <td><code>Referrer-Policy: no-referrer</code></td>
-<td>Non-HTML responses <em class="rfc2119">SHOULD</em> not trigger additional requests.</td>
+<td>Non-HTML responses SHOULD not trigger additional requests.</td>
 </tr>
 </tbody></table>
-<p>In addition to the above listed HTTP security headers, web- and browser-based applications <em class="rfc2119">SHOULD</em> apply Subresource Integrity <a href="https://www.w3.org/TR/SRI/">SRI</a>. When using third-party hosted contents, e.g. using a Content Delivery Network, this is even more relevant. While this is primarily a client implementation concern, it may affect the API when it is not strictly segregated or for example when shared supporting libraries are offered.</p>
+<p>In addition to the above listed HTTP security headers, web- and browser-based applications SHOULD apply Subresource Integrity <a href="https://www.w3.org/TR/SRI/">SRI</a>. When using third-party hosted contents, e.g. using a Content Delivery Network, this is even more relevant. While this is primarily a client implementation concern, it may affect the API when it is not strictly segregated or for example when shared supporting libraries are offered.</p>
 <p><strong>How to test</strong>
 The precense of the mandatory security headers can be tested in an automated way. A test client makes a call to the API root. The response is tested for the precense of mandatory headers.</p>
-</section><section id="cors-policy"><div class="header-wrapper"><h4 id="x2-3-2-cors-policy"><bdi class="secno">2.3.2 </bdi>CORS-policy</h4><a class="self-link" href="#cors-policy" aria-label="Permalink for Section 2.3.2"></a></div>
+</section><section id="cors-policy"><div class="header-wrapper"><h4 id="x1-3-2-cors-policy"><bdi class="secno">1.3.2 </bdi>CORS-policy</h4><a class="self-link" href="#cors-policy" aria-label="Permalink for Section 1.3.2"></a></div>
 <div class="rule" id="api-50">
   <p class="rulelab"><strong>API-50</strong>: Use CORS to control access</p>
   <p>Use CORS to restrict access from other domains (if applicable).</p>
 </div>
 
-<p>Modern web browsers use Cross-Origin Resource Sharing (CORS) to minimize the risk associated with cross-site HTTP-requests. By default browsers only allow 'same origin' access to resources. This means that responses on requests to another <code>[scheme]://[hostname]:[port]</code> than the <code>Origin</code> request header of the initial request will not be processed by the browser. To enable cross-site requests API's can return a <code>Access-Control-Allow-Origin</code> response header. It is <em class="rfc2119">RECOMMENDED</em> to use a whitelist to determine the validity of different cross-site request. To do this check the <code>Origin</code> header of the incoming request and check if the domain in this header is on the whitelist. If this is the case, set the incoming <code>Origin</code> header in the <code>Access-Control-Allow-Origin</code> response header.</p>
-<p>Using a wildcard <code>*</code> in the <code>Access-Control-Allow-Origin</code> response header is <em class="rfc2119">NOT RECOMMENDED</em>, because it disables CORS-security measures. Only for an open API which has to be accessed by numerous other websites this is appropriate.</p>
+<p>Modern web browsers use Cross-Origin Resource Sharing (CORS) to minimize the risk associated with cross-site HTTP-requests. By default browsers only allow 'same origin' access to resources. This means that responses on requests to another <code>[scheme]://[hostname]:[port]</code> than the <code>Origin</code> request header of the initial request will not be processed by the browser. To enable cross-site requests API's can return a <code>Access-Control-Allow-Origin</code> response header. It is RECOMMENDED to use a whitelist to determine the validity of different cross-site request. To do this check the <code>Origin</code> header of the incoming request and check if the domain in this header is on the whitelist. If this is the case, set the incoming <code>Origin</code> header in the <code>Access-Control-Allow-Origin</code> response header.</p>
+<p>Using a wildcard <code>*</code> in the <code>Access-Control-Allow-Origin</code> response header is NOT RECOMMENDED, because it disables CORS-security measures. Only for an open API which has to be accessed by numerous other websites this is appropriate.</p>
 <p><strong>How to test</strong>
 Tests of this design rule can only be performed when the intended client is known to the tester. A thest can be performed when this information is provided by the API provider. Otherwise no conclusive test result can be reached. </p>
-</section><section id="browser-based-applications"><div class="header-wrapper"><h4 id="x2-3-3-browser-based-applications"><bdi class="secno">2.3.3 </bdi>Browser-based applications</h4><a class="self-link" href="#browser-based-applications" aria-label="Permalink for Section 2.3.3"></a></div>
+</section><section id="browser-based-applications"><div class="header-wrapper"><h4 id="x1-3-3-browser-based-applications"><bdi class="secno">1.3.3 </bdi>Browser-based applications</h4><a class="self-link" href="#browser-based-applications" aria-label="Permalink for Section 1.3.3"></a></div>
 <p>A specific subclass of clients are browser-based applications, that require the presence of particular security controls to facilitate secure implementation. Clients in this class are also known as <em>user-agent-based</em> or <em>single-page-applications</em> (SPA).
 As with the (draft) <a href="https://tools.ietf.org/html/draft-ietf-oauth-browser-based-apps-07">OAuth 2.0 for Browser-Based Apps</a>, browser-based application can be split into three architectural patterns:</p>
 <ul>
 <li>JavaScript applications with a Backend; with this class of applications, the Backend is the confidential client and should intermediate any interaction, with tokens never ending up in the browser. Effectively, these are not different from regular web-application for this security facet, even though they leverage JavaScript for implementation.</li>
 <li>JavaScript applications that share a domain with the API (resource server); these can leverage cookies marked as HTTP-Only, Secure and SameSite.</li>
-<li>JavaScript applications without a Backend; these clients are considered public clients, are potentially more suspect to several types of attacks, including Cross-Site Scripting (XSS), Cross Site Request Forgery (CSRF) and OAuth token theft. In order to support these clients, the Cross-Origin Resource Sharing (CORS) policy mentioned above is critical and <em class="rfc2119">MUST</em> be supported.</li>
+<li>JavaScript applications without a Backend; these clients are considered public clients, are potentially more suspect to several types of attacks, including Cross-Site Scripting (XSS), Cross Site Request Forgery (CSRF) and OAuth token theft. In order to support these clients, the Cross-Origin Resource Sharing (CORS) policy mentioned above is critical and MUST be supported.</li>
 </ul>
-<p>All browser-based application <em class="rfc2119">SHOULD</em> follow the best practices specified in <a href="https://tools.ietf.org/html/draft-ietf-oauth-browser-based-apps-07">OAuth 2.0 for Browser-Based Apps</a>.</p>
-</section><section id="restrict-http-methods"><div class="header-wrapper"><h4 id="x2-3-4-restrict-http-methods"><bdi class="secno">2.3.4 </bdi>Restrict HTTP methods</h4><a class="self-link" href="#restrict-http-methods" aria-label="Permalink for Section 2.3.4"></a></div>
+<p>All browser-based application SHOULD follow the best practices specified in <a href="https://tools.ietf.org/html/draft-ietf-oauth-browser-based-apps-07">OAuth 2.0 for Browser-Based Apps</a>.</p>
+</section><section id="restrict-http-methods"><div class="header-wrapper"><h4 id="x1-3-4-restrict-http-methods"><bdi class="secno">1.3.4 </bdi>Restrict HTTP methods</h4><a class="self-link" href="#restrict-http-methods" aria-label="Permalink for Section 1.3.4"></a></div>
 <p>Apply a whitelist of permitted HTTP Methods e.g. <code>GET</code>, <code>POST</code>, <code>PUT</code>. Reject all requests not matching the whitelist with HTTP response code <code>405 Method not allowed</code>.</p>
-</section><section id="validate-content-types"><div class="header-wrapper"><h4 id="x2-3-5-validate-content-types"><bdi class="secno">2.3.5 </bdi>Validate content types</h4><a class="self-link" href="#validate-content-types" aria-label="Permalink for Section 2.3.5"></a></div>
-<p>A REST request or response body <em class="rfc2119">SHOULD</em> match the intended content type in the header. Otherwise this could cause misinterpretation at the consumer/producer side and lead to code injection/execution.</p>
+</section><section id="validate-content-types"><div class="header-wrapper"><h4 id="x1-3-5-validate-content-types"><bdi class="secno">1.3.5 </bdi>Validate content types</h4><a class="self-link" href="#validate-content-types" aria-label="Permalink for Section 1.3.5"></a></div>
+<p>A REST request or response body SHOULD match the intended content type in the header. Otherwise this could cause misinterpretation at the consumer/producer side and lead to code injection/execution.</p>
 <ul>
 <li>Reject requests containing unexpected or missing content type headers with HTTP response status <code>406 Unacceptable</code> or <code>415 Unsupported Media Type</code>.</li>
 <li>Avoid accidentally exposing unintended content types by explicitly defining content types e.g. Jersey (Java) <code>@consumes("application/json"); @produces("application/json")</code>. This avoids XXE-attack vectors for example.</li>
@@ -528,36 +493,32 @@ As with the (draft) <a href="https://tools.ietf.org/html/draft-ietf-oauth-browse
 <li>Do NOT simply copy the <code>Accept</code> header to the <code>Content-type</code> header of the response.</li>
 <li>Reject the request (ideally with a <code>406 Not Acceptable</code> response) if the Accept header does not specifically contain one of the allowable types.</li>
 </ul>
-<p>Services (potentially) including script code (e.g. JavaScript) in their responses <em class="rfc2119">MUST</em> be especially careful to defend against header injection attack.</p>
+<p>Services (potentially) including script code (e.g. JavaScript) in their responses MUST be especially careful to defend against header injection attack.</p>
 <ul>
 <li>Ensure sending intended content type headers in your response matching your body content e.g. <code>application/json</code> and not <code>application/javascript</code>.</li>
 </ul>
-</section><section id="http-return-code"><div class="header-wrapper"><h4 id="x2-3-6-http-return-code"><bdi class="secno">2.3.6 </bdi>HTTP Return Code</h4><a class="self-link" href="#http-return-code" aria-label="Permalink for Section 2.3.6"></a></div>
+</section><section id="http-return-code"><div class="header-wrapper"><h4 id="x1-3-6-http-return-code"><bdi class="secno">1.3.6 </bdi>HTTP Return Code</h4><a class="self-link" href="#http-return-code" aria-label="Permalink for Section 1.3.6"></a></div>
 <p>HTTP defines status codes. When designing a REST API, don't just use <code>200</code> for success or <code>404</code> for error. Always use the semantically appropriate <a href="https://tools.ietf.org/html/rfc7231#section-6">status code</a> for the response.</p>
-</section><section id="http-header-filtering"><div class="header-wrapper"><h4 id="x2-3-7-http-header-filtering"><bdi class="secno">2.3.7 </bdi>HTTP header filtering</h4><a class="self-link" href="#http-header-filtering" aria-label="Permalink for Section 2.3.7"></a></div>
+</section><section id="http-header-filtering"><div class="header-wrapper"><h4 id="x1-3-7-http-header-filtering"><bdi class="secno">1.3.7 </bdi>HTTP header filtering</h4><a class="self-link" href="#http-header-filtering" aria-label="Permalink for Section 1.3.7"></a></div>
 <p>Realizations may rely on internal usage of HTTP-Headers. Information for processing requests and responses can be passed between components, that can have security implications.
 For instance, this is commonly practices between a reverse proxy or TLS-offloader and an application server. Additional HTTP headers are used in such example to pass an original IP-address or client certificate.</p>
-<p>Implementations <em class="rfc2119">MUST</em> consider filtering both inbound and outbound traffic for HTTP-headers used internally.
+<p>Implementations MUST consider filtering both inbound and outbound traffic for HTTP-headers used internally.
 Primary focus for inbound filtering is to prevent injection of malicious headers on requests.
 For outbound filtering, the main concern is leaking of information.</p>
-</section><section id="error-handling"><div class="header-wrapper"><h4 id="x2-3-8-error-handling"><bdi class="secno">2.3.8 </bdi>Error handling</h4><a class="self-link" href="#error-handling" aria-label="Permalink for Section 2.3.8"></a></div>
+</section><section id="error-handling"><div class="header-wrapper"><h4 id="x1-3-8-error-handling"><bdi class="secno">1.3.8 </bdi>Error handling</h4><a class="self-link" href="#error-handling" aria-label="Permalink for Section 1.3.8"></a></div>
 <ul>
 <li>Respond with generic error messages - avoid revealing details of the failure unnecessarily.</li>
 <li>Do not pass technical details (e.g. call stacks or other internal hints) to the client.</li>
 </ul>
-</section></section></section>  
+</section></section></section>
   
 
 
 
-<section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-references"><bdi class="secno">A. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div><section id="normative-references">
-    <div class="header-wrapper"><h3 id="a-1-normative-references"><bdi class="secno">A.1 </bdi>Normative references</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix A.1"></a></div>
+<section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-referenties"><bdi class="secno">A. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div><section id="informatieve-referenties">
+    <div class="header-wrapper"><h3 id="a-1-informatieve-referenties"><bdi class="secno">A.1 </bdi>Informatieve referenties</h3><a class="self-link" href="#informatieve-referenties" aria-label="Permalink for Appendix A.1"></a></div>
     <dl class="bibliography"><dt id="bib-ncsc.tls">[NCSC.TLS]</dt><dd>
       <a href="https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1"><cite>ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS)</cite></a>. NCSC. Januari 2021. URL: <a href="https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1">https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1</a>
-    </dd><dt id="bib-rfc2119">[RFC2119]</dt><dd>
-      <a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>
-    </dd><dt id="bib-rfc8174">[RFC8174]</dt><dd>
-      <a href="https://www.rfc-editor.org/rfc/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>
     </dd></dl>
   </section></section><p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Back to Top">↑</abbr></a>
@@ -783,4 +744,4 @@ function hidePanel(panel) {
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script><div class="sidelabel">Logius Guide - Definitive version</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
+})()</script><div class="sidelabel">Geonovum Handreiking - Versie ter vaststelling</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
