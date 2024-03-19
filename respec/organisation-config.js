@@ -474,7 +474,7 @@ var organisationConfig = {
             publisher: "Geonovum",
             date: "November 2023"
         },
-        JRC117836 { 
+        "JRC117836" { 
             href: "https://op.europa.eu/en/publication-detail/-/publication/6521f427-01df-11ea-8c1f-01aa75ed71a1",
             title: "The Relationship Between Open Source Software and Standard Setting",
             authors: ["Knut Blind", "Mirko Böhm"],
@@ -483,7 +483,7 @@ var organisationConfig = {
             id: "JRC117836",
             date: "2019"
         },
-        Krechmer2002 {
+        "Krechmer2002" {
             href: "https://www.isology.com/pdf/cathedrals.pdf",
             title: "Cathedrals, Libraries and Bazaars",
             authors: ["Ken Krechmer"],
