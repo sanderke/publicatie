@@ -483,7 +483,7 @@ var organisationConfig = {
             id: "JRC117836",
             date: "2019"
         },
-        "Krechmer2002": {
+        "Krechmer2002" {
             href: "https://www.isology.com/pdf/cathedrals.pdf",
             title: "Cathedrals, Libraries and Bazaars",
             authors: ["Ken Krechmer"],
